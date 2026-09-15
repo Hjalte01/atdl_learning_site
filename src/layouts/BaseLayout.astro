@@ -1,4 +1,5 @@
 ---
+import { withBase } from "../lib/url";
 import "../styles/global.css";
 import "katex/dist/katex.min.css";
 
@@ -21,7 +22,7 @@ const pageTitle = title ? `${title} · ATDL Learning` : "ATDL Learning";
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href={withBase("/favicon.svg")} type="image/svg+xml" />
     <title>{pageTitle}</title>
     <script is:inline>
       const storedTheme = localStorage.getItem("atdl-theme");
@@ -30,13 +31,13 @@ const pageTitle = title ? `${title} · ATDL Learning` : "ATDL Learning";
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="/" aria-label="ATDL Learning home">
+      <a class="brand" href={withBase("/")} aria-label="ATDL Learning home">
         <span class="brand-mark" aria-hidden="true">λ</span>
         <span>ATDL Learning</span>
       </a>
       <nav class="top-nav" aria-label="Primary navigation">
-        <a href="/topics">Topics</a>
-        <a href="/study">Study</a>
+        <a href={withBase("/topics")}>Topics</a>
+        <a href={withBase("/study")}>Study</a>
         <button class="theme-toggle" type="button" aria-label="Toggle color theme">
           <span class="theme-icon" aria-hidden="true">◐</span>
           <span class="theme-label">Theme</span>

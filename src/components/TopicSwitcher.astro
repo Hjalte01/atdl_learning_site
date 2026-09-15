@@ -1,4 +1,5 @@
 ---
+import { withBase } from "../lib/url";
 import TopicList from "./TopicList.astro";
 import type { Topic } from "../lib/topics";
 
@@ -20,7 +21,7 @@ const { topics, activeSlug, activeTitle } = Astro.props;
   <div class="topic-switcher-menu">
     <div class="switcher-menu-heading">
       <span>Switch topic</span>
-      <a href="/topics">View all</a>
+      <a href={withBase("/topics")}>View all</a>
     </div>
     <TopicList {topics} {activeSlug} compact />
   </div>

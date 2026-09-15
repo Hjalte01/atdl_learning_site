@@ -1,4 +1,5 @@
 ---
+import { withBase } from "../lib/url";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import TopicList from "../components/TopicList.astro";
 import { getTopics } from "../lib/topics";
@@ -9,14 +10,14 @@ const topics=await getTopics();
 <section class="home-intro page-shell"><p class="eyebrow">Advanced topics in deep learning · your study atlas</p><h1>Make the hard parts<br /><em>make sense.</em></h1><p class="lede">Pictures to build intuition. Experiments to test it.<br />Paper-by-paper explanations you can come back to.</p></section>
 <section class="page-shell featured-lesson" aria-labelledby="featured-title">
  <div class="featured-topline"><span class="eyebrow">Featured visual guide · Topic 02 / Paper 05</span><span class="lesson-badge">6 illustrated chapters + a flow lab</span></div>
- <a class="featured-art" href="/papers/flux-kontext" aria-label="Open the illustrated FLUX.1 Kontext guide"><img src="/figures/flux/editing-context.png" alt="A bicycle changes from red to blue, then moves to a mountain setting while keeping its recognizable design." width="1916" height="821" fetchpriority="high" /></a>
- <div class="featured-copy"><div><h2 id="featured-title">FLUX.1 Kontext</h2><p>Change the scene. Keep the subject.<br />See how image context guides a generative flow.</p></div><div class="featured-actions"><a class="button primary" href="/papers/flux-kontext">Explore the visual guide →</a><a class="text-link" href="/papers/flux-kontext#rectified-flow-lab">Struggling with rectified flow? Start here ↗</a></div></div>
+ <a class="featured-art" href={withBase("/papers/flux-kontext")} aria-label="Open the illustrated FLUX.1 Kontext guide"><img src={withBase("/figures/flux/editing-context.png")} alt="A bicycle changes from red to blue, then moves to a mountain setting while keeping its recognizable design." width="1916" height="821" fetchpriority="high" /></a>
+ <div class="featured-copy"><div><h2 id="featured-title">FLUX.1 Kontext</h2><p>Change the scene. Keep the subject.<br />See how image context guides a generative flow.</p></div><div class="featured-actions"><a class="button primary" href={withBase("/papers/flux-kontext")}>Explore the visual guide →</a><a class="text-link" href={withBase("/papers/flux-kontext#rectified-flow-lab")}>Struggling with rectified flow? Start here ↗</a></div></div>
  <p class="art-note">Illustrative example · not a FLUX model result</p>
 </section>
 <section class="page-shell learning-path" aria-label="Three ways to learn">
- <a href="/papers/flux-kontext#visual-guide"><span>01 / SEE</span><h3>Build a mental picture.</h3><p>Six illustrations unpack the reference, latent space, flow, and attention.</p></a>
- <a href="/papers/flux-kontext#rectified-flow-lab"><span>02 / TRY</span><h3>Move through the math.</h3><p>Mix target and noise. Average arrows. Follow a velocity field.</p></a>
- <a href="/study"><span>03 / RECALL</span><h3>Explain it without looking.</h3><p>Check the key distinctions with study cards and immediate explanations.</p></a>
+ <a href={withBase("/papers/flux-kontext#visual-guide")}><span>01 / SEE</span><h3>Build a mental picture.</h3><p>Six illustrations unpack the reference, latent space, flow, and attention.</p></a>
+ <a href={withBase("/papers/flux-kontext#rectified-flow-lab")}><span>02 / TRY</span><h3>Move through the math.</h3><p>Mix target and noise. Average arrows. Follow a velocity field.</p></a>
+ <a href={withBase("/study")}><span>03 / RECALL</span><h3>Explain it without looking.</h3><p>Check the key distinctions with study cards and immediate explanations.</p></a>
 </section>
 <section class="page-shell overview-section"><div class="section-heading"><div><p class="eyebrow">Course map</p><h2>Six topics. A growing understanding.</h2></div><span class="coverage-note">Flux explained · other papers queued</span></div><TopicList {topics} /></section>
 </main>

@@ -1,4 +1,5 @@
 ---
+import { withBase } from "../lib/url";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
@@ -7,6 +8,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <p class="eyebrow">404</p>
     <h1>This page is not in the research map.</h1>
     <p class="lede">The page may have moved, or the learning material has not been created yet.</p>
-    <a class="button primary" href="/topics">Browse topics</a>
+    <a class="button primary" href={withBase("/topics")}>Browse topics</a>
   </main>
 </BaseLayout>

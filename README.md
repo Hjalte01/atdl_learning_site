@@ -38,3 +38,12 @@ Use level-two headings; explain intuition before equations; define symbols; cite
 ## Checks
 
 Run `npm run build` after changes. Check topic-to-paper links, mathematical rendering, slider endpoints, quiz feedback, and mobile layout when editing application behavior.
+
+## GitHub Pages
+
+Live site: https://hjalte01.github.io/atdl_learning_site/
+
+Pushes to `main` build and deploy through `.github/workflows/deploy.yml`.
+The workflow runs `npm ci` and `npm run build` before publishing `dist/`.
+Astro's `base` is `/atdl_learning_site`; use `withBase` from `src/lib/url.ts`
+for site-local links and assets. Markdown URLs receive the base automatically.

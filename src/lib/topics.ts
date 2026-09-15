@@ -1,3 +1,4 @@
+import { withBase } from "./url";
 import { getCollection, type CollectionEntry } from "astro:content";
 
 export type Topic = CollectionEntry<"topics">;
@@ -12,5 +13,5 @@ export async function getTopics(): Promise<Topic[]> {
 }
 
 export function topicHref(topic: Topic): string {
-  return `/topics/${topicSlug(topic)}`;
+  return withBase(`/topics/${topicSlug(topic)}`);
 }

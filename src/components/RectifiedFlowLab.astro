@@ -1,3 +1,6 @@
+---
+import { withBase } from "../lib/url";
+---
 <section class="flow-lab" id="rectified-flow-lab" aria-labelledby="lab-title" data-flow-lab>
   <header><p class="eyebrow">The rectified flow lab · learn by moving things</p><h2 id="lab-title">Where does the arrow come from?</h2><p>Start with one known example. Then see how many examples become a rule for generating something new.</p></header>
   <div class="lab-tabs" role="tablist" aria-label="Rectified flow experiments">
@@ -48,7 +51,7 @@
     <label class="range-label" for="sample-step">Scrub through generation <output data-sample-readout>Step 0 / 24 · t = 1.00</output></label><input id="sample-step" type="range" min="0" max="24" value="0" />
     <p class="field-legend"><span>↗ Teal arrows: generation direction −v</span><span>● Gold: generated particles</span><span>◯ Shaded: target regions</span></p>
     <div class="insight"><strong>The model predicts a velocity, not the final destination.</strong><p>Small moves plus repeated predictions form a trajectory. This is why a straight training construction does not automatically make the learned sampler one-step. Distillation is an additional technique in Kontext.</p></div>
-    <details><summary>What exactly is this simulation?</summary><p>An analytically computed rectified-flow field for a 2D mixture of three Gaussians, sampled with Euler integration backward in time. The target and Gaussian noise are independent. No neural network is trained or called. This illustrates the mathematics; it is not a FLUX latent visualization, benchmark, or comparison of FLUX step counts.</p><p>Changing the number of steps changes numerical approximation, not the definition of the field. See <a href="/docs/flow-lab-math.txt">the toy field’s derivation</a> for its assumptions and formula.</p></details>
+    <details><summary>What exactly is this simulation?</summary><p>An analytically computed rectified-flow field for a 2D mixture of three Gaussians, sampled with Euler integration backward in time. The target and Gaussian noise are independent. No neural network is trained or called. This illustrates the mathematics; it is not a FLUX latent visualization, benchmark, or comparison of FLUX step counts.</p><p>Changing the number of steps changes numerical approximation, not the definition of the field. See <a href={withBase("/docs/flow-lab-math.txt")}>the toy field’s derivation</a> for its assumptions and formula.</p></details>
   </div>
 </section>
 <script>

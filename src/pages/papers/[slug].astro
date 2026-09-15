@@ -1,4 +1,5 @@
 ---
+import { withBase } from "../../lib/url";
 import { getCollection, render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import TableOfContents from "../../components/TableOfContents.astro";
@@ -17,11 +18,11 @@ const cards=(await getStudyCards()).filter(c=>c.relatedTopicUrl?.startsWith(`/pa
 ---
 <BaseLayout title={paper.data.shortTitle} description={paper.data.description}>
  <div class:list={["topic-layout", {"flux-page":isFlux}]}><main class="topic-main">
- <a class="back-link" href={`/topics/${paper.data.topic}`}>← Back to topic</a>
+ <a class="back-link" href={withBase(`/topics/${paper.data.topic}`)}>← Back to topic</a>
  <header class="topic-header">
  <p class="eyebrow">Topic {paper.data.topic.replace('topic-','')} · Paper {paper.data.order} · {paper.data.status === 'ready' ? 'Learning guide' : 'Awaiting explanation'}</p>
  <h1>{paper.data.shortTitle}</h1><p class="lede">{paper.data.title}</p><p>{paper.data.description}</p>
- {paper.data.pdf && <a class="button secondary" href={paper.data.pdf}>Open the course PDF ↗</a>}
+ {paper.data.pdf && <a class="button secondary" href={withBase(paper.data.pdf)}>Open the course PDF ↗</a>}
  {paper.data.source && <a class="text-link" href={paper.data.source}>Paper on arXiv ↗</a>}
  </header>
  {isFlux ? <>

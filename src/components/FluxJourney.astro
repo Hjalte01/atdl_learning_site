@@ -1,4 +1,5 @@
 ---
+import { withBase } from "../lib/url";
 import chapters from '../../content/papers/flux-kontext/visual-journey.json';
 import RectifiedFlowLab from './RectifiedFlowLab.astro';
 import '../styles/visual-learning.css';
@@ -17,14 +18,14 @@ import '../styles/visual-learning.css';
     <section class="visual-chapter" id={c.id} data-visual-chapter aria-labelledby={`${c.id}-title`}>
       <header class="chapter-heading"><span class="chapter-index" aria-hidden="true">{c.number}</span><div><p class="eyebrow">{c.kicker}</p><h2 id={`${c.id}-title`}>{c.title}</h2></div></header>
       <figure class="teaching-figure">
-        <button class="image-expand" type="button" data-enlarge-image={`/figures/flux/${c.image}.png`} data-image-alt={c.alt} data-image-caption={c.caption} aria-label={`Enlarge illustration: ${c.title}`}><img src={`/figures/flux/${c.image}.png`} alt={c.alt} loading="lazy" decoding="async" /><span>Enlarge ↗</span></button>
+        <button class="image-expand" type="button" data-enlarge-image={withBase(`/figures/flux/${c.image}.png`)} data-image-alt={c.alt} data-image-caption={c.caption} aria-label={`Enlarge illustration: ${c.title}`}><img src={withBase(`/figures/flux/${c.image}.png`)} alt={c.alt} loading="lazy" decoding="async" /><span>Enlarge ↗</span></button>
         <figcaption>{c.caption}</figcaption>
       </figure>
       <div class="chapter-explanation"><p>{c.body}</p><div class="remember"><span>Keep this idea</span><strong>{c.takeaway}</strong></div></div>
       <details class="predict"><summary><span>Pause & predict</span>{c.question}<span class="reveal-cue">Think, then reveal +</span></summary><p>{c.answer}</p></details>
       {c.id==='see-training' && <div class="equation-ribbon" aria-label="Interpolation equation"><span class="equation-symbol">zₜ</span><span>=</span><span><b>(1 − t) x</b><small>clean target contribution</small></span><span>+</span><span><b>t ε</b><small>noise contribution</small></span></div>}
       {c.id==='see-context' && <div class="role-comparison"><div><span class="eyebrow">Reference identity</span><strong>(1, h, w)</strong><p>Which image do these tokens belong to?</p></div><div><span class="eyebrow">Flow time</span><strong>t ∈ [0, 1]</strong><p>Where is the target along the noise–data path?</p></div></div>}
-      <a class="chapter-source" href={`/papers/flux-kontext.pdf#page=${c.page}`}>Check the paper: {c.source} ↗</a>
+      <a class="chapter-source" href={withBase(`/papers/flux-kontext.pdf#page=${c.page}`)}>Check the paper: {c.source} ↗</a>
     </section>
     {c.id==='see-field' && <RectifiedFlowLab />}
   </>)}

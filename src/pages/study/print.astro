@@ -1,4 +1,5 @@
 ---
+import { withBase } from "../../lib/url";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getStudyCards } from "../../lib/study";
 import { getTopics, topicSlug } from "../../lib/topics";
@@ -19,7 +20,7 @@ const topics = (await getTopics())
         <label><span>Topic</span><select data-print-topic><option value="">All topics</option>{topics.map((topic) => <option value={topic.slug}>{topic.title}</option>)}</select></label>
         <label class="answer-toggle"><input type="checkbox" data-show-answers /> Include answers and explanations</label>
         <button class="button primary" type="button" data-print-button>Print</button>
-        <a class="button secondary" href="/study">Back to study</a>
+        <a class="button secondary" href={withBase("/study")}>Back to study</a>
       </div>
     </header>
     <div class="print-card-list">
@@ -27,7 +28,7 @@ const topics = (await getTopics())
         <article class="print-card" data-print-card data-topic={card.topic}>
           <div class="study-card-meta"><span>Card {cardIndex + 1}</span><span>{card.difficulty ?? "practice"}</span></div>
           <h2>{card.title}</h2>
-          {card.image && <img src={card.image} alt={card.imageAlt ?? ""} />}
+          {card.image && <img src={withBase(card.image)} alt={card.imageAlt ?? ""} />}
           <p class="study-question">{card.question}</p>
           {card.example && <p class="print-hint"><strong>Hint:</strong> {card.example}</p>}
           <ol class="print-choices" type="A">{card.choices.map((choice) => <li>{choice}</li>)}</ol>
