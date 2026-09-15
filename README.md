@@ -18,18 +18,20 @@ Open http://localhost:4322. For production verification, run `npm run build`; `n
 
 ## Scope
 
-Six topic routes; the twelve available papers for Topics 1 and 2 are catalogued. Only FLUX.1 Kontext has a full explanation, equations, an interactive scalar flow illustration, ten multiple-choice cards, and open-ended recall prompts. Topics 3–6 await their actual titles and reading lists. Topic 1's grouping label is provisional. Other papers are explicitly queued.
+Six topic routes; the twelve available papers for Topics 1 and 2 are catalogued. FLUX.1 Kontext and DiffAtlas have full visual learning guides, equations, interactive illustrations, and recall cards. DiffAtlas includes seven original diagrams and eight multiple-choice cards. Topics 3–6 await their actual titles and reading lists. Topic 1's grouping label is provisional. Other papers are explicitly queued.
 
 The Flux explanation uses the supplied arXiv v2 PDF (24 June 2025), copied into `public/papers/flux-kontext.pdf` for local reading. Toy examples are labeled. Results are historical claims from the report, not current product comparisons.
 
 ## Add learning material
+
+Follow [GPT.md](GPT.md) for architecture-to-math visual authoring. “Create sites for topic 2-4” selects Topic 2, paper 4.
 
 - Topic metadata and overview: `content/topics/topic-N/index.md`.
 - Paper metadata and explanation: `content/papers/<stable-slug>/index.md`.
 - Cards: `content/topics/topic-N/cards.json`; `relatedTopicUrl` points to the relevant paper section.
 - Shared presentation: `src/`; validation: `src/content.config.ts`.
 
-Add a paper directory with frontmatter `title`, `shortTitle`, `topic`, `order`, `description`, and `status` (`queued` or `ready`); optionally `source` and `pdf`. It is automatically listed in its topic and receives a stable `/papers/<slug>` route. No component changes are needed for ordinary papers. The optional Flux interactive component is the only paper-specific presentation.
+Add a paper directory with frontmatter `title`, `shortTitle`, `topic`, `order`, `description`, and `status` (`queued` or `ready`); optionally `source` and `pdf`. It is automatically listed in its topic and receives a stable `/papers/<slug>` route. No component changes are needed for ordinary papers. Flux and DiffAtlas include paper-specific interactive components.
 
 Use level-two headings; explain intuition before equations; define symbols; cite paper sections; distinguish reported evidence from critique. Equations use remark-math and KaTeX, with fonts hosted locally. Sources and optional visual collections inherited from the thesis layout remain available.
 

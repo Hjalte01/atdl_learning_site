@@ -188,5 +188,157 @@
       "FLUX.1 Kontext"
     ],
     "relatedTopicUrl": "/papers/flux-kontext#architecture-follow-the-information"
+  },
+  {
+    "id": "diffatlas-joint",
+    "topic": "topic-2",
+    "title": "DiffAtlas \u00b7 joint",
+    "question": "What does DiffAtlas learn jointly?",
+    "choices": [
+      "Images and their matching mask representations",
+      "Only masks conditioned on clean scans",
+      "A fixed atlas deformation for each patient",
+      "Text and images"
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "It denoises image\u2013mask pairs, learning their joint distribution. Inference then uses noisy image replacement to condition generation.",
+    "difficulty": "medium",
+    "tags": [
+      "DiffAtlas"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-4#2--architecture-learn-both-halves-in-one-denoising-task"
+  },
+  {
+    "id": "diffatlas-replacement",
+    "topic": "topic-2",
+    "title": "DiffAtlas \u00b7 replacement",
+    "question": "At inference, what is replaced at each time step?",
+    "choices": [
+      "Both image and mask with fresh noise",
+      "Only the image part, with the appropriately noised patient scan",
+      "Only the mask, with the annotation",
+      "The network weights"
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "Image channels are overwritten with the observed scan noised to the current level. The mask state carries progress forward.",
+    "difficulty": "medium",
+    "tags": [
+      "DiffAtlas"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-4#5--inference-steer-a-joint-generator-toward-this-patient"
+  },
+  {
+    "id": "diffatlas-noise",
+    "topic": "topic-2",
+    "title": "DiffAtlas \u00b7 noise",
+    "question": "Why use a noisy patient scan instead of a clean scan at every step?",
+    "choices": [
+      "To hide the patient from the model",
+      "To remove the need for annotated training data",
+      "To match the image corruption level expected at the current time",
+      "To update the model weights at test time"
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "Training uses noisy paired states at each time. Replacement should match that corruption level.",
+    "difficulty": "medium",
+    "tags": [
+      "DiffAtlas"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-4#6--why-the-replacement-scan-must-be-noisy"
+  },
+  {
+    "id": "diffatlas-sdf",
+    "topic": "topic-2",
+    "title": "DiffAtlas \u00b7 sdf",
+    "question": "What extra information does a signed distance field give?",
+    "choices": [
+      "A guaranteed correct segmentation",
+      "Only the organ class name",
+      "The time until diffusion finishes",
+      "Distance to a boundary and which side a location is on"
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "The field encodes graded geometry rather than just a discrete label. It encourages continuity but does not guarantee correctness.",
+    "difficulty": "medium",
+    "tags": [
+      "DiffAtlas"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-4#3--why-turn-a-mask-into-a-distance-field"
+  },
+  {
+    "id": "diffatlas-number",
+    "topic": "topic-2",
+    "title": "DiffAtlas \u00b7 number",
+    "question": "With \u03b1\u0304 = 0.64, image value 0.8, and noise 0.2, what is the noisy image value?",
+    "choices": [
+      "0.76",
+      "0.64",
+      "1.00",
+      "0.56"
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "The coefficients are \u221a0.64 = 0.8 and \u221a0.36 = 0.6, so 0.8 \u00d7 0.8 + 0.6 \u00d7 0.2 = 0.76.",
+    "difficulty": "medium",
+    "tags": [
+      "DiffAtlas"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-4#4--follow-the-numbers-through-the-boxes"
+  },
+  {
+    "id": "diffatlas-loss",
+    "topic": "topic-2",
+    "title": "DiffAtlas \u00b7 loss",
+    "question": "What does the paper\u2019s training loss compare?",
+    "choices": [
+      "Predicted mask and patient age",
+      "Predicted noise and known added noise, across both image and mask",
+      "Two registration deformation fields",
+      "Only Dice scores from different datasets"
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "Equation 6 trains noise prediction on the pair. The training loss changes weights; inference replacement changes the current sample state.",
+    "difficulty": "medium",
+    "tags": [
+      "DiffAtlas"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-4#2--architecture-learn-both-halves-in-one-denoising-task"
+  },
+  {
+    "id": "diffatlas-zero",
+    "topic": "topic-2",
+    "title": "DiffAtlas \u00b7 zero",
+    "question": "What does zero-shot CT-to-MRI evaluation mean here?",
+    "choices": [
+      "The model never sees any training data",
+      "MRI ground-truth masks are inserted during sampling",
+      "Source CT training is used without target MRI training",
+      "The target MRI scan is never shown to the model"
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "The model has learned from labeled source data. Target scans guide inference, but target-modality training is absent.",
+    "difficulty": "medium",
+    "tags": [
+      "DiffAtlas"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-4#7--what-did-the-experiments-actually-show"
+  },
+  {
+    "id": "diffatlas-ablation",
+    "topic": "topic-2",
+    "title": "DiffAtlas \u00b7 ablation",
+    "question": "Do the reported baseline comparisons isolate the benefit of the SDF alone?",
+    "choices": [
+      "Yes, any higher Dice proves the SDF caused it",
+      "Yes, because SDF guarantees anatomy",
+      "Yes, because all diffusion methods are identical",
+      "No; a controlled component ablation is needed"
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "Several design choices differ. The v1 comparisons support the tested system but do not isolate each component\u2019s causal contribution.",
+    "difficulty": "medium",
+    "tags": [
+      "DiffAtlas"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-4#7--what-did-the-experiments-actually-show"
   }
 ]

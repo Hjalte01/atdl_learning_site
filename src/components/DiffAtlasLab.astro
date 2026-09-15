@@ -1,0 +1,50 @@
+<section id="diffatlas-lab" class="atlas-lab" aria-labelledby="atlas-lab-title">
+ <p class="eyebrow">Try the equation · synthetic example</p>
+ <h2 id="atlas-lab-title">Noise-matching lab</h2>
+ <p>Move from early sampling (little signal) toward late sampling (a clearer image). The same fixed Gaussian noise draw is used at every setting so you can isolate the coefficients.</p>
+ <label for="atlas-signal">Remaining signal variance ᾱ: <output id="atlas-alpha">0.64</output></label>
+ <input id="atlas-signal" type="range" min="0" max="100" value="64" step="1" />
+ <div class="atlas-images">
+ <figure><canvas id="atlas-clean" width="128" height="128" role="img" aria-label="Synthetic circular grayscale image, not a medical scan"></canvas><figcaption>Observed toy image Iinput</figcaption></figure>
+ <figure><canvas id="atlas-noisy" width="128" height="128" role="img" aria-label="Image after applying the current signal and noise weights"></canvas><figcaption>Replacement image Iₜ</figcaption></figure>
+ </div>
+ <p id="atlas-equation" class="atlas-readout" aria-live="polite"></p>
+ <p id="atlas-stage"></p>
+ <p><strong>One pixel:</strong> Iinput = 0.8 and ε = 0.2. <output id="atlas-pixel"></output></p>
+ <p class="atlas-note">The grayscale display clips values outside [−1, 1]; the numerical calculation does not. The endpoints illustrate the noising formula’s limits. This is not a diffusion scheduler, a trained denoiser, or a segmentation prediction.</p>
+ <noscript>JavaScript enables the lab. At ᾱ = 0.64: Iₜ = 0.8 Iinput + 0.6 ε. For Iinput = 0.8 and ε = 0.2, Iₜ = 0.76.</noscript>
+</section>
+<script>
+ const slider=document.querySelector<HTMLInputElement>('#atlas-signal');
+ if(slider){
+  const clean=document.querySelector<HTMLCanvasElement>('#atlas-clean')!;
+  const noisy=document.querySelector<HTMLCanvasElement>('#atlas-noisy')!;
+  let seed=247;
+  const random=()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return (seed+1)/4294967297;};
+  const signal=Array.from({length:128*128},(_,i)=>{
+   const x=i%128-64,y=Math.floor(i/128)-64,r=Math.hypot(x,y);
+   return r<28 ? 0.8 : r<40 ? 0.05 : -0.7;
+  });
+  const noise=signal.map(()=>Math.sqrt(-2*Math.log(random()))*Math.cos(2*Math.PI*random()));
+  function draw(canvas:HTMLCanvasElement,values:number[]){
+   const ctx=canvas.getContext('2d')!;const data=ctx.createImageData(128,128);
+   values.forEach((v,i)=>{const gray=Math.round(255*Math.max(0,Math.min(1,(v+1)/2))); data.data.set([gray,gray,gray,255],i*4);});ctx.putImageData(data,0,0);
+  }
+  draw(clean,signal);
+  function update(){
+   const a=Number(slider!.value)/100,s=Math.sqrt(a),n=Math.sqrt(1-a);
+   document.querySelector('#atlas-alpha')!.textContent=a.toFixed(2);
+   document.querySelector('#atlas-equation')!.textContent=`Iₜ = ${s.toFixed(3)} × Iinput + ${n.toFixed(3)} × ε`;
+   document.querySelector('#atlas-pixel')!.textContent=`Iₜ = ${(s*0.8+n*0.2).toFixed(4)}`;
+   document.querySelector('#atlas-stage')!.textContent=a<0.2?'Early-sampling limit: noise dominates. The observed image contributes little signal.':a>0.8?'Late-sampling limit: the observed image dominates. The mask still comes from the evolving joint denoising state.':'Intermediate noise: the replacement contains both image structure and substantial noise.';
+   draw(noisy,signal.map((v,i)=>s*v+n*noise[i]));
+  }
+  slider.addEventListener('input',update);update();
+ }
+</script>
+<style>
+ .atlas-lab{margin:3rem 0;padding:clamp(1rem,3vw,2rem);border:1px solid var(--border);border-radius:20px;background:var(--surface-soft)}
+ .atlas-lab h2{font-size:1.8rem}.atlas-lab p{line-height:1.7}.atlas-lab input{display:block;width:100%;margin:1.4rem 0;accent-color:var(--accent)}
+ .atlas-images{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.atlas-images figure{margin:0}.atlas-images canvas{display:block;width:100%;max-width:256px;image-rendering:pixelated;border-radius:12px}.atlas-images figcaption{font-size:.85rem;margin-top:.6rem}
+ .atlas-readout{font-family:var(--mono);font-size:clamp(.85rem,2vw,1.1rem);overflow-wrap:anywhere}.atlas-note{font-size:.85rem;color:var(--muted)}
+</style>

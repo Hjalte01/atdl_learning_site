@@ -4,6 +4,7 @@ import { getCollection, render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import TableOfContents from "../../components/TableOfContents.astro";
 import StudyDeck from "../../components/StudyDeck.astro";
+import DiffAtlasLab from "../../components/DiffAtlasLab.astro";
 import FlowExplorer from "../../components/FlowExplorer.astro";
 import FluxJourney from "../../components/FluxJourney.astro";
 import chapters from "../../../content/papers/flux-kontext/visual-journey.json";
@@ -12,6 +13,7 @@ export async function getStaticPaths() {
  return (await getCollection("papers")).map(paper => ({params:{slug:paper.id.replace(/\/index$/,"")},props:{paper}}));
 }
 const {paper}=Astro.props;
+const isDiffAtlas=paper.id.replace(/\/index$/, "") === "t2-paper-4";
 const isFlux=paper.id.replace(/\/index$/, "") === "flux-kontext";
 const {Content, headings}=await render(paper);
 const cards=(await getStudyCards()).filter(c=>c.relatedTopicUrl?.startsWith(`/papers/${paper.id.replace(/\/index$/,"")}`));
@@ -29,6 +31,7 @@ const cards=(await getStudyCards()).filter(c=>c.relatedTopicUrl?.startsWith(`/pa
  <FluxJourney />
  <details class="full-notes" id="full-paper-notes"><summary>The complete paper explanation<span>Equations, architecture, evidence, limitations, and the source-by-source reading map.</span></summary><article class="prose"><Content /></article><FlowExplorer /></details>
  </> : <article class="prose"><Content /></article>}
+ {isDiffAtlas && <DiffAtlasLab />}
  <StudyDeck {cards} />
- </main><aside class="toc-sidebar"><TableOfContents headings={[...(isFlux ? [{depth:2,slug:"visual-guide",text:"The illustrated route"},...chapters.map(c=>({depth:2,slug:c.id,text:`${c.number} · ${c.title}`})),{depth:2,slug:"rectified-flow-lab",text:"Interactive rectified flow lab"},{depth:2,slug:"full-paper-notes",text:"Complete paper explanation"}] : headings),...(cards.length ? [{depth:2,slug:'flow-explorer',text:'Explore the flow'},{depth:2,slug:'study-cards',text:'Study cards'}] : [])]} /></aside></div>
+ </main><aside class="toc-sidebar"><TableOfContents headings={[...(isFlux ? [{depth:2,slug:"visual-guide",text:"The illustrated route"},...chapters.map(c=>({depth:2,slug:c.id,text:`${c.number} · ${c.title}`})),{depth:2,slug:"rectified-flow-lab",text:"Interactive rectified flow lab"},{depth:2,slug:"full-paper-notes",text:"Complete paper explanation"}] : headings),...(isDiffAtlas ? [{depth:2,slug:'diffatlas-lab',text:'Noise-matching lab'}] : []),...(isFlux ? [{depth:2,slug:'flow-explorer',text:'Explore the flow'}] : []),...(cards.length ? [{depth:2,slug:'study-cards',text:'Study cards'}] : [])]} /></aside></div>
 </BaseLayout>
