@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import TopicList from "../../components/TopicList.astro";
+import { getTopics } from "../../lib/topics";
+
+const topics = await getTopics();
+---
+
+<BaseLayout title="Topics" description="Six ATDL course topics.">
+  <main class="page-shell index-page">
+    <header class="page-intro">
+      <p class="eyebrow">Course map</p>
+      <h1>All topics</h1>
+      <p class="lede">Explore each topic and its paper list. Flux is ready; other explanations will be added as you work through the course.</p>
+    </header>
+    <TopicList {topics} />
+  </main>
+</BaseLayout>

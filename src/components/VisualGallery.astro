@@ -1,0 +1,47 @@
+---
+import type { VisualItem } from "../lib/study";
+
+interface Props {
+  visuals: VisualItem[];
+  heading?: string;
+  sectionId?: string;
+}
+
+const {
+  visuals,
+  heading = "Visual explanations",
+  sectionId = "visual-explanations",
+} = Astro.props;
+---
+
+{visuals.length > 0 && (
+  <section class="learning-section visual-section" id={sectionId} aria-labelledby={`${sectionId}-heading`}>
+    <div class="learning-section-heading">
+      <div>
+        <p class="eyebrow">See the idea</p>
+        <h2 id={`${sectionId}-heading`}>{heading}</h2>
+      </div>
+      <span>{visuals.length} {visuals.length === 1 ? "figure" : "figures"}</span>
+    </div>
+    <div class="visual-grid">
+      {visuals.map((visual) => (
+        <figure class="visual-card" id={`visual-${visual.id}`}>
+          <a class="visual-image-link" href={visual.image} target="_blank" rel="noreferrer" aria-label={`Open ${visual.title} at full size`}>
+            <img src={visual.image} alt={visual.alt} loading="lazy" />
+            <span aria-hidden="true">Open full size ↗</span>
+          </a>
+          <figcaption>
+            <div class="visual-meta">
+              <span>{visual.type.replace("-", " ")}</span>
+              {visual.tags.length > 0 && <span>{visual.tags.join(" · ")}</span>}
+            </div>
+            <h3>{visual.title}</h3>
+            <p class="visual-caption">{visual.caption}</p>
+            <p>{visual.explanation}</p>
+            {visual.sourceNote && <p class="source-note"><strong>Source note:</strong> {visual.sourceNote}</p>}
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </section>
+)}

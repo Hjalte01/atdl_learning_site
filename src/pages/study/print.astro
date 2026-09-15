@@ -1,0 +1,61 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getStudyCards } from "../../lib/study";
+import { getTopics, topicSlug } from "../../lib/topics";
+
+const cards = await getStudyCards();
+const topics = (await getTopics())
+  .filter((topic) => cards.some((card) => card.topic === topicSlug(topic)))
+  .map((topic) => ({ slug: topicSlug(topic), title: topic.data.shortTitle }));
+---
+
+<BaseLayout title="Print study cards" description="Print-friendly ATDL study cards.">
+  <main class="page-shell print-page" data-print-page>
+    <header class="page-intro print-intro">
+      <p class="eyebrow">Print view</p>
+      <h1>Study cards</h1>
+      <p class="lede">Print questions alone for practice, or include the answer key and explanations.</p>
+      <div class="print-toolbar" data-print-controls>
+        <label><span>Topic</span><select data-print-topic><option value="">All topics</option>{topics.map((topic) => <option value={topic.slug}>{topic.title}</option>)}</select></label>
+        <label class="answer-toggle"><input type="checkbox" data-show-answers /> Include answers and explanations</label>
+        <button class="button primary" type="button" data-print-button>Print</button>
+        <a class="button secondary" href="/study">Back to study</a>
+      </div>
+    </header>
+    <div class="print-card-list">
+      {cards.map((card, cardIndex) => (
+        <article class="print-card" data-print-card data-topic={card.topic}>
+          <div class="study-card-meta"><span>Card {cardIndex + 1}</span><span>{card.difficulty ?? "practice"}</span></div>
+          <h2>{card.title}</h2>
+          {card.image && <img src={card.image} alt={card.imageAlt ?? ""} />}
+          <p class="study-question">{card.question}</p>
+          {card.example && <p class="print-hint"><strong>Hint:</strong> {card.example}</p>}
+          <ol class="print-choices" type="A">{card.choices.map((choice) => <li>{choice}</li>)}</ol>
+          <div class="print-answer" data-print-answer hidden>
+            <strong>Answer: {String.fromCharCode(65 + card.correctChoiceIndex)}</strong>
+            <p>{card.explanation}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </main>
+</BaseLayout>
+
+<script>
+  const page = document.querySelector<HTMLElement>("[data-print-page]");
+  if (page) {
+    const topic = page.querySelector<HTMLSelectElement>("[data-print-topic]");
+    const answers = page.querySelector<HTMLInputElement>("[data-show-answers]");
+    const cards = Array.from(page.querySelectorAll<HTMLElement>("[data-print-card]"));
+    const render = () => {
+      cards.forEach((card) => { card.hidden = Boolean(topic?.value) && card.dataset.topic !== topic?.value; });
+      page.querySelectorAll<HTMLElement>("[data-print-answer]").forEach((answer) => { answer.hidden = !answers?.checked; });
+    };
+    const requestedTopic = new URLSearchParams(window.location.search).get("topic");
+    if (topic && requestedTopic && Array.from(topic.options).some((option) => option.value === requestedTopic)) topic.value = requestedTopic;
+    topic?.addEventListener("change", render);
+    answers?.addEventListener("change", render);
+    page.querySelector<HTMLButtonElement>("[data-print-button]")?.addEventListener("click", () => window.print());
+    render();
+  }
+</script>

@@ -1,0 +1,13 @@
+---
+import { getCollection } from "astro:content";
+interface Props { topic: string }
+const papers = (await getCollection("papers")).filter(p => p.data.topic === Astro.props.topic).sort((a,b) => a.data.order-b.data.order);
+---
+<section class="learning-section" aria-labelledby="papers-heading">
+  <p class="eyebrow">Reading list</p><h2 id="papers-heading">Papers in this topic</h2>
+  {papers.length ? <ol class="topic-list">{papers.map(p => <li><a href={`/papers/${p.id.replace(/\/index$/, "")}`}>
+    <span class="topic-number">{String(p.data.order).padStart(2,"0")}</span>
+    <span class="topic-link-copy"><strong>{p.data.shortTitle}</strong><span>{p.data.description}</span></span>
+    <span class={`status ${p.data.status === "ready" ? "status-active" : "status-not-started"}`}>{p.data.status === "ready" ? "Read explanation" : "Queued"}</span>
+  </a></li>)}</ol> : <p>The paper list has not been provided yet. Around six papers are planned for this topic.</p>}
+</section>

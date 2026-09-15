@@ -1,0 +1,44 @@
+---
+import TopicList from "./TopicList.astro";
+import type { Topic } from "../lib/topics";
+
+interface Props {
+  topics: Topic[];
+  activeSlug: string;
+  activeTitle: string;
+}
+
+const { topics, activeSlug, activeTitle } = Astro.props;
+---
+
+<details class="topic-switcher">
+  <summary>
+    <span class="switcher-label">Current topic</span>
+    <strong>{activeTitle}</strong>
+    <span class="switcher-chevron" aria-hidden="true">⌄</span>
+  </summary>
+  <div class="topic-switcher-menu">
+    <div class="switcher-menu-heading">
+      <span>Switch topic</span>
+      <a href="/topics">View all</a>
+    </div>
+    <TopicList {topics} {activeSlug} compact />
+  </div>
+</details>
+
+<script>
+  const switcher = document.querySelector<HTMLDetailsElement>(".topic-switcher");
+
+  document.addEventListener("click", (event) => {
+    if (switcher?.open && event.target instanceof Node && !switcher.contains(event.target)) {
+      switcher.open = false;
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && switcher?.open) {
+      switcher.open = false;
+      switcher.querySelector("summary")?.focus();
+    }
+  });
+</script>

@@ -1,0 +1,41 @@
+RECTIFIED FLOW LAB — AN ANALYTIC TEACHING EXAMPLE
+
+This is not a trained FLUX model or a measurement of its latent space.
+Convention follows the course paper, section 3: z_t = (1-t)x + t epsilon.
+
+Target distribution: an equal mixture of three isotropic 2D Gaussians.
+Centers mu_k = (-1.15,-0.75), (1.1,-0.6), (0,1.2).
+Each component has covariance s_x^2 I, where s_x^2 = 0.075.
+Noise epsilon ~ N(0,I), independent of x.
+
+Let a = 1-t. Given component k:
+  E[z_t|k] = a mu_k
+  Var(z_t|k) = S I, S = a^2 s_x^2 + t^2
+  u = epsilon-x
+  E[u|k] = -mu_k
+  Cov(u,z_t|k) = (t-a s_x^2) I
+
+Gaussian conditioning therefore gives:
+  E[u|z_t=z,k] = -mu_k + ((t-a s_x^2)/S)(z-a mu_k)
+
+Posterior component probabilities w_k are proportional to:
+  exp(-||z-a mu_k||^2 / (2S))
+The priors and component determinants are equal and cancel.
+
+The exact squared-error-optimal field is:
+  v(z,t) = sum_k w_k E[u|z_t=z,k]
+
+The simulation uses explicit Euler integration BACKWARD IN TIME:
+  z_next = z - (1/N) v(z,t)
+  t_next = t - 1/N
+This is not the implicit numerical method called "backward Euler".
+
+The vector arrows display normalized -v (generation direction), not velocity
+magnitude. The same reproducible Gaussian starting sample is used when changing
+N. Target outlines are illustrative level regions, not hard boundaries.
+Finite step counts introduce numerical error. At t=0 and t=1 the variances stay
+positive. There is no singular endpoint in this chosen toy distribution.
+
+The two-arrow experiment is separate: two equally weighted pairs intersect at
+z=(3,2), t=0.5 with forward velocities (4,-2) and (4,2), averaging to (4,0).
+It illustrates conditional-mean regression locally, not a complete sampler.

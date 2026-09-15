@@ -1,0 +1,97 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PaperList from "../../components/PaperList.astro";
+import StudyDeck from "../../components/StudyDeck.astro";
+import TableOfContents from "../../components/TableOfContents.astro";
+import TopicSwitcher from "../../components/TopicSwitcher.astro";
+import VisualGallery from "../../components/VisualGallery.astro";
+import { getStudyCards, getVisuals, type StudyCard, type VisualItem } from "../../lib/study";
+import { getTopics, topicSlug, type Topic } from "../../lib/topics";
+
+export const getStaticPaths = (async () => {
+  const topics = await getTopics();
+  const sources = await getCollection("sources");
+  const visuals = await getVisuals();
+  const cards = await getStudyCards();
+
+  return topics.map((topic) => {
+    const slug = topicSlug(topic);
+    return {
+    params: { slug },
+    props: {
+      topic,
+      topics,
+      source: sources.find((entry) => entry.data.topic === slug),
+      visuals: visuals.filter((visual) => visual.topic === slug),
+      cards: cards.filter((card) => card.topic === slug),
+    },
+  }});
+}) satisfies GetStaticPaths;
+
+interface Props {
+  topic: Topic;
+  topics: Topic[];
+  source?: CollectionEntry<"sources">;
+  visuals: VisualItem[];
+  cards: StudyCard[];
+}
+
+const { topic, topics, source, visuals, cards }: Props = Astro.props;
+const { Content, headings } = await render(topic);
+const sourceRender = source ? await render(source) : undefined;
+const learningHeadings = [
+  ...(visuals.length ? [{ depth: 2 as const, slug: "visual-explanations", text: "Visual explanations" }] : []),
+  ...(cards.length ? [{ depth: 2 as const, slug: "study-cards", text: "Study cards" }] : []),
+];
+const allHeadings = [...headings, ...learningHeadings, ...(sourceRender?.headings ?? [])];
+const slug = topicSlug(topic);
+---
+
+<BaseLayout title={topic.data.shortTitle} description={topic.data.description}>
+  <div class="topic-layout">
+    <main class="topic-main">
+      <div class="topic-reading-nav">
+        <a class="back-link" href="/topics">← All topics</a>
+        <TopicSwitcher {topics} activeSlug={slug} activeTitle={topic.data.shortTitle} />
+      </div>
+
+      <header class="topic-header">
+        <div class="topic-meta">
+          <span>Topic {String(topic.data.order).padStart(2, "0")}</span>
+          <span class={`status status-${topic.data.status}`}>{topic.data.status.replace("-", " ")}</span>
+          <span>{topic.data.locale.toUpperCase()}</span>
+        </div>
+        <h1>{topic.data.title}</h1>
+        <p class="lede">{topic.data.description}</p>
+        <div class="tags" aria-label="Topic tags">
+          {topic.data.tags.map((tag) => <span>{tag}</span>)}
+        </div>
+      </header>
+
+      <article class="prose">
+        <Content />
+      </article>
+
+      <PaperList topic={slug} />
+      <VisualGallery {visuals} />
+      <StudyDeck {cards} />
+
+      {sourceRender && (
+        <article class="prose">
+          {sourceRender && (
+            <section class="sources-section" aria-label="Sources workspace">
+              <sourceRender.Content />
+            </section>
+          )}
+        </article>
+      )}
+
+    </main>
+
+    <aside class="toc-sidebar">
+      <TableOfContents headings={allHeadings} />
+    </aside>
+  </div>
+</BaseLayout>

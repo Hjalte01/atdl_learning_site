@@ -1,0 +1,29 @@
+<section class="learning-section prose" id="flow-explorer" aria-labelledby="flow-heading">
+<p class="eyebrow">Interactive intuition · A scalar toy example</p>
+<h2 id="flow-heading">One target evolves. The reference stays fixed.</h2>
+<p>This illustrates the training interpolation with a known target x = 2 and noise ε = 10. It is not a simulation of a trained image model. Move from right to left to follow the generation direction.</p>
+<div class="flow-panel">
+  <div class="flow-context"><strong>Reference y</strong><span>Red bicycle against a wall</span><small>Fixed conditioning · image position (1, h, w)</small></div>
+  <div class="flow-context"><strong>Instruction c</strong><span>“Make the bicycle blue.”</span><small>Fixed text conditioning</small></div>
+  <div class="flow-target"><strong>Evolving target zₜ</strong><output id="latent-value" for="flow-time">zₜ = 8.00</output><span id="flow-state">75% noise weight · 25% target weight</span><small>Target image position (0, h, w)</small></div>
+</div>
+<label for="flow-time"><strong>Flow time t = <span id="time-value">0.75</span></strong></label>
+<input id="flow-time" type="range" min="0" max="100" value="75" step="1" aria-describedby="flow-help" />
+<div class="flow-endpoints"><span>0 · clean target</span><span>1 · noise</span></div>
+<p id="flow-help">zₜ = (1 − t) × 2 + t × 10. The exact velocity for this pair is always 10 − 2 = 8. With the paper’s convention, generation decreases t.</p>
+<p><strong>A backward step of 0.25:</strong> <span id="step-value">8.00 − 0.25 × 8 = 6.00 (t = 0.50)</span></p>
+<p class="source-note">The percentages are interpolation coefficients, not measured perceptual noise or information percentages. A real network does not know the clean target at inference.</p>
+</section>
+<script>
+const slider=document.querySelector<HTMLInputElement>('#flow-time');
+const set=(id:string,value:string)=>{const e=document.getElementById(id);if(e)e.textContent=value;};
+slider?.addEventListener('input',()=>{
+ const t=Number(slider.value)/100; const z=2+8*t;const dt=Math.min(.25,t);
+ set('time-value',t.toFixed(2));set('latent-value',`zₜ = ${z.toFixed(2)}`);
+ set('flow-state',`${Math.round(t*100)}% noise weight · ${Math.round((1-t)*100)}% target weight`);
+ set('step-value',`${z.toFixed(2)} − ${dt.toFixed(2)} × 8 = ${(z-dt*8).toFixed(2)} (t = ${(t-dt).toFixed(2)})${t<.25?' — step shortened at t = 0':''}`);
+});
+</script>
+<style>
+.flow-panel{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0}.flow-context,.flow-target{border:1px solid var(--border);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:8px}.flow-target{grid-column:1/-1;border:2px solid var(--accent);}.flow-target output{font-size:2rem;font-weight:700}.flow-panel small{font-size:.8rem}input{width:100%;accent-color:var(--accent);min-height:44px}.flow-endpoints{display:flex;justify-content:space-between;font-size:.85rem}@media(max-width:520px){.flow-panel{grid-template-columns:1fr}}
+</style>

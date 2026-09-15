@@ -1,0 +1,57 @@
+<section class="flow-lab" id="rectified-flow-lab" aria-labelledby="lab-title" data-flow-lab>
+  <header><p class="eyebrow">The rectified flow lab · learn by moving things</p><h2 id="lab-title">Where does the arrow come from?</h2><p>Start with one known example. Then see how many examples become a rule for generating something new.</p></header>
+  <div class="lab-tabs" role="tablist" aria-label="Rectified flow experiments">
+    <button id="tab-pair" type="button" role="tab" aria-selected="true" aria-controls="panel-pair" data-lab-tab="pair">1. Build a bridge</button>
+    <button id="tab-average" type="button" role="tab" aria-selected="false" aria-controls="panel-average" tabindex="-1" data-lab-tab="average">2. Learn the arrow</button>
+    <button id="tab-sample" type="button" role="tab" aria-selected="false" aria-controls="panel-sample" tabindex="-1" data-lab-tab="sample">3. Follow the field</button>
+  </div>
+  <div id="panel-pair" role="tabpanel" aria-labelledby="tab-pair" data-lab-panel="pair">
+    <div class="lab-intro"><h3>The answer is known during training.</h3><p>Pick a clean target <strong>x = 2</strong> and a noise sample <strong>ε = 10</strong>. Every mixture lies on the line connecting them. The model practices predicting the direction of that line.</p></div>
+    <svg class="bridge-plot" viewBox="0 0 720 210" role="img" aria-labelledby="bridge-title bridge-desc">
+      <title id="bridge-title">The straight path between a target value of 2 and noise value of 10</title><desc id="bridge-desc">A moving gold marker shows the mixture. The coral velocity arrow points toward noise; generation travels in the reverse direction.</desc>
+      <defs><marker id="bridge-arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#c4533d" /></marker></defs>
+      <line x1="80" y1="110" x2="640" y2="110" stroke="#c6cec9" stroke-width="3" />
+      <g stroke="#c6cec9"><line x1="220" y1="102" x2="220" y2="118"/><line x1="360" y1="102" x2="360" y2="118"/><line x1="500" y1="102" x2="500" y2="118"/></g>
+      <circle cx="80" cy="110" r="12" fill="#167563"/><circle cx="640" cy="110" r="12" fill="#c4533d"/>
+      <text x="80" y="153" text-anchor="middle">Clean x = 2</text><text x="640" y="153" text-anchor="middle">Noise ε = 10</text>
+      <text x="80" y="177" text-anchor="middle" class="svg-small">t = 0</text><text x="640" y="177" text-anchor="middle" class="svg-small">t = 1</text>
+      <g data-bridge-marker transform="translate(500 110)"><circle r="16" fill="#dfab47" stroke="#ffffff" stroke-width="3"/><text data-bridge-label y="-26" text-anchor="middle">z = 8.00</text></g>
+      <line x1="260" y1="35" x2="450" y2="35" stroke="#c4533d" stroke-width="3" marker-end="url(#bridge-arrow)"/>
+      <text x="360" y="64" text-anchor="middle" class="svg-small">Training velocity: ε − x = +8</text>
+    </svg>
+    <label class="range-label" for="pair-time">Move the mixture <output id="pair-readout">t = 0.75</output></label>
+    <input id="pair-time" type="range" min="0" max="100" value="75" aria-describedby="pair-equation" />
+    <p class="live-equation" id="pair-equation">zₜ = 0.25 × 2 + 0.75 × 10 = <strong data-mixture>8.00</strong></p>
+    <div class="lab-facts"><div><span>What changes?</span><strong>The noisy target zₜ</strong></div><div><span>What stays fixed?</span><strong>The reference y + instruction c</strong></div><div><span>What do we supervise?</span><strong>The velocity ε − x</strong></div></div>
+    <div class="insight"><strong>Why is generation backward?</strong><p>Here t = 1 means noise. To generate, start there and move toward t = 0. A step of 0.25 subtracts 0.25 × 8 = 2. Try moving the slider from 75 to 50: the target moves from 8 to 6.</p></div>
+  </div>
+  <div id="panel-average" role="tabpanel" aria-labelledby="tab-average" data-lab-panel="average" hidden>
+    <div class="lab-intro"><h3>One location can have several training stories.</h3><p>Two equally likely training pairs meet at the same noisy point at t = 0.5. They share the same reference and instruction in this toy example. Which forward-time arrow should a squared-error model predict?</p></div>
+    <svg class="average-plot" viewBox="0 0 720 300" role="img" aria-labelledby="average-title average-desc">
+      <title id="average-title">Two straight training pairs cross and their velocity vectors average</title><desc id="average-desc">The pairs cross at (3,2). Their forward velocities are (4,−2) and (4,2). Their equally weighted mean is (4,0).</desc>
+      <defs><marker id="mean-arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#167563"/></marker></defs>
+      <path d="M110 65 L610 235 M110 235 L610 65" fill="none" stroke="#c8cec9" stroke-width="2" stroke-dasharray="7 6"/>
+      <g fill="#167563"><circle cx="110" cy="65" r="10"/><circle cx="110" cy="235" r="10"/></g><g fill="#c4533d"><circle cx="610" cy="235" r="10"/><circle cx="610" cy="65" r="10"/></g>
+      <circle cx="360" cy="150" r="12" fill="#dfab47"/><text x="345" y="185" text-anchor="end">Same z, same t</text>
+      <path d="M360 150 L505 101 M360 150 L505 199" stroke="#c4533d" stroke-width="4" fill="none"/><path d="M493 102 L505 101 L499 114 M499 187 L505 199 L493 198" stroke="#c4533d" fill="none" stroke-width="3"/>
+      <g data-mean-vector visibility="hidden"><line x1="360" y1="150" x2="505" y2="150" stroke="#167563" stroke-width="6" marker-end="url(#mean-arrow)"/><text x="455" y="132" fill="#167563">Mean</text></g>
+      <text x="110" y="280" text-anchor="middle">Possible targets</text><text x="610" y="280" text-anchor="middle">Noise samples</text>
+    </svg>
+    <button type="button" class="button primary" data-reveal-mean>Reveal the best shared prediction</button>
+    <div class="insight" data-mean-answer hidden><strong>(4, −2) + (4, 2), divided by 2 → (4, 0)</strong><p>The vertical components cancel. The model predicts the average compatible velocity, not the identity of the hidden training pair. This is the conditional-mean interpretation of squared-error regression. In this toy example the two possibilities have equal weight.</p></div>
+    <p class="lab-note">This is a local, two-example illustration. It is not a full distribution or a guarantee that averaging only two arrows can generate images.</p>
+  </div>
+  <div id="panel-sample" role="tabpanel" aria-labelledby="tab-sample" data-lab-panel="sample" hidden>
+    <div class="lab-intro"><h3>At generation time, ask the field again at every step.</h3><p>Gold particles start as noise. Each update uses the current position and time to choose the next move. The paths can bend. The three shaded regions represent a toy target distribution.</p></div>
+    <canvas data-field-canvas width="960" height="540" role="img" aria-label="Animated two-dimensional toy flow. Noise particles follow a time-dependent velocity field toward three target regions. Gold paths show their trajectories."></canvas>
+    <div class="sample-controls"><button type="button" class="button primary" data-flow-play>Play generation</button><button type="button" class="button secondary" data-flow-reset>Reset</button><label>Solver steps <select data-flow-steps><option value="8">8 · coarse</option><option value="24" selected>24 · finer</option><option value="80">80 · fine</option></select></label></div>
+    <label class="range-label" for="sample-step">Scrub through generation <output data-sample-readout>Step 0 / 24 · t = 1.00</output></label><input id="sample-step" type="range" min="0" max="24" value="0" />
+    <p class="field-legend"><span>↗ Teal arrows: generation direction −v</span><span>● Gold: generated particles</span><span>◯ Shaded: target regions</span></p>
+    <div class="insight"><strong>The model predicts a velocity, not the final destination.</strong><p>Small moves plus repeated predictions form a trajectory. This is why a straight training construction does not automatically make the learned sampler one-step. Distillation is an additional technique in Kontext.</p></div>
+    <details><summary>What exactly is this simulation?</summary><p>An analytically computed rectified-flow field for a 2D mixture of three Gaussians, sampled with Euler integration backward in time. The target and Gaussian noise are independent. No neural network is trained or called. This illustrates the mathematics; it is not a FLUX latent visualization, benchmark, or comparison of FLUX step counts.</p><p>Changing the number of steps changes numerical approximation, not the definition of the field. See <a href="/docs/flow-lab-math.txt">the toy field’s derivation</a> for its assumptions and formula.</p></details>
+  </div>
+</section>
+<script>
+import { initFlowLab } from '../lib/flow-lab';
+document.querySelectorAll<HTMLElement>('[data-flow-lab]').forEach(initFlowLab);
+</script>

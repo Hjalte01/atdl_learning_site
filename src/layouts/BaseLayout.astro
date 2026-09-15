@@ -1,0 +1,62 @@
+---
+import "../styles/global.css";
+import "katex/dist/katex.min.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = "A learning workspace for six ATDL topics and their papers.",
+} = Astro.props;
+const pageTitle = title ? `${title} · ATDL Learning` : "ATDL Learning";
+---
+
+<!doctype html>
+<html lang="en" data-theme="system">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>{pageTitle}</title>
+    <script is:inline>
+      const storedTheme = localStorage.getItem("atdl-theme");
+      document.documentElement.dataset.theme = storedTheme || "system";
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="ATDL Learning home">
+        <span class="brand-mark" aria-hidden="true">λ</span>
+        <span>ATDL Learning</span>
+      </a>
+      <nav class="top-nav" aria-label="Primary navigation">
+        <a href="/topics">Topics</a>
+        <a href="/study">Study</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle color theme">
+          <span class="theme-icon" aria-hidden="true">◐</span>
+          <span class="theme-label">Theme</span>
+        </button>
+      </nav>
+    </header>
+    <slot />
+    <footer class="site-footer">
+      <p>ATDL · Read, understand, recall.</p>
+    </footer>
+    <script>
+      const button = document.querySelector<HTMLButtonElement>(".theme-toggle");
+      const root = document.documentElement;
+      button?.addEventListener("click", () => {
+        const isDark = root.dataset.theme === "dark" ||
+          (root.dataset.theme === "system" && matchMedia("(prefers-color-scheme: dark)").matches);
+        const nextTheme = isDark ? "light" : "dark";
+        root.dataset.theme = nextTheme;
+        localStorage.setItem("atdl-theme", nextTheme);
+      });
+    </script>
+  </body>
+</html>

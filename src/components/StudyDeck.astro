@@ -1,0 +1,120 @@
+---
+import type { StudyCard as StudyCardData } from "../lib/study";
+import StudyCard from "./StudyCard.astro";
+
+interface TopicOption {
+  slug: string;
+  title: string;
+}
+
+interface Props {
+  cards: StudyCardData[];
+  topics?: TopicOption[];
+  showFilter?: boolean;
+  heading?: string;
+  sectionId?: string;
+  initialTopic?: string;
+}
+
+const {
+  cards,
+  topics = [],
+  showFilter = false,
+  heading = "Study cards",
+  sectionId = "study-cards",
+  initialTopic = "",
+} = Astro.props;
+---
+
+{cards.length > 0 && (
+  <section class="learning-section study-section" id={sectionId} data-study-deck data-initial-topic={initialTopic} aria-labelledby={`${sectionId}-heading`}>
+    <div class="learning-section-heading study-heading">
+      <div>
+        <p class="eyebrow">Test the distinction</p>
+        <h2 id={`${sectionId}-heading`}>{heading}</h2>
+      </div>
+      <div class="study-progress" aria-live="polite"><span data-current-card>1</span> / <span data-card-count>{cards.length}</span></div>
+    </div>
+    {showFilter && topics.length > 0 && (
+      <div class="study-toolbar">
+        <label>
+          <span>Topic</span>
+          <select data-topic-filter>
+            <option value="">All topics</option>
+            {topics.map((topic) => <option value={topic.slug}>{topic.title}</option>)}
+          </select>
+        </label>
+        <a class="button secondary" data-print-link href="/study/print">Print cards</a>
+      </div>
+    )}
+    <div class="study-card-stage">
+      {cards.map((card, index) => <StudyCard {card} active={index === 0} />)}
+    </div>
+    <noscript><p class="study-noscript">Enable JavaScript to answer cards and move through the deck. The first card remains readable without it.</p></noscript>
+    <nav class="study-controls" aria-label="Study card navigation">
+      <button class="button secondary" type="button" data-previous-card>← Previous</button>
+      <button class="button secondary" type="button" data-next-card>Next →</button>
+    </nav>
+  </section>
+)}
+
+<script>
+  document.querySelectorAll<HTMLElement>("[data-study-deck]").forEach((deck) => {
+    const cards = Array.from(deck.querySelectorAll<HTMLElement>("[data-study-card]"));
+    const filter = deck.querySelector<HTMLSelectElement>("[data-topic-filter]");
+    const currentLabel = deck.querySelector<HTMLElement>("[data-current-card]");
+    const countLabel = deck.querySelector<HTMLElement>("[data-card-count]");
+    const previous = deck.querySelector<HTMLButtonElement>("[data-previous-card]");
+    const next = deck.querySelector<HTMLButtonElement>("[data-next-card]");
+    const printLink = deck.querySelector<HTMLAnchorElement>("[data-print-link]");
+    let current = 0;
+
+    const availableCards = () => cards.filter((card) => !filter?.value || card.dataset.topic === filter.value);
+
+    const renderDeck = () => {
+      const available = availableCards();
+      current = Math.min(current, Math.max(available.length - 1, 0));
+      cards.forEach((card) => { card.hidden = !available.length || card !== available[current]; });
+      if (currentLabel) currentLabel.textContent = available.length ? String(current + 1) : "0";
+      if (countLabel) countLabel.textContent = String(available.length);
+      if (previous) previous.disabled = current === 0 || available.length === 0;
+      if (next) next.disabled = current >= available.length - 1 || available.length === 0;
+      if (printLink) printLink.href = filter?.value ? `/study/print?topic=${encodeURIComponent(filter.value)}` : "/study/print";
+    };
+
+    previous?.addEventListener("click", () => { current -= 1; renderDeck(); deck.scrollIntoView({ behavior: "smooth", block: "start" }); });
+    next?.addEventListener("click", () => { current += 1; renderDeck(); deck.scrollIntoView({ behavior: "smooth", block: "start" }); });
+    filter?.addEventListener("change", () => { current = 0; renderDeck(); });
+
+    cards.forEach((card) => {
+      const form = card.querySelector<HTMLFormElement>("[data-card-form]");
+      form?.addEventListener("submit", (event) => {
+        event.preventDefault();
+        let chosen = form.querySelector<HTMLInputElement>('input[type="radio"]:checked');
+        if (!chosen) {
+          chosen = form.querySelector<HTMLInputElement>('input[type="radio"]');
+          chosen?.focus();
+          return;
+        }
+        const correct = Number(form.dataset.correctIndex);
+        const selected = Number(chosen.value);
+        form.querySelectorAll<HTMLLabelElement>("[data-choice-index]").forEach((label) => {
+          const index = Number(label.dataset.choiceIndex);
+          label.classList.toggle("is-correct", index === correct);
+          label.classList.toggle("is-incorrect", index === selected && selected !== correct);
+        });
+        form.querySelectorAll<HTMLInputElement>('input[type="radio"]').forEach((input) => { input.disabled = true; });
+        const submit = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+        if (submit) submit.disabled = true;
+        const feedback = card.querySelector<HTMLElement>("[data-card-feedback]");
+        const status = card.querySelector<HTMLElement>("[data-feedback-status]");
+        if (status) status.textContent = selected === correct ? "Correct." : `Not quite. The answer is ${String.fromCharCode(65 + correct)}.`;
+        if (feedback) feedback.hidden = false;
+      });
+    });
+
+    const requestedTopic = new URLSearchParams(window.location.search).get("topic") ?? deck.dataset.initialTopic;
+    if (filter && requestedTopic && Array.from(filter.options).some((option) => option.value === requestedTopic)) filter.value = requestedTopic;
+    renderDeck();
+  });
+</script>

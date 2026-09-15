@@ -1,0 +1,33 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import TableOfContents from "../../components/TableOfContents.astro";
+import StudyDeck from "../../components/StudyDeck.astro";
+import FlowExplorer from "../../components/FlowExplorer.astro";
+import FluxJourney from "../../components/FluxJourney.astro";
+import chapters from "../../../content/papers/flux-kontext/visual-journey.json";
+import { getStudyCards } from "../../lib/study";
+export async function getStaticPaths() {
+ return (await getCollection("papers")).map(paper => ({params:{slug:paper.id.replace(/\/index$/,"")},props:{paper}}));
+}
+const {paper}=Astro.props;
+const isFlux=paper.id.replace(/\/index$/, "") === "flux-kontext";
+const {Content, headings}=await render(paper);
+const cards=(await getStudyCards()).filter(c=>c.relatedTopicUrl?.startsWith(`/papers/${paper.id.replace(/\/index$/,"")}`));
+---
+<BaseLayout title={paper.data.shortTitle} description={paper.data.description}>
+ <div class:list={["topic-layout", {"flux-page":isFlux}]}><main class="topic-main">
+ <a class="back-link" href={`/topics/${paper.data.topic}`}>← Back to topic</a>
+ <header class="topic-header">
+ <p class="eyebrow">Topic {paper.data.topic.replace('topic-','')} · Paper {paper.data.order} · {paper.data.status === 'ready' ? 'Learning guide' : 'Awaiting explanation'}</p>
+ <h1>{paper.data.shortTitle}</h1><p class="lede">{paper.data.title}</p><p>{paper.data.description}</p>
+ {paper.data.pdf && <a class="button secondary" href={paper.data.pdf}>Open the course PDF ↗</a>}
+ {paper.data.source && <a class="text-link" href={paper.data.source}>Paper on arXiv ↗</a>}
+ </header>
+ {isFlux ? <>
+ <FluxJourney />
+ <details class="full-notes" id="full-paper-notes"><summary>The complete paper explanation<span>Equations, architecture, evidence, limitations, and the source-by-source reading map.</span></summary><article class="prose"><Content /></article><FlowExplorer /></details>
+ </> : <article class="prose"><Content /></article>}
+ <StudyDeck {cards} />
+ </main><aside class="toc-sidebar"><TableOfContents headings={[...(isFlux ? [{depth:2,slug:"visual-guide",text:"The illustrated route"},...chapters.map(c=>({depth:2,slug:c.id,text:`${c.number} · ${c.title}`})),{depth:2,slug:"rectified-flow-lab",text:"Interactive rectified flow lab"},{depth:2,slug:"full-paper-notes",text:"Complete paper explanation"}] : headings),...(cards.length ? [{depth:2,slug:'flow-explorer',text:'Explore the flow'},{depth:2,slug:'study-cards',text:'Study cards'}] : [])]} /></aside></div>
+</BaseLayout>

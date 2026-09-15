@@ -1,0 +1,43 @@
+---
+import type { StudyCard as StudyCardData } from "../lib/study";
+
+interface Props {
+  card: StudyCardData;
+  active?: boolean;
+}
+
+const { card, active = false } = Astro.props;
+const relatedUrl = card.relatedTopicUrl ?? `/topics/${card.topic}`;
+---
+
+<article class="study-card" data-study-card data-topic={card.topic} data-card-id={card.id} hidden={!active}>
+  <div class="study-card-meta">
+    <span>{card.topic.replaceAll("-", " ")}</span>
+    <span>{card.difficulty ?? "practice"}</span>
+    {card.tags.length > 0 && <span>{card.tags.join(" · ")}</span>}
+  </div>
+  <h3>{card.title}</h3>
+  {card.image && <img class="study-card-image" src={card.image} alt={card.imageAlt ?? ""} loading="lazy" />}
+  <p class="study-question">{card.question}</p>
+  {card.example && <aside class="study-hint"><strong>Hint or example</strong><span>{card.example}</span></aside>}
+  <form data-card-form data-correct-index={card.correctChoiceIndex}>
+    <fieldset>
+      <legend class="sr-only">Choose one answer</legend>
+      <div class="study-choices">
+        {card.choices.map((choice, index) => (
+          <label data-choice-index={index}>
+            <input type="radio" name={`${card.id}-answer`} value={index} />
+            <span class="choice-letter" aria-hidden="true">{String.fromCharCode(65 + index)}</span>
+            <span>{choice}</span>
+          </label>
+        ))}
+      </div>
+    </fieldset>
+    <button class="button primary check-answer" type="submit">Check answer</button>
+  </form>
+  <div class="study-feedback" data-card-feedback aria-live="polite" hidden>
+    <strong data-feedback-status></strong>
+    <p>{card.explanation}</p>
+    <a href={relatedUrl}>Review the related topic →</a>
+  </div>
+</article>

@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import StudyDeck from "../../components/StudyDeck.astro";
+import { getStudyCards } from "../../lib/study";
+import { getTopics, topicSlug } from "../../lib/topics";
+
+const cards = await getStudyCards();
+const topics = (await getTopics())
+  .filter((topic) => cards.some((card) => card.topic === topicSlug(topic)))
+  .map((topic) => ({ slug: topicSlug(topic), title: topic.data.shortTitle }));
+---
+
+<BaseLayout title="Study" description="Multiple-choice retrieval-practice cards across ATDL topics.">
+  <main class="page-shell study-page">
+    <header class="page-intro study-page-intro">
+      <p class="eyebrow">Retrieval practice</p>
+      <h1>Study one distinction at a time.</h1>
+      <p class="lede">Choose an answer, check your reasoning, and use the explanation to return to the topic when a concept needs another pass.</p>
+    </header>
+    <StudyDeck {cards} {topics} showFilter heading="Practice deck" sectionId="practice-deck" />
+  </main>
+</BaseLayout>

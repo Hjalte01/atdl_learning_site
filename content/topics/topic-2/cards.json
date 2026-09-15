@@ -1,0 +1,192 @@
+[
+  {
+    "id": "flux-conditioning",
+    "topic": "topic-2",
+    "title": "FLUX.1 Kontext \u00b7 conditioning",
+    "question": "What happens to the reference while the output is sampled?",
+    "choices": [
+      "It stays fixed as conditioning.",
+      "It is denoised with the target.",
+      "It becomes the target noise.",
+      "It is used only after decoding."
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "The reference provides context tokens while the target sequence evolves. See Architecture, \u00a73 of the paper.",
+    "difficulty": "medium",
+    "tags": [
+      "FLUX.1 Kontext"
+    ],
+    "relatedTopicUrl": "/papers/flux-kontext#architecture-follow-the-information"
+  },
+  {
+    "id": "flux-time-direction",
+    "topic": "topic-2",
+    "title": "FLUX.1 Kontext \u00b7 time direction",
+    "question": "With z\u209c = (1\u2212t)x + t\u03b5, which direction generates an image?",
+    "choices": [
+      "t = 0 toward 1",
+      "t = 1 toward 0",
+      "Only t = 0.5",
+      "Time is the reference-image index."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "t = 1 is noise and t = 0 is the clean target. Backward integration explains the minus sign in the toy Euler update.",
+    "difficulty": "medium",
+    "tags": [
+      "FLUX.1 Kontext"
+    ],
+    "relatedTopicUrl": "/papers/flux-kontext#flow-matching-step-by-step"
+  },
+  {
+    "id": "flux-velocity",
+    "topic": "topic-2",
+    "title": "FLUX.1 Kontext \u00b7 velocity",
+    "question": "For x = 2 and \u03b5 = 10, what is the exact training velocity?",
+    "choices": [
+      "2",
+      "10",
+      "8",
+      "\u22128"
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "Differentiate (1\u2212t)x + t\u03b5 with respect to t: \u03b5\u2212x = 8. The sampling update goes backward in time.",
+    "difficulty": "medium",
+    "tags": [
+      "FLUX.1 Kontext"
+    ],
+    "relatedTopicUrl": "/papers/flux-kontext#flow-matching-step-by-step"
+  },
+  {
+    "id": "flux-position",
+    "topic": "topic-2",
+    "title": "FLUX.1 Kontext \u00b7 position",
+    "question": "What does the 1 in reference position (1, h, w) mean?",
+    "choices": [
+      "Noise level is maximal.",
+      "First denoising step.",
+      "The model has one channel.",
+      "It identifies the reference separately from target positions."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "The virtual time coordinate separates image sequences. It is distinct from the flow noise time t.",
+    "difficulty": "medium",
+    "tags": [
+      "FLUX.1 Kontext"
+    ],
+    "relatedTopicUrl": "/papers/flux-kontext#architecture-follow-the-information"
+  },
+  {
+    "id": "flux-dev",
+    "topic": "topic-2",
+    "title": "FLUX.1 Kontext \u00b7 dev",
+    "question": "Which statement matches the report\u2019s dev recipe?",
+    "choices": [
+      "LADD with the same joint task training as pro.",
+      "Guidance distillation into a 12B transformer, focused on image-to-image.",
+      "No model training ever takes place.",
+      "A demonstrated multiple-reference video model."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "Section 3 distinguishes dev guidance distillation and editing-only training from pro\u2019s flow training followed by LADD.",
+    "difficulty": "medium",
+    "tags": [
+      "FLUX.1 Kontext"
+    ],
+    "relatedTopicUrl": "/papers/flux-kontext#what-is-trained-and-why-it-is-fast"
+  },
+  {
+    "id": "flux-metric",
+    "topic": "topic-2",
+    "title": "FLUX.1 Kontext \u00b7 metric",
+    "question": "An editor returns the reference unchanged and gets a high face-similarity score. What follows?",
+    "choices": [
+      "The edit succeeded.",
+      "Its text rendering is correct.",
+      "Identity similarity alone cannot establish instruction following.",
+      "All image quality metrics must be low."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "An unchanged reference can preserve identity while ignoring the instruction. Evaluate preservation and the requested change together.",
+    "difficulty": "medium",
+    "tags": [
+      "FLUX.1 Kontext"
+    ],
+    "relatedTopicUrl": "/papers/flux-kontext#evidence-what-the-results-actually-support"
+  },
+  {
+    "id": "flux-benchmark",
+    "topic": "topic-2",
+    "title": "FLUX.1 Kontext \u00b7 benchmark",
+    "question": "What does 1,026 refer to in KontextBench?",
+    "choices": [
+      "Image\u2013prompt pairs, derived from 108 base images.",
+      "Independent source photographs.",
+      "Editing categories.",
+      "Denoising steps."
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "Section 4.1 reports 1,026 pairs across five categories. Several instructions can reuse a base image.",
+    "difficulty": "medium",
+    "tags": [
+      "FLUX.1 Kontext"
+    ],
+    "relatedTopicUrl": "/papers/flux-kontext#evidence-what-the-results-actually-support"
+  },
+  {
+    "id": "flux-multi-image",
+    "topic": "topic-2",
+    "title": "FLUX.1 Kontext \u00b7 multi image",
+    "question": "What is established about multiple reference images in this report?",
+    "choices": [
+      "They are the focus of every experiment.",
+      "They are impossible with sequence concatenation.",
+      "They require identical image resolutions.",
+      "The formulation extends to them, but the report focuses on single-reference conditioning."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "An architecture supporting an extension is different from evidence that the extension was trained and evaluated.",
+    "difficulty": "medium",
+    "tags": [
+      "FLUX.1 Kontext"
+    ],
+    "relatedTopicUrl": "/papers/flux-kontext#architecture-follow-the-information"
+  },
+  {
+    "id": "flux-limits",
+    "topic": "topic-2",
+    "title": "FLUX.1 Kontext \u00b7 limits",
+    "question": "How should you describe multi-turn consistency?",
+    "choices": [
+      "Unlimited edits without drift.",
+      "Reduced drift in reported comparisons, with failures still documented.",
+      "A pixel-preservation guarantee.",
+      "Evidence that distillation cannot cause artifacts."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "Section 5 and Figure 15 show identity degradation, instruction failures, and artifacts after repeated edits.",
+    "difficulty": "medium",
+    "tags": [
+      "FLUX.1 Kontext"
+    ],
+    "relatedTopicUrl": "/papers/flux-kontext#failure-cases-and-boundaries"
+  },
+  {
+    "id": "flux-concat",
+    "topic": "topic-2",
+    "title": "FLUX.1 Kontext \u00b7 concat",
+    "question": "Why can sequence concatenation handle different input/output grids?",
+    "choices": [
+      "It makes the images have identical pixels.",
+      "It discards reference positions.",
+      "It appends separate token sequences rather than pairing channels at each matching location.",
+      "It removes attention."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "Separate sequences can contain different numbers of spatial tokens. Position embeddings retain their spatial organization.",
+    "difficulty": "medium",
+    "tags": [
+      "FLUX.1 Kontext"
+    ],
+    "relatedTopicUrl": "/papers/flux-kontext#architecture-follow-the-information"
+  }
+]

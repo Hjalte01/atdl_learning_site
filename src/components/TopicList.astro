@@ -1,0 +1,30 @@
+---
+import { topicHref, topicSlug, type Topic } from "../lib/topics";
+
+interface Props {
+  topics: Topic[];
+  activeSlug?: string;
+  compact?: boolean;
+}
+
+const { topics, activeSlug, compact = false } = Astro.props;
+---
+
+<ol class:list={["topic-list", { compact }]}>
+  {topics.map((topic) => (
+    <li>
+      <a
+        href={topicHref(topic)}
+        class:list={{ active: topicSlug(topic) === activeSlug }}
+        aria-current={topicSlug(topic) === activeSlug ? "page" : undefined}
+      >
+        <span class="topic-number">{String(topic.data.order).padStart(2, "0")}</span>
+        <span class="topic-link-copy">
+          <strong>{topic.data.shortTitle}</strong>
+          {!compact && <span>{topic.data.description}</span>}
+        </span>
+        {!compact && <span class={`status status-${topic.data.status}`}>{topic.data.status.replace("-", " ")}</span>}
+      </a>
+    </li>
+  ))}
+</ol>
