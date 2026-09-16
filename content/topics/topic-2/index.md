@@ -1,7 +1,7 @@
 ---
 title: "Deep generative modeling"
 shortTitle: "Deep generative modeling"
-description: "Six papers on generative models. Explore illustrated DiME, Mean Flows, REPA, DiffAtlas and FLUX.1 Kontext guides."
+description: "Six papers on generative models. Explore illustrated guides for all six papers, including Qwen-Image."
 order: 2
 status: "active"
 tags: ["generative modeling"]
@@ -18,3 +18,5 @@ Continue with [REPA · paper 1](/papers/t2-paper-1): see how a clean-image teach
 Continue with [Mean Flows · paper 2](/papers/t2-paper-2): learn why an interval-average velocity supports one-call generation, derive the JVP target, and distinguish sampling steps from network evaluations.
 
 Continue with [DiME · paper 3](/papers/t2-paper-3): trace clean-image classifier gradients back into a noisy diffusion state, examine the gradient approximation, and question what counterfactual metrics actually establish.
+
+Continue with [Qwen-Image · paper 6](/papers/t2-paper-6): follow text rendering through the data curriculum, VAE, and flow model; trace dual-reference conditioning for editing and inspect where benchmark gains still leave failures.

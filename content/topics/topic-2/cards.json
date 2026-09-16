@@ -796,5 +796,157 @@
       "DiME"
     ],
     "relatedTopicUrl": "/papers/t2-paper-3#8--evidence-success-and-quality-must-be-read-together"
+  },
+  {
+    "id": "qwen-time",
+    "topic": "topic-2",
+    "title": "Qwen-Image · time",
+    "question": "Under Qwen-Image Equation 1, which time is pure noise?",
+    "choices": [
+      "t = 0.",
+      "t = 1.",
+      "t = 0.5.",
+      "Time is the reference frame ID."
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "The paper uses xₜ = tz + (1−t)ε, so noise is at 0 and data at 1.",
+    "difficulty": "medium",
+    "tags": [
+      "Qwen-Image"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-6#4--where-the-flow-mathematics-happens"
+  },
+  {
+    "id": "qwen-velocity",
+    "topic": "topic-2",
+    "title": "Qwen-Image · velocity",
+    "question": "For clean latent 2 and noise 10, what is the flow velocity target?",
+    "choices": [
+      "8.",
+      "−8.",
+      "12.",
+      "2."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "Differentiate tz + (1−t)ε: z−ε = 2−10 = −8.",
+    "difficulty": "medium",
+    "tags": [
+      "Qwen-Image"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-6#5--trace-a-numerical-example"
+  },
+  {
+    "id": "qwen-dual",
+    "topic": "topic-2",
+    "title": "Qwen-Image · dual",
+    "question": "Why encode an editing reference with both Qwen2.5-VL and the VAE?",
+    "choices": [
+      "To generate two independent final images.",
+      "To train the reference pixels.",
+      "To supply semantic understanding and reconstructive appearance information.",
+      "To guarantee all unedited pixels are identical."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "The semantic branch helps instruction following; clean VAE tokens help preserve visual detail. Neither is an exact preservation guarantee.",
+    "difficulty": "medium",
+    "tags": [
+      "Qwen-Image"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-6#7--editing-one-reference-two-encodings"
+  },
+  {
+    "id": "qwen-decoder",
+    "topic": "topic-2",
+    "title": "Qwen-Image · decoder",
+    "question": "Which part is adapted in the text-aware VAE training described in §2.3?",
+    "choices": [
+      "The shared encoder only.",
+      "Every model including MMDiT.",
+      "The video decoder only.",
+      "The image decoder, with the shared encoder frozen."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "The report fine-tunes the image decoder on text-rich data to improve fine-detail reconstruction.",
+    "difficulty": "medium",
+    "tags": [
+      "Qwen-Image"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-6#3--representation-why-the-decoder-matters"
+  },
+  {
+    "id": "qwen-positions",
+    "topic": "topic-2",
+    "title": "Qwen-Image · positions",
+    "question": "Does placing text position IDs on a diagonal make output text diagonal?",
+    "choices": [
+      "No; these IDs organize token positions for attention.",
+      "Yes, every generated word must follow that diagonal.",
+      "Yes, unless noise time is zero.",
+      "No, because position encoding is removed during inference."
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "MSRoPE encodes text order across both axes. Position IDs do not prescribe rendered word coordinates.",
+    "difficulty": "medium",
+    "tags": [
+      "Qwen-Image"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-6#6--positions-give-text-and-image-tokens-a-useful-geometry"
+  },
+  {
+    "id": "qwen-curriculum",
+    "topic": "topic-2",
+    "title": "Qwen-Image · curriculum",
+    "question": "What does synthetic text data mean in this report?",
+    "choices": [
+      "Unfiltered outputs from other image generators.",
+      "Controlled rendering of text in backgrounds, scenes, and templates.",
+      "Randomly corrupted captions.",
+      "Only machine-translated prompts without images."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "Controlled rendering supplies reliable glyph coverage and layout examples; the report distinguishes it from other models’ generated images.",
+    "difficulty": "medium",
+    "tags": [
+      "Qwen-Image"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-6#8--training-text-coverage-before-polish"
+  },
+  {
+    "id": "qwen-evidence",
+    "topic": "topic-2",
+    "title": "Qwen-Image · evidence",
+    "question": "What does the ChineseWord Level-3 accuracy of 6.48% show?",
+    "choices": [
+      "All Chinese text rendering is solved.",
+      "Every paragraph is 6.48% correct.",
+      "Rare-character rendering remains difficult despite the aggregate lead.",
+      "The VAE reconstructs only 6.48% of pixels."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "ChineseWord evaluates single characters grouped into tiers; aggregate superiority does not remove rare-character failures.",
+    "difficulty": "medium",
+    "tags": [
+      "Qwen-Image"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-6#10--evidence-strong-results-with-visible-boundaries"
+  },
+  {
+    "id": "qwen-state",
+    "topic": "topic-2",
+    "title": "Qwen-Image · state",
+    "question": "What changes repeatedly during ordinary editing inference?",
+    "choices": [
+      "The reference image features.",
+      "The model weights.",
+      "The clean training target.",
+      "The noisy target latent, conditioned on fixed reference features."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "The reference provides conditioning; the generated target state advances along the flow, with model parameters fixed.",
+    "difficulty": "medium",
+    "tags": [
+      "Qwen-Image"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-6#7--editing-one-reference-two-encodings"
   }
 ]
