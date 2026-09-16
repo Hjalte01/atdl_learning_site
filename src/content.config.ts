@@ -69,6 +69,7 @@ const papers = defineCollection({
   schema: z.object({
     title: z.string(), shortTitle: z.string(), topic: z.string(), order: z.number().int().positive(),
     description: z.string(), status: z.enum(["ready", "queued"]),
+    materialKind: z.enum(["paper", "overview", "slides", "extra"]).default("paper"),
     source: z.string().optional(), pdf: z.string().optional(),
   }),
 });

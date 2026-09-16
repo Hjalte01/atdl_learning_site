@@ -1,0 +1,28 @@
+---
+import { materialCatalog, materialKinds } from '../lib/materials';
+import { withBase } from '../lib/url';
+import { getCollection } from 'astro:content';
+interface Props { topic?: number }
+const { topic } = Astro.props;
+const papers = await getCollection('papers');
+const materials = materialCatalog.materials.filter(m => topic === undefined || m.topic === topic);
+---
+<div class="material-groups">
+  {Object.entries(materialKinds).map(([kind, label]) => {
+    const items = materials.filter(m => m.kind === kind).sort((a,b) => (b.topic ?? 0)-(a.topic ?? 0) || (a.order ?? 999)-(b.order ?? 999) || a.title.localeCompare(b.title));
+    return <section data-material-group={kind}>
+      <h3>{label}{(kind === 'overview' || kind === 'slides') && <span class="core-label">Core reading</span>}</h3>
+      {items.length ? <ul class="material-list">{items.map(m => {
+        const paper = papers.find(p => m.guide === `/papers/${p.id.replace(/\/index$/, '')}`);
+        const ready = paper ? paper.data.status === 'ready' : m.status === 'ready';
+        return <li data-material data-kind={kind} data-topic={m.topic ?? 'other'} data-search={`${m.title} ${m.sourcePath}`.toLowerCase()}>
+          <div><strong>{m.title}</strong><p>{m.topic ? `Topic ${m.topic}` : 'General / topic to review'}{m.order ? ` · Reading ${m.order}` : ''} · Guide: {ready ? 'Ready' : 'Not started'}</p><small>{m.sourcePath}</small></div>
+          <div class="material-actions"><a href={withBase(m.pdf)}>Read PDF ↗</a>{m.guide && <a href={withBase(m.guide)}>{ready ? 'Read guide' : 'Guide status'}</a>}</div>
+        </li>;
+      })}</ul> : <p class="empty-materials">No {label.toLowerCase()} imported yet.</p>}
+    </section>;
+  })}
+</div>
+<style>
+.material-groups{display:grid;gap:1.5rem}.material-list{list-style:none;padding:0;display:grid;gap:.75rem}.material-list li{display:flex;gap:1rem;justify-content:space-between;border:1px solid var(--border);border-radius:12px;padding:1rem;background:var(--surface);min-width:0}.material-list p{font-size:.85rem;margin:.4rem 0;color:var(--muted)}.material-list small{display:block;overflow-wrap:anywhere;color:var(--muted)}.material-list strong{overflow-wrap:anywhere}.material-actions{display:flex;gap:.75rem;flex-wrap:wrap;align-content:center;flex-shrink:0}.core-label{font-size:.7rem;font-weight:400;color:var(--accent);margin-left:.75rem}.empty-materials{color:var(--muted)}[hidden]{display:none!important}@media(max-width:700px){.material-list li{flex-direction:column}}
+</style>

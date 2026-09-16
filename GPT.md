@@ -6,6 +6,16 @@
 
 Use the DiffAtlas guide (`content/papers/t2-paper-4/index.md`) as the architecture-to-math teaching reference. Preserve existing guides. This Astro site uses Markdown, KaTeX, custom Astro components, and local SVG/canvas visuals.
 
+## Automatic selection and other learning material
+
+For an unspecified “goal create site” request, complete one not-started guide. Run `python3 scripts/materials.py next`. Both existing paper `status: queued` and catalog `status: not-started` mean unfinished. Readiness for a catalog record linked to an existing paper comes from that paper's frontmatter.
+
+Sort all unfinished papers by topic descending, then paper order ascending. Once papers are finished, select an overview, then slides, then extra material (topic descending and reading order ascending within each category; stable ID breaks ties). Do not select empty placeholder Topics 3–6 unless readings have actually been supplied. Explicit topic/paper requests take precedence. Read the selected PDF before writing; missing source access is a blocker, not a reason to invent a guide. Report an incomplete inventory because it may hide higher-priority topics.
+
+`content/materials/catalog.json` tracks all PDFs, including core slides/overviews and extras. The importer recursively copies vault PDFs into repository-owned public assets, records source-relative paths and SHA-256 hashes, and retains prior records. Review filename-based topic/kind inference, especially unassigned materials; retain manual title/category overrides. A PDF can be available while its guide is not started.
+
+For a newly discovered paper, add a stable `content/papers/<slug>/index.md` record and link the catalog's `guide` to it. For an overview, slide deck, or extra resource, use the same Markdown guide infrastructure with a descriptive stable slug, link it from the catalog, and add `materialKind: overview`, `slides`, or `extra` to its frontmatter so it is excluded from the main paper list and ranked correctly. Tailor the teaching structure to the source: overview guides explain the topic map and prerequisites; slides guides explain their sequence and worked examples; extra guides explain their contribution and relation to the main papers. Use the same source fidelity, visual explanations where useful, cards, and verification standards. Set both guide and catalog status to ready only when complete.
+
 ## Source before storytelling
 
 1. Read applicable AGENTS.md instructions and the existing site structure.

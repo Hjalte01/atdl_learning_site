@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import MaterialList from '../components/MaterialList.astro';
+import { materialCatalog } from '../lib/materials';
+---
+<BaseLayout title="Reading library" description="Course PDFs, core slides and overviews, papers, and extra reading across all six ATDL topics.">
+  <main class="page-shell library">
+    <p class="eyebrow">All six topics · course material</p>
+    <h1>Reading library</h1>
+    <p class="lede">Start with core slides and overviews, read the papers, or explore extra material. PDFs are available independently of their learning guides.</p>
+    <p>{materialCatalog.materials.length} PDFs available.{!materialCatalog.inventoryComplete && ' The vault inventory is incomplete: only previously imported PDFs are available so far.'}</p>
+    <form class="filters" role="search" onsubmit="return false">
+      <label>Find a PDF<input type="search" id="material-search" placeholder="Title or source filename" /></label>
+      <label>Topic<select id="material-topic"><option value="all">All topics</option>{[1,2,3,4,5,6].map(n => <option value={n}>Topic {n}</option>)}<option value="other">General / unassigned</option></select></label>
+      <label>Reading type<select id="material-kind"><option value="all">Everything</option><option value="core">Core: slides &amp; overviews</option><option value="paper">Papers</option><option value="overview">Overviews</option><option value="slides">Slides</option><option value="extra">Extra material</option></select></label>
+    </form>
+    <p id="material-count" role="status" aria-live="polite"></p>
+    <MaterialList />
+  </main>
+</BaseLayout>
+<script>
+  const search = document.querySelector<HTMLInputElement>('#material-search')!;
+  const topic = document.querySelector<HTMLSelectElement>('#material-topic')!;
+  const kind = document.querySelector<HTMLSelectElement>('#material-kind')!;
+  function filter() {
+    let count = 0;
+    document.querySelectorAll<HTMLElement>('[data-material]').forEach(row => {
+      row.hidden = !(row.dataset.search?.includes(search.value.toLowerCase().trim()) &&
+        (topic.value === 'all' || row.dataset.topic === topic.value) &&
+        (kind.value === 'all' || (kind.value === 'core' ? ['slides', 'overview'].includes(row.dataset.kind!) : row.dataset.kind === kind.value)));
+      if (!row.hidden) count++;
+    });
+    document.querySelectorAll<HTMLElement>('[data-material-group]').forEach(group => {
+      group.hidden = !group.querySelector('[data-material]:not([hidden])');
+    });
+    document.querySelector('#material-count')!.textContent = count ? `${count} PDFs shown` : 'No PDFs match these filters.';
+  }
+  [search, topic, kind].forEach(control => control.addEventListener('input', filter));
+  filter();
+</script>
+<style>
+.library{padding-top:3rem;padding-bottom:4rem}.library h1{font-size:clamp(2.2rem,5vw,4rem)}.filters{display:flex;gap:1rem;flex-wrap:wrap;margin:2rem 0}.filters label{display:grid;gap:.4rem;flex:1;min-width:180px}.filters input,.filters select{width:100%;padding:.7rem;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text);font:inherit}.filters input{box-sizing:border-box}
+</style>

@@ -4,12 +4,12 @@ A static Astro learning site modeled on `study/thesis/learning_site`.
 
 ## Location
 
-The project now lives at `/home/hjalte/Documents/study/ATDL/learning_site/`, as requested. It is inside the study Obsidian vault. No Remotely Save settings were changed; this folder is subject to that vault's existing sync configuration.
+The repository lives at `/home/hjalte/documents/atdl_learning_site`. The source study vault is separate.
 
 ## Run
 
 ```sh
-cd '/home/hjalte/Documents/study/ATDL/learning_site'
+cd '/home/hjalte/documents/atdl_learning_site'
 npm ci
 npm run dev -- --host 127.0.0.1 --port 4322
 ```
@@ -49,3 +49,20 @@ Pushes to `main` build and deploy through `.github/workflows/deploy.yml`.
 The workflow runs `npm ci` and `npm run build` before publishing `dist/`.
 Astro's `base` is `/atdl_learning_site`; use `withBase` from `src/lib/url.ts`
 for site-local links and assets. Markdown URLs receive the base automatically.
+
+## Reading library and automatic guide selection
+
+`/materials` provides text, topic, and reading-type filters, with core overviews/slides first, followed by papers and extras. Every imported PDF is readable even before its explanation is started. Topic pages also list their PDFs. The current inventory contains only the two previously available course PDFs; full vault access is still required.
+
+Import all vault PDFs, then review filename-inferred titles, topics and categories:
+
+```sh
+python3 scripts/materials.py import /path/to/study/ATDL
+python3 scripts/materials.py next
+```
+
+The dependency-free importer stores portable assets and SHA-256 hashes in `content/materials/catalog.json`. It excludes embedded site copies, preserves prior records and manual metadata, and does not delete existing guides. Unrecognized topic names are listed as general/unassigned for review. Subsequent imports must be run when vault material changes; builds do not require vault access.
+
+“Goal create site” now selects one unfinished guide: papers from the latest supplied topic first, ascending paper order; then overviews, slides and extras. See AGENTS.md and GPT.md. Missing source PDFs must be supplied before authoring.
+
+The registered VPS deployment serves `/atdl/`; deployment is handled by the queue after review. Editing this repository does not update the running site.

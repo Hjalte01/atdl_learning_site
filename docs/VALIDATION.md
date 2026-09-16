@@ -29,3 +29,13 @@
 - Resolved project directory is outside the study Obsidian vault.
 
 Scope at the time of the earlier checks: only Flux had a completed learning guide. The six-topic structure and twelve known paper records are present; other explanations and Topics 3–6 course material are intentionally pending.
+
+
+## Reading library and next-guide workflow — 2026-09-16
+
+- `npm run build`: passed, 24 pages, zero errors/warnings/hints. No project dependencies or lockfiles changed; no Nix dependency hash update needed.
+- `python3 scripts/test-materials.py`: passed isolated PDF hash/copy checks, nested topic numbering, repeated imports, manual metadata preservation, paper-before-overview priority, newest-topic selection, and linked ready-guide exclusion.
+- Chromium at 1440px and 390px: library search, topic filter, core-material filter and empty results passed; no horizontal overflow or browser errors; theme toggle checked. All displayed PDF and guide links returned HTTP 200. Mobile dark-mode screenshot visually inspected.
+- Running local preview verified HTTP 200 at `http://127.0.0.1:4322/atdl_learning_site/materials`. No deployment, queue restart, push, or nxb performed.
+- Incomplete requirement: the study/ATDL vault is unavailable to this session. The old `/home/hjalte/Documents/study/ATDL` path does not exist; `/srv/obsidian-webdav` denies reads, and sudo is unavailable under the no-new-privileges constraint. Only the two existing PDFs could be included. The catalog and UI explicitly mark the inventory incomplete. Full-vault import and verification remain pending a readable source path; the tracked goal is not complete.
+- Assumed priority: all papers first, descending topic and ascending reading order; then overviews, slides, and extras with the same topic ordering. Selection against the current incomplete inventory yields Topic 2, paper 1 (REPA). No new explanation was requested for this setup task.

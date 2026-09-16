@@ -1,0 +1,29 @@
+{
+  "inventoryComplete": false,
+  "materials": [
+    {
+      "id": "flux-kontext",
+      "sourcePath": "Previously imported/flux-kontext.pdf",
+      "title": "FLUX.1 Kontext",
+      "topic": 2,
+      "order": 5,
+      "kind": "paper",
+      "status": "ready",
+      "guide": "/papers/flux-kontext",
+      "pdf": "/papers/flux-kontext.pdf",
+      "sha256": "86c8acc1ca714fa463f02315d849a81b5d746c4da4ecb50743b9d672311f916b"
+    },
+    {
+      "id": "diffatlas",
+      "sourcePath": "Previously imported/diffatlas.pdf",
+      "title": "DiffAtlas",
+      "topic": 2,
+      "order": 4,
+      "kind": "paper",
+      "status": "ready",
+      "guide": "/papers/t2-paper-4",
+      "pdf": "/papers/diffatlas.pdf",
+      "sha256": "96b623485471742c79c730fb9c8a66a72b014fdae50f6169dac3574417c8947b"
+    }
+  ]
+}
