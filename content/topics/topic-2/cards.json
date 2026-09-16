@@ -492,5 +492,157 @@
       "REPA"
     ],
     "relatedTopicUrl": "/papers/t2-paper-1#3--where-the-generation-mathematics-happens"
+  },
+  {
+    "id": "meanflows-curvature",
+    "topic": "topic-2",
+    "title": "Mean Flows · curvature",
+    "question": "Why can generation curve despite straight training pairs?",
+    "choices": [
+      "The marginal velocity averages possible pairs at each state.",
+      "Every training pair is secretly curved.",
+      "The VAE always rotates each step.",
+      "Only numerical errors cause curvature."
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "The changing conditional mean of pair velocities can induce curved marginal ODE trajectories even with exact fields.",
+    "difficulty": "medium",
+    "tags": [
+      "Mean Flows"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-2#1--straight-pairs-do-not-mean-straight-generation"
+  },
+  {
+    "id": "meanflows-interval",
+    "topic": "topic-2",
+    "title": "Mean Flows · interval",
+    "question": "Why does average velocity depend on destination time r?",
+    "choices": [
+      "It selects a training image.",
+      "Different intervals can have different average velocities.",
+      "It counts transformer blocks.",
+      "It sets the random seed."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "Average velocity summarizes a specified interval, so changing its destination changes the quantity being predicted.",
+    "difficulty": "medium",
+    "tags": [
+      "Mean Flows"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-2#2--represent-a-displacement-using-two-times"
+  },
+  {
+    "id": "meanflows-jvp",
+    "topic": "topic-2",
+    "title": "Mean Flows · jvp",
+    "question": "Which JVP tangent differentiates u(z, r, t) along the flow with fixed r?",
+    "choices": [
+      "(v, 1, 0)",
+      "(0, 0, 1)",
+      "(v, 0, 1)",
+      "(v, 1, 1)"
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "The state moves with velocity v, destination r stays fixed, and current time increases at unit rate.",
+    "difficulty": "medium",
+    "tags": [
+      "Mean Flows"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-2#3--train-an-average-without-evaluating-its-integral"
+  },
+  {
+    "id": "meanflows-detach",
+    "topic": "topic-2",
+    "title": "Mean Flows · detach",
+    "question": "What does stopping the target gradient accomplish?",
+    "choices": [
+      "It freezes the network forever.",
+      "It removes the JVP value from the target.",
+      "It makes the target identical at every update.",
+      "It avoids backpropagating through the target JVP during the weight update."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "The target still uses the derivative and changes across updates; only its gradient contribution is detached.",
+    "difficulty": "medium",
+    "tags": [
+      "Mean Flows"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-2#3--train-an-average-without-evaluating-its-integral"
+  },
+  {
+    "id": "meanflows-numbers",
+    "topic": "topic-2",
+    "title": "Mean Flows · numbers",
+    "question": "If v = 4, t − r = 0.5 and JVP = 2, what is the target?",
+    "choices": [
+      "3",
+      "4",
+      "5",
+      "2"
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "The MeanFlow target is 4 − 0.5 × 2 = 3.",
+    "difficulty": "medium",
+    "tags": [
+      "Mean Flows"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-2#4--trace-one-training-example-through-the-boxes"
+  },
+  {
+    "id": "meanflows-diagonal",
+    "topic": "topic-2",
+    "title": "Mean Flows · diagonal",
+    "question": "What happens to the training target when r = t?",
+    "choices": [
+      "It divides by zero.",
+      "The correction vanishes, giving the Flow Matching target.",
+      "The entire loss is always zero.",
+      "It becomes the clean image."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "The target formula multiplies the derivative by t − r, so diagonal samples use instantaneous velocity supervision.",
+    "difficulty": "medium",
+    "tags": [
+      "Mean Flows"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-2#4--trace-one-training-example-through-the-boxes"
+  },
+  {
+    "id": "meanflows-nfe",
+    "topic": "topic-2",
+    "title": "Mean Flows · nfe",
+    "question": "Why can guided MeanFlow sampling retain 1-NFE?",
+    "choices": [
+      "The unconditional call is not counted.",
+      "Guidance is removed entirely.",
+      "The model learns the guided average field during training.",
+      "VAE decoding performs the second flow call."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "Guidance enters the training target, allowing a single conditional average-velocity prediction at inference. VAE decoding is separate work.",
+    "difficulty": "medium",
+    "tags": [
+      "Mean Flows"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-2#5--inference-one-call-or-a-sequence-of-interval-jumps"
+  },
+  {
+    "id": "meanflows-evidence",
+    "topic": "topic-2",
+    "title": "Mean Flows · evidence",
+    "question": "Which statement correctly describes the course Table 2 result of FID 2.20?",
+    "choices": [
+      "It is the 1-NFE result.",
+      "It uses no pretrained VAE.",
+      "It proves universal superiority.",
+      "It uses 2-NFE with XL/2+ trained for 1,000 epochs."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "The main 240-epoch XL/2 gets 3.43 at 1-NFE and 2.93 at 2-NFE. The 2.20 result also changes training and configuration.",
+    "difficulty": "medium",
+    "tags": [
+      "Mean Flows"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-2#6--what-does-the-evidence-establish"
   }
 ]

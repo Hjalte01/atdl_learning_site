@@ -18,7 +18,7 @@ Open http://localhost:4322. For production verification, run `npm run build`; `n
 
 ## Scope
 
-Six topic routes; the twelve available papers for Topics 1 and 2 are catalogued. FLUX.1 Kontext, DiffAtlas and REPA have full visual learning guides, equations and recall cards; Flux and DiffAtlas also include interactive illustrations. REPA adds seven reproducible SVG diagrams and eight cards, based on the supplied 43-page ICLR 2025 PDF. DiffAtlas includes seven original diagrams and eight multiple-choice cards. Topics 3–6 await their actual titles and reading lists. Topic 1's grouping label is provisional. Other papers are explicitly queued.
+Six topic routes; the twelve available papers for Topics 1 and 2 are catalogued. FLUX.1 Kontext, DiffAtlas, REPA and Mean Flows have full visual learning guides, equations and recall cards; Flux and DiffAtlas also include interactive illustrations. Mean Flows adds seven reproducible SVG diagrams, eight cards, and an architecture-to-math walkthrough based on the supplied 23-page NeurIPS 2025 conference PDF. REPA adds seven reproducible SVG diagrams and eight cards, based on the supplied 43-page ICLR 2025 PDF. DiffAtlas includes seven original diagrams and eight multiple-choice cards. Topics 3–6 await their actual titles and reading lists. Topic 1's grouping label is provisional. Other papers are explicitly queued.
 
 The Flux explanation uses the supplied arXiv v2 PDF (24 June 2025), copied into `public/papers/flux-kontext.pdf` for local reading. Toy examples are labeled. Results are historical claims from the report, not current product comparisons.
 

@@ -200,9 +200,9 @@
       "topic": 2,
       "order": 2,
       "kind": "paper",
-      "status": "not-started",
+      "status": "ready",
       "guide": "/papers/t2-paper-2",
-      "pdf": "/materials/215843b3d4041760.pdf",
+      "pdf": "/papers/meanflows.pdf",
       "sha256": "c0b560a099c17966bbb0bb293f6c8d295f4a5a5f47b5698b4f26bd2d0f793caa"
     },
     {
