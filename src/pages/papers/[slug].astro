@@ -25,7 +25,7 @@ const cards=(await getStudyCards()).filter(c=>c.relatedTopicUrl?.startsWith(`/pa
  <p class="eyebrow">Topic {paper.data.topic.replace('topic-','')} · Paper {paper.data.order} · {paper.data.status === 'ready' ? 'Learning guide' : 'Awaiting explanation'}</p>
  <h1>{paper.data.shortTitle}</h1><p class="lede">{paper.data.title}</p><p>{paper.data.description}</p>
  {paper.data.pdf && <a class="button secondary" href={withBase(paper.data.pdf)}>Open the course PDF ↗</a>}
- {paper.data.source && <a class="text-link" href={paper.data.source}>Paper on arXiv ↗</a>}
+ {paper.data.source && <a class="text-link" href={paper.data.source}>Original paper ↗</a>}
  </header>
  {isFlux ? <>
  <FluxJourney />

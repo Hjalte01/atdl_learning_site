@@ -644,5 +644,157 @@
       "Mean Flows"
     ],
     "relatedTopicUrl": "/papers/t2-paper-2#6--what-does-the-evidence-establish"
+  },
+  {
+    "id": "dime-clean",
+    "topic": "topic-2",
+    "title": "DiME · clean",
+    "question": "Why does DiME roll the noisy state out to a clean image before evaluating the classifier?",
+    "choices": [
+      "The classifier under explanation was trained on clean images.",
+      "The classifier weights must change every step.",
+      "The DDPM cannot accept noisy images.",
+      "The clean image replaces the original reference permanently."
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "The clean rollout gives the existing classifier an appropriate input without retraining it.",
+    "difficulty": "medium",
+    "tags": [
+      "DiME"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-3#4--full-architecture-look-ahead-to-a-clean-image"
+  },
+  {
+    "id": "dime-state",
+    "topic": "topic-2",
+    "title": "DiME · state",
+    "question": "What is carried forward between outer sampling steps?",
+    "choices": [
+      "The classifier weights.",
+      "The evolving noisy image state.",
+      "Only the target probability.",
+      "An independently chosen face each time."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "Clean rollouts supply gradients; guided reverse transitions advance the noisy state.",
+    "difficulty": "medium",
+    "tags": [
+      "DiME"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-3#7--the-outer-loop-and-its-inner-rollouts"
+  },
+  {
+    "id": "dime-surrogate",
+    "topic": "topic-2",
+    "title": "DiME · surrogate",
+    "question": "What does the reciprocal-square-root-alpha factor represent?",
+    "choices": [
+      "An exact Jacobian of every learned reverse chain.",
+      "A new classifier training loss.",
+      "A gradient-transfer approximation motivated by fixed-noise forward corruption.",
+      "A guarantee of minimal edits."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "The algebraic surrogate has this derivative, but the actual rollout Jacobian need not equal it.",
+    "difficulty": "medium",
+    "tags": [
+      "DiME"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-3#5--where-the-approximation-enters"
+  },
+  {
+    "id": "dime-variance",
+    "topic": "topic-2",
+    "title": "DiME · variance",
+    "question": "With mean 0.70, variance 0.04 and guidance gradient 0.5, what is the shifted mean?",
+    "choices": [
+      "0.80",
+      "0.72",
+      "0.60",
+      "0.68"
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "Subtract variance times gradient: 0.70 − 0.04 × 0.5 = 0.68. Sampling noise is a separate term.",
+    "difficulty": "medium",
+    "tags": [
+      "DiME"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-3#6--follow-one-scalar-through-the-boxes"
+  },
+  {
+    "id": "dime-training",
+    "topic": "topic-2",
+    "title": "DiME · training",
+    "question": "What changes when DiME explains a single image?",
+    "choices": [
+      "The image state, while classifier and DDPM weights stay fixed.",
+      "Only DenseNet weights.",
+      "Only DDPM weights.",
+      "The original reference is retrained."
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "Input gradients steer sampling; they are not parameter updates.",
+    "difficulty": "medium",
+    "tags": [
+      "DiME"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-3#2--training-and-inference-have-different-jobs"
+  },
+  {
+    "id": "dime-cost",
+    "topic": "topic-2",
+    "title": "DiME · cost",
+    "question": "Why is DiME still expensive despite avoiding rollout backpropagation?",
+    "choices": [
+      "It retrains a DDPM for every explanation.",
+      "Clean previews still require many denoiser forward evaluations.",
+      "It enumerates every possible face.",
+      "It queries a text model for each pixel."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "Avoiding a deep derivative graph saves memory but leaves repeated clean rollouts; the paper reports about 1,800 DDPM calls.",
+    "difficulty": "medium",
+    "tags": [
+      "DiME"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-3#5--where-the-approximation-enters"
+  },
+  {
+    "id": "dime-mnac",
+    "topic": "topic-2",
+    "title": "DiME · mnac",
+    "question": "Why can a lower number of changed attributes be misleading?",
+    "choices": [
+      "Every extra changed attribute is always good.",
+      "MNAC measures only computation time.",
+      "Additional changes may reveal associations used by the classifier.",
+      "Lower MNAC proves causality."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "A method may hide correlated attribute changes while obtaining low MNAC; use complementary evidence.",
+    "difficulty": "medium",
+    "tags": [
+      "DiME"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-3#9--why-fewer-changed-attributes-can-mislead"
+  },
+  {
+    "id": "dime-fid",
+    "topic": "topic-2",
+    "title": "DiME · fid",
+    "question": "Why should Table 1 FID be read together with flip rates?",
+    "choices": [
+      "FID already includes all failures as zero.",
+      "Flip rate and FID are identical.",
+      "FID proves each explanation is causal.",
+      "FID is computed on successful explanations, whose subsets differ by method."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "Success filtering and different sample counts complicate comparisons of image-distribution quality.",
+    "difficulty": "medium",
+    "tags": [
+      "DiME"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-3#8--evidence-success-and-quality-must-be-read-together"
   }
 ]
