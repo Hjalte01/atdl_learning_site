@@ -18,7 +18,7 @@ Open http://localhost:4322. For production verification, run `npm run build`; `n
 
 ## Scope
 
-Six topic routes; the twelve available papers for Topics 1 and 2 are catalogued. FLUX.1 Kontext and DiffAtlas have full visual learning guides, equations, interactive illustrations, and recall cards. DiffAtlas includes seven original diagrams and eight multiple-choice cards. Topics 3–6 await their actual titles and reading lists. Topic 1's grouping label is provisional. Other papers are explicitly queued.
+Six topic routes; the twelve available papers for Topics 1 and 2 are catalogued. FLUX.1 Kontext, DiffAtlas and REPA have full visual learning guides, equations and recall cards; Flux and DiffAtlas also include interactive illustrations. REPA adds seven reproducible SVG diagrams and eight cards, based on the supplied 43-page ICLR 2025 PDF. DiffAtlas includes seven original diagrams and eight multiple-choice cards. Topics 3–6 await their actual titles and reading lists. Topic 1's grouping label is provisional. Other papers are explicitly queued.
 
 The Flux explanation uses the supplied arXiv v2 PDF (24 June 2025), copied into `public/papers/flux-kontext.pdf` for local reading. Toy examples are labeled. Results are historical claims from the report, not current product comparisons.
 
@@ -52,7 +52,7 @@ for site-local links and assets. Markdown URLs receive the base automatically.
 
 ## Reading library and automatic guide selection
 
-`/materials` provides text, topic, and reading-type filters, with core overviews/slides first, followed by papers and extras. Every imported PDF is readable even before its explanation is started. Topic pages also list their PDFs. The current inventory contains only the two previously available course PDFs; full vault access is still required.
+`/materials` provides text, topic, and reading-type filters, with core overviews/slides first, followed by papers and extras. Every imported PDF is readable even before its explanation is started. Topic pages also list their PDFs. The inventory contains all 27 PDFs present in the supplied ATDL vault as of 16 September 2026, with source and portable-copy hashes verified. Slide topics and the Topic 2 reading overview were manually classified after reading their contents. The two copies of Deep Generative Modeling are retained as separate source entries. General overview texts remain unassigned to a topic. No Topic 3–6 readings were present.
 
 Import all vault PDFs, then review filename-inferred titles, topics and categories:
 

@@ -2,7 +2,7 @@
   {
     "id": "flux-conditioning",
     "topic": "topic-2",
-    "title": "FLUX.1 Kontext \u00b7 conditioning",
+    "title": "FLUX.1 Kontext · conditioning",
     "question": "What happens to the reference while the output is sampled?",
     "choices": [
       "It stays fixed as conditioning.",
@@ -11,7 +11,7 @@
       "It is used only after decoding."
     ],
     "correctChoiceIndex": 0,
-    "explanation": "The reference provides context tokens while the target sequence evolves. See Architecture, \u00a73 of the paper.",
+    "explanation": "The reference provides context tokens while the target sequence evolves. See Architecture, §3 of the paper.",
     "difficulty": "medium",
     "tags": [
       "FLUX.1 Kontext"
@@ -21,8 +21,8 @@
   {
     "id": "flux-time-direction",
     "topic": "topic-2",
-    "title": "FLUX.1 Kontext \u00b7 time direction",
-    "question": "With z\u209c = (1\u2212t)x + t\u03b5, which direction generates an image?",
+    "title": "FLUX.1 Kontext · time direction",
+    "question": "With zₜ = (1−t)x + tε, which direction generates an image?",
     "choices": [
       "t = 0 toward 1",
       "t = 1 toward 0",
@@ -40,16 +40,16 @@
   {
     "id": "flux-velocity",
     "topic": "topic-2",
-    "title": "FLUX.1 Kontext \u00b7 velocity",
-    "question": "For x = 2 and \u03b5 = 10, what is the exact training velocity?",
+    "title": "FLUX.1 Kontext · velocity",
+    "question": "For x = 2 and ε = 10, what is the exact training velocity?",
     "choices": [
       "2",
       "10",
       "8",
-      "\u22128"
+      "−8"
     ],
     "correctChoiceIndex": 2,
-    "explanation": "Differentiate (1\u2212t)x + t\u03b5 with respect to t: \u03b5\u2212x = 8. The sampling update goes backward in time.",
+    "explanation": "Differentiate (1−t)x + tε with respect to t: ε−x = 8. The sampling update goes backward in time.",
     "difficulty": "medium",
     "tags": [
       "FLUX.1 Kontext"
@@ -59,7 +59,7 @@
   {
     "id": "flux-position",
     "topic": "topic-2",
-    "title": "FLUX.1 Kontext \u00b7 position",
+    "title": "FLUX.1 Kontext · position",
     "question": "What does the 1 in reference position (1, h, w) mean?",
     "choices": [
       "Noise level is maximal.",
@@ -78,8 +78,8 @@
   {
     "id": "flux-dev",
     "topic": "topic-2",
-    "title": "FLUX.1 Kontext \u00b7 dev",
-    "question": "Which statement matches the report\u2019s dev recipe?",
+    "title": "FLUX.1 Kontext · dev",
+    "question": "Which statement matches the report’s dev recipe?",
     "choices": [
       "LADD with the same joint task training as pro.",
       "Guidance distillation into a 12B transformer, focused on image-to-image.",
@@ -87,7 +87,7 @@
       "A demonstrated multiple-reference video model."
     ],
     "correctChoiceIndex": 1,
-    "explanation": "Section 3 distinguishes dev guidance distillation and editing-only training from pro\u2019s flow training followed by LADD.",
+    "explanation": "Section 3 distinguishes dev guidance distillation and editing-only training from pro’s flow training followed by LADD.",
     "difficulty": "medium",
     "tags": [
       "FLUX.1 Kontext"
@@ -97,7 +97,7 @@
   {
     "id": "flux-metric",
     "topic": "topic-2",
-    "title": "FLUX.1 Kontext \u00b7 metric",
+    "title": "FLUX.1 Kontext · metric",
     "question": "An editor returns the reference unchanged and gets a high face-similarity score. What follows?",
     "choices": [
       "The edit succeeded.",
@@ -116,10 +116,10 @@
   {
     "id": "flux-benchmark",
     "topic": "topic-2",
-    "title": "FLUX.1 Kontext \u00b7 benchmark",
+    "title": "FLUX.1 Kontext · benchmark",
     "question": "What does 1,026 refer to in KontextBench?",
     "choices": [
-      "Image\u2013prompt pairs, derived from 108 base images.",
+      "Image–prompt pairs, derived from 108 base images.",
       "Independent source photographs.",
       "Editing categories.",
       "Denoising steps."
@@ -135,7 +135,7 @@
   {
     "id": "flux-multi-image",
     "topic": "topic-2",
-    "title": "FLUX.1 Kontext \u00b7 multi image",
+    "title": "FLUX.1 Kontext · multi image",
     "question": "What is established about multiple reference images in this report?",
     "choices": [
       "They are the focus of every experiment.",
@@ -154,7 +154,7 @@
   {
     "id": "flux-limits",
     "topic": "topic-2",
-    "title": "FLUX.1 Kontext \u00b7 limits",
+    "title": "FLUX.1 Kontext · limits",
     "question": "How should you describe multi-turn consistency?",
     "choices": [
       "Unlimited edits without drift.",
@@ -173,7 +173,7 @@
   {
     "id": "flux-concat",
     "topic": "topic-2",
-    "title": "FLUX.1 Kontext \u00b7 concat",
+    "title": "FLUX.1 Kontext · concat",
     "question": "Why can sequence concatenation handle different input/output grids?",
     "choices": [
       "It makes the images have identical pixels.",
@@ -192,7 +192,7 @@
   {
     "id": "diffatlas-joint",
     "topic": "topic-2",
-    "title": "DiffAtlas \u00b7 joint",
+    "title": "DiffAtlas · joint",
     "question": "What does DiffAtlas learn jointly?",
     "choices": [
       "Images and their matching mask representations",
@@ -201,7 +201,7 @@
       "Text and images"
     ],
     "correctChoiceIndex": 0,
-    "explanation": "It denoises image\u2013mask pairs, learning their joint distribution. Inference then uses noisy image replacement to condition generation.",
+    "explanation": "It denoises image–mask pairs, learning their joint distribution. Inference then uses noisy image replacement to condition generation.",
     "difficulty": "medium",
     "tags": [
       "DiffAtlas"
@@ -211,7 +211,7 @@
   {
     "id": "diffatlas-replacement",
     "topic": "topic-2",
-    "title": "DiffAtlas \u00b7 replacement",
+    "title": "DiffAtlas · replacement",
     "question": "At inference, what is replaced at each time step?",
     "choices": [
       "Both image and mask with fresh noise",
@@ -230,7 +230,7 @@
   {
     "id": "diffatlas-noise",
     "topic": "topic-2",
-    "title": "DiffAtlas \u00b7 noise",
+    "title": "DiffAtlas · noise",
     "question": "Why use a noisy patient scan instead of a clean scan at every step?",
     "choices": [
       "To hide the patient from the model",
@@ -249,7 +249,7 @@
   {
     "id": "diffatlas-sdf",
     "topic": "topic-2",
-    "title": "DiffAtlas \u00b7 sdf",
+    "title": "DiffAtlas · sdf",
     "question": "What extra information does a signed distance field give?",
     "choices": [
       "A guaranteed correct segmentation",
@@ -268,8 +268,8 @@
   {
     "id": "diffatlas-number",
     "topic": "topic-2",
-    "title": "DiffAtlas \u00b7 number",
-    "question": "With \u03b1\u0304 = 0.64, image value 0.8, and noise 0.2, what is the noisy image value?",
+    "title": "DiffAtlas · number",
+    "question": "With ᾱ = 0.64, image value 0.8, and noise 0.2, what is the noisy image value?",
     "choices": [
       "0.76",
       "0.64",
@@ -277,7 +277,7 @@
       "0.56"
     ],
     "correctChoiceIndex": 0,
-    "explanation": "The coefficients are \u221a0.64 = 0.8 and \u221a0.36 = 0.6, so 0.8 \u00d7 0.8 + 0.6 \u00d7 0.2 = 0.76.",
+    "explanation": "The coefficients are √0.64 = 0.8 and √0.36 = 0.6, so 0.8 × 0.8 + 0.6 × 0.2 = 0.76.",
     "difficulty": "medium",
     "tags": [
       "DiffAtlas"
@@ -287,8 +287,8 @@
   {
     "id": "diffatlas-loss",
     "topic": "topic-2",
-    "title": "DiffAtlas \u00b7 loss",
-    "question": "What does the paper\u2019s training loss compare?",
+    "title": "DiffAtlas · loss",
+    "question": "What does the paper’s training loss compare?",
     "choices": [
       "Predicted mask and patient age",
       "Predicted noise and known added noise, across both image and mask",
@@ -306,7 +306,7 @@
   {
     "id": "diffatlas-zero",
     "topic": "topic-2",
-    "title": "DiffAtlas \u00b7 zero",
+    "title": "DiffAtlas · zero",
     "question": "What does zero-shot CT-to-MRI evaluation mean here?",
     "choices": [
       "The model never sees any training data",
@@ -325,7 +325,7 @@
   {
     "id": "diffatlas-ablation",
     "topic": "topic-2",
-    "title": "DiffAtlas \u00b7 ablation",
+    "title": "DiffAtlas · ablation",
     "question": "Do the reported baseline comparisons isolate the benefit of the SDF alone?",
     "choices": [
       "Yes, any higher Dice proves the SDF caused it",
@@ -334,11 +334,163 @@
       "No; a controlled component ablation is needed"
     ],
     "correctChoiceIndex": 3,
-    "explanation": "Several design choices differ. The v1 comparisons support the tested system but do not isolate each component\u2019s causal contribution.",
+    "explanation": "Several design choices differ. The v1 comparisons support the tested system but do not isolate each component’s causal contribution.",
     "difficulty": "medium",
     "tags": [
       "DiffAtlas"
     ],
     "relatedTopicUrl": "/papers/t2-paper-4#7--what-did-the-experiments-actually-show"
+  },
+  {
+    "id": "repa-teacher",
+    "topic": "topic-2",
+    "title": "REPA · teacher",
+    "question": "What does the REPA teacher receive during training?",
+    "choices": [
+      "The same clean image corresponding to the noisy latent.",
+      "Only the class label.",
+      "The model’s final generated image.",
+      "Fresh Gaussian noise unrelated to the example."
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "The frozen visual encoder supplies clean-image feature targets while the generator receives a corrupted latent.",
+    "difficulty": "medium",
+    "tags": [
+      "REPA"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-1#2--training-architecture-two-views-of-the-same-example"
+  },
+  {
+    "id": "repa-gradient",
+    "topic": "topic-2",
+    "title": "REPA · gradient",
+    "question": "Which parameters does the alignment branch directly train?",
+    "choices": [
+      "The frozen VAE decoder.",
+      "The teacher encoder.",
+      "The projection and generator blocks upstream of its attachment.",
+      "Only generator blocks after the attachment."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "Alignment gradients flow through the projection into the early generator; later blocks are trained by the generation loss.",
+    "difficulty": "medium",
+    "tags": [
+      "REPA"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-1#4--representation-close-up-compare-patches-not-class-labels"
+  },
+  {
+    "id": "repa-cosine",
+    "topic": "topic-2",
+    "title": "REPA · cosine",
+    "question": "A projected feature is multiplied by a positive factor of 10. What happens to its cosine similarity?",
+    "choices": [
+      "It increases tenfold.",
+      "It stays the same, for nonzero vectors.",
+      "It becomes zero.",
+      "It must become negative."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "Cosine divides the dot product by both vector lengths; a positive scale cancels.",
+    "difficulty": "medium",
+    "tags": [
+      "REPA"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-1#4--representation-close-up-compare-patches-not-class-labels"
+  },
+  {
+    "id": "repa-loss",
+    "topic": "topic-2",
+    "title": "REPA · loss",
+    "question": "Velocity loss is 1, REPA loss is −0.8, and λ is 0.5. What is the combined loss?",
+    "choices": [
+      "1.4",
+      "−0.4",
+      "0.2",
+      "0.6"
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "The objective is 1 + 0.5 × (−0.8) = 0.6. Negative cosine is intentionally minimized.",
+    "difficulty": "medium",
+    "tags": [
+      "REPA"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-1#5--trace-a-numerical-example-through-the-same-boxes"
+  },
+  {
+    "id": "repa-inference",
+    "topic": "topic-2",
+    "title": "REPA · inference",
+    "question": "What extra REPA networks must be evaluated for each generated image?",
+    "choices": [
+      "Both DINOv2 and the projection.",
+      "The teacher but not the projection.",
+      "Neither the teacher nor projection is needed.",
+      "Only the projection."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "They provide training supervision; sampling retains the trained generator and VAE decoder.",
+    "difficulty": "medium",
+    "tags": [
+      "REPA"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-1#6--sampling-carry-the-latent-forward-leave-the-teacher-behind"
+  },
+  {
+    "id": "repa-speed",
+    "topic": "topic-2",
+    "title": "REPA · speed",
+    "question": "What does the 7M / 400K = 17.5 comparison directly establish?",
+    "choices": [
+      "17.5 times fewer training iterations at better reported unguided FID.",
+      "17.5 times fewer sampling steps.",
+      "17.5 times lower total compute including teacher pretraining.",
+      "17.5 times faster image decoding."
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "The table compares iteration budgets and FID, not wall-clock time or sampling cost.",
+    "difficulty": "medium",
+    "tags": [
+      "REPA"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-1#8--what-the-speedup-actually-measures"
+  },
+  {
+    "id": "repa-depth",
+    "topic": "topic-2",
+    "title": "REPA · depth",
+    "question": "Depth 16 has better probe accuracy but worse FID than depth 8. What follows?",
+    "choices": [
+      "Classification accuracy guarantees better generation.",
+      "More semantic probe accuracy need not improve generation quality.",
+      "REPA cannot improve generation.",
+      "The teacher must run during sampling."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "Table 2 separates two goals: recognition-friendly representations and generation performance.",
+    "difficulty": "medium",
+    "tags": [
+      "REPA"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-1#7--why-align-early-instead-of-everywhere"
+  },
+  {
+    "id": "repa-time",
+    "topic": "topic-2",
+    "title": "REPA · time",
+    "question": "For zₜ = (1−t)z + tε, which sampling direction reaches data?",
+    "choices": [
+      "0 toward 1.",
+      "Keep t fixed.",
+      "Alternate 0 and 1.",
+      "1 toward 0."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "At t=1 the state is noise; at t=0 it is data. A backward Euler ODE illustration subtracts a positive step times velocity.",
+    "difficulty": "medium",
+    "tags": [
+      "REPA"
+    ],
+    "relatedTopicUrl": "/papers/t2-paper-1#3--where-the-generation-mathematics-happens"
   }
 ]
