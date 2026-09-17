@@ -948,5 +948,157 @@
       "Qwen-Image"
     ],
     "relatedTopicUrl": "/papers/t2-paper-6#7--editing-one-reference-two-encodings"
+  },
+  {
+    "id": "gm-overview-coverage",
+    "topic": "topic-2",
+    "title": "Generative overview · 2 · Three ways to learn a generator",
+    "question": "Why can attractive GAN samples still indicate a poor distribution model?",
+    "choices": [
+      "They may cover only a few modes.",
+      "Sharpness proves full coverage.",
+      "The discriminator is always absent in training.",
+      "A generator only retrieves data."
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "Mode collapse can omit kinds of examples even when individual samples look convincing.",
+    "difficulty": "medium",
+    "tags": [
+      "Generative overview"
+    ],
+    "relatedTopicUrl": "/papers/t2-generative-overview#2--three-ways-to-learn-a-generator"
+  },
+  {
+    "id": "gm-overview-vae",
+    "topic": "topic-2",
+    "title": "Generative overview · VAE",
+    "question": "How does the ordinary VAE generation path begin?",
+    "choices": [
+      "Encode a required test image.",
+      "Sample a latent from the prior.",
+      "Train a new discriminator.",
+      "Retrieve the closest training image."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "Prior sampling followed by decoding generates without requiring an input example.",
+    "difficulty": "medium",
+    "tags": [
+      "Generative overview"
+    ],
+    "relatedTopicUrl": "/papers/t2-generative-overview#2--three-ways-to-learn-a-generator"
+  },
+  {
+    "id": "gm-overview-weights",
+    "topic": "topic-2",
+    "title": "Generative overview · Training versus sampling",
+    "question": "What changes during ordinary iterative inference?",
+    "choices": [
+      "The training dataset.",
+      "The target noise labels.",
+      "The sample state, with weights fixed.",
+      "The network weights after each loss."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "Training updates parameters; inference uses those parameters to evolve a sample.",
+    "difficulty": "medium",
+    "tags": [
+      "Generative overview"
+    ],
+    "relatedTopicUrl": "/papers/t2-generative-overview#3--training-and-sampling-do-different-jobs"
+  },
+  {
+    "id": "gm-overview-noise",
+    "topic": "topic-2",
+    "title": "Generative overview · Noise targets",
+    "question": "Why is the target noise known in diffusion training?",
+    "choices": [
+      "A test oracle provides it.",
+      "The network already predicts perfectly.",
+      "Noise is always zero.",
+      "The training procedure drew it."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "Artificial corruption creates a known supervised target.",
+    "difficulty": "medium",
+    "tags": [
+      "Generative overview"
+    ],
+    "relatedTopicUrl": "/papers/t2-generative-overview#3--training-and-sampling-do-different-jobs"
+  },
+  {
+    "id": "gm-overview-flow",
+    "topic": "topic-2",
+    "title": "Generative overview · Flow example",
+    "question": "With z = 2, x = 6 and y(t) = (1−t)z + tx, what is y(0.5)?",
+    "choices": [
+      "4",
+      "2",
+      "6",
+      "8"
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "The midpoint is 0.5×2 + 0.5×6 = 4; the constant pairwise target velocity is also 4.",
+    "difficulty": "medium",
+    "tags": [
+      "Generative overview"
+    ],
+    "relatedTopicUrl": "/papers/t2-generative-overview#4--from-denoising-steps-to-transport"
+  },
+  {
+    "id": "gm-overview-deterministic",
+    "topic": "topic-2",
+    "title": "Generative overview · Deterministic sampling",
+    "question": "Does a deterministic sampler remove all output diversity?",
+    "choices": [
+      "Yes, its output ignores initial noise.",
+      "No, different starting noise can give different outputs.",
+      "Yes, it must retrieve a stored image.",
+      "No, because it must update weights."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "Determinism fixes the trajectory given its inputs, including the initial noise.",
+    "difficulty": "medium",
+    "tags": [
+      "Generative overview"
+    ],
+    "relatedTopicUrl": "/papers/t2-generative-overview#4--from-denoising-steps-to-transport"
+  },
+  {
+    "id": "gm-overview-latent",
+    "topic": "topic-2",
+    "title": "Generative overview · Representation and context",
+    "question": "Which distinction separates latent diffusion from conditioning?",
+    "choices": [
+      "Both mean classifier guidance.",
+      "Both specify the number of solver steps.",
+      "Latent diffusion chooses a representation; conditioning supplies context.",
+      "Latent diffusion guarantees exact pixel preservation."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "Compressed representation and context influence are separate design choices.",
+    "difficulty": "medium",
+    "tags": [
+      "Generative overview"
+    ],
+    "relatedTopicUrl": "/papers/t2-generative-overview#5--context-changes-the-task"
+  },
+  {
+    "id": "gm-overview-evidence",
+    "topic": "topic-2",
+    "title": "Generative overview · Evidence limits",
+    "question": "What quantitative conclusion can this reading overview establish?",
+    "choices": [
+      "Flow matching always wins every benchmark.",
+      "GANs always sample fastest at equal quality.",
+      "Synthetic augmentation always improves accuracy.",
+      "None of these: it supplies no controlled benchmark table."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "The overview makes qualitative comparisons; quantitative claims need the underlying papers and a specified protocol.",
+    "difficulty": "medium",
+    "tags": [
+      "Generative overview"
+    ],
+    "relatedTopicUrl": "/papers/t2-generative-overview#7--the-idea-to-carry-forward"
   }
 ]

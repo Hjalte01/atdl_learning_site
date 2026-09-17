@@ -9,6 +9,8 @@ locale: "en"
 ---
 ## Learning path
 
+Start with the [Deep Generative Models reading roadmap](/papers/t2-generative-overview) for prerequisites, model-family comparisons, and routes into the six papers. It explains the supplied three-page overview with six teaching diagrams and eight study cards.
+
 Start with [FLUX.1 Kontext](/papers/flux-kontext). Learn why the reference image stays fixed while the output is generated from noise, and how both streams interact. Then use the study cards to check the distinctions.
 
 Continue with [DiffAtlas · paper 4](/papers/t2-paper-4): follow the architecture, trace the equations through image–mask diffusion, and explore why inference replaces the image with a noisy patient scan.

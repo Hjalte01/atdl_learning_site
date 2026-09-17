@@ -260,8 +260,8 @@
       "topic": 2,
       "order": 1,
       "kind": "overview",
-      "status": "not-started",
-      "guide": null,
+      "status": "ready",
+      "guide": "/papers/t2-generative-overview",
       "pdf": "/materials/3b63c2d5e77657be.pdf",
       "sha256": "b1407d10ee2f10f52b67344ed7e5320fbaaf67dd404b3bf05671c502e2d3f2eb"
     },
