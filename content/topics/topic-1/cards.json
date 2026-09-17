@@ -758,5 +758,157 @@
       "Grokking"
     ],
     "relatedTopicUrl": "/papers/t1-paper-5#7--four-outcomes-from-the-same-learning-problem"
+  },
+  {
+    "id": "bnn-objective",
+    "topic": "topic-1",
+    "title": "Binarized networks · objective",
+    "question": "What trains the BNN in this study?",
+    "choices": [
+      "Cross-entropy optimized with Adam",
+      "BDM alone",
+      "A weighted sum of BDM and entropy",
+      "Exact Kolmogorov complexity"
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "BDM and entropy observe weight snapshots; neither is an explicit training penalty.",
+    "difficulty": "medium",
+    "tags": [
+      "Binarized networks"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-6#3--training-and-inference-follow-different-paths"
+  },
+  {
+    "id": "bnn-ste",
+    "topic": "topic-1",
+    "title": "Binarized networks · ste",
+    "question": "Why use a straight-through estimator?",
+    "choices": [
+      "To compute exact program length",
+      "To supply surrogate gradients through discrete operations",
+      "To choose test labels",
+      "To replace all hidden layers with entropy"
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "A literal sign derivative is zero away from its discontinuity. The exact surrogate is not specified in the supplied main text.",
+    "difficulty": "medium",
+    "tags": [
+      "Binarized networks"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-6#3--training-and-inference-follow-different-paths"
+  },
+  {
+    "id": "bnn-baseline",
+    "topic": "topic-1",
+    "title": "Binarized networks · baseline",
+    "question": "What distribution does the entropy baseline summarize?",
+    "choices": [
+      "Only class labels",
+      "Only individual weight signs",
+      "Frequencies of nonoverlapping 4×4 weight blocks",
+      "Output logits on the test set"
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "Both metrics use the same block decomposition, so entropy already sees local pattern frequencies.",
+    "difficulty": "medium",
+    "tags": [
+      "Binarized networks"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-6#4--representation-close-up-frequency-and-description-cost"
+  },
+  {
+    "id": "bnn-cost",
+    "topic": "topic-1",
+    "title": "Binarized networks · cost",
+    "question": "A tile with toy CTM cost 5 occurs four times. What is its BDM contribution?",
+    "choices": [
+      "20",
+      "0",
+      "5",
+      "7"
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "The distinct tile cost is paid once, plus log₂4 = 2. These are teaching costs, not actual lookup values.",
+    "difficulty": "medium",
+    "tags": [
+      "Binarized networks"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-6#4--representation-close-up-frequency-and-description-cost"
+  },
+  {
+    "id": "bnn-zero",
+    "topic": "topic-1",
+    "title": "Binarized networks · zero",
+    "question": "What does zero block entropy mean?",
+    "choices": [
+      "Only one tile identity is observed",
+      "The network has no weights",
+      "BDM must also be zero",
+      "Test accuracy must be perfect"
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "A single observed block identity has probability one. Its description and repetition can still have nonzero BDM cost.",
+    "difficulty": "medium",
+    "tags": [
+      "Binarized networks"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-6#4--representation-close-up-frequency-and-description-cost"
+  },
+  {
+    "id": "bnn-correlation",
+    "topic": "topic-1",
+    "title": "Binarized networks · correlation",
+    "question": "If loss and complexity both decline together, what correlation can result?",
+    "choices": [
+      "Necessarily negative",
+      "Positive, without proving causation",
+      "Always zero",
+      "A generalization guarantee"
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "Positive correlation means they move together. Common time trends can generate association without a causal mechanism.",
+    "difficulty": "medium",
+    "tags": [
+      "Binarized networks"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-6#6--training-over-time-what-gets-correlated"
+  },
+  {
+    "id": "bnn-evidence",
+    "topic": "topic-1",
+    "title": "Binarized networks · evidence",
+    "question": "Which result limits a universal BDM advantage?",
+    "choices": [
+      "MNIST test accuracy exceeds chance",
+      "The study uses Adam",
+      "Neither UCI HAR variant shows a consistent advantage",
+      "Some weights are positive"
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "Table 3 has overlapping intervals and lower BDM midpoints on both engineered-feature and raw UCI HAR.",
+    "difficulty": "medium",
+    "tags": [
+      "Binarized networks"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-6#7--evidence-where-does-the-advantage-hold"
+  },
+  {
+    "id": "bnn-invariance",
+    "topic": "topic-1",
+    "title": "Binarized networks · invariance",
+    "question": "What happens when whole tiles are rearranged without changing their counts?",
+    "choices": [
+      "Both metrics necessarily increase",
+      "Only entropy must change",
+      "The predictor must remain unchanged",
+      "Both count-based metric summaries stay the same"
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "Both formulas depend on distinct tile identities and counts, not their positions. The underlying network function can still change.",
+    "difficulty": "medium",
+    "tags": [
+      "Binarized networks"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-6#4--representation-close-up-frequency-and-description-cost"
   }
 ]

@@ -160,11 +160,11 @@
     {
       "id": "e623964ae51976dd",
       "sourcePath": "topic 1/T1_6_sakabe2026BNN_BDM.pdf",
-      "title": "Binarized neural networks — title to be transcribed",
+      "title": "Binarized neural networks converge toward algorithmic simplicity: empirical support for the learning-as-compression hypothesis",
       "topic": 1,
       "order": 6,
       "kind": "paper",
-      "status": "not-started",
+      "status": "ready",
       "guide": "/papers/t1-paper-6",
       "pdf": "/materials/e623964ae51976dd.pdf",
       "sha256": "953744cf2120b6294669be59eaaf432433aa47c21e27192f421ed75501bbc926"

@@ -19,6 +19,6 @@ Continue with [Deep double descent](/papers/t1-paper-4): follow the fitting thre
 
 Then study [Understanding grokking](/papers/t1-paper-5): trace delayed generalization through equal embedding sums, constraint rank, spectral timescales and decoder competition. Seven teaching diagrams, the supplied Figure 4 and eight cards distinguish the toy theory from transformer evidence and explain the missing appendices and normalization caveats.
 
-The final paper explanation remains queued.
+Finish with [Binarized networks and compression](/papers/t1-paper-6): separate cross-entropy training from weight diagnostics, compute block entropy and BDM, and examine the limits of loss correlations. Seven reproducible diagrams, including a measured interval plot, and eight cards follow the supplied May 2026 paper. All six supplied Topic 1 papers now have guides.
 
 **Working topic label:** inferred from the available papers, not verified against a course syllabus.
