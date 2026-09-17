@@ -150,5 +150,157 @@
       "Information bottleneck"
     ],
     "relatedTopicUrl": "/papers/t1-paper-1#7--what-the-experiments-establish"
+  },
+  {
+    "id": "pb-nonvacuous",
+    "topic": "topic-1",
+    "title": "PAC-Bayes · nonvacuous",
+    "question": "What makes an error bound nonvacuous?",
+    "choices": [
+      "It is less than 1",
+      "It is smaller than training error",
+      "It is always below 0.5",
+      "It uses no probability assumptions"
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "Error is always at most 1. A bound below 1 adds information, although a binary-task bound above 0.5 need not certify an improvement over fair guessing.",
+    "difficulty": "medium",
+    "tags": [
+      "PAC-Bayes"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-2#1--what-would-count-as-a-useful-bound"
+  },
+  {
+    "id": "pb-classifier",
+    "topic": "topic-1",
+    "title": "PAC-Bayes · classifier",
+    "question": "Which predictor is directly covered by this paper’s PAC-Bayes certificate?",
+    "choices": [
+      "The deterministic posterior mean",
+      "Every individual weight draw",
+      "The classifier averaged over draws from Q",
+      "Any majority-vote ensemble"
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "The bounded quantity is population classification error averaged over weight draws. A guarantee for a mean network or vote needs additional reasoning.",
+    "difficulty": "medium",
+    "tags": [
+      "PAC-Bayes"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-2#2--architecture-a-network-inside-a-distribution"
+  },
+  {
+    "id": "pb-variance",
+    "topic": "topic-1",
+    "title": "PAC-Bayes · variance",
+    "question": "In v = w + √s ⊙ ξ, what does s contain?",
+    "choices": [
+      "Standard deviations",
+      "Variances of individual weights and biases",
+      "Layer activation means",
+      "A covariance shared between all pairs of weights"
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "The posterior covariance is diag(s). Sampling uses √s because standard deviation, not variance, multiplies a standard-normal draw.",
+    "difficulty": "medium",
+    "tags": [
+      "PAC-Bayes"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-2#3--representation-close-up-width-has-a-price-and-a-benefit"
+  },
+  {
+    "id": "pb-prior",
+    "topic": "topic-1",
+    "title": "PAC-Bayes · prior",
+    "question": "Why is the prior centered at the original random initialization?",
+    "choices": [
+      "It was fitted to the test labels",
+      "It is equal to the final posterior mean",
+      "It makes all KL costs zero",
+      "It is independent of the training sample and preserves an initial parameter reference"
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "The fixed-prior theorem permits this data-independent center. Centering freely at trained weights after observing data would not be justified by that theorem.",
+    "difficulty": "medium",
+    "tags": [
+      "PAC-Bayes"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-2#4--the-theorem-and-the-cost-of-choosing-a-prior"
+  },
+  {
+    "id": "pb-selection",
+    "topic": "topic-1",
+    "title": "PAC-Bayes · selection",
+    "question": "How does the paper justify choosing the prior variance using training data?",
+    "choices": [
+      "A union bound over a predeclared countable grid",
+      "Ignoring the selection because variance is a scalar",
+      "Replacing the prior mean with the posterior mean",
+      "Using the raw test error as a bound"
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "The candidate variances receive confidence budgets proportional to 1/j². Their total failure probability is bounded by delta; continuous optimization is followed by grid evaluation.",
+    "difficulty": "medium",
+    "tags": [
+      "PAC-Bayes"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-2#4--the-theorem-and-the-cost-of-choosing-a-prior"
+  },
+  {
+    "id": "pb-optimization",
+    "topic": "topic-1",
+    "title": "PAC-Bayes · optimization",
+    "question": "What changes during PAC-Bayes bound optimization?",
+    "choices": [
+      "Only an inference threshold",
+      "The original prior center and test labels",
+      "The posterior mean, posterior variances and relaxed prior variance",
+      "Only the last sampled network, with no distribution retained"
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "The posterior mean can move from the SGD solution. Fresh noise estimates loss gradients while the original initialization stays fixed as the prior center.",
+    "difficulty": "medium",
+    "tags": [
+      "PAC-Bayes"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-2#5--training-has-two-stages-then-certification"
+  },
+  {
+    "id": "pb-confidence",
+    "topic": "topic-1",
+    "title": "PAC-Bayes · confidence",
+    "question": "Why are there two inverse-KL steps in final certification?",
+    "choices": [
+      "One for each hidden layer",
+      "To correct Monte Carlo error, then bound population error from training data",
+      "To train the mean network twice",
+      "To certify both the mean network and a majority vote"
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "Finite posterior sampling and finite training data produce different uncertainties. With delta = 0.025 and delta prime = 0.01 the combined confidence is at least 0.965.",
+    "difficulty": "medium",
+    "tags": [
+      "PAC-Bayes"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-2#7--certification-two-uncertainties-two-inverse-kl-steps"
+  },
+  {
+    "id": "pb-evidence",
+    "topic": "topic-1",
+    "title": "PAC-Bayes · evidence",
+    "question": "What does the random-label table value 1.352 represent?",
+    "choices": [
+      "A 135.2% inverse-KL error probability",
+      "A test accuracy above 100%",
+      "The bound for the T-600 mean network",
+      "A square-root complexity diagnostic indicating vacuity"
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "Section 4.4 specially reports √(BRE/2) for random labels. It is not an inverse-KL probability, which must lie in [0,1].",
+    "difficulty": "medium",
+    "tags": [
+      "PAC-Bayes"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-2#8--what-the-evidence-actually-establishes"
   }
 ]

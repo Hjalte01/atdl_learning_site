@@ -116,7 +116,7 @@
       "topic": 1,
       "order": 2,
       "kind": "paper",
-      "status": "not-started",
+      "status": "ready",
       "guide": "/papers/t1-paper-2",
       "pdf": "/materials/fd2a56c293d6c3a4.pdf",
       "sha256": "4d28d0e2f5f7b841a5c79c0ecfa675cb6357323a008fa048dff9a07594ee6a35"
