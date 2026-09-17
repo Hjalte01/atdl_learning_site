@@ -247,6 +247,7 @@ h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); }
 .prose p, .prose ul, .prose ol { max-width: 45rem; }
 .prose a { color: var(--accent); text-decoration-thickness: .08em; text-underline-offset: .16em; }
 .prose strong { font-weight: 600; }
+.prose img { max-width: 100%; height: auto; }
 .prose blockquote { margin: 1.8rem 0; padding: .7rem 1.2rem; border-left: 3px solid var(--accent); background: var(--surface-soft); color: var(--muted); }
 .prose blockquote p { margin: 0; }
 .prose code { padding: .12rem .3rem; border-radius: .25rem; background: var(--surface-soft); font-family: var(--mono); font-size: .82em; }

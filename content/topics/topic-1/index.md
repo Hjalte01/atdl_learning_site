@@ -15,6 +15,8 @@ Continue with [Nonvacuous generalization bounds](/papers/t1-paper-2): turn a tra
 
 Then explore [A Bayesian perspective on SGD](/papers/t1-paper-3): connect prior-relative width and evidence to mini-batch gradient noise, finite-batch limits and momentum through seven diagrams and eight cards. The guide uses the supplied ICLR 2018 conference PDF and distinguishes the Bayesian sampling analogy from an exact sampling claim.
 
-The other three paper explanations remain queued.
+Continue with [Deep double descent](/papers/t1-paper-4): follow the fitting threshold through model width, training time and dataset size, with eight teaching diagrams, a source result figure and eight cards. The guide uses the updated December 2021 journal paper and records its metric and training-budget ambiguities.
+
+The other two paper explanations remain queued.
 
 **Working topic label:** inferred from the available papers, not verified against a course syllabus.

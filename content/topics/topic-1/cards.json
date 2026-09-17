@@ -454,5 +454,157 @@
       "Bayesian SGD"
     ],
     "relatedTopicUrl": "/papers/t1-paper-3#1--why-can-a-better-gradient-give-a-worse-predictor"
+  },
+  {
+    "id": "dd-procedure",
+    "topic": "topic-1",
+    "title": "Double descent · procedure",
+    "question": "What can change effective model complexity while parameter count stays fixed?",
+    "choices": [
+      "The training duration",
+      "Only the class names",
+      "Only the page title",
+      "Nothing"
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "EMC belongs to the full training procedure and labeled-data distribution; training longer can alter fitting ability.",
+    "difficulty": "medium",
+    "tags": [
+      "Double descent"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-4#5--effective-model-complexity-how-much-can-this-procedure-fit"
+  },
+  {
+    "id": "dd-threshold",
+    "topic": "topic-1",
+    "title": "Double descent · threshold",
+    "question": "Where does the proposed critical regime lie?",
+    "choices": [
+      "Always at one parameter per sample",
+      "Where EMC is comparable to the number of training samples",
+      "At exactly 50% test accuracy",
+      "At the first learning-rate update"
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "The fitting boundary depends on the procedure and data, so raw parameter count is not a universal locator.",
+    "difficulty": "medium",
+    "tags": [
+      "Double descent"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-4#5--effective-model-complexity-how-much-can-this-procedure-fit"
+  },
+  {
+    "id": "dd-noise",
+    "topic": "topic-1",
+    "title": "Double descent · noise",
+    "question": "How are noisy image labels assigned in these experiments?",
+    "choices": [
+      "Resampled every epoch",
+      "Corrupted only at inference",
+      "Sampled once, then kept across augmentations",
+      "Chosen using test predictions"
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "A corrupted label is fixed for that image; it is drawn uniformly from the incorrect classes.",
+    "difficulty": "medium",
+    "tags": [
+      "Double descent"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-4#3--training-and-inference-are-different-paths"
+  },
+  {
+    "id": "dd-loss",
+    "topic": "topic-1",
+    "title": "Double descent · loss",
+    "question": "A predictor assigns probability 0.25 to its observed class. What is its cross-entropy?",
+    "choices": [
+      "0.25",
+      "0.75",
+      "Exactly 1 because classification is wrong",
+      "About 1.386 with natural logarithms"
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "Cross-entropy is −log(0.25), not the binary correct/incorrect indicator used for classification error.",
+    "difficulty": "medium",
+    "tags": [
+      "Double descent"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-4#6--trace-a-noisy-example-through-the-same-boxes"
+  },
+  {
+    "id": "dd-time",
+    "topic": "topic-1",
+    "title": "Double descent · time",
+    "question": "Why can a fixed-width model show epoch-wise double descent?",
+    "choices": [
+      "Its fitting ability changes as training proceeds",
+      "New layers are added every epoch",
+      "Its dataset must shrink",
+      "Its output classes must increase"
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "The weights and optimization state evolve while the architecture stays fixed, potentially carrying the procedure through the critical regime.",
+    "difficulty": "medium",
+    "tags": [
+      "Double descent"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-4#7--three-ways-to-approach-the-same-fitting-threshold"
+  },
+  {
+    "id": "dd-samples",
+    "topic": "topic-1",
+    "title": "Double descent · samples",
+    "question": "How can adding data hurt the specified learner locally?",
+    "choices": [
+      "It always lowers the quality of every label",
+      "It can move an overparameterized procedure toward the fitting threshold",
+      "It necessarily increases its parameter count",
+      "It proves data is useless"
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "Increasing sample size can move the fitting boundary; its shift can temporarily outweigh the benefit of more data at a fixed width and procedure.",
+    "difficulty": "medium",
+    "tags": [
+      "Double descent"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-4#7--three-ways-to-approach-the-same-fitting-threshold"
+  },
+  {
+    "id": "dd-stopping",
+    "topic": "topic-1",
+    "title": "Double descent · stopping",
+    "question": "What does the updated paper say about optimal early stopping?",
+    "choices": [
+      "It always removes every form of double descent",
+      "It was never considered",
+      "It often removes effects, but Figure 19 is a model-wise exception",
+      "It always makes more data harmful"
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "The authors report a CIFAR-100 exception and do not observe more-data harm with optimal early stopping; neither statement is a universal theorem.",
+    "difficulty": "medium",
+    "tags": [
+      "Double descent"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-4#8--what-the-experiments-actually-establish"
+  },
+  {
+    "id": "dd-hypothesis",
+    "topic": "topic-1",
+    "title": "Double descent · hypothesis",
+    "question": "What is the status of the generalized EMC claim?",
+    "choices": [
+      "A proof for every neural network",
+      "A new differentiable training loss",
+      "An exact efficient capacity estimator",
+      "An informal hypothesis supported by experiments"
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "The tolerance and width of the critical regime are not generally derived, and the paper does not prove a universal scaling law.",
+    "difficulty": "medium",
+    "tags": [
+      "Double descent"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-4#5--effective-model-complexity-how-much-can-this-procedure-fit"
   }
 ]

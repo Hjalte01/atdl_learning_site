@@ -140,7 +140,7 @@
       "topic": 1,
       "order": 4,
       "kind": "paper",
-      "status": "not-started",
+      "status": "ready",
       "guide": "/papers/t1-paper-4",
       "pdf": "/materials/afd074637ca4280b.pdf",
       "sha256": "8f731731ecb6dcf08cb9736e55b6f84a39d50546db0d9e724e1a68dc34464e68"
