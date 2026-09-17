@@ -606,5 +606,157 @@
       "Double descent"
     ],
     "relatedTopicUrl": "/papers/t1-paper-4#5--effective-model-complexity-how-much-can-this-procedure-fit"
+  },
+  {
+    "id": "grok-transfer",
+    "topic": "topic-1",
+    "title": "Grokking · transfer",
+    "question": "What makes a held-out pair reuse a fitted training answer exactly?",
+    "choices": [
+      "Its embedding sum equals the training pair’s embedding sum",
+      "Its inputs use different targets",
+      "Its embedding dimension is large",
+      "Its decoder is randomly reinitialized"
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "Identical inputs to the same fixed decoder produce identical outputs. The training input must already have the correct target.",
+    "difficulty": "medium",
+    "tags": [
+      "Grokking"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-5#4--representation-close-up-equal-sums-become-equal-inputs"
+  },
+  {
+    "id": "grok-injective",
+    "topic": "topic-1",
+    "title": "Grokking · injective",
+    "question": "Why does Proposition 2 assume an injective decoder?",
+    "choices": [
+      "To guarantee that every optimizer converges",
+      "To infer equal decoder inputs from equal fitted targets",
+      "To remove all training examples",
+      "To guarantee zero classification loss at finite logits"
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "Equal outputs can come from different inputs for a noninjective decoder. Injectivity supplies the reverse implication under the zero-loss idealization.",
+    "difficulty": "medium",
+    "tags": [
+      "Grokking"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-5#4--representation-close-up-equal-sums-become-equal-inputs"
+  },
+  {
+    "id": "grok-objective",
+    "topic": "topic-1",
+    "title": "Grokking · objective",
+    "question": "Which loss trains the actual toy predictor?",
+    "choices": [
+      "Only the constraint-matrix rank",
+      "Only PCA entropy",
+      "Task MSE or cross-entropy through the decoder",
+      "The analytical spectral gap alone"
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "The effective embedding loss is a surrogate for analysis. Actual task gradients update both the embedding table and decoder.",
+    "difficulty": "medium",
+    "tags": [
+      "Grokking"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-5#2--architecture-lookup-add-decode"
+  },
+  {
+    "id": "grok-rank",
+    "topic": "topic-1",
+    "title": "Grokking · rank",
+    "question": "What does nullity two imply for ordinary-addition constraints?",
+    "choices": [
+      "There are exactly two training examples",
+      "The decoder must have two layers",
+      "All held-out target classes were seen",
+      "Every embedding coordinate is affine in the symbol index"
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "The constant and index vectors span the nullspace when no extra degrees of freedom remain. This describes geometry, not decoder coverage of targets.",
+    "difficulty": "medium",
+    "tags": [
+      "Grokking"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-5#6--effective-dynamics-which-structure-is-determined"
+  },
+  {
+    "id": "grok-rate",
+    "topic": "topic-1",
+    "title": "Grokking · rate",
+    "question": "In the linear relaxation, what happens if the positive slow rate λ3 halves at fixed η?",
+    "choices": [
+      "The one-e-fold timescale doubles",
+      "The timescale halves",
+      "Accuracy must double",
+      "The embedding dimension doubles"
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "The paper’s qualitative spectral timescale is 1/(ηλ3). It is not an exact accuracy threshold for Adam and a neural decoder.",
+    "difficulty": "medium",
+    "tags": [
+      "Grokking"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-5#6--effective-dynamics-which-structure-is-determined"
+  },
+  {
+    "id": "grok-phases",
+    "topic": "topic-1",
+    "title": "Grokking · phases",
+    "question": "Why can more decoder weight decay fail to improve generalization?",
+    "choices": [
+      "It always removes the training split",
+      "Excessive restriction can cause confusion and prevent fitting",
+      "It guarantees all embeddings collapse",
+      "It changes ordinary addition into modular addition"
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "The reported phase diagrams include confusion as well as comprehension, grokking and memorization. Useful settings depend on the competition between both modules.",
+    "difficulty": "medium",
+    "tags": [
+      "Grokking"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-5#7--four-outcomes-from-the-same-learning-problem"
+  },
+  {
+    "id": "grok-censoring",
+    "topic": "topic-1",
+    "title": "Grokking · censoring",
+    "question": "What do Figure 4’s runs that miss RQI > 0.95 by 10,000 steps establish?",
+    "choices": [
+      "They can never generalize",
+      "Their exact convergence time is 10,000",
+      "They did not reach that representation threshold within the budget",
+      "Their held-out accuracy is exactly zero"
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "These are censored observations of a representation metric. They do not prove infinite delay or give an exact held-out accuracy.",
+    "difficulty": "medium",
+    "tags": [
+      "Grokking"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-5#8--what-the-evidence-establishes"
+  },
+  {
+    "id": "grok-pca",
+    "topic": "topic-1",
+    "title": "Grokking · pca",
+    "question": "What does a circle in two PCA coordinates prove about the transformer?",
+    "choices": [
+      "Every other variance component is zero",
+      "The affine ordinary-addition theorem applies unchanged",
+      "The decoder is injective everywhere",
+      "It reveals visible structure, but not that the full effective dimension is two"
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "The PCA projection is evidence of structure. The entropy-based effective dimension uses the full variance distribution and need not equal the number of displayed axes.",
+    "difficulty": "medium",
+    "tags": [
+      "Grokking"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-5#7--four-outcomes-from-the-same-learning-problem"
   }
 ]

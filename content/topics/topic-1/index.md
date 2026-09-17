@@ -17,6 +17,8 @@ Then explore [A Bayesian perspective on SGD](/papers/t1-paper-3): connect prior-
 
 Continue with [Deep double descent](/papers/t1-paper-4): follow the fitting threshold through model width, training time and dataset size, with eight teaching diagrams, a source result figure and eight cards. The guide uses the updated December 2021 journal paper and records its metric and training-budget ambiguities.
 
-The other two paper explanations remain queued.
+Then study [Understanding grokking](/papers/t1-paper-5): trace delayed generalization through equal embedding sums, constraint rank, spectral timescales and decoder competition. Seven teaching diagrams, the supplied Figure 4 and eight cards distinguish the toy theory from transformer evidence and explain the missing appendices and normalization caveats.
+
+The final paper explanation remains queued.
 
 **Working topic label:** inferred from the available papers, not verified against a course syllabus.
