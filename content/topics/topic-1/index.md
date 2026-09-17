@@ -13,6 +13,8 @@ Start with [Information bottleneck](/papers/t1-paper-1): follow classifier train
 
 Continue with [Nonvacuous generalization bounds](/papers/t1-paper-2): turn a trained network into a distribution of networks, then trace the PAC-Bayes objective and final certificate through eight diagrams and eight recall cards. The guide follows the supplied October 2017 v2 PDF and distinguishes randomized-network guarantees from deterministic test accuracy.
 
-The other four paper explanations remain queued.
+Then explore [A Bayesian perspective on SGD](/papers/t1-paper-3): connect prior-relative width and evidence to mini-batch gradient noise, finite-batch limits and momentum through seven diagrams and eight cards. The guide uses the supplied ICLR 2018 conference PDF and distinguishes the Bayesian sampling analogy from an exact sampling claim.
+
+The other three paper explanations remain queued.
 
 **Working topic label:** inferred from the available papers, not verified against a course syllabus.

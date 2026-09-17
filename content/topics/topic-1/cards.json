@@ -302,5 +302,157 @@
       "PAC-Bayes"
     ],
     "relatedTopicUrl": "/papers/t1-paper-2#8--what-the-evidence-actually-establishes"
+  },
+  {
+    "id": "bsgd-mass",
+    "topic": "topic-1",
+    "title": "Bayesian SGD · mass",
+    "question": "What distinguishes Bayesian evidence from the best training fit?",
+    "choices": [
+      "Evidence integrates likelihood under the prior",
+      "Evidence is the maximum likelihood alone",
+      "Evidence is test accuracy",
+      "Evidence ignores the prior"
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "A narrow high peak can contribute less integrated mass than a broader region. The prior measure is part of the comparison.",
+    "difficulty": "medium",
+    "tags": [
+      "Bayesian SGD"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-3#3--representation-close-up-density-is-not-mass"
+  },
+  {
+    "id": "bsgd-coordinates",
+    "topic": "topic-1",
+    "title": "Bayesian SGD · coordinates",
+    "question": "What must accompany a change of parameter coordinates for exact evidence to remain invariant?",
+    "choices": [
+      "Keep the old numerical prior regardless",
+      "Transform the prior density with its Jacobian",
+      "Discard the likelihood",
+      "Keep only the largest Hessian eigenvalue"
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "A coordinate change preserves the model only when its probability measure is transformed consistently. General nonlinear changes can still affect a Laplace approximation.",
+    "difficulty": "medium",
+    "tags": [
+      "Bayesian SGD"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-3#3--representation-close-up-density-is-not-mass"
+  },
+  {
+    "id": "bsgd-sign",
+    "topic": "topic-1",
+    "title": "Bayesian SGD · sign",
+    "question": "If the source defines Z / Znull = exp(−E), what does E = −2 mean?",
+    "choices": [
+      "The null is favored by exp(2)",
+      "The evidences are equal",
+      "The learned model is favored by exp(2), before prior model odds",
+      "The test error is −2"
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "The minus sign means negative E favors the learned model. Evidence odds are not error rates.",
+    "difficulty": "medium",
+    "tags": [
+      "Bayesian SGD"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-3#3--representation-close-up-density-is-not-mass"
+  },
+  {
+    "id": "bsgd-sampler",
+    "topic": "topic-1",
+    "title": "Bayesian SGD · sampler",
+    "question": "Why is ordinary SGD not established here as an exact posterior sampler?",
+    "choices": [
+      "It never uses gradients",
+      "Every batch is full batch",
+      "Bayesian prediction averages weights",
+      "Its noise is generally anisotropic and parameter dependent"
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "The exact Langevin argument uses appropriately scaled isotropic noise and limiting assumptions; the analogy to SGD is not an exact sampling theorem.",
+    "difficulty": "medium",
+    "tags": [
+      "Bayesian SGD"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-3#4--training-is-not-posterior-prediction"
+  },
+  {
+    "id": "bsgd-fullbatch",
+    "topic": "topic-1",
+    "title": "Bayesian SGD · fullbatch",
+    "question": "What does the no-momentum formula g = ε(N/B − 1) give at B = N?",
+    "choices": [
+      "Zero batch-sampling noise",
+      "g = ε",
+      "Infinite noise",
+      "A negative covariance"
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "A full batch contains all examples, so batch-selection noise disappears. The approximation εN/B is unsuitable at this endpoint.",
+    "difficulty": "medium",
+    "tags": [
+      "Bayesian SGD"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-3#5--the-noise-scale-lives-at-the-update-arrow"
+  },
+  {
+    "id": "bsgd-scale",
+    "topic": "topic-1",
+    "title": "Bayesian SGD · scale",
+    "question": "In the small-batch momentum approximation, what compensates for increasing m from 0.9 to 0.95?",
+    "choices": [
+      "Halve B",
+      "Double B at fixed ε and N",
+      "Double N at fixed B",
+      "Keep B unchanged"
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "The denominator 1−m halves. Doubling B preserves εN/[B(1−m)] approximately, within the model’s regime.",
+    "difficulty": "medium",
+    "tags": [
+      "Bayesian SGD"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-3#6--scaling-batches-learning-rates-and-momentum"
+  },
+  {
+    "id": "bsgd-optimum",
+    "topic": "topic-1",
+    "title": "Bayesian SGD · optimum",
+    "question": "What does the batch-size experiment imply at fixed learning rate?",
+    "choices": [
+      "Full batch always wins",
+      "The smallest batch always wins",
+      "An interior optimum can balance useful noise and fitting",
+      "Noise intensity completely determines accuracy"
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "The tested setup has an interior optimum; batches around ten or smaller fail to train. This is not a universal numerical optimum.",
+    "difficulty": "medium",
+    "tags": [
+      "Bayesian SGD"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-3#7--what-the-experiments-establish"
+  },
+  {
+    "id": "bsgd-metrics",
+    "topic": "topic-1",
+    "title": "Bayesian SGD · metrics",
+    "question": "Why can stable test accuracy coexist with rising test cross-entropy?",
+    "choices": [
+      "Cross-entropy ignores probabilities",
+      "Accuracy measures the posterior mass",
+      "The test labels must have changed",
+      "Wrong predictions can become more confident without changing their class"
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "Accuracy depends on the predicted class, while cross-entropy penalizes the probability assigned to the true label. Confidence can deteriorate without changing accuracy.",
+    "difficulty": "medium",
+    "tags": [
+      "Bayesian SGD"
+    ],
+    "relatedTopicUrl": "/papers/t1-paper-3#1--why-can-a-better-gradient-give-a-worse-predictor"
   }
 ]
