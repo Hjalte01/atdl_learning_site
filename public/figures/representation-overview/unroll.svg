@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="475" viewBox="0 0 960 475" role="img" aria-label="Depth transforms features; training learns parameters">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="#fff" font-family="sans-serif" font-size="25">Depth transforms features; training learns parameters</text>
+<text x="30" y="85" fill="#c5d5ee" font-family="sans-serif" font-size="18">Functional CRATE encoder: n tokens, feature width d</text>
+<rect x="30" y="100" width="275" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="44" y="127" fill="#fff" font-family="sans-serif" font-size="18">Input → embeddings</text>
+<text x="44" y="151" fill="#fff" font-family="sans-serif" font-size="18">Z⁰: d × n</text>
+<path d="M308,134 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="100" width="275" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="354" y="127" fill="#fff" font-family="sans-serif" font-size="18">L repeated blocks</text>
+<text x="354" y="151" fill="#fff" font-family="sans-serif" font-size="18">Zˡ → Zˡ⁺¹: d × n</text>
+<path d="M618,134 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="100" width="275" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="664" y="127" fill="#fff" font-family="sans-serif" font-size="18">Final representation</text>
+<text x="664" y="151" fill="#fff" font-family="sans-serif" font-size="18">Task-specific head</text>
+<text x="30" y="210" fill="#c5d5ee" font-family="sans-serif" font-size="18">Inside a block: functional view, normalization omitted</text>
+<rect x="30" y="225" width="275" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="44" y="252" fill="#fff" font-family="sans-serif" font-size="18">Current features Zˡ</text>
+<path d="M308,259 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="225" width="275" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="354" y="252" fill="#fff" font-family="sans-serif" font-size="18">Subspace attention</text>
+<text x="354" y="276" fill="#fff" font-family="sans-serif" font-size="18">MSSA: compression</text>
+<path d="M618,259 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="225" width="275" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="664" y="252" fill="#fff" font-family="sans-serif" font-size="18">Sparse-coding stage</text>
+<text x="664" y="276" fill="#fff" font-family="sans-serif" font-size="18">ISTA-inspired update</text>
+<text x="30" y="335" fill="#c5d5ee" font-family="sans-serif" font-size="18">Outer training loop is separate from network depth</text>
+<rect x="30" y="350" width="275" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="44" y="377" fill="#fff" font-family="sans-serif" font-size="18">A batch + task target</text>
+<path d="M308,384 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="350" width="275" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="354" y="377" fill="#fff" font-family="sans-serif" font-size="18">Forward pass → loss</text>
+<path d="M618,384 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="350" width="275" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="664" y="377" fill="#fff" font-family="sans-serif" font-size="18">Backprop → parameters</text>
+<text x="664" y="401" fill="#fff" font-family="sans-serif" font-size="18">Then another batch</text>
+</svg>

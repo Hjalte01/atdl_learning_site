@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="410" viewBox="0 0 960 410" role="img" aria-label="Selected Table 8.5 ImageNet-1K linear probe results">
+<rect width="960" height="410" fill="#101c30"/>
+<text x="30" y="42" fill="#fff" font-family="sans-serif" font-size="25">Reported evidence: a parameter–accuracy trade-off</text>
+<text x="30" y="78" fill="#c5d5ee" font-family="sans-serif" font-size="18">Table 8.5 · ImageNet-1K linear-probe accuracy · March 1, 2026 copy</text>
+<text x="30" y="153" fill="#fff" font-family="sans-serif" font-size="20">CRATE-S</text>
+<text x="30" y="178" fill="#c5d5ee" font-family="sans-serif" font-size="16">13.12M parameters</text>
+<rect x="240" y="130" width="415.20000000000005" height="40" fill="#57c4b7" rx="4"/>
+<text x="665.2" y="157" fill="#fff" font-family="sans-serif" font-size="20">69.2%</text>
+<text x="30" y="248" fill="#fff" font-family="sans-serif" font-size="20">ViT-S</text>
+<text x="30" y="273" fill="#c5d5ee" font-family="sans-serif" font-size="16">22.05M parameters</text>
+<rect x="240" y="225" width="434.40000000000003" height="40" fill="#b69bf5" rx="4"/>
+<text x="684.4000000000001" y="252" fill="#fff" font-family="sans-serif" font-size="20">72.4%</text>
+<path d="M240,285 v8" stroke="#c5d5ee"/>
+<text x="232" y="318" fill="#c5d5ee" font-family="sans-serif" font-size="16">0</text>
+<path d="M390,285 v8" stroke="#c5d5ee"/>
+<text x="382" y="318" fill="#c5d5ee" font-family="sans-serif" font-size="16">25</text>
+<path d="M540,285 v8" stroke="#c5d5ee"/>
+<text x="532" y="318" fill="#c5d5ee" font-family="sans-serif" font-size="16">50</text>
+<path d="M690,285 v8" stroke="#c5d5ee"/>
+<text x="682" y="318" fill="#c5d5ee" font-family="sans-serif" font-size="16">75</text>
+<path d="M840,285 v8" stroke="#c5d5ee"/>
+<text x="832" y="318" fill="#c5d5ee" font-family="sans-serif" font-size="16">100</text>
+<path d="M240,285 H840" stroke="#c5d5ee"/>
+<text x="30" y="362" fill="#fff" font-family="sans-serif" font-size="18">150 epochs supervised pretraining · patch size 16 · no intervals supplied</text>
+<text x="30" y="390" fill="#c5d5ee" font-family="sans-serif" font-size="18">Selected comparison only. Parameter count does not measure latency.</text>
+</svg>

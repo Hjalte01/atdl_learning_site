@@ -910,5 +910,165 @@
       "Binarized networks"
     ],
     "relatedTopicUrl": "/papers/t1-paper-6#4--representation-close-up-frequency-and-description-cost"
+  },
+  {
+    "id": "representation-overview-projection",
+    "topic": "topic-1",
+    "title": "What did PCA discard?",
+    "question": "With U = (1,1)/√2 and x = (3,1), what is the reconstructed input?",
+    "choices": [
+      "(3,1)",
+      "(2,2)",
+      "(1,−1)",
+      "(4,4)"
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "Encoding gives 2√2; decoding gives (2,2). The residual (1,−1) is perpendicular to the assumed signal subspace.",
+    "difficulty": "medium",
+    "tags": [
+      "representation-overview",
+      "foundations"
+    ],
+    "relatedTopicUrl": "/papers/representation-overview#2--start-with-a-representation-you-can-calculate"
+  },
+  {
+    "id": "representation-overview-denoise",
+    "topic": "topic-1",
+    "title": "A denoiser is not a sampler",
+    "question": "For x ~ N(0,1), noise standard deviation 1 and noisy input 2, the optimal squared-error denoiser outputs 1. What is it?",
+    "choices": [
+      "The unique original clean value",
+      "A guaranteed posterior sample",
+      "The posterior mean",
+      "The learned model parameter"
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "Squared-error population risk selects the conditional mean. A sampler needs additional dynamics; the mean need not be a typical sample.",
+    "difficulty": "medium",
+    "tags": [
+      "representation-overview",
+      "foundations"
+    ],
+    "relatedTopicUrl": "/papers/representation-overview#3--denoising-learns-more-than-a-clean-looking-image"
+  },
+  {
+    "id": "representation-overview-rate",
+    "topic": "topic-1",
+    "title": "Why subtract two coding rates?",
+    "question": "What does the normalized coding-rate reduction objective encourage?",
+    "choices": [
+      "Compact groups that remain distinguishable overall",
+      "A constant code for every example",
+      "Only the smallest global rate",
+      "Arbitrarily large feature norms"
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "The within-group term rewards compactness, while the whole-set term rewards diversity. The subtraction balances those aims under fixed scale.",
+    "difficulty": "medium",
+    "tags": [
+      "representation-overview",
+      "foundations"
+    ],
+    "relatedTopicUrl": "/papers/representation-overview#4--compression-must-preserve-differences"
+  },
+  {
+    "id": "representation-overview-scale",
+    "topic": "topic-1",
+    "title": "Control the scale",
+    "question": "Which comparison is necessary before interpreting a larger coding-rate reduction?",
+    "choices": [
+      "Use different precision for each model",
+      "Multiply the better model by 100",
+      "Compare training loss with test accuracy",
+      "Keep feature normalization and coding precision comparable"
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "Coding rates depend on second moments and precision. Scale changes can confound a claimed improvement in geometry.",
+    "difficulty": "medium",
+    "tags": [
+      "representation-overview",
+      "foundations"
+    ],
+    "relatedTopicUrl": "/papers/representation-overview#4--compression-must-preserve-differences"
+  },
+  {
+    "id": "representation-overview-unroll",
+    "topic": "topic-1",
+    "title": "Two kinds of update",
+    "question": "In an optimization-inspired network, what distinguishes depth from outer training?",
+    "choices": [
+      "Every layer must update the training dataset",
+      "Depth transforms features; training adjusts parameters",
+      "Unrolling rules out backpropagation",
+      "Inference requires the true class label"
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "Layer states change during a forward pass. Parameters can still be trained through a separate optimization loop.",
+    "difficulty": "medium",
+    "tags": [
+      "representation-overview",
+      "foundations"
+    ],
+    "relatedTopicUrl": "/papers/representation-overview#5--turn-an-update-rule-into-a-layer"
+  },
+  {
+    "id": "representation-overview-consistency",
+    "topic": "topic-1",
+    "title": "What does a round trip prove?",
+    "question": "Matching distributions of original and re-encoded features establishes which claim by itself?",
+    "choices": [
+      "Exact pixel reconstruction for each input",
+      "The correct latent dimension",
+      "Distributional feature agreement",
+      "No information can have been lost"
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "Distributional agreement need not preserve sample pairing or information invisible to the encoder. The other claims require additional conditions.",
+    "difficulty": "medium",
+    "tags": [
+      "representation-overview",
+      "foundations"
+    ],
+    "relatedTopicUrl": "/papers/representation-overview#6--check-the-round-trip"
+  },
+  {
+    "id": "representation-overview-posterior",
+    "topic": "topic-1",
+    "title": "Mean or sample?",
+    "question": "A posterior assigns probability 1/2 to −2 and 1/2 to 2. Which statement is correct?",
+    "choices": [
+      "The mean is 0, but a posterior sample is −2 or 2",
+      "Every posterior sample is 0",
+      "The mode is uniquely 0",
+      "The mean must have positive posterior probability"
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "A mean minimizes expected squared error but can lie outside the support. Means, modes and samples answer different inference questions.",
+    "difficulty": "medium",
+    "tags": [
+      "representation-overview",
+      "foundations"
+    ],
+    "relatedTopicUrl": "/papers/representation-overview#7--use-the-representation-under-an-observation"
+  },
+  {
+    "id": "representation-overview-evidence",
+    "topic": "topic-1",
+    "title": "Read the actual comparison",
+    "question": "Table 8.5 lists CRATE-S at 13.12M parameters / 69.2% and ViT-S at 22.05M / 72.4%. What follows?",
+    "choices": [
+      "CRATE is always faster",
+      "CRATE has better accuracy",
+      "The gap is statistically significant",
+      "CRATE-S uses fewer parameters with lower accuracy in this setting"
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "The source comparison is ImageNet-1K linear probing after supervised pretraining. It reports neither latency nor uncertainty intervals, and does not establish a universal ranking.",
+    "difficulty": "medium",
+    "tags": [
+      "representation-overview",
+      "foundations"
+    ],
+    "relatedTopicUrl": "/papers/representation-overview#8--use-experiments-to-test-the-story"
   }
 ]

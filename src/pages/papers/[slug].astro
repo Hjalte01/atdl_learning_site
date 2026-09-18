@@ -13,6 +13,7 @@ export async function getStaticPaths() {
  return (await getCollection("papers")).map(paper => ({params:{slug:paper.id.replace(/\/index$/,"")},props:{paper}}));
 }
 const {paper}=Astro.props;
+const isGeneral = paper.data.topic === "general";
 const isDiffAtlas=paper.id.replace(/\/index$/, "") === "t2-paper-4";
 const isFlux=paper.id.replace(/\/index$/, "") === "flux-kontext";
 const {Content, headings}=await render(paper);
@@ -20,9 +21,9 @@ const cards=(await getStudyCards()).filter(c=>c.relatedTopicUrl?.startsWith(`/pa
 ---
 <BaseLayout title={paper.data.shortTitle} description={paper.data.description}>
  <div class:list={["topic-layout", {"flux-page":isFlux}]}><main class="topic-main">
- <a class="back-link" href={withBase(`/topics/${paper.data.topic}`)}>← Back to topic</a>
+ <a class="back-link" href={withBase(isGeneral ? "/materials" : `/topics/${paper.data.topic}`)}>← {isGeneral ? "Back to reading library" : "Back to topic"}</a>
  <header class="topic-header">
- <p class="eyebrow">Topic {paper.data.topic.replace('topic-','')} · {paper.data.materialKind === 'paper' ? `Paper ${paper.data.order}` : ({overview: 'Overview', slides: 'Slides', extra: 'Extra material'}[paper.data.materialKind])} · {paper.data.status === 'ready' ? 'Learning guide' : 'Awaiting explanation'}</p>
+ <p class="eyebrow">{isGeneral ? 'General course material' : `Topic ${paper.data.topic.replace('topic-','')}`} · {paper.data.materialKind === 'paper' ? `Paper ${paper.data.order}` : ({overview: 'Overview', slides: 'Slides', extra: 'Extra material'}[paper.data.materialKind])} · {paper.data.status === 'ready' ? 'Learning guide' : 'Awaiting explanation'}</p>
  <h1>{paper.data.shortTitle}</h1><p class="lede">{paper.data.title}</p><p>{paper.data.description}</p>
  {paper.data.pdf && <a class="button secondary" href={withBase(paper.data.pdf)}>Open the course PDF ↗</a>}
  {paper.data.source && <a class="text-link" href={paper.data.source}>Original paper ↗</a>}

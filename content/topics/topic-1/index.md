@@ -9,6 +9,9 @@ locale: "en"
 ---
 ## Learning path
 
+For shared foundations, read the [Deep representation learning roadmap](/papers/representation-overview): the general March 2026 textbook connects PCA, denoising, coding-rate objectives, unrolled networks and consistency. Its eight recall cards are grouped here for study and printing; the book remains general course material in the library.
+
+
 Start with [Information bottleneck](/papers/t1-paper-1): follow classifier training, whole-layer information measurements, and the compression–prediction tradeoff through seven diagrams and eight recall cards. The guide follows the supplied April 2017 v3 paper and separates reported experiments from toy examples and theoretical interpretation.
 
 Continue with [Nonvacuous generalization bounds](/papers/t1-paper-2): turn a trained network into a distribution of networks, then trace the PAC-Bayes objective and final certificate through eight diagrams and eight recall cards. The guide follows the supplied October 2017 v2 PDF and distinguishes randomized-network guarantees from deterministic test accuracy.

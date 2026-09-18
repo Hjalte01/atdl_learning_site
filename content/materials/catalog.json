@@ -32,8 +32,8 @@
       "topic": null,
       "order": null,
       "kind": "overview",
-      "status": "not-started",
-      "guide": null,
+      "status": "ready",
+      "guide": "/papers/representation-overview",
       "pdf": "/materials/0d0a9af9a318e975.pdf",
       "sha256": "e61ca87bd97a702638e9e7264ac38c95ca5759af3412637b2993113ffae6571e"
     },

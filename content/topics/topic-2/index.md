@@ -22,3 +22,7 @@ Continue with [Mean Flows · paper 2](/papers/t2-paper-2): learn why an interval
 Continue with [DiME · paper 3](/papers/t2-paper-3): trace clean-image classifier gradients back into a noisy diffusion state, examine the gradient approximation, and question what counterfactual metrics actually establish.
 
 Continue with [Qwen-Image · paper 6](/papers/t2-paper-6): follow text rendering through the data curriculum, VAE, and flow model; trace dual-reference conditioning for editing and inspect where benchmark gains still leave failures.
+
+## Shared foundations
+
+The [Deep representation learning roadmap](/papers/representation-overview) connects the general textbook’s denoising and representation chapters to conditional inference and the Topic 2 guides. It includes worked examples and a reading route into Chapters 3, 6, 7 and 8.
