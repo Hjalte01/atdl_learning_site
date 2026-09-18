@@ -29,3 +29,7 @@ Finish with [Binarized networks and compression](/papers/t1-paper-6): separate c
 ## Textbook foundations
 
 The [Understanding Deep Learning roadmap](/papers/understanding-deep-learning) follows Prince’s supplied November 21, 2024 copy from predictions and likelihoods through gradients, evaluation, attention and diffusion. It remains general course material; eight foundation cards are grouped with Topic 1 for practice and printing.
+
+## A unifying position
+
+[Deep Learning is Not So Mysterious or Different](/papers/not-so-mysterious) connects soft inductive biases, countable-hypothesis bounds and double descent. The July 10, 2025 overview remains general course material; its eight cards are grouped here for practice and printing. Worked examples and source Figure 5 separate mathematical guarantees from synthetic evidence and open questions.

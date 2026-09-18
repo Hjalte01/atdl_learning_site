@@ -1230,5 +1230,165 @@
       "foundations"
     ],
     "relatedTopicUrl": "/papers/understanding-deep-learning#5--measure-the-claim-you-actually-want-to-make"
+  },
+  {
+    "id": "mysterious-soft",
+    "topic": "topic-1",
+    "title": "Soft preference",
+    "question": "What distinguishes an order-dependent penalty from a degree-two restriction?",
+    "choices": [
+      "It removes all higher powers",
+      "It keeps higher powers available at a greater cost",
+      "It guarantees perfect interpolation",
+      "It uses test labels during training"
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "A soft preference changes which functions are favored without excluding all alternatives.",
+    "difficulty": "medium",
+    "tags": [
+      "not-so-mysterious",
+      "foundations"
+    ],
+    "relatedTopicUrl": "/papers/not-so-mysterious#1--replace-a-prohibition-with-a-preference"
+  },
+  {
+    "id": "mysterious-features",
+    "topic": "topic-1",
+    "title": "Learned or fixed?",
+    "question": "In the polynomial example, what does training change?",
+    "choices": [
+      "The observed targets",
+      "The definition of each polynomial feature",
+      "The coefficient vector w",
+      "The held-out input values"
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "The feature map is fixed within this fit. Training updates its coefficients; learning the feature map is a different mechanism.",
+    "difficulty": "medium",
+    "tags": [
+      "not-so-mysterious",
+      "foundations"
+    ],
+    "relatedTopicUrl": "/papers/not-so-mysterious#2--follow-the-polynomial-through-training-and-prediction"
+  },
+  {
+    "id": "mysterious-fit",
+    "topic": "topic-1",
+    "title": "Equal training fit",
+    "question": "With γ = 2, what are the penalties for f(x) = x and f(x) = x³ with unit coefficients?",
+    "choices": [
+      "2 and 8",
+      "1 and 3",
+      "2 and 2",
+      "0 and 0"
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "Both fit the endpoint examples, but γ to the coefficient order gives costs 2 and 8. This comparison does not identify the global optimum.",
+    "difficulty": "medium",
+    "tags": [
+      "not-so-mysterious",
+      "foundations"
+    ],
+    "relatedTopicUrl": "/papers/not-so-mysterious#3--a-numerical-preference-between-identical-training-fits"
+  },
+  {
+    "id": "mysterious-prior",
+    "topic": "topic-1",
+    "title": "Prior timing",
+    "question": "What condition is needed for the displayed countable-hypothesis bound?",
+    "choices": [
+      "Choose the prior after seeing which model won",
+      "Use a continuous density as point mass",
+      "Use any unbounded loss unchanged",
+      "Fix the prior independently of the training sample"
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "Appendix C makes sample independence explicit. A data-dependent prior needs additional justification or a different guarantee.",
+    "difficulty": "medium",
+    "tags": [
+      "not-so-mysterious",
+      "foundations"
+    ],
+    "relatedTopicUrl": "/papers/not-so-mysterious#4--bound-the-selected-solution-not-just-the-available-space"
+  },
+  {
+    "id": "mysterious-loose",
+    "topic": "topic-1",
+    "title": "Interpret a certificate",
+    "question": "A risk upper bound is larger than one for zero-one loss. What follows?",
+    "choices": [
+      "The classifier must fail",
+      "This certificate is uninformative",
+      "Test error must equal the bound",
+      "The empirical error was computed incorrectly"
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "A vacuous upper bound does not prove poor generalization. It only fails to certify useful performance.",
+    "difficulty": "medium",
+    "tags": [
+      "not-so-mysterious",
+      "foundations"
+    ],
+    "relatedTopicUrl": "/papers/not-so-mysterious#4--bound-the-selected-solution-not-just-the-available-space"
+  },
+  {
+    "id": "mysterious-dimension",
+    "topic": "topic-1",
+    "title": "Spectral soft count",
+    "question": "For eigenvalues (9, 1, 1/9) and α = 1, what is effective dimension?",
+    "choices": [
+      "3",
+      "11.111",
+      "1.5",
+      "0"
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "The contributions are 0.9, 0.5 and 0.1. Effective dimension depends on the matrix and regularization scale.",
+    "difficulty": "medium",
+    "tags": [
+      "not-so-mysterious",
+      "foundations"
+    ],
+    "relatedTopicUrl": "/papers/not-so-mysterious#5--connect-three-phenomena-without-erasing-their-conditions"
+  },
+  {
+    "id": "mysterious-evidence",
+    "topic": "topic-1",
+    "title": "Scope of the evidence",
+    "question": "What does source Figure 5 directly compare?",
+    "choices": [
+      "Test RMSE of polynomial fits on three synthetic target families",
+      "Accuracy of every neural architecture",
+      "Exact risk guarantees for all tasks",
+      "Performance of a trained language model"
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "It is a synthetic regression comparison with repeated fits, specified sample counts and baselines. It is not a universal ranking.",
+    "difficulty": "medium",
+    "tags": [
+      "not-so-mysterious",
+      "foundations"
+    ],
+    "relatedTopicUrl": "/papers/not-so-mysterious#6--read-the-evidence-at-the-scale-it-supports"
+  },
+  {
+    "id": "mysterious-representation",
+    "topic": "topic-1",
+    "title": "Changing similarity",
+    "question": "What changes in wᵀφ(x; v) compared with fixed polynomial features?",
+    "choices": [
+      "Labels become unnecessary for all training",
+      "No parameters are learned",
+      "All possible tasks become equally easy",
+      "The feature representation has learned parameters v"
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "Learning the representation changes the similarity structure used for prediction. Kernel learning can also adapt similarity.",
+    "difficulty": "medium",
+    "tags": [
+      "not-so-mysterious",
+      "foundations"
+    ],
+    "relatedTopicUrl": "/papers/not-so-mysterious#7--what-remains-distinctiveand-a-route-through-the-course"
   }
 ]

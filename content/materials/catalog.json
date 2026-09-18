@@ -8,8 +8,8 @@
       "topic": null,
       "order": null,
       "kind": "overview",
-      "status": "not-started",
-      "guide": null,
+      "status": "ready",
+      "guide": "/papers/not-so-mysterious",
       "pdf": "/materials/c3a92e3755fdccf8.pdf",
       "sha256": "ed980e43235fdb036cdfbdee31a6287f527aad1a54d003a4ca00d8f585b4a539"
     },
