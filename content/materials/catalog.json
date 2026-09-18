@@ -20,8 +20,8 @@
       "topic": null,
       "order": null,
       "kind": "overview",
-      "status": "not-started",
-      "guide": null,
+      "status": "ready",
+      "guide": "/papers/selection-under-uncertainty",
       "pdf": "/materials/eaaa66a375c9ea2f.pdf",
       "sha256": "79a8ec3efd554d6252ba17b681b82b7e47ef18ec66732b04134bc10d0d33bb36"
     },

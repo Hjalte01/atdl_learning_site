@@ -33,3 +33,7 @@ The [Understanding Deep Learning roadmap](/papers/understanding-deep-learning) f
 ## A unifying position
 
 [Deep Learning is Not So Mysterious or Different](/papers/not-so-mysterious) connects soft inductive biases, countable-hypothesis bounds and double descent. The July 10, 2025 overview remains general course material; its eight cards are grouped here for practice and printing. Worked examples and source Figure 5 separate mathematical guarantees from synthetic evidence and open questions.
+
+## Selection and uncertainty foundations
+
+[Selection under uncertainty](/papers/selection-under-uncertainty) follows Seldin’s January 2026 textbook from K-NN validation through finite-class and PAC-Bayes guarantees to online learning. Seven reproducible diagrams and eight foundation cards connect source assumptions to worked examples. The selective roadmap remains general course material in the library.

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-label="Calculated finite-class Hoeffding margins"><rect width="960" height="420" fill="#101c30"/>
+<text x="30" y="42" fill="white" font-family="sans-serif" font-size="25">Selection cost grows with candidate count</text>
+<text x="30" y="78" fill="white" font-family="sans-serif" font-size="20">Calculated margins: n = 1000; δ = 0.05; losses in [0, 1]</text>
+<text x="30" y="141" fill="white" font-family="sans-serif" font-size="20">M = 1</text>
+<rect x="220" y="115" width="232.214" height="40" rx="5" fill="#31859b"/>
+<text x="467.213653612297" y="141" fill="white" font-family="sans-serif" font-size="20">0.0387</text>
+<text x="30" y="216" fill="white" font-family="sans-serif" font-size="20">M = 100</text>
+<rect x="220" y="190" width="369.887" height="40" rx="5" fill="#8162b0"/>
+<text x="604.8867992666911" y="216" fill="white" font-family="sans-serif" font-size="20">0.0616</text>
+<text x="30" y="291" fill="white" font-family="sans-serif" font-size="20">M = 1,000,000</text>
+<rect x="220" y="265" width="550.093" height="40" rx="5" fill="#379c77"/>
+<text x="785.0930566434453" y="291" fill="white" font-family="sans-serif" font-size="20">0.0917</text>
+<path d="M220 333 H820" stroke="#c5d5ee"/>
+<path d="M220 333 v7" stroke="#c5d5ee"/>
+<text x="208" y="362" fill="white" font-family="sans-serif" font-size="16">0.00</text>
+<path d="M340.0 333 v7" stroke="#c5d5ee"/>
+<text x="328.0" y="362" fill="white" font-family="sans-serif" font-size="16">0.02</text>
+<path d="M460.0 333 v7" stroke="#c5d5ee"/>
+<text x="448.0" y="362" fill="white" font-family="sans-serif" font-size="16">0.04</text>
+<path d="M580.0 333 v7" stroke="#c5d5ee"/>
+<text x="568.0" y="362" fill="white" font-family="sans-serif" font-size="16">0.06</text>
+<path d="M700.0 333 v7" stroke="#c5d5ee"/>
+<text x="688.0" y="362" fill="white" font-family="sans-serif" font-size="16">0.08</text>
+<path d="M820.0 333 v7" stroke="#c5d5ee"/>
+<text x="808.0" y="362" fill="white" font-family="sans-serif" font-size="16">0.10</text>
+<text x="220" y="400" fill="white" font-family="sans-serif" font-size="18">Additive upper-bound margin (not measured error)</text>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="350" viewBox="0 0 960 350" role="img" aria-label="Representation close-up: the stored points are the model">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="#fff" font-family="sans-serif" font-size="25">Representation close-up: the stored points are the model</text>
+<text x="30" y="85" fill="#c5d5ee" font-family="sans-serif" font-size="18">Toy query x = 0.2; distance = absolute difference</text>
+<rect x="30" y="100" width="275" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="44" y="127" fill="#fff" font-family="sans-serif" font-size="18">Point x₁ = 0</text>
+<text x="44" y="151" fill="#fff" font-family="sans-serif" font-size="18">Label +1; distance 0.2</text>
+<rect x="340" y="100" width="275" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="354" y="127" fill="#fff" font-family="sans-serif" font-size="18">Point x₂ = 1</text>
+<text x="354" y="151" fill="#fff" font-family="sans-serif" font-size="18">Label −1; distance 0.8</text>
+<rect x="650" y="100" width="275" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="664" y="127" fill="#fff" font-family="sans-serif" font-size="18">Point x₃ = 2</text>
+<text x="664" y="151" fill="#fff" font-family="sans-serif" font-size="18">Label −1; distance 1.8</text>
+<text x="30" y="210" fill="#c5d5ee" font-family="sans-serif" font-size="18">Already sorted by distance; compare two votes</text>
+<rect x="30" y="225" width="275" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="44" y="252" fill="#fff" font-family="sans-serif" font-size="18">K = 1</text>
+<text x="44" y="276" fill="#fff" font-family="sans-serif" font-size="18">Sum = +1 → predict +1</text>
+<rect x="340" y="225" width="275" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="354" y="252" fill="#fff" font-family="sans-serif" font-size="18">K = 3</text>
+<text x="354" y="276" fill="#fff" font-family="sans-serif" font-size="18">Sum = −1 → predict −1</text>
+<rect x="650" y="225" width="275" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="664" y="252" fill="#fff" font-family="sans-serif" font-size="18">Future correctness?</text>
+<text x="664" y="276" fill="#fff" font-family="sans-serif" font-size="18">Needs a new target label</text>
+</svg>
