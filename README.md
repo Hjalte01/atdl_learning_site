@@ -8,6 +8,11 @@ The repository lives at `/home/hjalte/documents/atdl_learning_site`. The source 
 
 ## Run
 
+Install Git LFS before cloning. For an existing checkout, run `git lfs install`
+and `git lfs pull` before building; the large textbook PDF uses LFS. Normal
+`git push` uploads its LFS content automatically. The Pages workflow downloads
+LFS files before building.
+
 ```sh
 cd '/home/hjalte/documents/atdl_learning_site'
 npm ci
