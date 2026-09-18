@@ -1070,5 +1070,165 @@
       "foundations"
     ],
     "relatedTopicUrl": "/papers/representation-overview#8--use-experiments-to-test-the-story"
+  },
+  {
+    "id": "udl-representation",
+    "topic": "topic-1",
+    "title": "Inside the classifier",
+    "question": "For pre-activations (−1, 2), what does ReLU produce?",
+    "choices": [
+      "(−1, 2)",
+      "(0, 2)",
+      "(1, 2)",
+      "(0, 1)"
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "ReLU replaces negative coordinates with zero and leaves positive ones unchanged. This is an intermediate representation, not a probability.",
+    "difficulty": "medium",
+    "tags": [
+      "understanding-deep-learning",
+      "foundations"
+    ],
+    "relatedTopicUrl": "/papers/understanding-deep-learning#2--follow-one-prediction-through-a-network"
+  },
+  {
+    "id": "udl-loss",
+    "topic": "topic-1",
+    "title": "Confidence matters",
+    "question": "Two models both predict label 1. Which quantity distinguishes probabilities 0.51 and 0.99 for a true label 1?",
+    "choices": [
+      "Accuracy on that example",
+      "Number of labels",
+      "Binary cross-entropy",
+      "The class threshold alone"
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "Cross-entropy rewards probability assigned to the true outcome. Both thresholded predictions have the same accuracy here.",
+    "difficulty": "medium",
+    "tags": [
+      "understanding-deep-learning",
+      "foundations"
+    ],
+    "relatedTopicUrl": "/papers/understanding-deep-learning#3--choose-a-loss-by-specifying-an-output-distribution"
+  },
+  {
+    "id": "udl-gradient",
+    "topic": "topic-1",
+    "title": "A backward pass is not an update",
+    "question": "What does backpropagation compute?",
+    "choices": [
+      "Derivatives used by an optimizer",
+      "New test labels",
+      "The best hyperparameters automatically",
+      "An exact posterior sample"
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "Backpropagation reuses chain-rule calculations. The optimizer separately applies parameter updates.",
+    "difficulty": "medium",
+    "tags": [
+      "understanding-deep-learning",
+      "foundations"
+    ],
+    "relatedTopicUrl": "/papers/understanding-deep-learning#4--separate-backpropagation-from-the-parameter-update"
+  },
+  {
+    "id": "udl-update",
+    "topic": "topic-1",
+    "title": "Trace the sign",
+    "question": "With sigmoid probability 0.7311 and true label 1, what is the logit derivative of cross-entropy?",
+    "choices": [
+      "+0.7311",
+      "+0.2689",
+      "−1.0000",
+      "−0.2689"
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "The derivative is p − y. A negative derivative means a small increase of the logit lowers this example’s loss.",
+    "difficulty": "medium",
+    "tags": [
+      "understanding-deep-learning",
+      "foundations"
+    ],
+    "relatedTopicUrl": "/papers/understanding-deep-learning#4--separate-backpropagation-from-the-parameter-update"
+  },
+  {
+    "id": "udl-validation",
+    "topic": "topic-1",
+    "title": "Selection uses data too",
+    "question": "Which split should choose a learning rate among trained candidates?",
+    "choices": [
+      "The final test set repeatedly",
+      "The validation set",
+      "Whichever gives the highest accuracy",
+      "No data are needed"
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "Validation evaluates candidate hyperparameters; a reserved test set estimates performance after selection. Repeated test-based selection compromises that role.",
+    "difficulty": "medium",
+    "tags": [
+      "understanding-deep-learning",
+      "foundations"
+    ],
+    "relatedTopicUrl": "/papers/understanding-deep-learning#5--measure-the-claim-you-actually-want-to-make"
+  },
+  {
+    "id": "udl-attention",
+    "topic": "topic-1",
+    "title": "Route values, not keys",
+    "question": "Attention weights are (0.25, 0.75) and scalar values are (2, 6). What is the output?",
+    "choices": [
+      "8",
+      "4",
+      "5",
+      "0.75"
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "The weighted value sum is 0.25×2 + 0.75×6 = 5. Query–key scores determine routing; values supply the content.",
+    "difficulty": "medium",
+    "tags": [
+      "understanding-deep-learning",
+      "foundations"
+    ],
+    "relatedTopicUrl": "/papers/understanding-deep-learning#6--a-representation-can-route-information"
+  },
+  {
+    "id": "udl-diffusion",
+    "topic": "topic-1",
+    "title": "Match the time convention",
+    "question": "In this textbook’s Eq. 18.7, what is αₜ?",
+    "choices": [
+      "The product of retained-signal factors through time t",
+      "The learning rate",
+      "A new independent noise draw",
+      "Always the single-step factor"
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "Prince writes αₜ = product of (1 − βₛ) through t. Other sources often put a bar over this cumulative quantity.",
+    "difficulty": "medium",
+    "tags": [
+      "understanding-deep-learning",
+      "foundations"
+    ],
+    "relatedTopicUrl": "/papers/understanding-deep-learning#7--generation-changes-the-object-being-learned"
+  },
+  {
+    "id": "udl-evidence",
+    "topic": "topic-1",
+    "title": "Fit is not generalization",
+    "question": "The source’s best line has summed squared residuals 0.20 on 12 training pairs. What follows?",
+    "choices": [
+      "It must win on new data",
+      "Its uncertainty is zero",
+      "It has learned the true function",
+      "It fits those training pairs better than the two displayed alternatives"
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "The values 7.07, 10.28 and 0.20 compare training fits. Held-out generalization requires different evidence.",
+    "difficulty": "medium",
+    "tags": [
+      "understanding-deep-learning",
+      "foundations"
+    ],
+    "relatedTopicUrl": "/papers/understanding-deep-learning#5--measure-the-claim-you-actually-want-to-make"
   }
 ]

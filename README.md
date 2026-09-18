@@ -68,3 +68,5 @@ The dependency-free importer stores portable assets and SHA-256 hashes in `conte
 “Goal create site” now selects one unfinished guide: papers from the latest supplied topic first, ascending paper order; then overviews, slides and extras. See AGENTS.md and GPT.md. Missing source PDFs must be supplied before authoring.
 
 The registered VPS deployment serves `/atdl/`; deployment is handled by the queue after review. Editing this repository does not update the running site.
+
+The general *Understanding Deep Learning* textbook now has a selective reading roadmap at `/papers/understanding-deep-learning`, following the supplied November 21, 2024 copy. Seven reproducible SVG diagrams, a worked classifier and gradient trace, attention and diffusion calculations, and eight Topic 1 foundation cards connect the textbook to course readings. This is a roadmap, not an exhaustive textbook review; the catalog classification remains general.

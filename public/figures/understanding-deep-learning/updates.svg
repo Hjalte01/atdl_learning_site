@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="350" viewBox="0 0 960 350" role="img" aria-label="Repeated updates of the frozen-feature toy classifier">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="#fff" font-family="sans-serif" font-size="25">Repeated updates of the frozen-feature toy classifier</text>
+<text x="30" y="85" fill="#c5d5ee" font-family="sans-serif" font-size="18">Fixed h = (0, 2), y = 1; update v and c with learning rate 0.1</text>
+<rect x="30" y="100" width="275" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="44" y="127" fill="#fff" font-family="sans-serif" font-size="18">Update k = 0: z = 1.0000</text>
+<text x="44" y="151" fill="#fff" font-family="sans-serif" font-size="18">p = 0.7311; loss = 0.3133</text>
+<path d="M308,134 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="100" width="275" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="354" y="127" fill="#fff" font-family="sans-serif" font-size="18">Update k = 1: z = 1.1345</text>
+<text x="354" y="151" fill="#fff" font-family="sans-serif" font-size="18">p = 0.7567; loss = 0.2788</text>
+<path d="M618,134 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="100" width="275" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="664" y="127" fill="#fff" font-family="sans-serif" font-size="18">Update k = 2: z = 1.2561</text>
+<text x="664" y="151" fill="#fff" font-family="sans-serif" font-size="18">p = 0.7784; loss = 0.2506</text>
+<text x="30" y="210" fill="#c5d5ee" font-family="sans-serif" font-size="18">Why the logit changes by 0.5(1 − p) per step</text>
+<rect x="30" y="225" width="275" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="44" y="252" fill="#fff" font-family="sans-serif" font-size="18">Δv = 0.1(1 − p)h</text>
+<text x="44" y="276" fill="#fff" font-family="sans-serif" font-size="18">Δc = 0.1(1 − p)</text>
+<path d="M308,259 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="225" width="275" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="354" y="252" fill="#fff" font-family="sans-serif" font-size="18">Δz = Δvᵀh + Δc</text>
+<text x="354" y="276" fill="#fff" font-family="sans-serif" font-size="18">||h||² + 1 = 5</text>
+<path d="M618,259 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="225" width="275" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="664" y="252" fill="#fff" font-family="sans-serif" font-size="18">Recompute probability</text>
+<text x="664" y="276" fill="#fff" font-family="sans-serif" font-size="18">Then the next gradient</text>
+</svg>

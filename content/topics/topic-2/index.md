@@ -26,3 +26,7 @@ Continue with [Qwen-Image · paper 6](/papers/t2-paper-6): follow text rendering
 ## Shared foundations
 
 The [Deep representation learning roadmap](/papers/representation-overview) connects the general textbook’s denoising and representation chapters to conditional inference and the Topic 2 guides. It includes worked examples and a reading route into Chapters 3, 6, 7 and 8.
+
+## Textbook foundations
+
+The [Understanding Deep Learning roadmap](/papers/understanding-deep-learning) follows Prince’s supplied November 21, 2024 copy from predictions and likelihoods through gradients, evaluation, attention and diffusion. It remains general course material; eight foundation cards are grouped with Topic 1 for practice and printing.

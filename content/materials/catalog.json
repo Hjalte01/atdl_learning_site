@@ -40,12 +40,12 @@
     {
       "id": "9de9386c534d5941",
       "sourcePath": "overview/Understanding Deep Learning -- Simon J_D_ Prince -- 1, 2024 -- dbf7181bacefb36ab8cc009157d8cc3c -- Anna’s Archive.pdf",
-      "title": "Understanding Deep Learning -- Simon J D  Prince -- 1, 2024 -- dbf7181bacefb36ab8cc009157d8cc3c -- Anna’s Archive",
+      "title": "Understanding Deep Learning — Simon J. D. Prince (November 21, 2024)",
       "topic": null,
       "order": null,
       "kind": "overview",
-      "status": "not-started",
-      "guide": null,
+      "status": "ready",
+      "guide": "/papers/understanding-deep-learning",
       "pdf": "/materials/9de9386c534d5941.pdf",
       "sha256": "8a107732419052818773169fb348e0128b2d234db952f4c62a1711a5cab02c5f"
     },

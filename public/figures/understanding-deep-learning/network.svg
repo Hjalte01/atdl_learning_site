@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="350" viewBox="0 0 960 350" role="img" aria-label="One toy classifier: follow the tensor shapes">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="#fff" font-family="sans-serif" font-size="25">One toy classifier: follow the tensor shapes</text>
+<text x="30" y="85" fill="#c5d5ee" font-family="sans-serif" font-size="18">Learned affine maps; ReLU is fixed</text>
+<rect x="30" y="100" width="275" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="44" y="127" fill="#fff" font-family="sans-serif" font-size="18">Input x: 2 coordinates</text>
+<text x="44" y="151" fill="#fff" font-family="sans-serif" font-size="18">x = (1, 2)</text>
+<path d="M308,134 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="100" width="275" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="354" y="127" fill="#fff" font-family="sans-serif" font-size="18">a = Wx + b → ReLU</text>
+<text x="354" y="151" fill="#fff" font-family="sans-serif" font-size="18">h = (0, 2): 2 coordinates</text>
+<path d="M618,134 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="100" width="275" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="664" y="127" fill="#fff" font-family="sans-serif" font-size="18">Logit z = vᵀh + c</text>
+<text x="664" y="151" fill="#fff" font-family="sans-serif" font-size="18">z = 1: scalar</text>
+<text x="30" y="210" fill="#c5d5ee" font-family="sans-serif" font-size="18">Continue from the logit; label is needed only for loss</text>
+<rect x="30" y="225" width="275" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="44" y="252" fill="#fff" font-family="sans-serif" font-size="18">Sigmoid probability</text>
+<text x="44" y="276" fill="#fff" font-family="sans-serif" font-size="18">p = 0.7311: scalar</text>
+<path d="M308,259 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="225" width="275" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="354" y="252" fill="#fff" font-family="sans-serif" font-size="18">Observed label y = 1</text>
+<text x="354" y="276" fill="#fff" font-family="sans-serif" font-size="18">Bernoulli loss = 0.3133</text>
+<path d="M618,259 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="225" width="275" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="664" y="252" fill="#fff" font-family="sans-serif" font-size="18">Backprop + optimizer</text>
+<text x="664" y="276" fill="#fff" font-family="sans-serif" font-size="18">Update learned weights</text>
+</svg>

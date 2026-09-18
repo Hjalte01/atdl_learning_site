@@ -25,3 +25,7 @@ Then study [Understanding grokking](/papers/t1-paper-5): trace delayed generaliz
 Finish with [Binarized networks and compression](/papers/t1-paper-6): separate cross-entropy training from weight diagnostics, compute block entropy and BDM, and examine the limits of loss correlations. Seven reproducible diagrams, including a measured interval plot, and eight cards follow the supplied May 2026 paper. All six supplied Topic 1 papers now have guides.
 
 **Working topic label:** inferred from the available papers, not verified against a course syllabus.
+
+## Textbook foundations
+
+The [Understanding Deep Learning roadmap](/papers/understanding-deep-learning) follows Prince’s supplied November 21, 2024 copy from predictions and likelihoods through gradients, evaluation, attention and diffusion. It remains general course material; eight foundation cards are grouped with Topic 1 for practice and printing.

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="475" viewBox="0 0 960 475" role="img" aria-label="An output distribution determines a training loss">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="#fff" font-family="sans-serif" font-size="25">An output distribution determines a training loss</text>
+<text x="30" y="85" fill="#c5d5ee" font-family="sans-serif" font-size="18">Same prediction, alternative observed label 1</text>
+<rect x="30" y="100" width="275" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="44" y="127" fill="#fff" font-family="sans-serif" font-size="18">Logit z = 1</text>
+<text x="44" y="151" fill="#fff" font-family="sans-serif" font-size="18">p = 0.7311</text>
+<path d="M308,134 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="100" width="275" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="354" y="127" fill="#fff" font-family="sans-serif" font-size="18">y = 1: loss = 0.3133</text>
+<text x="354" y="151" fill="#fff" font-family="sans-serif" font-size="18">−log(p)</text>
+<path d="M618,134 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="100" width="275" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="664" y="127" fill="#fff" font-family="sans-serif" font-size="18">Logit derivative</text>
+<text x="664" y="151" fill="#fff" font-family="sans-serif" font-size="18">p − y = −0.2689</text>
+<text x="30" y="210" fill="#c5d5ee" font-family="sans-serif" font-size="18">Same prediction, alternative observed label 0</text>
+<rect x="30" y="225" width="275" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="44" y="252" fill="#fff" font-family="sans-serif" font-size="18">Logit z = 1</text>
+<text x="44" y="276" fill="#fff" font-family="sans-serif" font-size="18">p = 0.7311</text>
+<path d="M308,259 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="225" width="275" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="354" y="252" fill="#fff" font-family="sans-serif" font-size="18">y = 0: loss = 1.3133</text>
+<text x="354" y="276" fill="#fff" font-family="sans-serif" font-size="18">−log(1 − p)</text>
+<path d="M618,259 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="225" width="275" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="664" y="252" fill="#fff" font-family="sans-serif" font-size="18">Logit derivative</text>
+<text x="664" y="276" fill="#fff" font-family="sans-serif" font-size="18">p − y = +0.7311</text>
+<text x="30" y="335" fill="#c5d5ee" font-family="sans-serif" font-size="18">A different task: fixed-variance Gaussian regression</text>
+<rect x="30" y="350" width="275" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="44" y="377" fill="#fff" font-family="sans-serif" font-size="18">Network predicts mean μ</text>
+<text x="44" y="401" fill="#fff" font-family="sans-serif" font-size="18">Assume variance s² &gt; 0</text>
+<path d="M308,384 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="350" width="275" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="354" y="377" fill="#fff" font-family="sans-serif" font-size="18">Negative log-likelihood</text>
+<text x="354" y="401" fill="#fff" font-family="sans-serif" font-size="18">(y − μ)² / (2s²) + const.</text>
+<path d="M618,384 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="350" width="275" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="664" y="377" fill="#fff" font-family="sans-serif" font-size="18">Least-squares fitting</text>
+<text x="664" y="401" fill="#fff" font-family="sans-serif" font-size="18">Check noise assumptions</text>
+</svg>
