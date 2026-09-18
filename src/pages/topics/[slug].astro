@@ -4,7 +4,6 @@ import type { GetStaticPaths } from "astro";
 import { getCollection, render, type CollectionEntry } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import MaterialList from "../../components/MaterialList.astro";
-import PaperList from "../../components/PaperList.astro";
 import StudyDeck from "../../components/StudyDeck.astro";
 import TableOfContents from "../../components/TableOfContents.astro";
 import TopicSwitcher from "../../components/TopicSwitcher.astro";
@@ -76,8 +75,7 @@ const slug = topicSlug(topic);
         <Content />
       </article>
 
-      <section class="learning-section" aria-labelledby="topic-materials"><h2 id="topic-materials">Course PDFs</h2><a href={withBase("/materials")}>Browse the full reading library →</a><MaterialList topic={topic.data.order} /></section>
-      <PaperList topic={slug} />
+      <section class="learning-section" aria-labelledby="topic-materials"><h2 id="topic-materials">Readings &amp; learning guides</h2><a href={withBase("/materials")}>Browse the full reading library →</a><MaterialList topic={topic.data.order} /></section>
       <VisualGallery {visuals} />
       <StudyDeck {cards} />
 

@@ -13,6 +13,7 @@ import { materialCatalog } from '../lib/materials';
       <label>Find a PDF<input type="search" id="material-search" placeholder="Title or source filename" /></label>
       <label>Topic<select id="material-topic"><option value="all">All topics</option>{[1,2,3,4,5,6].map(n => <option value={n}>Topic {n}</option>)}<option value="other">General / unassigned</option></select></label>
       <label>Reading type<select id="material-kind"><option value="all">Everything</option><option value="core">Core: slides &amp; overviews</option><option value="paper">Papers</option><option value="overview">Overviews</option><option value="slides">Slides</option><option value="extra">Extra material</option></select></label>
+      <label>Learning guide<select id="material-status"><option value="all">All guide statuses</option><option value="ready">Ready to read</option><option value="missing">Missing / not started</option></select></label>
     </form>
     <p id="material-count" role="status" aria-live="polite"></p>
     <MaterialList />
@@ -22,10 +23,17 @@ import { materialCatalog } from '../lib/materials';
   const search = document.querySelector<HTMLInputElement>('#material-search')!;
   const topic = document.querySelector<HTMLSelectElement>('#material-topic')!;
   const kind = document.querySelector<HTMLSelectElement>('#material-kind')!;
+  const status = document.querySelector<HTMLSelectElement>('#material-status')!;
+  const params = new URLSearchParams(location.search);
+  for (const [key, control] of [['topic', topic], ['kind', kind], ['status', status]] as const) {
+    const value = params.get(key);
+    if (value && Array.from(control.options).some(option => option.value === value)) control.value = value;
+  }
   function filter() {
     let count = 0;
     document.querySelectorAll<HTMLElement>('[data-material]').forEach(row => {
       row.hidden = !(row.dataset.search?.includes(search.value.toLowerCase().trim()) &&
+        (status.value === 'all' || row.dataset.status === status.value) &&
         (topic.value === 'all' || row.dataset.topic === topic.value) &&
         (kind.value === 'all' || (kind.value === 'core' ? ['slides', 'overview'].includes(row.dataset.kind!) : row.dataset.kind === kind.value)));
       if (!row.hidden) count++;
@@ -35,7 +43,7 @@ import { materialCatalog } from '../lib/materials';
     });
     document.querySelector('#material-count')!.textContent = count ? `${count} PDFs shown` : 'No PDFs match these filters.';
   }
-  [search, topic, kind].forEach(control => control.addEventListener('input', filter));
+  [search, topic, kind, status].forEach(control => control.addEventListener('input', filter));
   filter();
 </script>
 <style>

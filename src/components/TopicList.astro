@@ -1,4 +1,5 @@
 ---
+import { getMaterialsWithProgress } from "../lib/materials";
 import { topicHref, topicSlug, type Topic } from "../lib/topics";
 
 interface Props {
@@ -7,11 +8,15 @@ interface Props {
   compact?: boolean;
 }
 
+const materials = await getMaterialsWithProgress();
 const { topics, activeSlug, compact = false } = Astro.props;
 ---
 
 <ol class:list={["topic-list", { compact }]}>
-  {topics.map((topic) => (
+  {topics.map((topic) => {
+    const papers = materials.filter(m => m.topic === topic.data.order && m.kind === "paper");
+    const ready = papers.filter(m => m.ready).length;
+    return (
     <li>
       <a
         href={topicHref(topic)}
@@ -21,10 +26,10 @@ const { topics, activeSlug, compact = false } = Astro.props;
         <span class="topic-number">{String(topic.data.order).padStart(2, "0")}</span>
         <span class="topic-link-copy">
           <strong>{topic.data.shortTitle}</strong>
-          {!compact && <span>{topic.data.description}</span>}
+          {!compact && <span>{papers.length ? `${ready} ready · ${papers.length - ready} missing · ${papers.length} paper guides` : "No papers supplied"}</span>}
         </span>
-        {!compact && <span class={`status status-${topic.data.status}`}>{topic.data.status.replace("-", " ")}</span>}
+        {!compact && <span aria-hidden="true">→</span>}
       </a>
     </li>
-  ))}
+  );})}
 </ol>
