@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="485" viewBox="0 0 1000 485" role="img" aria-label="QuBD reads weights; it does not update this predictor">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="#fff" font-family="sans-serif" font-size="25">QuBD reads weights; it does not update this predictor</text>
+<text x="30" y="85" fill="#c5d5ee" font-family="sans-serif" font-size="18">TRAIN · repeated supervised updates</text>
+<rect x="30" y="100" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="127" fill="#fff" font-family="sans-serif" font-size="17">x ∈ ℝᵃ → f_w(x) ∈ ℝᴷ</text>
+<text x="42" y="151" fill="#fff" font-family="sans-serif" font-size="17">Inputs → prediction</text>
+<path d="M324,134 H349" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="355" y="100" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="127" fill="#fff" font-family="sans-serif" font-size="17">Loss against target y</text>
+<text x="367" y="151" fill="#fff" font-family="sans-serif" font-size="17">Backpropagate derivatives</text>
+<path d="M649,134 H674" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="680" y="100" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="127" fill="#fff" font-family="sans-serif" font-size="17">Optimizer updates w ∈ ℝᵈ</text>
+<text x="692" y="151" fill="#fff" font-family="sans-serif" font-size="17">Next batch repeats the loop</text>
+<text x="30" y="210" fill="#c5d5ee" font-family="sans-serif" font-size="18">DIAGNOSE · read a checkpoint w</text>
+<rect x="30" y="225" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="252" fill="#fff" font-family="sans-serif" font-size="17">Uniform quantizer Q_b</text>
+<text x="42" y="276" fill="#fff" font-family="sans-serif" font-size="17">d real weights → d integers</text>
+<path d="M324,259 H349" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="355" y="225" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="252" fill="#fff" font-family="sans-serif" font-size="17">Split into b binary planes</text>
+<text x="367" y="276" fill="#fff" font-family="sans-serif" font-size="17">Each plane has d entries</text>
+<path d="M649,259 H674" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="680" y="225" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="252" fill="#fff" font-family="sans-serif" font-size="17">BDM per plane; sum</text>
+<text x="692" y="276" fill="#fff" font-family="sans-serif" font-size="17">Normalize vs. random reference</text>
+<text x="30" y="335" fill="#c5d5ee" font-family="sans-serif" font-size="18">INFER · fixed predictor</text>
+<rect x="30" y="350" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="377" fill="#fff" font-family="sans-serif" font-size="17">Fresh x*</text>
+<text x="42" y="401" fill="#fff" font-family="sans-serif" font-size="17">No target required</text>
+<path d="M324,384 H349" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="355" y="350" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="377" fill="#fff" font-family="sans-serif" font-size="17">Frozen weights w</text>
+<text x="367" y="401" fill="#fff" font-family="sans-serif" font-size="17">Run f_w(x*)</text>
+<path d="M649,384 H674" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="680" y="350" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="377" fill="#fff" font-family="sans-serif" font-size="17">Prediction</text>
+<text x="692" y="401" fill="#fff" font-family="sans-serif" font-size="17">Diagnostic need not run</text>
+</svg>

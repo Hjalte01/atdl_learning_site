@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="485" viewBox="0 0 1000 485" role="img" aria-label="One projection; shared motifs replace near matches">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="#fff" font-family="sans-serif" font-size="25">One projection; shared motifs replace near matches</text>
+<text x="30" y="85" fill="#c5d5ee" font-family="sans-serif" font-size="18">SAMPLED TOY · m = 3; s = 2; c = 0.8; k = 2</text>
+<rect x="30" y="100" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="127" fill="#fff" font-family="sans-serif" font-size="17">Block 1: (0.1,0.2)</text>
+<text x="42" y="151" fill="#fff" font-family="sans-serif" font-size="17">Distances²: 0.05, 1.45</text>
+<rect x="355" y="100" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="127" fill="#fff" font-family="sans-serif" font-size="17">Block 2: (0.9,1.1)</text>
+<text x="367" y="151" fill="#fff" font-family="sans-serif" font-size="17">Distances²: 2.02, 0.02</text>
+<rect x="680" y="100" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="127" fill="#fff" font-family="sans-serif" font-size="17">Block 3: (1,1)</text>
+<text x="692" y="151" fill="#fff" font-family="sans-serif" font-size="17">Distances²: 2, 0</text>
+<text x="30" y="210" fill="#c5d5ee" font-family="sans-serif" font-size="18">MOTIFS · z₁ = (0,0); z₂ = sampled block 3 = (1,1)</text>
+<rect x="30" y="225" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="252" fill="#fff" font-family="sans-serif" font-size="17">M(1) = 1</text>
+<text x="42" y="276" fill="#fff" font-family="sans-serif" font-size="17">Replace by (0,0)</text>
+<rect x="355" y="225" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="252" fill="#fff" font-family="sans-serif" font-size="17">M(2) = 2</text>
+<text x="367" y="276" fill="#fff" font-family="sans-serif" font-size="17">Replace by (1,1)</text>
+<rect x="680" y="225" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="252" fill="#fff" font-family="sans-serif" font-size="17">M(3) = 2</text>
+<text x="692" y="276" fill="#fff" font-family="sans-serif" font-size="17">Keep (1,1)</text>
+<text x="30" y="335" fill="#c5d5ee" font-family="sans-serif" font-size="18">SEPARATE STORAGE TOY · m = 16; s = 4; k = 2; 32 bits/scalar</text>
+<rect x="30" y="350" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="377" fill="#fff" font-family="sans-serif" font-size="17">Dense: 16 × 4 × 32</text>
+<text x="42" y="401" fill="#fff" font-family="sans-serif" font-size="17">2048 bits</text>
+<rect x="355" y="350" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="377" fill="#fff" font-family="sans-serif" font-size="17">Dictionary: 2 × 4 × 32</text>
+<text x="367" y="401" fill="#fff" font-family="sans-serif" font-size="17">256 bits</text>
+<rect x="680" y="350" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="377" fill="#fff" font-family="sans-serif" font-size="17">Indices: 16 × 1</text>
+<text x="692" y="401" fill="#fff" font-family="sans-serif" font-size="17">Total 272, before overhead</text>
+</svg>

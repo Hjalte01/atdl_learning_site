@@ -1694,5 +1694,157 @@
       "Theories lecture"
     ],
     "relatedTopicUrl": "/papers/t1-theories-lecture#7--six-lenses-six-different-objects"
+  },
+  {
+    "id": "complexity-lecture-total",
+    "topic": "topic-1",
+    "title": "Complexity lecture · Two-part coding",
+    "question": "Model A costs 20 model bits plus 80 label bits; B costs 60 plus 20. Which has the shorter total code?",
+    "choices": [
+      "A, because its weights cost less",
+      "B, with 80 total bits",
+      "They tie at 100 bits",
+      "Neither can encode labels"
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "MDL compares model plus residual: A totals 100 and B totals 80. Decoder overhead must also be accounted for.",
+    "difficulty": "medium",
+    "tags": [
+      "Algorithmic complexity"
+    ],
+    "relatedTopicUrl": "/papers/t1-complexity-lecture#1--short-programs-and-practical-codes"
+  },
+  {
+    "id": "complexity-lecture-point",
+    "topic": "topic-1",
+    "title": "Complexity lecture · Continuous precision",
+    "question": "What happens to KL(N(0, σ²) || N(0, 1)) as σ tends to zero?",
+    "choices": [
+      "It becomes the prior density",
+      "It tends to zero",
+      "It diverges",
+      "It must become negative"
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "An increasingly concentrated continuous posterior pays unbounded precision cost. A point mass and a density value are different objects.",
+    "difficulty": "medium",
+    "tags": [
+      "Algorithmic complexity"
+    ],
+    "relatedTopicUrl": "/papers/t1-complexity-lecture#2--a-distribution-is-not-a-point-with-free-precision"
+  },
+  {
+    "id": "complexity-lecture-bound",
+    "topic": "topic-1",
+    "title": "Complexity lecture · Objective versus guarantee",
+    "question": "Does expected negative log likelihood plus prior-relative KL alone give a high-probability test-error bound?",
+    "choices": [
+      "Yes, for every distribution shift",
+      "Yes, without a confidence level",
+      "Only if training accuracy is 100%",
+      "No; a valid bound needs a theorem and its assumptions"
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "The variational objective relates to evidence. PAC-Bayes certification additionally requires the applicable loss, sampling, prior and confidence conditions.",
+    "difficulty": "medium",
+    "tags": [
+      "Algorithmic complexity"
+    ],
+    "relatedTopicUrl": "/papers/t1-complexity-lecture#2--a-distribution-is-not-a-point-with-free-precision"
+  },
+  {
+    "id": "complexity-lecture-blocks",
+    "topic": "topic-1",
+    "title": "Complexity lecture · BDM blind spot",
+    "question": "Why do A,A,A,B and A,B,A,A receive the same distinct-block BDM score under this partition?",
+    "choices": [
+      "Their distinct blocks and multiplicities match",
+      "BDM knows all shortest programs",
+      "Every binary object has identical complexity",
+      "Order is included in the repeat-count term"
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "The displayed BDM sum uses per-block lookups and multiplicities. It does not explicitly encode large-scale ordering.",
+    "difficulty": "medium",
+    "tags": [
+      "Algorithmic complexity"
+    ],
+    "relatedTopicUrl": "/papers/t1-complexity-lecture#3--from-small-programs-to-repeated-blocks"
+  },
+  {
+    "id": "complexity-lecture-planes",
+    "topic": "topic-1",
+    "title": "Complexity lecture · Bit-plane reconstruction",
+    "question": "For q = (0,1,2,3), which pair is its high and low two-bit plane?",
+    "choices": [
+      "High (0,1,0,1); low (0,0,1,1)",
+      "Both planes (0,1,2,3)",
+      "High (0,0,1,1); low (0,1,0,1)",
+      "High (1,1,0,0); low (1,0,1,0)"
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "Each symbol is 2 times its high bit plus its low bit. Planes preserve corresponding positions across all symbols.",
+    "difficulty": "medium",
+    "tags": [
+      "Algorithmic complexity"
+    ],
+    "relatedTopicUrl": "/papers/t1-complexity-lecture#4--qubd-keeps-several-bit-planes"
+  },
+  {
+    "id": "complexity-lecture-joint",
+    "topic": "topic-1",
+    "title": "Complexity lecture · QuBD limitation",
+    "question": "What structure can the sum of separate bit-plane scores miss?",
+    "choices": [
+      "The number of bit planes",
+      "Dependence between planes",
+      "The presence of binary digits",
+      "Every local repetition"
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "Identical planes could be jointly described by copying one. Separate BDM sums do not explicitly exploit that inter-plane relationship.",
+    "difficulty": "medium",
+    "tags": [
+      "Algorithmic complexity"
+    ],
+    "relatedTopicUrl": "/papers/t1-complexity-lecture#5--precision-and-structure-are-different-losses"
+  },
+  {
+    "id": "complexity-lecture-loop",
+    "topic": "topic-1",
+    "title": "Complexity lecture · MoMos iteration",
+    "question": "What weights are carried into the next optimizer step in the displayed MoMos algorithm?",
+    "choices": [
+      "The initial random weights forever",
+      "The unconstrained temporary update",
+      "Only the scalar QuBD score",
+      "The reconstructed weights after motif assignment"
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "The algorithm optimizes, partitions, constructs motifs, assigns nearest motifs, reconstructs and then carries the constrained weights forward.",
+    "difficulty": "medium",
+    "tags": [
+      "Algorithmic complexity"
+    ],
+    "relatedTopicUrl": "/papers/t1-complexity-lecture#7--momos-turns-a-diagnostic-idea-into-a-constraint"
+  },
+  {
+    "id": "complexity-lecture-capacity",
+    "topic": "topic-1",
+    "title": "Complexity lecture · MoMos capacity endpoint",
+    "question": "Why does c = 1 not guarantee exact identity projection for arbitrary blocks in the displayed algorithm?",
+    "choices": [
+      "One motif is reserved for zero and only m−1 block indices are sampled",
+      "All motifs must be nonzero",
+      "The algorithm never samples blocks",
+      "Squared distances are always equal"
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "Even with k=m, a missing nonzero block may lack an exact motif. At k=1 the zero motif is the only choice.",
+    "difficulty": "medium",
+    "tags": [
+      "Algorithmic complexity"
+    ],
+    "relatedTopicUrl": "/papers/t1-complexity-lecture#7--momos-turns-a-diagnostic-idea-into-a-constraint"
   }
 ]

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="360" viewBox="0 0 1000 360" role="img" aria-label="Describe structure; count the whole code">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="#fff" font-family="sans-serif" font-size="25">Describe structure; count the whole code</text>
+<text x="30" y="85" fill="#c5d5ee" font-family="sans-serif" font-size="18">SAME LENGTH · different candidate descriptions</text>
+<rect x="30" y="100" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="127" fill="#fff" font-family="sans-serif" font-size="17">100111010110</text>
+<text x="42" y="151" fill="#fff" font-family="sans-serif" font-size="17">Literal: twelve payload bits</text>
+<rect x="355" y="100" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="127" fill="#fff" font-family="sans-serif" font-size="17">100100100100</text>
+<text x="367" y="151" fill="#fff" font-family="sans-serif" font-size="17">Motif 100, repeated four times</text>
+<rect x="680" y="100" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="127" fill="#fff" font-family="sans-serif" font-size="17">Decoder + syntax</text>
+<text x="692" y="151" fill="#fff" font-family="sans-serif" font-size="17">Overhead matters at this size</text>
+<text x="30" y="210" fill="#c5d5ee" font-family="sans-serif" font-size="18">TWO-PART TOY · shared inputs; model plus labels</text>
+<rect x="30" y="225" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="252" fill="#fff" font-family="sans-serif" font-size="17">Model A</text>
+<text x="42" y="276" fill="#fff" font-family="sans-serif" font-size="17">20 + 80 = 100 bits</text>
+<rect x="355" y="225" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="252" fill="#fff" font-family="sans-serif" font-size="17">Model B</text>
+<text x="367" y="276" fill="#fff" font-family="sans-serif" font-size="17">60 + 20 = 80 bits</text>
+<rect x="680" y="225" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="252" fill="#fff" font-family="sans-serif" font-size="17">Compare total descriptions</text>
+<text x="692" y="276" fill="#fff" font-family="sans-serif" font-size="17">Not just model size</text>
+</svg>

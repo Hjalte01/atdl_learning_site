@@ -41,3 +41,5 @@ The [Understanding Deep Learning roadmap](/papers/understanding-deep-learning) f
 ## Lecture roadmap
 
 [Theories for Deep Learning · Lecture 1](/papers/t1-theories-lecture) follows Selvan’s September 1, 2026 slides from interpolation to six candidate explanations. Seven teaching diagrams, worked information/PAC-Bayes/evidence examples and eight cards distinguish training from diagnostics and qualify the lecture’s broad claims about variance and complexity.
+
+[Learning through the lens of Complexity · Lecture 2](/papers/t1-complexity-lecture) follows Selvan’s September 3, 2026 slides from shortest programs and MDL to CTM, BDM, QuBD bit planes and Mosaic-of-Motifs. Seven teaching diagrams, a source result slide, worked quantization/projection examples and eight cards distinguish diagnostic scores, code lengths and training constraints.

@@ -68,8 +68,8 @@
       "topic": 1,
       "order": 2,
       "kind": "slides",
-      "status": "not-started",
-      "guide": null,
+      "status": "ready",
+      "guide": "/papers/t1-complexity-lecture",
       "pdf": "/materials/d94bef971da2e5c9.pdf",
       "sha256": "a766100dcfccf4728a37d98698116bbee8d1c1ac84f0ac8e43d03d0f87a105c8"
     },

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="485" viewBox="0 0 1000 485" role="img" aria-label="Four weights through a two-bit representation">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="#fff" font-family="sans-serif" font-size="25">Four weights through a two-bit representation</text>
+<text x="30" y="85" fill="#c5d5ee" font-family="sans-serif" font-size="18">TOY QUANTIZER · range [−1,1]; b = 2; no clipping</text>
+<rect x="30" y="100" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="127" fill="#fff" font-family="sans-serif" font-size="17">w = (−1, −1/3, 1/3, 1)</text>
+<text x="42" y="151" fill="#fff" font-family="sans-serif" font-size="17">q = round(3(w + 1)/2)</text>
+<path d="M324,134 H349" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="355" y="100" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="127" fill="#fff" font-family="sans-serif" font-size="17">q = (0, 1, 2, 3)</text>
+<text x="367" y="151" fill="#fff" font-family="sans-serif" font-size="17">Binary: 00, 01, 10, 11</text>
+<path d="M649,134 H674" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="680" y="100" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="127" fill="#fff" font-family="sans-serif" font-size="17">Reconstruct real weights</text>
+<text x="692" y="151" fill="#fff" font-family="sans-serif" font-size="17">ŵ = −1 + 2q/3</text>
+<text x="30" y="210" fill="#c5d5ee" font-family="sans-serif" font-size="18">PLANES · read corresponding entries down the two vectors</text>
+<rect x="30" y="225" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="252" fill="#fff" font-family="sans-serif" font-size="17">High: β₁ = (0,0,1,1)</text>
+<text x="42" y="276" fill="#fff" font-family="sans-serif" font-size="17">Low: β₀ = (0,1,0,1)</text>
+<path d="M324,259 H349" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="355" y="225" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="252" fill="#fff" font-family="sans-serif" font-size="17">Integer reconstruction</text>
+<text x="367" y="276" fill="#fff" font-family="sans-serif" font-size="17">q = 2β₁ + β₀</text>
+<path d="M649,259 H674" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="680" y="225" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="252" fill="#fff" font-family="sans-serif" font-size="17">Drop the low plane</text>
+<text x="692" y="276" fill="#fff" font-family="sans-serif" font-size="17">Lose residual (0,1,0,1)</text>
+<text x="30" y="335" fill="#c5d5ee" font-family="sans-serif" font-size="18">ASSUMED SCORES · only arithmetic, no CTM evaluation</text>
+<rect x="30" y="350" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="377" fill="#fff" font-family="sans-serif" font-size="17">BDM(β₁) = 6</text>
+<text x="42" y="401" fill="#fff" font-family="sans-serif" font-size="17">BDM(β₀) = 8</text>
+<path d="M324,384 H349" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="355" y="350" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="377" fill="#fff" font-family="sans-serif" font-size="17">QuBD = 6 + 8 = 14</text>
+<text x="367" y="401" fill="#fff" font-family="sans-serif" font-size="17">Random reference = 20</text>
+<path d="M649,384 H674" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="680" y="350" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="377" fill="#fff" font-family="sans-serif" font-size="17">Normalized = 14/20</text>
+<text x="692" y="401" fill="#fff" font-family="sans-serif" font-size="17">0.7 = 70%; not a probability</text>
+</svg>
