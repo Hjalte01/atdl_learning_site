@@ -56,8 +56,8 @@
       "topic": 1,
       "order": 1,
       "kind": "slides",
-      "status": "not-started",
-      "guide": null,
+      "status": "ready",
+      "guide": "/papers/t1-theories-lecture",
       "pdf": "/materials/2d3cbfe4f57b5df2.pdf",
       "sha256": "1e880e0605e6fc679abe98166c803b003bad754e0862a49b657a6a005aa8556c"
     },

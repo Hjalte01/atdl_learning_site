@@ -37,3 +37,7 @@ The [Understanding Deep Learning roadmap](/papers/understanding-deep-learning) f
 ## Selection and uncertainty foundations
 
 [Selection under uncertainty](/papers/selection-under-uncertainty) follows Seldin’s January 2026 textbook from K-NN validation through finite-class and PAC-Bayes guarantees to online learning. Seven reproducible diagrams and eight foundation cards connect source assumptions to worked examples. The selective roadmap remains general course material in the library.
+
+## Lecture roadmap
+
+[Theories for Deep Learning · Lecture 1](/papers/t1-theories-lecture) follows Selvan’s September 1, 2026 slides from interpolation to six candidate explanations. Seven teaching diagrams, worked information/PAC-Bayes/evidence examples and eight cards distinguish training from diagnostics and qualify the lecture’s broad claims about variance and complexity.

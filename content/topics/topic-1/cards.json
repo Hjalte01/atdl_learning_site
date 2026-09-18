@@ -1542,5 +1542,157 @@
       "Selection under uncertainty"
     ],
     "relatedTopicUrl": "/papers/selection-under-uncertainty#6--when-selection-changes-what-you-get-to-observe"
+  },
+  {
+    "id": "theories-fit",
+    "topic": "topic-1",
+    "title": "Equal fit, different continuations",
+    "question": "Both x and x³ fit (−1,−1) and (1,1). What follows?",
+    "choices": [
+      "They agree on every new input",
+      "Training error alone cannot select between them",
+      "The cubic always generalizes better",
+      "The linear function is proven optimal"
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "At x = 1/2 they give 1/2 and 1/8. Which is better depends on the unseen rule.",
+    "difficulty": "medium",
+    "tags": [
+      "Theories lecture"
+    ],
+    "relatedTopicUrl": "/papers/t1-theories-lecture#1--fit-and-complexity-ask-different-questions"
+  },
+  {
+    "id": "theories-update",
+    "topic": "topic-1",
+    "title": "Training versus prediction",
+    "question": "Which operation changes weights in the illustrated learning pipeline?",
+    "choices": [
+      "Softmax at inference",
+      "Measuring hidden-state information",
+      "The optimizer update using gradients",
+      "Reading a new input"
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "Backprop computes derivatives; the optimizer applies them. Ordinary inference freezes the selected weights.",
+    "difficulty": "medium",
+    "tags": [
+      "Theories lecture"
+    ],
+    "relatedTopicUrl": "/papers/t1-theories-lecture#2--follow-training-prediction-and-diagnosis-separately"
+  },
+  {
+    "id": "theories-variance",
+    "topic": "topic-1",
+    "title": "Interpolation does not erase variance",
+    "question": "Does exact fitting force prediction variance across training samples to zero?",
+    "choices": [
+      "No; different samples can produce different interpolants",
+      "Yes; every fit is identical",
+      "Yes; only label noise remains",
+      "Only if training accuracy is measured"
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "The squared-error bias–variance identity remains valid. Zero empirical error does not identify the prediction at unseen inputs.",
+    "difficulty": "medium",
+    "tags": [
+      "Theories lecture"
+    ],
+    "relatedTopicUrl": "/papers/t1-theories-lecture#3--interpolation-shifts-the-question-to-selection"
+  },
+  {
+    "id": "theories-information",
+    "topic": "topic-1",
+    "title": "Discard nuisance, preserve label",
+    "question": "For independent fair bits X=(A,B), Y=A and T=A, what are I(X;T) and I(T;Y)?",
+    "choices": [
+      "2 and 2 bits",
+      "2 and 0 bits",
+      "0 and 1 bits",
+      "1 and 1 bits"
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "The representation retains one input bit and that bit completely determines the label.",
+    "difficulty": "medium",
+    "tags": [
+      "Theories lecture"
+    ],
+    "relatedTopicUrl": "/papers/t1-theories-lecture#4--information-measures-the-representation"
+  },
+  {
+    "id": "theories-certificate",
+    "topic": "topic-1",
+    "title": "Know the certified predictor",
+    "question": "What does the displayed PAC-Bayes risk bound concern?",
+    "choices": [
+      "Only the mean network",
+      "Expected loss of a predictor sampled from Q",
+      "The best individual predictor in Q",
+      "A majority vote without further analysis"
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "Both empirical and population risks are averaged over Q; a different prediction rule requires additional justification.",
+    "difficulty": "medium",
+    "tags": [
+      "Theories lecture"
+    ],
+    "relatedTopicUrl": "/papers/t1-theories-lecture#5--pac-bayes-measures-a-distribution-relative-to-a-prior"
+  },
+  {
+    "id": "theories-prior",
+    "topic": "topic-1",
+    "title": "Do not hide selection in the prior",
+    "question": "Can the displayed guarantee set P=Q after seeing the training sample?",
+    "choices": [
+      "Yes; KL should always be zero",
+      "Yes; if Q has many parameters",
+      "No; this prior must be independent of that sample",
+      "Only when training error is zero"
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "A sample-dependent reference needs a different valid prior-selection argument, not the fixed-prior guarantee as written.",
+    "difficulty": "medium",
+    "tags": [
+      "Theories lecture"
+    ],
+    "relatedTopicUrl": "/papers/t1-theories-lecture#5--pac-bayes-measures-a-distribution-relative-to-a-prior"
+  },
+  {
+    "id": "theories-evidence",
+    "topic": "topic-1",
+    "title": "Curvature with equal peak height",
+    "question": "In one dimension with equal likelihood and prior heights, how does Laplace evidence at H=1 compare with H=4?",
+    "choices": [
+      "It is twice as large",
+      "It is four times as large",
+      "It is half as large",
+      "It must be identical"
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "The width factor is H^(−1/2), so it changes from 1/2 to 1. Equal heights and valid local Gaussian approximation are assumptions.",
+    "difficulty": "medium",
+    "tags": [
+      "Theories lecture"
+    ],
+    "relatedTopicUrl": "/papers/t1-theories-lecture#6--evidence-weighs-width-together-with-prior-density"
+  },
+  {
+    "id": "theories-diagnostic",
+    "topic": "topic-1",
+    "title": "A measurement is not a loss",
+    "question": "What does a correlation between BDM and loss establish by itself?",
+    "choices": [
+      "That the optimizer minimizes exact Kolmogorov complexity",
+      "That BDM is a complete data code",
+      "That the effect is causal",
+      "An association requiring further tests"
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "BDM is a diagnostic approximation. Controlled interventions and validation beyond correlation are needed to support a mechanism.",
+    "difficulty": "medium",
+    "tags": [
+      "Theories lecture"
+    ],
+    "relatedTopicUrl": "/papers/t1-theories-lecture#7--six-lenses-six-different-objects"
   }
 ]
