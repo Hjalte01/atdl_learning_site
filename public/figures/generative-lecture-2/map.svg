@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="610" viewBox="0 0 1000 610" role="img" aria-label="One generator combines several independent choices">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="#fff" font-family="sans-serif" font-size="25">One generator combines several independent choices</text>
+<text x="30" y="85" fill="#c5d5ee" font-family="sans-serif" font-size="18">LEARNED TARGET · what does the network predict?</text>
+<rect x="30" y="100" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="127" fill="#fff" font-family="sans-serif" font-size="17">Noise ε</text>
+<text x="42" y="151" fill="#fff" font-family="sans-serif" font-size="17">DDPM: slides 2–3</text>
+<rect x="355" y="100" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="127" fill="#fff" font-family="sans-serif" font-size="17">Score ∇ log p</text>
+<text x="367" y="151" fill="#fff" font-family="sans-serif" font-size="17">Score models: slides 7–12</text>
+<rect x="680" y="100" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="127" fill="#fff" font-family="sans-serif" font-size="17">Velocity v</text>
+<text x="692" y="151" fill="#fff" font-family="sans-serif" font-size="17">Flow matching: slide 17</text>
+<text x="30" y="210" fill="#c5d5ee" font-family="sans-serif" font-size="18">SAMPLING · how does the state move?</text>
+<rect x="30" y="225" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="252" fill="#fff" font-family="sans-serif" font-size="17">Stochastic updates</text>
+<text x="42" y="276" fill="#fff" font-family="sans-serif" font-size="17">Fresh noise at steps</text>
+<rect x="355" y="225" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="252" fill="#fff" font-family="sans-serif" font-size="17">Deterministic integration</text>
+<text x="367" y="276" fill="#fff" font-family="sans-serif" font-size="17">ODE or deterministic DDIM</text>
+<rect x="680" y="225" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="252" fill="#fff" font-family="sans-serif" font-size="17">Endpoint prediction</text>
+<text x="692" y="276" fill="#fff" font-family="sans-serif" font-size="17">Consistency: slide 13</text>
+<text x="30" y="335" fill="#c5d5ee" font-family="sans-serif" font-size="18">REPRESENTATION · what object evolves?</text>
+<rect x="30" y="350" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="377" fill="#fff" font-family="sans-serif" font-size="17">Pixel values</text>
+<text x="42" y="401" fill="#fff" font-family="sans-serif" font-size="17">Full image tensor</text>
+<rect x="355" y="350" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="377" fill="#fff" font-family="sans-serif" font-size="17">Latent / wavelet features</text>
+<text x="367" y="401" fill="#fff" font-family="sans-serif" font-size="17">Encode or transform</text>
+<rect x="680" y="350" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="377" fill="#fff" font-family="sans-serif" font-size="17">Discrete visual tokens</text>
+<text x="692" y="401" fill="#fff" font-family="sans-serif" font-size="17">MaskGIT: slide 24</text>
+<text x="30" y="460" fill="#c5d5ee" font-family="sans-serif" font-size="18">CONDITIONING · where does outside information enter?</text>
+<rect x="30" y="475" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="502" fill="#fff" font-family="sans-serif" font-size="17">Attention</text>
+<text x="42" y="526" fill="#fff" font-family="sans-serif" font-size="17">Route condition information</text>
+<rect x="355" y="475" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="502" fill="#fff" font-family="sans-serif" font-size="17">FiLM</text>
+<text x="367" y="526" fill="#fff" font-family="sans-serif" font-size="17">Scale and shift channels</text>
+<rect x="680" y="475" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="502" fill="#fff" font-family="sans-serif" font-size="17">Guidance</text>
+<text x="692" y="526" fill="#fff" font-family="sans-serif" font-size="17">Combine sampling predictions</text>
+</svg>

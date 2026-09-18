@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="485" viewBox="0 0 1000 485" role="img" aria-label="Three ways conditions affect the computation">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="#fff" font-family="sans-serif" font-size="25">Three ways conditions affect the computation</text>
+<text x="30" y="85" fill="#c5d5ee" font-family="sans-serif" font-size="18">ATTENTION · route values inside the network</text>
+<rect x="30" y="100" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="127" fill="#fff" font-family="sans-serif" font-size="17">Scaled query-key logits</text>
+<text x="42" y="151" fill="#fff" font-family="sans-serif" font-size="17">(0, ln 3)</text>
+<path d="M324,134 H349" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="355" y="100" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="127" fill="#fff" font-family="sans-serif" font-size="17">Row softmax weights</text>
+<text x="367" y="151" fill="#fff" font-family="sans-serif" font-size="17">(1/4, 3/4)</text>
+<path d="M649,134 H674" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="680" y="100" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="127" fill="#fff" font-family="sans-serif" font-size="17">Values (2, 6)</text>
+<text x="692" y="151" fill="#fff" font-family="sans-serif" font-size="17">Weighted output = 5</text>
+<text x="30" y="210" fill="#c5d5ee" font-family="sans-serif" font-size="18">FiLM · condition produces channel scale and shift</text>
+<rect x="30" y="225" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="252" fill="#fff" font-family="sans-serif" font-size="17">Condition → γ = 2, β = −1</text>
+<text x="42" y="276" fill="#fff" font-family="sans-serif" font-size="17">Feature F = 3</text>
+<path d="M324,259 H349" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="355" y="225" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="252" fill="#fff" font-family="sans-serif" font-size="17">Apply γF + β</text>
+<text x="367" y="276" fill="#fff" font-family="sans-serif" font-size="17">2 × 3 − 1</text>
+<path d="M649,259 H674" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="680" y="225" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="252" fill="#fff" font-family="sans-serif" font-size="17">Modulated feature = 5</text>
+<text x="692" y="276" fill="#fff" font-family="sans-serif" font-size="17">Broadcast over spatial map</text>
+<text x="30" y="335" fill="#c5d5ee" font-family="sans-serif" font-size="18">CLASSIFIER-FREE GUIDANCE · combine predictions for the sampler</text>
+<rect x="30" y="350" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="377" fill="#fff" font-family="sans-serif" font-size="17">Same xₜ and time t</text>
+<text x="42" y="401" fill="#fff" font-family="sans-serif" font-size="17">s_uncond = 1; s_cond = 3</text>
+<path d="M324,384 H349" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="355" y="350" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="377" fill="#fff" font-family="sans-serif" font-size="17">Scale γ = 2</text>
+<text x="367" y="401" fill="#fff" font-family="sans-serif" font-size="17">1 + 2 × (3 − 1)</text>
+<path d="M649,384 H674" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="680" y="350" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="377" fill="#fff" font-family="sans-serif" font-size="17">Guided prediction = 5</text>
+<text x="692" y="401" fill="#fff" font-family="sans-serif" font-size="17">Pass to the update rule</text>
+</svg>

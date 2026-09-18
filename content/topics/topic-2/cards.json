@@ -1100,5 +1100,157 @@
       "Generative overview"
     ],
     "relatedTopicUrl": "/papers/t2-generative-overview#7--the-idea-to-carry-forward"
+  },
+  {
+    "id": "gm-lecture2-noise",
+    "topic": "topic-2",
+    "title": "Lecture 2 · Noise prediction",
+    "question": "During DDPM training, what supplies the noise target?",
+    "choices": [
+      "The known Gaussian noise used to corrupt the training image.",
+      "The model’s final generated image.",
+      "A classifier applied only to clean images.",
+      "An unknown target inferred after sampling."
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "The training corruption is constructed, so its sampled noise is known. At inference there is no clean training target.",
+    "difficulty": "medium",
+    "tags": [
+      "Generative models lecture 2"
+    ],
+    "relatedTopicUrl": "/papers/t2-generative-lecture-2#2--ddpm-learn-the-noise-then-use-it-to-move-backward"
+  },
+  {
+    "id": "gm-lecture2-ode",
+    "topic": "topic-2",
+    "title": "Lecture 2 · Reverse SDE versus ODE",
+    "question": "How does the probability-flow ODE differ from the reverse SDE?",
+    "choices": [
+      "It only sets the random sample to zero.",
+      "It removes fresh noise and uses half the score coefficient in its drift.",
+      "It reverses the sign of every network weight.",
+      "It must use the same trajectories as the SDE."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "For the lecture’s time-only diffusion coefficient, the score coefficient changes from g² to g²/2. Shared ideal marginals do not mean identical trajectories.",
+    "difficulty": "medium",
+    "tags": [
+      "Generative models lecture 2"
+    ],
+    "relatedTopicUrl": "/papers/t2-generative-lecture-2#4--scores-connect-stochastic-and-deterministic-paths"
+  },
+  {
+    "id": "gm-lecture2-flow",
+    "topic": "topic-2",
+    "title": "Lecture 2 · Flow time convention",
+    "question": "In slide 17’s straight noise-to-data path, x₀ = −2 and x₁ = 2. What velocity target is used?",
+    "choices": [
+      "−4",
+      "0",
+      "4",
+      "The current state, whatever its value."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "The derivative of (1−t)x₀ + tx₁ is x₁−x₀ = 4. Here time 0 means noise, unlike the earlier diffusion notation.",
+    "difficulty": "medium",
+    "tags": [
+      "Generative models lecture 2"
+    ],
+    "relatedTopicUrl": "/papers/t2-generative-lecture-2#5--flow-matching-supervise-movement-directly"
+  },
+  {
+    "id": "gm-lecture2-latent",
+    "topic": "topic-2",
+    "title": "Lecture 2 · Latent inference",
+    "question": "Which path describes text-to-image latent generation after training?",
+    "choices": [
+      "Encode an unavailable target image at each step.",
+      "Decode Gaussian pixel noise before encoding a prompt.",
+      "Run a discriminator instead of the decoder.",
+      "Draw latent noise, repeatedly denoise with conditioning, then decode."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "Training uses encoded images, but text-to-image inference has no source image to encode. The final generated latent is decoded.",
+    "difficulty": "medium",
+    "tags": [
+      "Generative models lecture 2"
+    ],
+    "relatedTopicUrl": "/papers/t2-generative-lecture-2#6--change-the-representation-keep-the-loop-explicit"
+  },
+  {
+    "id": "gm-lecture2-attention",
+    "topic": "topic-2",
+    "title": "Lecture 2 · Attention arithmetic",
+    "question": "Attention weights are (1/4, 3/4), with scalar values (2, 6). What is the output?",
+    "choices": [
+      "5",
+      "6, because attention always selects only the best key.",
+      "4",
+      "8"
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "Attention forms a weighted sum: (1/4)×2 + (3/4)×6 = 5. It is not generally hard selection of one value.",
+    "difficulty": "medium",
+    "tags": [
+      "Generative models lecture 2"
+    ],
+    "relatedTopicUrl": "/papers/t2-generative-lecture-2#7--put-the-condition-into-the-computation"
+  },
+  {
+    "id": "gm-lecture2-guidance",
+    "topic": "topic-2",
+    "title": "Lecture 2 · Guidance convention",
+    "question": "For s = sᵤ + γ(s꜀ − sᵤ), what does γ = 1 return?",
+    "choices": [
+      "The unconditional prediction.",
+      "The conditional prediction.",
+      "Twice the conditional prediction.",
+      "The average of the predictions."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "Substitution cancels sᵤ and returns s꜀. Values above 1 extrapolate; other guidance conventions can shift the parameter.",
+    "difficulty": "medium",
+    "tags": [
+      "Generative models lecture 2"
+    ],
+    "relatedTopicUrl": "/papers/t2-generative-lecture-2#7--put-the-condition-into-the-computation"
+  },
+  {
+    "id": "gm-lecture2-is",
+    "topic": "topic-2",
+    "title": "Lecture 2 · Metric limits",
+    "question": "Why can Inception Score miss poor within-class diversity?",
+    "choices": [
+      "It compares all generated images to real images pixel by pixel.",
+      "It is exactly a coverage measure.",
+      "Confident predictions spread across classes can coexist with repeated images within each class.",
+      "It directly measures calibrated medical uncertainty."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "IS uses classifier predictions and their generated marginal. It does not compare a real-image reference set or ensure within-class diversity.",
+    "difficulty": "medium",
+    "tags": [
+      "Generative models lecture 2"
+    ],
+    "relatedTopicUrl": "/papers/t2-generative-lecture-2#9--measure-what-the-generator-actually-gets-right"
+  },
+  {
+    "id": "gm-lecture2-speed",
+    "topic": "topic-2",
+    "title": "Lecture 2 · Generation cost",
+    "question": "What is needed to assess a claimed sampling speed improvement?",
+    "choices": [
+      "Only the number of time steps.",
+      "Only a prettier example image.",
+      "Only whether the sampler is deterministic.",
+      "Network evaluations, cost per evaluation, resolution, hardware, and matched quality."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "Step-aware networks, latent generation and fewer-step samplers change different cost factors. The complete generation path matters.",
+    "difficulty": "medium",
+    "tags": [
+      "Generative models lecture 2"
+    ],
+    "relatedTopicUrl": "/papers/t2-generative-lecture-2#3--speed-is-more-than-a-step-count"
   }
 ]

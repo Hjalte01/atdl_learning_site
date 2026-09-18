@@ -92,8 +92,8 @@
       "topic": 2,
       "order": 2,
       "kind": "slides",
-      "status": "not-started",
-      "guide": null,
+      "status": "ready",
+      "guide": "/papers/t2-generative-lecture-2",
       "pdf": "/materials/120203b5e33d656b.pdf",
       "sha256": "26d6e8fbe615c4101932f536b74283160fab34cdf2e7eac2ed649f065e04cb20"
     },

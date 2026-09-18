@@ -9,6 +9,8 @@ locale: "en"
 ---
 ## Learning path
 
+The [Lecture 2 guide](/papers/t2-generative-lecture-2) follows the supplied generative-model slides from DDPM and score-based sampling through flow matching, latent representations, conditioning and evaluation. Seven diagrams, worked calculations and eight study cards connect the mechanisms to the paper guides.
+
 Start with the [Deep Generative Models reading roadmap](/papers/t2-generative-overview) for prerequisites, model-family comparisons, and routes into the six papers. It explains the supplied three-page overview with six teaching diagrams and eight study cards.
 
 Start with [FLUX.1 Kontext](/papers/flux-kontext). Learn why the reference image stays fixed while the output is generated from noise, and how both streams interact. Then use the study cards to check the distinctions.
