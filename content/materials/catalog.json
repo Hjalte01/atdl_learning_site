@@ -296,8 +296,8 @@
       "topic": 2,
       "order": null,
       "kind": "extra",
-      "status": "not-started",
-      "guide": null,
+      "status": "ready",
+      "guide": "/papers/t2-flow-matching",
       "pdf": "/materials/0e64cd296a587841.pdf",
       "sha256": "d61ddac4329c49043c633c47fadd5293204bce4c9ab28e994a04c79e7251e622"
     },

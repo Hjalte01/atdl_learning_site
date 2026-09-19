@@ -1252,5 +1252,157 @@
       "Generative models lecture 2"
     ],
     "relatedTopicUrl": "/papers/t2-generative-lecture-2#3--speed-is-more-than-a-step-count"
+  },
+  {
+    "id": "flow-notes-path",
+    "topic": "topic-2",
+    "title": "Flow Matching · path",
+    "question": "What does the linear path xₜ = tz + (1−t)ε represent at t = 0?",
+    "choices": [
+      "Pure Gaussian noise.",
+      "The clean endpoint.",
+      "The network prediction.",
+      "The guidance prompt."
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "The supplied notes use noise-to-data time: t=0 gives ε and t=1 gives z.",
+    "difficulty": "medium",
+    "tags": [
+      "Flow Matching"
+    ],
+    "relatedTopicUrl": "/papers/t2-flow-matching#1--choose-a-path-of-distributions"
+  },
+  {
+    "id": "flow-notes-target",
+    "topic": "topic-2",
+    "title": "Flow Matching · target",
+    "question": "What target does linear-path conditional flow matching regress against?",
+    "choices": [
+      "The clean endpoint z alone.",
+      "The displacement z−ε, interpreted as a velocity.",
+      "The added noise ε alone.",
+      "The final solver error."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "Differentiating tz+(1−t)ε at a fixed pair gives z−ε. The network receives the mixed state and time.",
+    "difficulty": "medium",
+    "tags": [
+      "Flow Matching"
+    ],
+    "relatedTopicUrl": "/papers/t2-flow-matching#2--architecture-where-the-training-target-comes-from"
+  },
+  {
+    "id": "flow-notes-posterior",
+    "topic": "topic-2",
+    "title": "Flow Matching · posterior",
+    "question": "How are conditional velocities combined into the marginal field at x?",
+    "choices": [
+      "Uniformly over all data points.",
+      "By picking the largest-magnitude velocity.",
+      "Using posterior endpoint weights given x and t.",
+      "By averaging only training losses."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "Bayes weights depend on how likely each endpoint is to have produced this noisy state.",
+    "difficulty": "medium",
+    "tags": [
+      "Flow Matching"
+    ],
+    "relatedTopicUrl": "/papers/t2-flow-matching#3--why-many-conflicting-targets-teach-one-useful-field"
+  },
+  {
+    "id": "flow-notes-loss",
+    "topic": "topic-2",
+    "title": "Flow Matching · loss",
+    "question": "Can conditional regression loss remain positive when the marginal field is learned perfectly?",
+    "choices": [
+      "No: every target must match.",
+      "Only if time is sampled incorrectly.",
+      "Only for a stochastic sampler.",
+      "Yes: conditional targets can have irreducible variance."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "The conditional loss equals marginal squared error plus a parameter-independent target-variance term.",
+    "difficulty": "medium",
+    "tags": [
+      "Flow Matching"
+    ],
+    "relatedTopicUrl": "/papers/t2-flow-matching#why-the-loss-is-enough"
+  },
+  {
+    "id": "flow-notes-sampling",
+    "topic": "topic-2",
+    "title": "Flow Matching · sampling",
+    "question": "What does simulation-free mean in flow matching?",
+    "choices": [
+      "Training samples a state and target directly; inference still integrates a field.",
+      "Generation always takes one step.",
+      "No noise is sampled.",
+      "The trained network knows the clean endpoint."
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "Algorithm 3 does not roll out an ODE during training. The generative ODE still needs numerical integration.",
+    "difficulty": "medium",
+    "tags": [
+      "Flow Matching"
+    ],
+    "relatedTopicUrl": "/papers/t2-flow-matching#5--sampling-now-the-state-moves-and-the-weights-stay-fixed"
+  },
+  {
+    "id": "flow-notes-sde",
+    "topic": "topic-2",
+    "title": "Flow Matching · sde",
+    "question": "What accompanies Brownian noise when extending the flow to an SDE with the same ideal marginals?",
+    "choices": [
+      "An arbitrary extra velocity.",
+      "A drift correction equal to σₜ² times the score divided by two.",
+      "A retraining update after each step.",
+      "A reset to the initial sample."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "The score correction cancels the noise-induced spreading in the Fokker–Planck equation, in the exact continuous-time setting.",
+    "difficulty": "medium",
+    "tags": [
+      "Flow Matching"
+    ],
+    "relatedTopicUrl": "/papers/t2-flow-matching#add-noise-without-changing-the-intended-marginals"
+  },
+  {
+    "id": "flow-notes-guidance",
+    "topic": "topic-2",
+    "title": "Flow Matching · guidance",
+    "question": "For CFG = (1−w)u_unconditional + w u_conditional, what does w=1 do?",
+    "choices": [
+      "Removes all conditioning.",
+      "Doubles the conditional velocity.",
+      "Returns the ordinary conditional prediction.",
+      "Guarantees a perfect prompt match."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "w=1 removes the unconditional coefficient. Values above one extrapolate; stronger guidance is a heuristic.",
+    "difficulty": "medium",
+    "tags": [
+      "Flow Matching"
+    ],
+    "relatedTopicUrl": "/papers/t2-flow-matching#7--conditioning-is-not-the-same-as-the-conditional-training-target"
+  },
+  {
+    "id": "flow-notes-latent",
+    "topic": "topic-2",
+    "title": "Flow Matching · latent",
+    "question": "Why train a generative flow on autoencoder latents?",
+    "choices": [
+      "The decoder makes any latent valid.",
+      "Autoencoder training proves the latents are exactly standard Gaussian.",
+      "The encoder is needed to supply the target image at text-to-image inference.",
+      "The encoded-data distribution still needs to be modeled."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "Regularizing latents toward a Gaussian does not force the aggregated distribution to equal that Gaussian. The learned flow models encoded data before decoding.",
+    "difficulty": "medium",
+    "tags": [
+      "Flow Matching"
+    ],
+    "relatedTopicUrl": "/papers/t2-flow-matching#8--from-vectors-to-image-generatorsand-beyond"
   }
 ]

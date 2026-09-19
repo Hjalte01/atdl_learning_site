@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="485" viewBox="0 0 1000 485" role="img" aria-label="Same time-marginals need not mean the same trajectories">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="#fff" font-family="sans-serif" font-size="25">Same time-marginals need not mean the same trajectories</text>
+<text x="30" y="85" fill="#c5d5ee" font-family="sans-serif" font-size="18">ODE · learned velocity field; random initialization</text>
+<rect x="30" y="100" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="127" fill="#fff" font-family="sans-serif" font-size="17">X₀ drawn once</text>
+<text x="42" y="151" fill="#fff" font-family="sans-serif" font-size="17">Freeze trained θ</text>
+<path d="M324,134 H349" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="355" y="100" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="127" fill="#fff" font-family="sans-serif" font-size="17">Drift u(Xₜ,t)</text>
+<text x="367" y="151" fill="#fff" font-family="sans-serif" font-size="17">No new Brownian noise</text>
+<path d="M649,134 H674" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="680" y="100" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="127" fill="#fff" font-family="sans-serif" font-size="17">Desired marginal pₜ</text>
+<text x="692" y="151" fill="#fff" font-family="sans-serif" font-size="17">Exact-field idealization</text>
+<text x="30" y="210" fill="#c5d5ee" font-family="sans-serif" font-size="18">SDE · pair the added noise with a score correction</text>
+<rect x="30" y="225" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="252" fill="#fff" font-family="sans-serif" font-size="17">Same initial distribution</text>
+<text x="42" y="276" fill="#fff" font-family="sans-serif" font-size="17">Choose noise schedule σₜ</text>
+<path d="M324,259 H349" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="355" y="225" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="252" fill="#fff" font-family="sans-serif" font-size="17">Drift u + (σₜ²/2)s</text>
+<text x="367" y="276" fill="#fff" font-family="sans-serif" font-size="17">Noise increment σₜ√h ξ</text>
+<path d="M649,259 H674" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="680" y="225" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="252" fill="#fff" font-family="sans-serif" font-size="17">Same desired marginal pₜ</text>
+<text x="692" y="276" fill="#fff" font-family="sans-serif" font-size="17">Different random trajectories</text>
+<text x="30" y="335" fill="#c5d5ee" font-family="sans-serif" font-size="18">NUMERIC · u = 0.5; score s = −2; σ = 1; h = 0.04; ξ = 0.3</text>
+<rect x="30" y="350" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="377" fill="#fff" font-family="sans-serif" font-size="17">Corrected drift = −0.5</text>
+<text x="42" y="401" fill="#fff" font-family="sans-serif" font-size="17">Drift increment = −0.02</text>
+<rect x="355" y="350" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="377" fill="#fff" font-family="sans-serif" font-size="17">Noise increment = 0.06</text>
+<text x="367" y="401" fill="#fff" font-family="sans-serif" font-size="17">√0.04 × 0.3</text>
+<rect x="680" y="350" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="377" fill="#fff" font-family="sans-serif" font-size="17">Net increment = 0.04</text>
+<text x="692" y="401" fill="#fff" font-family="sans-serif" font-size="17">An illustrative single draw</text>
+</svg>

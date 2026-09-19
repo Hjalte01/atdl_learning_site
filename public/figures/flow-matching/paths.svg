@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="360" viewBox="0 0 1000 360" role="img" aria-label="Choose distributions first; learn how to move between them">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="#fff" font-family="sans-serif" font-size="25">Choose distributions first; learn how to move between them</text>
+<text x="30" y="85" fill="#c5d5ee" font-family="sans-serif" font-size="18">CONDITIONAL · fix one endpoint z; vary the initial noise</text>
+<rect x="30" y="100" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="127" fill="#fff" font-family="sans-serif" font-size="17">t = 0: ε ~ N(0,I)</text>
+<text x="42" y="151" fill="#fff" font-family="sans-serif" font-size="17">Every endpoint starts here</text>
+<path d="M324,134 H349" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="355" y="100" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="127" fill="#fff" font-family="sans-serif" font-size="17">0 &lt; t &lt; 1: tz + (1−t)ε</text>
+<text x="367" y="151" fill="#fff" font-family="sans-serif" font-size="17">Gaussian cloud around tz</text>
+<path d="M649,134 H674" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="680" y="100" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="127" fill="#fff" font-family="sans-serif" font-size="17">t = 1: z</text>
+<text x="692" y="151" fill="#fff" font-family="sans-serif" font-size="17">Cloud collapses to this point</text>
+<text x="30" y="210" fill="#c5d5ee" font-family="sans-serif" font-size="18">MARGINAL · average over data endpoints z</text>
+<rect x="30" y="225" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="252" fill="#fff" font-family="sans-serif" font-size="17">Initial Gaussian p₀</text>
+<text x="42" y="276" fill="#fff" font-family="sans-serif" font-size="17">Same starting distribution</text>
+<path d="M324,259 H349" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="355" y="225" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="252" fill="#fff" font-family="sans-serif" font-size="17">Mixture pₜ over all z</text>
+<text x="367" y="276" fill="#fff" font-family="sans-serif" font-size="17">Not generally a Gaussian</text>
+<path d="M649,259 H674" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="680" y="225" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="252" fill="#fff" font-family="sans-serif" font-size="17">Data distribution p₁</text>
+<text x="692" y="276" fill="#fff" font-family="sans-serif" font-size="17">Many possible outputs</text>
+</svg>
