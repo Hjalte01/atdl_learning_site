@@ -1846,5 +1846,157 @@
       "Algorithmic complexity"
     ],
     "relatedTopicUrl": "/papers/t1-complexity-lecture#7--momos-turns-a-diagnostic-idea-into-a-constraint"
+  },
+  {
+    "id": "momos-lecture-locations",
+    "topic": "topic-1",
+    "title": "MoMos · Why store the mosaic?",
+    "question": "What is missing if a motif bank records its patterns and occurrence counts only?",
+    "choices": [
+      "The number of distinct motifs",
+      "The exact placement of motifs",
+      "The stored values in each motif",
+      "The total number of blocks"
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "Counts do not specify the order. The mosaic gives an index at every block position.",
+    "difficulty": "medium",
+    "tags": [
+      "Mosaic-of-Motifs"
+    ],
+    "relatedTopicUrl": "/papers/t1-momos-lecture#1--reuse-needs-a-pattern-and-its-locations"
+  },
+  {
+    "id": "momos-lecture-lookup",
+    "topic": "topic-1",
+    "title": "MoMos · Reconstruct the weights",
+    "question": "With motifs (0,0) and (1,1), what does the one-based mosaic (1,2,2) reconstruct?",
+    "choices": [
+      "(0,1,2)",
+      "(1,1,0,0,0,0)",
+      "(0,0,1,1,1,1)",
+      "(0,0,1,1)"
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "Look up a two-scalar motif at each of the three positions. Six weight slots remain.",
+    "difficulty": "medium",
+    "tags": [
+      "Mosaic-of-Motifs"
+    ],
+    "relatedTopicUrl": "/papers/t1-momos-lecture#2--the-representation-a-bank-plus-a-mosaic"
+  },
+  {
+    "id": "momos-lecture-budget",
+    "topic": "topic-1",
+    "title": "MoMos · Count both terms",
+    "question": "For k=3, s=4, q=32 and m=16, what is the fixed-width bank-plus-index payload before metadata?",
+    "choices": [
+      "384 bits",
+      "2048 bits",
+      "400 bits",
+      "416 bits"
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "The bank costs 384 bits and sixteen two-bit indices cost 32 more.",
+    "difficulty": "medium",
+    "tags": [
+      "Mosaic-of-Motifs"
+    ],
+    "relatedTopicUrl": "/papers/t1-momos-lecture#3--count-the-entire-description"
+  },
+  {
+    "id": "momos-lecture-state",
+    "topic": "topic-1",
+    "title": "MoMos · Carry the right state",
+    "question": "After assignment and reconstruction, which weights enter the next optimizer step?",
+    "choices": [
+      "The reconstructed constrained weights",
+      "The temporary proposal before assignment",
+      "Always the initial weights",
+      "Only the motif usage counts"
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "The training loop carries the reconstructed weights forward; the constraint changes the next optimization state.",
+    "difficulty": "medium",
+    "tags": [
+      "Mosaic-of-Motifs"
+    ],
+    "relatedTopicUrl": "/papers/t1-momos-lecture#4--train-by-proposing-assigning-and-reconstructing"
+  },
+  {
+    "id": "momos-lecture-distance",
+    "topic": "topic-1",
+    "title": "MoMos · Understand projection",
+    "question": "Why does (0.1,0.2) choose the zero motif over (1,1) in the worked example?",
+    "choices": [
+      "It guarantees the smallest classification loss",
+      "Its squared weight distance is 0.05 rather than 1.45",
+      "Every block must use zero",
+      "The zero motif is always the most frequent"
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "Nearest assignment minimizes local squared weight error, not necessarily the task loss.",
+    "difficulty": "medium",
+    "tags": [
+      "Mosaic-of-Motifs"
+    ],
+    "relatedTopicUrl": "/papers/t1-momos-lecture#5--trace-one-update-then-the-next"
+  },
+  {
+    "id": "momos-lecture-domain",
+    "topic": "topic-1",
+    "title": "MoMos · Compare domains fairly",
+    "question": "At fixed n=16 and k=2, reducing s from 4 to 2 changes what?",
+    "choices": [
+      "It guarantees better accuracy",
+      "It keeps capacity fixed",
+      "It increases positions from 4 to 8 and changes capacity",
+      "It removes all mosaic storage"
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "More positions permit more index strings, but k/m changes from 1/2 to 1/4 and the storage budget also changes.",
+    "difficulty": "medium",
+    "tags": [
+      "Mosaic-of-Motifs"
+    ],
+    "relatedTopicUrl": "/papers/t1-momos-lecture#6--capacity-and-block-size-are-different-controls"
+  },
+  {
+    "id": "momos-lecture-evidence",
+    "topic": "topic-1",
+    "title": "MoMos · Read simplification evidence",
+    "question": "How should the reported 3.95× ResNet20 factor be described?",
+    "choices": [
+      "A guaranteed inference speedup",
+      "A universal accuracy improvement",
+      "A verified serialized file ratio",
+      "The slide’s algorithmic simplification factor with incomplete evaluation details"
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "The source labels the factor algorithmic simplification. It does not fully specify dataset/protocol or establish file-size and runtime equivalence.",
+    "difficulty": "medium",
+    "tags": [
+      "Mosaic-of-Motifs"
+    ],
+    "relatedTopicUrl": "/papers/t1-momos-lecture#7--what-the-supplied-results-support"
+  },
+  {
+    "id": "momos-lecture-infer",
+    "topic": "topic-1",
+    "title": "MoMos · Freeze the representation",
+    "question": "Which action matches the described inference path?",
+    "choices": [
+      "Freeze final motifs and mosaic, reconstruct weights, predict",
+      "Resample motifs for each test example",
+      "Update weights using test labels",
+      "Discard the mosaic and use motif counts"
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "Inference uses the final constrained predictor. The described path does not require training targets, resampling or optimizer steps.",
+    "difficulty": "medium",
+    "tags": [
+      "Mosaic-of-Motifs"
+    ],
+    "relatedTopicUrl": "/papers/t1-momos-lecture#4--train-by-proposing-assigning-and-reconstructing"
   }
 ]

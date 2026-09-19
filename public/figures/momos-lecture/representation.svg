@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="485" viewBox="0 0 1000 485" role="img" aria-label="Bank Z + mosaic M → reconstructed weights">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="#fff" font-family="sans-serif" font-size="25">Bank Z + mosaic M → reconstructed weights</text>
+<text x="30" y="85" fill="#c5d5ee" font-family="sans-serif" font-size="18">BANK · each letter names a four-scalar block</text>
+<rect x="30" y="100" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="127" fill="#fff" font-family="sans-serif" font-size="17">A = (0,0,0,0)</text>
+<text x="42" y="151" fill="#fff" font-family="sans-serif" font-size="17">One stored motif</text>
+<rect x="355" y="100" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="127" fill="#fff" font-family="sans-serif" font-size="17">B = (1,1,1,1)</text>
+<text x="367" y="151" fill="#fff" font-family="sans-serif" font-size="17">One stored motif</text>
+<rect x="680" y="100" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="127" fill="#fff" font-family="sans-serif" font-size="17">C = (−1,0,0,−1)</text>
+<text x="692" y="151" fill="#fff" font-family="sans-serif" font-size="17">One stored motif</text>
+<text x="30" y="210" fill="#c5d5ee" font-family="sans-serif" font-size="18">MOSAIC · sixteen positions; counts A:7, B:5, C:4</text>
+<rect x="30" y="225" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="252" fill="#fff" font-family="sans-serif" font-size="17">Row 1: A B A C</text>
+<text x="42" y="276" fill="#fff" font-family="sans-serif" font-size="17">Row 2: C A B A</text>
+<rect x="355" y="225" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="252" fill="#fff" font-family="sans-serif" font-size="17">Row 3: B C A B</text>
+<text x="367" y="276" fill="#fff" font-family="sans-serif" font-size="17">Row 4: A B C A</text>
+<rect x="680" y="225" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="252" fill="#fff" font-family="sans-serif" font-size="17">Each position is an index</text>
+<text x="692" y="276" fill="#fff" font-family="sans-serif" font-size="17">Counts alone lose location</text>
+<text x="30" y="335" fill="#c5d5ee" font-family="sans-serif" font-size="18">LOOKUP · first row reconstructed, with the fixed layout</text>
+<rect x="30" y="350" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="377" fill="#fff" font-family="sans-serif" font-size="17">A B</text>
+<text x="42" y="401" fill="#fff" font-family="sans-serif" font-size="17">(0,0,0,0), (1,1,1,1)</text>
+<rect x="355" y="350" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="377" fill="#fff" font-family="sans-serif" font-size="17">A C</text>
+<text x="367" y="401" fill="#fff" font-family="sans-serif" font-size="17">(0,0,0,0), (−1,0,0,−1)</text>
+<rect x="680" y="350" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="377" fill="#fff" font-family="sans-serif" font-size="17">Repeat for other rows</text>
+<text x="692" y="401" fill="#fff" font-family="sans-serif" font-size="17">ψ⁻¹ restores tensor positions</text>
+</svg>

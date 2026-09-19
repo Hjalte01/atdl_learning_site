@@ -80,8 +80,8 @@
       "topic": 1,
       "order": 3,
       "kind": "slides",
-      "status": "not-started",
-      "guide": null,
+      "status": "ready",
+      "guide": "/papers/t1-momos-lecture",
       "pdf": "/materials/9457e09b91494020.pdf",
       "sha256": "038664c8295960724630a00ad7fe0ba58c5abca2f8a87e3d00798a7a0c16af00"
     },
