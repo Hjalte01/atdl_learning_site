@@ -2012,5 +2012,165 @@
       "DDPMs"
     ],
     "relatedTopicUrl": "/papers/t2-ddpms#8--evidence-sample-quality-and-likelihood-pull-differently"
+  },
+  {
+    "id": "vae-original-roles",
+    "topic": "topic-2",
+    "title": "Auto-Encoding VB · roles",
+    "question": "Which factor belongs to the VAE generative joint distribution?",
+    "choices": [
+      "The recognition encoder q(z | x).",
+      "The decoder p(x | z), multiplied by the prior p(z).",
+      "The exact posterior multiplied by the encoder.",
+      "Only the reconstruction mean."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "The model generates a latent from its prior and an observation from the decoder. The encoder approximates inference and is not a factor in that joint.",
+    "difficulty": "medium",
+    "tags": [
+      "VAEs",
+      "Auto-Encoding Variational Bayes"
+    ],
+    "relatedTopicUrl": "/papers/t2-vaes#1--architecture-one-model-generates-another-infers"
+  },
+  {
+    "id": "vae-original-gap",
+    "topic": "topic-2",
+    "title": "Auto-Encoding VB · gap",
+    "question": "Which KL is the gap between the expected ELBO and exact log evidence?",
+    "choices": [
+      "KL from the encoder to the prior.",
+      "KL from the prior to the decoder.",
+      "KL from the encoder to the true posterior conditioned on x.",
+      "KL between two minibatches."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "The prior KL is part of the ELBO. The posterior KL measures how far the variational bound is below the evidence.",
+    "difficulty": "medium",
+    "tags": [
+      "VAEs",
+      "Auto-Encoding Variational Bayes"
+    ],
+    "relatedTopicUrl": "/papers/t2-vaes#3--the-elbo-fit-observations-without-solving-the-integral"
+  },
+  {
+    "id": "vae-original-scale",
+    "topic": "topic-2",
+    "title": "Auto-Encoding VB · scale",
+    "question": "An encoder outputs log variance ℓ. What multiplies standard Gaussian noise?",
+    "choices": [
+      "ℓ",
+      "exp(ℓ)",
+      "exp(ℓ/2)",
+      "ℓ/2"
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "Sampling needs the standard deviation. Exponentiating log variance gives variance; taking its square root gives exp(ℓ/2).",
+    "difficulty": "medium",
+    "tags": [
+      "VAEs",
+      "Auto-Encoding Variational Bayes"
+    ],
+    "relatedTopicUrl": "/papers/t2-vaes#4--reparameterization-move-randomness-before-the-learned-transform"
+  },
+  {
+    "id": "vae-original-gradient",
+    "topic": "topic-2",
+    "title": "Auto-Encoding VB · gradient",
+    "question": "What stays fixed while differentiating one reparameterized sample?",
+    "choices": [
+      "The encoder outputs.",
+      "The sampled epsilon, whose distribution is independent of encoder weights.",
+      "The latent z, so reconstruction cannot reach the encoder.",
+      "Both networks for the entire training run."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "The sampled epsilon is held fixed for a pathwise derivative, but z changes differentiably with encoder outputs. Later estimates use new draws.",
+    "difficulty": "medium",
+    "tags": [
+      "VAEs",
+      "Auto-Encoding Variational Bayes"
+    ],
+    "relatedTopicUrl": "/papers/t2-vaes#4--reparameterization-move-randomness-before-the-learned-transform"
+  },
+  {
+    "id": "vae-original-sampling",
+    "topic": "topic-2",
+    "title": "Auto-Encoding VB · sampling",
+    "question": "How does unconditional generation proceed after VAE training?",
+    "choices": [
+      "Random pixels → encoder → decoder.",
+      "Repeat encoder optimization until convergence.",
+      "Draw a training image and return its latent mean.",
+      "Draw z from the prior, then draw x from the decoder distribution."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "Ancestral generation needs the prior and decoder. Displaying decoder means instead of drawing observations is a different presentation choice.",
+    "difficulty": "medium",
+    "tags": [
+      "VAEs",
+      "Auto-Encoding Variational Bayes"
+    ],
+    "relatedTopicUrl": "/papers/t2-vaes#5--training-reconstruction-and-generation"
+  },
+  {
+    "id": "vae-original-estimate",
+    "topic": "topic-2",
+    "title": "Auto-Encoding VB · estimate",
+    "question": "Must every single-noise ELBO estimate be below exact log evidence?",
+    "choices": [
+      "No; the expected ELBO is the bound, while individual estimates fluctuate.",
+      "Yes; any Monte Carlo draw is a deterministic lower bound.",
+      "Yes, provided the latent has more than one coordinate.",
+      "No, because the expected ELBO is an upper bound."
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "Unbiased estimation preserves the expectation, not a per-draw inequality. Integrating the KL analytically does not remove reconstruction sampling variance.",
+    "difficulty": "medium",
+    "tags": [
+      "VAEs",
+      "Auto-Encoding Variational Bayes"
+    ],
+    "relatedTopicUrl": "/papers/t2-vaes#5--training-reconstruction-and-generation"
+  },
+  {
+    "id": "vae-original-worked",
+    "topic": "topic-2",
+    "title": "Auto-Encoding VB · worked",
+    "question": "With x=1, μ=σ=0.5, epsilon=1 and y=sigmoid(z), what is the sampled negative ELBO?",
+    "choices": [
+      "0.3133 nats, omitting KL.",
+      "−0.7564 nats.",
+      "0.4431 nats, omitting reconstruction.",
+      "About 0.7564 nats: reconstruction 0.3133 plus KL 0.4431."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "z=1 and y≈0.7311. Negative log likelihood is 0.3133; the analytic Gaussian prior KL is 0.4431. The loss adds them.",
+    "difficulty": "medium",
+    "tags": [
+      "VAEs",
+      "Auto-Encoding Variational Bayes"
+    ],
+    "relatedTopicUrl": "/papers/t2-vaes#6--worked-example-trace-a-sample-and-its-gradient"
+  },
+  {
+    "id": "vae-original-evidence",
+    "topic": "topic-2",
+    "title": "Auto-Encoding VB · evidence",
+    "question": "What does Figure 2 directly compare on its horizontal axis?",
+    "choices": [
+      "Elapsed GPU seconds.",
+      "Evaluated training examples; the curves report estimated average ELBO.",
+      "FID on generated image batches.",
+      "Exact marginal likelihood at every latent dimension."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "Figure 2 compares AEVB and wake-sleep by evaluated-example count. Figure 3 is a separate low-dimensional marginal-likelihood estimation experiment.",
+    "difficulty": "medium",
+    "tags": [
+      "VAEs",
+      "Auto-Encoding Variational Bayes"
+    ],
+    "relatedTopicUrl": "/papers/t2-vaes#7--evidence-what-was-actually-compared"
   }
 ]

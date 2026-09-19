@@ -320,8 +320,8 @@
       "topic": 2,
       "order": null,
       "kind": "extra",
-      "status": "not-started",
-      "guide": null,
+      "status": "ready",
+      "guide": "/papers/t2-vaes",
       "pdf": "/materials/a885b4b61bd44c12.pdf",
       "sha256": "bdcb63b79ed88f64f8ee2d43a721930d01dde5441a4dba20ecaa2342b34e017c"
     }

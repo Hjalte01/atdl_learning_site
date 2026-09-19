@@ -9,6 +9,8 @@ locale: "en"
 ---
 ## Learning path
 
+The [original VAE guide](/papers/t2-vaes) follows the supplied *Auto-Encoding Variational Bayes* v11 through probabilistic encoding, reparameterization, the ELBO and prior-based generation. Seven teaching diagrams, the source experiment page, a complete scalar gradient trace and eight cards connect inference to learning.
+
 The [original DDPM guide](/papers/t2-ddpms) follows the supplied NeurIPS 2020 paper through forward corruption, noise prediction, likelihood reweighting and stochastic reverse sampling. Seven diagrams, a scalar calculation and eight cards connect the mechanism to its reported CIFAR10 evidence.
 
 The [original GANs guide](/papers/t2-gans) follows the supplied 2014 paper through alternating training, generator-only sampling, non-saturating gradients and ideal equilibrium. Seven diagrams, a worked update and eight study cards distinguish mathematical guarantees from the reported Parzen evaluation.
