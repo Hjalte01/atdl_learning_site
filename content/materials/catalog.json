@@ -284,8 +284,8 @@
       "topic": 2,
       "order": null,
       "kind": "extra",
-      "status": "not-started",
-      "guide": null,
+      "status": "ready",
+      "guide": "/papers/t2-deep-generative-modeling",
       "pdf": "/materials/13642986bfb3ef2f.pdf",
       "sha256": "b3655c0ddda7345f020b132e57e826687b0f3dbbc67a3bca23f2738e29ffeed4"
     },

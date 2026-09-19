@@ -9,6 +9,8 @@ locale: "en"
 ---
 ## Learning path
 
+The [Deep Generative Modeling textbook guide](/papers/t2-deep-generative-modeling) follows Tomczak’s supplied second edition (2024). Seven diagrams and eight study cards trace autoregressive likelihoods, flow volume corrections, VAE training and generation, adversarial learning and score-based sampling.
+
 The [Flow Matching extra-reading guide](/papers/t2-flow-matching) develops the supplied 2026 MIT notes: conditional targets, posterior averaging, separate training and sampling, score-corrected SDEs, guidance and latent generators. Seven diagrams and eight study cards connect the derivations to worked examples.
 
 The [Lecture 2 guide](/papers/t2-generative-lecture-2) follows the supplied generative-model slides from DDPM and score-based sampling through flow matching, latent representations, conditioning and evaluation. Seven diagrams, worked calculations and eight study cards connect the mechanisms to the paper guides.

@@ -1404,5 +1404,157 @@
       "Flow Matching"
     ],
     "relatedTopicUrl": "/papers/t2-flow-matching#8--from-vectors-to-image-generatorsand-beyond"
+  },
+  {
+    "id": "dgm-book-chain",
+    "topic": "topic-2",
+    "title": "Deep Generative Modeling · Autoregressive dependence",
+    "question": "What does causal masking ensure?",
+    "choices": [
+      "A prediction cannot use future entries.",
+      "All entries are independent.",
+      "Sampling all tokens is always parallel.",
+      "The joint probability is unnormalized."
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "A conditional may depend on its prefix; the mask blocks future leakage.",
+    "difficulty": "medium",
+    "tags": [
+      "Deep Generative Modeling"
+    ],
+    "relatedTopicUrl": "/papers/t2-deep-generative-modeling#2--autoregression-turn-one-joint-into-many-conditionals"
+  },
+  {
+    "id": "dgm-book-volume",
+    "topic": "topic-2",
+    "title": "Deep Generative Modeling · Flow volume",
+    "question": "For x = 2z + 1, how does density at corresponding points change?",
+    "choices": [
+      "It doubles.",
+      "It halves.",
+      "It stays fixed.",
+      "It becomes a point probability."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "The map doubles interval width, so density halves to preserve probability mass.",
+    "difficulty": "medium",
+    "tags": [
+      "Deep Generative Modeling"
+    ],
+    "relatedTopicUrl": "/papers/t2-deep-generative-modeling#3--flows-account-for-the-space-a-transformation-stretches"
+  },
+  {
+    "id": "dgm-book-generate",
+    "topic": "topic-2",
+    "title": "Deep Generative Modeling · VAE generation",
+    "question": "Which path generates an unconditional observation in the VAE described here?",
+    "choices": [
+      "Observed x → encoder → reconstruction.",
+      "Discriminator → encoder.",
+      "Prior sample → decoder distribution → observation sample.",
+      "Training loss → observed x."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "The encoder helps approximate the posterior during training; generation can start from the prior.",
+    "difficulty": "medium",
+    "tags": [
+      "Deep Generative Modeling"
+    ],
+    "relatedTopicUrl": "/papers/t2-deep-generative-modeling#4--vae-architecture-use-an-encoder-to-learn-a-decoder"
+  },
+  {
+    "id": "dgm-book-gap",
+    "topic": "topic-2",
+    "title": "Deep Generative Modeling · ELBO gap",
+    "question": "What determines the gap between exact log-likelihood and the ELBO?",
+    "choices": [
+      "Only the reconstruction error.",
+      "KL from the prior to itself.",
+      "The number of generated samples alone.",
+      "KL from the variational posterior to the true posterior."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "The posterior-to-posterior KL is the nonnegative gap; the encoder-to-prior KL is a different term inside the ELBO.",
+    "difficulty": "medium",
+    "tags": [
+      "Deep Generative Modeling"
+    ],
+    "relatedTopicUrl": "/papers/t2-deep-generative-modeling#4--vae-architecture-use-an-encoder-to-learn-a-decoder"
+  },
+  {
+    "id": "dgm-book-variance",
+    "topic": "topic-2",
+    "title": "Deep Generative Modeling · Reparameterization",
+    "question": "With μ = 1, σ = 0.5 and ε = −2, what are z and the encoder variance?",
+    "choices": [
+      "z = 0; variance = 0.25.",
+      "z = 0; variance = 0.5.",
+      "z = −1; variance = 0.25.",
+      "z = 2; variance = 1."
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "z = μ + σε = 0, and variance is the square of the standard deviation.",
+    "difficulty": "medium",
+    "tags": [
+      "Deep Generative Modeling"
+    ],
+    "relatedTopicUrl": "/papers/t2-deep-generative-modeling#5--latent-close-up-trace-one-sample-and-its-loss"
+  },
+  {
+    "id": "dgm-book-gan",
+    "topic": "topic-2",
+    "title": "Deep Generative Modeling · GAN gradients",
+    "question": "During a generator update, what does holding discriminator weights fixed mean?",
+    "choices": [
+      "Block all gradients through the discriminator.",
+      "Keep its weights fixed but propagate input gradients to the generator.",
+      "Replace it with the prior.",
+      "Train only on real examples."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "The discriminator supplies a differentiable signal while only generator parameters are updated.",
+    "difficulty": "medium",
+    "tags": [
+      "Deep Generative Modeling"
+    ],
+    "relatedTopicUrl": "/papers/t2-deep-generative-modeling#6--energies-and-gans-two-different-ways-to-avoid-direct-likelihood-computation"
+  },
+  {
+    "id": "dgm-book-score",
+    "topic": "topic-2",
+    "title": "Deep Generative Modeling · Noise to score",
+    "question": "For x̃ = x + σε, how is predicted noise converted to a score?",
+    "choices": [
+      "Multiply by σ without changing sign.",
+      "Use predicted noise unchanged.",
+      "Negate and divide by σ.",
+      "Square the predicted noise."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "The Gaussian conditional score is −ε/σ; the learned noise prediction uses the same conversion.",
+    "difficulty": "medium",
+    "tags": [
+      "Deep Generative Modeling"
+    ],
+    "relatedTopicUrl": "/papers/t2-deep-generative-modeling#7--scores-learn-a-local-direction-then-run-a-sampler"
+  },
+  {
+    "id": "dgm-book-sampling",
+    "topic": "topic-2",
+    "title": "Deep Generative Modeling · Langevin noise",
+    "question": "Why is repeatedly following the standard-normal score without noise not Gaussian sampling?",
+    "choices": [
+      "It makes the density unnormalized.",
+      "It trains the network too quickly.",
+      "It changes the latent dimension.",
+      "It drifts toward the mode instead of maintaining the distribution."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "The deterministic drift contracts toward zero; the properly scaled random term is essential to the Langevin construction.",
+    "difficulty": "medium",
+    "tags": [
+      "Deep Generative Modeling"
+    ],
+    "relatedTopicUrl": "/papers/t2-deep-generative-modeling#7--scores-learn-a-local-direction-then-run-a-sampler"
   }
 ]
