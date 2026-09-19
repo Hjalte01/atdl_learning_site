@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="485" viewBox="0 0 1000 485" role="img" aria-label="Training takes a shortcut; generation takes the chain">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="#fff" font-family="sans-serif" font-size="25">Training takes a shortcut; generation takes the chain</text>
+<text x="30" y="85" fill="#c5d5ee" font-family="sans-serif" font-size="18">TRAIN · one random time per example</text>
+<rect x="30" y="100" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="127" fill="#fff" font-family="sans-serif" font-size="17">A: sample x₀, t, ε</text>
+<text x="42" y="151" fill="#fff" font-family="sans-serif" font-size="17">t uniform from 1 to T</text>
+<path d="M324,134 H349" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="355" y="100" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="127" fill="#fff" font-family="sans-serif" font-size="17">B → C: construct xₜ</text>
+<text x="367" y="151" fill="#fff" font-family="sans-serif" font-size="17">Predict known target ε</text>
+<path d="M649,134 H674" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="680" y="100" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="127" fill="#fff" font-family="sans-serif" font-size="17">D: squared noise error</text>
+<text x="692" y="151" fill="#fff" font-family="sans-serif" font-size="17">Gradient update to θ</text>
+<text x="30" y="210" fill="#c5d5ee" font-family="sans-serif" font-size="18">GENERATE · trained θ stays fixed</text>
+<rect x="30" y="225" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="252" fill="#fff" font-family="sans-serif" font-size="17">Draw xT from N(0,I)</text>
+<text x="42" y="276" fill="#fff" font-family="sans-serif" font-size="17">No original image input</text>
+<path d="M324,259 H349" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="355" y="225" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="252" fill="#fff" font-family="sans-serif" font-size="17">C → E: reverse transition</text>
+<text x="367" y="276" fill="#fff" font-family="sans-serif" font-size="17">Fresh noise for t &gt; 1</text>
+<path d="M649,259 H674" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="680" y="225" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="252" fill="#fff" font-family="sans-serif" font-size="17">Carry xₜ₋₁ forward</text>
+<text x="692" y="276" fill="#fff" font-family="sans-serif" font-size="17">Repeat at time t − 1</text>
+<text x="30" y="335" fill="#c5d5ee" font-family="sans-serif" font-size="18">COMPUTE · original paper setup</text>
+<rect x="30" y="350" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="377" fill="#fff" font-family="sans-serif" font-size="17">Training corruption</text>
+<text x="42" y="401" fill="#fff" font-family="sans-serif" font-size="17">Direct marginal formula</text>
+<rect x="355" y="350" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="377" fill="#fff" font-family="sans-serif" font-size="17">Generation from scratch</text>
+<text x="367" y="401" fill="#fff" font-family="sans-serif" font-size="17">1,000 network evaluations</text>
+<rect x="680" y="350" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="377" fill="#fff" font-family="sans-serif" font-size="17">Final step t = 1</text>
+<text x="692" y="401" fill="#fff" font-family="sans-serif" font-size="17">Display mean; z = 0</text>
+</svg>

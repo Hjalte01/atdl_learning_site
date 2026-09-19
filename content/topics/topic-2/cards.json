@@ -1860,5 +1860,157 @@
       "GANs"
     ],
     "relatedTopicUrl": "/papers/t2-gans#8--what-the-experiments-establish"
+  },
+  {
+    "id": "ddpm-original-shape",
+    "topic": "topic-2",
+    "title": "DDPMs · shape",
+    "question": "What shape does a DDPM noisy latent retain?",
+    "choices": [
+      "The image dimensions.",
+      "A mandatory compressed VAE code.",
+      "One class label.",
+      "One scalar for the whole image."
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "The original model diffuses in image space; all time states have the data dimensionality.",
+    "difficulty": "medium",
+    "tags": [
+      "DDPMs"
+    ],
+    "relatedTopicUrl": "/papers/t2-ddpms#2--representation-the-latent-is-still-image-shaped"
+  },
+  {
+    "id": "ddpm-original-shortcut",
+    "topic": "topic-2",
+    "title": "DDPMs · shortcut",
+    "question": "How is one random training time constructed?",
+    "choices": [
+      "Run all reverse steps first.",
+      "Use the closed-form forward marginal.",
+      "Train a separate network for that time.",
+      "Decode a text embedding."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "The cumulative alpha product permits direct noising at a selected time.",
+    "difficulty": "medium",
+    "tags": [
+      "DDPMs"
+    ],
+    "relatedTopicUrl": "/papers/t2-ddpms#2--representation-the-latent-is-still-image-shaped"
+  },
+  {
+    "id": "ddpm-original-target",
+    "topic": "topic-2",
+    "title": "DDPMs · target",
+    "question": "What does the ideal squared-error noise predictor estimate?",
+    "choices": [
+      "The exact draw for every possible input.",
+      "The clean image label.",
+      "Conditional mean noise given noisy state and time.",
+      "The next random sampling draw."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "Ambiguous noisy inputs do not uniquely determine the original corruption.",
+    "difficulty": "medium",
+    "tags": [
+      "DDPMs"
+    ],
+    "relatedTopicUrl": "/papers/t2-ddpms#3--training-known-corruption-gives-a-supervised-target"
+  },
+  {
+    "id": "ddpm-original-weight",
+    "topic": "topic-2",
+    "title": "DDPMs · weight",
+    "question": "How does the simple objective differ from the intermediate variational terms?",
+    "choices": [
+      "It learns a discriminator.",
+      "It removes time conditioning.",
+      "It changes the data dimensions.",
+      "It drops the time-dependent noise-error prefactor."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "Changing relative time weights changes the learning objective, even with the same noise target.",
+    "difficulty": "medium",
+    "tags": [
+      "DDPMs"
+    ],
+    "relatedTopicUrl": "/papers/t2-ddpms#4--why-the-simple-loss-is-not-the-original-likelihood-objective"
+  },
+  {
+    "id": "ddpm-original-state",
+    "topic": "topic-2",
+    "title": "DDPMs · state",
+    "question": "Which quantity is carried into the next reverse iteration?",
+    "choices": [
+      "The sampled next noisy state.",
+      "Always the clean estimate.",
+      "The original training image.",
+      "The loss value."
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "The reverse mean plus its random increment produces the next state; the clean estimate is a separate quantity.",
+    "difficulty": "medium",
+    "tags": [
+      "DDPMs"
+    ],
+    "relatedTopicUrl": "/papers/t2-ddpms#5--sampling-a-clean-estimate-is-not-a-reverse-step"
+  },
+  {
+    "id": "ddpm-original-variance",
+    "topic": "topic-2",
+    "title": "DDPMs · variance",
+    "question": "If reverse variance is 0.1, what multiplies a standard Gaussian draw?",
+    "choices": [
+      "0.1",
+      "The square root of 0.1.",
+      "The square of 0.1.",
+      "1/0.1"
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "The multiplier is the standard deviation; its square determines variance.",
+    "difficulty": "medium",
+    "tags": [
+      "DDPMs"
+    ],
+    "relatedTopicUrl": "/papers/t2-ddpms#6--worked-example-trace-one-coordinate-through-the-same-boxes"
+  },
+  {
+    "id": "ddpm-original-final",
+    "topic": "topic-2",
+    "title": "DDPMs · final",
+    "question": "When does Algorithm 2 set its random increment to zero?",
+    "choices": [
+      "At every step.",
+      "Only at the noisiest time.",
+      "At the final t = 1 step.",
+      "Only during training."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "The paper displays the final mean noiselessly; earlier steps use fresh Gaussian draws.",
+    "difficulty": "medium",
+    "tags": [
+      "DDPMs"
+    ],
+    "relatedTopicUrl": "/papers/t2-ddpms#5--sampling-a-clean-estimate-is-not-a-reverse-step"
+  },
+  {
+    "id": "ddpm-original-evidence",
+    "topic": "topic-2",
+    "title": "DDPMs · evidence",
+    "question": "What does the original CIFAR10 simple-loss result demonstrate?",
+    "choices": [
+      "Exact likelihood improves along with FID.",
+      "A one-step generator beats every baseline.",
+      "FID is independent of reference data.",
+      "FID improves while the reported NLL bound worsens."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "FID changes from 13.51 to 3.17, while the bound changes from 3.70 to 3.75 bits/dimension.",
+    "difficulty": "medium",
+    "tags": [
+      "DDPMs"
+    ],
+    "relatedTopicUrl": "/papers/t2-ddpms#8--evidence-sample-quality-and-likelihood-pull-differently"
   }
 ]

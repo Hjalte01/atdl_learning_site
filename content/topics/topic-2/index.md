@@ -9,6 +9,8 @@ locale: "en"
 ---
 ## Learning path
 
+The [original DDPM guide](/papers/t2-ddpms) follows the supplied NeurIPS 2020 paper through forward corruption, noise prediction, likelihood reweighting and stochastic reverse sampling. Seven diagrams, a scalar calculation and eight cards connect the mechanism to its reported CIFAR10 evidence.
+
 The [original GANs guide](/papers/t2-gans) follows the supplied 2014 paper through alternating training, generator-only sampling, non-saturating gradients and ideal equilibrium. Seven diagrams, a worked update and eight study cards distinguish mathematical guarantees from the reported Parzen evaluation.
 
 The [Neural compression chapter guide](/papers/t2-neural-compression) complements the textbook roadmap using the separately cataloged course copy. Follow learned transforms, soft and hard quantization, entropy coding and rate–distortion accounting through seven diagrams, a complete toy message and eight study cards.

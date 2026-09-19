@@ -268,12 +268,12 @@
     {
       "id": "6fa0f9acb73dc11a",
       "sourcePath": "topic 2/extra reading material/DDPMs.pdf",
-      "title": "DDPMs",
+      "title": "Denoising Diffusion Probabilistic Models",
       "topic": 2,
       "order": null,
       "kind": "extra",
-      "status": "not-started",
-      "guide": null,
+      "status": "ready",
+      "guide": "/papers/t2-ddpms",
       "pdf": "/materials/6fa0f9acb73dc11a.pdf",
       "sha256": "cb471d4c0063cad56f8d74b6a72fa7dad1677f8423a0a81349487a63bb58d3de"
     },

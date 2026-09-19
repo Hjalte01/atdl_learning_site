@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="485" viewBox="0 0 1000 485" role="img" aria-label="A hierarchy of information, not a pixel filling order">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="#fff" font-family="sans-serif" font-size="25">A hierarchy of information, not a pixel filling order</text>
+<text x="30" y="85" fill="#c5d5ee" font-family="sans-serif" font-size="18">REVERSE DIRECTION · schematic reading of Figures 5–7</text>
+<rect x="30" y="100" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="127" fill="#fff" font-family="sans-serif" font-size="17">Early: low signal</text>
+<text x="42" y="151" fill="#fff" font-family="sans-serif" font-size="17">Broad structure emerges</text>
+<path d="M324,134 H349" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="355" y="100" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="127" fill="#fff" font-family="sans-serif" font-size="17">Middle: more information</text>
+<text x="367" y="151" fill="#fff" font-family="sans-serif" font-size="17">Shape becomes clearer</text>
+<path d="M649,134 H674" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="680" y="100" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="127" fill="#fff" font-family="sans-serif" font-size="17">Late: fine detail</text>
+<text x="692" y="151" fill="#fff" font-family="sans-serif" font-size="17">Small residual uncertainty</text>
+<text x="30" y="210" fill="#c5d5ee" font-family="sans-serif" font-size="18">TWO INTERPRETATIONS · keep their inputs distinct</text>
+<rect x="30" y="225" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="252" fill="#fff" font-family="sans-serif" font-size="17">Generation</text>
+<text x="42" y="276" fill="#fff" font-family="sans-serif" font-size="17">Start from random xT</text>
+<rect x="355" y="225" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="252" fill="#fff" font-family="sans-serif" font-size="17">Progressive decoding</text>
+<text x="367" y="276" fill="#fff" font-family="sans-serif" font-size="17">Receive information about x₀</text>
+<rect x="680" y="225" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="252" fill="#fff" font-family="sans-serif" font-size="17">Both can preview x̂₀</text>
+<text x="692" y="276" fill="#fff" font-family="sans-serif" font-size="17">Using the current xₜ</text>
+<text x="30" y="335" fill="#c5d5ee" font-family="sans-serif" font-size="18">REPORTED CIFAR10 ACCOUNTING · §4.3</text>
+<rect x="30" y="350" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="377" fill="#fff" font-family="sans-serif" font-size="17">Rate: 1.78 bits/dim</text>
+<text x="42" y="401" fill="#fff" font-family="sans-serif" font-size="17">Intermediate bound terms</text>
+<path d="M324,384 H349" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="355" y="350" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="377" fill="#fff" font-family="sans-serif" font-size="17">Distortion: 1.97 bits/dim</text>
+<text x="367" y="401" fill="#fff" font-family="sans-serif" font-size="17">Final decoder term</text>
+<path d="M649,384 H674" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="680" y="350" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="377" fill="#fff" font-family="sans-serif" font-size="17">Total: 3.75 bits/dim</text>
+<text x="692" y="401" fill="#fff" font-family="sans-serif" font-size="17">Not an actual file size</text>
+</svg>
