@@ -9,6 +9,8 @@ locale: "en"
 ---
 ## Learning path
 
+The [original GANs guide](/papers/t2-gans) follows the supplied 2014 paper through alternating training, generator-only sampling, non-saturating gradients and ideal equilibrium. Seven diagrams, a worked update and eight study cards distinguish mathematical guarantees from the reported Parzen evaluation.
+
 The [Neural compression chapter guide](/papers/t2-neural-compression) complements the textbook roadmap using the separately cataloged course copy. Follow learned transforms, soft and hard quantization, entropy coding and rate–distortion accounting through seven diagrams, a complete toy message and eight study cards.
 
 The [Deep Generative Modeling textbook guide](/papers/t2-deep-generative-modeling) follows Tomczak’s supplied second edition (2024). Seven diagrams and eight study cards trace autoregressive likelihoods, flow volume corrections, VAE training and generation, adversarial learning and score-based sampling.

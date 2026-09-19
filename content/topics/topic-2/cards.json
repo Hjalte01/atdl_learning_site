@@ -1708,5 +1708,157 @@
       "Neural compression"
     ],
     "relatedTopicUrl": "/papers/t2-neural-compression#8--what-the-source-demonstrates-and-what-remains-untested"
+  },
+  {
+    "id": "gans-original-signal",
+    "topic": "topic-2",
+    "title": "GANs · signal",
+    "question": "What does the GAN discriminator estimate in the balanced classification task?",
+    "choices": [
+      "Probability of real origin.",
+      "Exact normalized image density.",
+      "The noise vector.",
+      "A semantic class label."
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "The scalar distinguishes training-data origin from generator origin, not semantic classes.",
+    "difficulty": "medium",
+    "tags": [
+      "GANs"
+    ],
+    "relatedTopicUrl": "/papers/t2-gans#1--architecture-the-discriminator-supplies-a-differentiable-signal"
+  },
+  {
+    "id": "gans-original-freeze",
+    "topic": "topic-2",
+    "title": "GANs · freeze",
+    "question": "During the generator step, what does freezing the discriminator mean?",
+    "choices": [
+      "Block all input gradients.",
+      "Keep its weights fixed while differentiating through its input.",
+      "Replace its output with one half.",
+      "Train it only on real data."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "The chain rule must still connect the discriminator output to generator parameters.",
+    "difficulty": "medium",
+    "tags": [
+      "GANs"
+    ],
+    "relatedTopicUrl": "/papers/t2-gans#3--training-and-sampling-follow-different-paths"
+  },
+  {
+    "id": "gans-original-sample",
+    "topic": "topic-2",
+    "title": "GANs · sample",
+    "question": "What is required for unconditional sampling after training?",
+    "choices": [
+      "A real image and an encoder.",
+      "Alternating discriminator updates.",
+      "A noise draw and a generator forward pass.",
+      "A Markov chain through D."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "The original sampling path uses the noise prior and the fixed generator alone.",
+    "difficulty": "medium",
+    "tags": [
+      "GANs"
+    ],
+    "relatedTopicUrl": "/papers/t2-gans#3--training-and-sampling-follow-different-paths"
+  },
+  {
+    "id": "gans-original-gradient",
+    "topic": "topic-2",
+    "title": "GANs · gradient",
+    "question": "When the fake score is 0.01, what is the non-saturating loss derivative with respect to its logit?",
+    "choices": [
+      "0.99",
+      "−0.01",
+      "0.01",
+      "−0.99"
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "For −log sigmoid(a), the derivative is sigmoid(a)−1. This is a logit derivative, not a parameter gradient.",
+    "difficulty": "medium",
+    "tags": [
+      "GANs"
+    ],
+    "relatedTopicUrl": "/papers/t2-gans#5--why-change-the-generator-loss"
+  },
+  {
+    "id": "gans-original-collapse",
+    "topic": "topic-2",
+    "title": "GANs · collapse",
+    "question": "Why does independent input noise not guarantee diverse generated outputs?",
+    "choices": [
+      "G can map many noise values to the same output.",
+      "Independent draws are always identical.",
+      "D is needed to inject sampling noise.",
+      "The prior must be learned from images."
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "A constant or collapsed generator can discard the variation in its inputs.",
+    "difficulty": "medium",
+    "tags": [
+      "GANs"
+    ],
+    "relatedTopicUrl": "/papers/t2-gans#4--representation-a-map-induces-a-distribution"
+  },
+  {
+    "id": "gans-original-optimal",
+    "topic": "topic-2",
+    "title": "GANs · optimal",
+    "question": "At a point where data density is 3 and generator density is 1, what is the ideal balanced discriminator score?",
+    "choices": [
+      "1/4",
+      "3/4",
+      "3",
+      "1/2"
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "The optimal score is data/(data+generator), so 3/(3+1)=3/4.",
+    "difficulty": "medium",
+    "tags": [
+      "GANs"
+    ],
+    "relatedTopicUrl": "/papers/t2-gans#7--ideal-equilibrium-why-one-half-can-mean-success"
+  },
+  {
+    "id": "gans-original-theorem",
+    "topic": "topic-2",
+    "title": "GANs · theorem",
+    "question": "Why does the original convergence proof not guarantee practical neural GAN convergence?",
+    "choices": [
+      "It assumes no discriminator.",
+      "It applies only to MNIST.",
+      "It assumes ideal capacity, optimal D and distribution-space updates.",
+      "It requires D to stay untrained."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "Finite networks optimize parameters and need not satisfy the proof’s idealized assumptions.",
+    "difficulty": "medium",
+    "tags": [
+      "GANs"
+    ],
+    "relatedTopicUrl": "/papers/t2-gans#7--ideal-equilibrium-why-one-half-can-mean-success"
+  },
+  {
+    "id": "gans-original-evidence",
+    "topic": "topic-2",
+    "title": "GANs · evidence",
+    "question": "What do the paper’s Table 1 scores measure?",
+    "choices": [
+      "Exact GAN log-likelihood.",
+      "Human preference for CIFAR-10 images.",
+      "Variance over independent training seeds.",
+      "Test log-likelihood under a Parzen estimator fitted to generated samples."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "The fitted estimator and validation-selected kernel width are part of the evaluation; it is not exact model likelihood.",
+    "difficulty": "medium",
+    "tags": [
+      "GANs"
+    ],
+    "relatedTopicUrl": "/papers/t2-gans#8--what-the-experiments-establish"
   }
 ]

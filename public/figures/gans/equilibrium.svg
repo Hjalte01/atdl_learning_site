@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="485" viewBox="0 0 1000 485" role="img" aria-label="An ideal discriminator compares local probability mass">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="#fff" font-family="sans-serif" font-size="25">An ideal discriminator compares local probability mass</text>
+<text x="30" y="85" fill="#c5d5ee" font-family="sans-serif" font-size="18">TWO-BIN TEACHING DISTRIBUTIONS · not discrete GAN training</text>
+<rect x="30" y="100" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="127" fill="#fff" font-family="sans-serif" font-size="17">Data: (0.75, 0.25)</text>
+<text x="42" y="151" fill="#fff" font-family="sans-serif" font-size="17">Generator: (0.25, 0.75)</text>
+<path d="M324,134 H349" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="355" y="100" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="127" fill="#fff" font-family="sans-serif" font-size="17">D* = data / (data + gen)</text>
+<text x="367" y="151" fill="#fff" font-family="sans-serif" font-size="17">D* = (0.75, 0.25)</text>
+<path d="M649,134 H674" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="680" y="100" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="127" fill="#fff" font-family="sans-serif" font-size="17">C(G) ≈ −1.1247</text>
+<text x="692" y="151" fill="#fff" font-family="sans-serif" font-size="17">Above optimum −1.3863</text>
+<text x="30" y="210" fill="#c5d5ee" font-family="sans-serif" font-size="18">MATCHED DISTRIBUTIONS · generator now equals data</text>
+<rect x="30" y="225" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="252" fill="#fff" font-family="sans-serif" font-size="17">Data: (0.75, 0.25)</text>
+<text x="42" y="276" fill="#fff" font-family="sans-serif" font-size="17">Generator: (0.75, 0.25)</text>
+<path d="M324,259 H349" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="355" y="225" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="252" fill="#fff" font-family="sans-serif" font-size="17">D* = (0.5, 0.5)</text>
+<text x="367" y="276" fill="#fff" font-family="sans-serif" font-size="17">Origins indistinguishable</text>
+<path d="M649,259 H674" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="680" y="225" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="252" fill="#fff" font-family="sans-serif" font-size="17">C(G) = −log 4</text>
+<text x="692" y="276" fill="#fff" font-family="sans-serif" font-size="17">Jensen–Shannon = 0</text>
+<text x="30" y="335" fill="#c5d5ee" font-family="sans-serif" font-size="18">THEOREM CONDITIONS · distribution-space result</text>
+<rect x="30" y="350" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="377" fill="#fff" font-family="sans-serif" font-size="17">Unlimited capacity</text>
+<text x="42" y="401" fill="#fff" font-family="sans-serif" font-size="17">Optimal discriminator</text>
+<rect x="355" y="350" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="377" fill="#fff" font-family="sans-serif" font-size="17">Small distribution updates</text>
+<text x="367" y="401" fill="#fff" font-family="sans-serif" font-size="17">Not arbitrary SGD steps</text>
+<rect x="680" y="350" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="377" fill="#fff" font-family="sans-serif" font-size="17">Finite networks differ</text>
+<text x="692" y="401" fill="#fff" font-family="sans-serif" font-size="17">No practical convergence proof</text>
+</svg>

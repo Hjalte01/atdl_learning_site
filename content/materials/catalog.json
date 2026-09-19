@@ -308,8 +308,8 @@
       "topic": 2,
       "order": null,
       "kind": "extra",
-      "status": "not-started",
-      "guide": null,
+      "status": "ready",
+      "guide": "/papers/t2-gans",
       "pdf": "/materials/62f87d046817a782.pdf",
       "sha256": "331961622a2f6588c48a34ecddc6a3d052ffe8fcfba333f233d5f27b2da5565d"
     },

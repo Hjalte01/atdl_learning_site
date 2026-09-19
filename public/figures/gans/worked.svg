@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="485" viewBox="0 0 1000 485" role="img" aria-label="One scalar generator step, traced through B and C">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="#fff" font-family="sans-serif" font-size="25">One scalar generator step, traced through B and C</text>
+<text x="30" y="85" fill="#c5d5ee" font-family="sans-serif" font-size="18">CONSTRUCTED NETWORKS · Gθ(z) = θz; D(x) = sigmoid(2x − 2)</text>
+<rect x="30" y="100" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="127" fill="#fff" font-family="sans-serif" font-size="17">A: z = 1; θ = 0</text>
+<text x="42" y="151" fill="#fff" font-family="sans-serif" font-size="17">B: fake x = 0</text>
+<path d="M324,134 H349" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="355" y="100" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="127" fill="#fff" font-family="sans-serif" font-size="17">C: logit a = −2</text>
+<text x="367" y="151" fill="#fff" font-family="sans-serif" font-size="17">D(fake) ≈ 0.1192</text>
+<path d="M649,134 H674" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="680" y="100" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="127" fill="#fff" font-family="sans-serif" font-size="17">Loss = −log D(fake)</text>
+<text x="692" y="151" fill="#fff" font-family="sans-serif" font-size="17">≈ 2.1269</text>
+<text x="30" y="210" fill="#c5d5ee" font-family="sans-serif" font-size="18">BACKWARD · discriminator slope is 2; z is 1</text>
+<rect x="30" y="225" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="252" fill="#fff" font-family="sans-serif" font-size="17">∂L/∂a = D − 1</text>
+<text x="42" y="276" fill="#fff" font-family="sans-serif" font-size="17">≈ −0.8808</text>
+<path d="M324,259 H349" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="355" y="225" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="252" fill="#fff" font-family="sans-serif" font-size="17">∂L/∂θ = (D − 1) × 2 × 1</text>
+<text x="367" y="276" fill="#fff" font-family="sans-serif" font-size="17">≈ −1.7616</text>
+<path d="M649,259 H674" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="680" y="225" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="252" fill="#fff" font-family="sans-serif" font-size="17">Step size η = 0.1</text>
+<text x="692" y="276" fill="#fff" font-family="sans-serif" font-size="17">θ new ≈ 0.1762</text>
+<text x="30" y="335" fill="#c5d5ee" font-family="sans-serif" font-size="18">RECOMPUTE WITH SAME z · pedagogical check, not a full training run</text>
+<rect x="30" y="350" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="377" fill="#fff" font-family="sans-serif" font-size="17">B: fake x ≈ 0.1762</text>
+<text x="42" y="401" fill="#fff" font-family="sans-serif" font-size="17">Generator changed</text>
+<path d="M324,384 H349" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="355" y="350" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="377" fill="#fff" font-family="sans-serif" font-size="17">C: D(fake) ≈ 0.1614</text>
+<text x="367" y="401" fill="#fff" font-family="sans-serif" font-size="17">Discriminator unchanged</text>
+<path d="M649,384 H674" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="680" y="350" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="377" fill="#fff" font-family="sans-serif" font-size="17">Loss ≈ 1.8237</text>
+<text x="692" y="401" fill="#fff" font-family="sans-serif" font-size="17">One local improvement</text>
+</svg>
