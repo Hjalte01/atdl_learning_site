@@ -1556,5 +1556,157 @@
       "Deep Generative Modeling"
     ],
     "relatedTopicUrl": "/papers/t2-deep-generative-modeling#7--scores-learn-a-local-direction-then-run-a-sampler"
+  },
+  {
+    "id": "compression-book-lossless",
+    "topic": "topic-2",
+    "title": "Neural compression · Lossless stage",
+    "question": "What does a lossless entropy decoder guarantee inside this lossy codec?",
+    "choices": [
+      "The quantized indices are recovered exactly.",
+      "The original pixels are recovered exactly.",
+      "The encoder is invertible.",
+      "The rate is zero."
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "Quantization or the learned transform can lose image information before the lossless entropy stage.",
+    "difficulty": "medium",
+    "tags": [
+      "Neural compression"
+    ],
+    "relatedTopicUrl": "/papers/t2-neural-compression#1--architecture-where-does-information-disappear"
+  },
+  {
+    "id": "compression-book-training",
+    "topic": "topic-2",
+    "title": "Neural compression · Training path",
+    "question": "Why can the chapter train without running an actual entropy coder?",
+    "choices": [
+      "The image is already a bitstream.",
+      "A differentiable probability-based rate surrogate enters the loss.",
+      "Quantization always has an exact gradient.",
+      "The decoder is unnecessary."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "The rate surrogate trains the entropy model and representation; real coding remains necessary for deployment.",
+    "difficulty": "medium",
+    "tags": [
+      "Neural compression"
+    ],
+    "relatedTopicUrl": "/papers/t2-neural-compression#2--training-compression-and-generation-follow-different-paths"
+  },
+  {
+    "id": "compression-book-tie",
+    "topic": "topic-2",
+    "title": "Neural compression · Quantization tie",
+    "question": "For y = 0.5 and codebook (0,1), what does the symmetric soft quantizer output as sharpness increases?",
+    "choices": [
+      "Always 0.",
+      "Always 1.",
+      "The equal mixture 0.5, unless symmetry is broken.",
+      "An integer index 2."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "The similarities tie, so softmax gives equal weights. Hard quantization needs a tie rule and chooses an endpoint.",
+    "difficulty": "medium",
+    "tags": [
+      "Neural compression"
+    ],
+    "relatedTopicUrl": "/papers/t2-neural-compression#3--representation-close-up-an-index-is-not-a-float"
+  },
+  {
+    "id": "compression-book-payload",
+    "topic": "topic-2",
+    "title": "Neural compression · Ideal versus actual bits",
+    "question": "The worked sequence has ideal information content 1.415 bits. How long is its illustrated binary prefix-code payload?",
+    "choices": [
+      "1.415 bits exactly.",
+      "Zero bits.",
+      "Four bits.",
+      "Two bits, before headers."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "The actual code transmits 01. A fractional ideal length is not the size of that finite message.",
+    "difficulty": "medium",
+    "tags": [
+      "Neural compression"
+    ],
+    "relatedTopicUrl": "/papers/t2-neural-compression#4--worked-example-follow-one-image-all-the-way-back"
+  },
+  {
+    "id": "compression-book-decode",
+    "topic": "topic-2",
+    "title": "Neural compression · Decode versus sample",
+    "question": "How does an autoregressive entropy decoder obtain the next index?",
+    "choices": [
+      "It recovers it from bits using the distribution conditioned on the decoded prefix.",
+      "It samples a plausible value.",
+      "It reads future symbols first.",
+      "It retrains the image encoder."
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "Decoding must reproduce the encoded sequence; sampling instead creates a new sequence.",
+    "difficulty": "medium",
+    "tags": [
+      "Neural compression"
+    ],
+    "relatedTopicUrl": "/papers/t2-neural-compression#5--probability-becomes-useful-through-synchronized-decoding"
+  },
+  {
+    "id": "compression-book-bpp",
+    "topic": "topic-2",
+    "title": "Neural compression · Fixed-width accounting",
+    "question": "Four indices use a four-entry codebook for a 16-pixel grayscale image. What is fixed-width payload bpp?",
+    "choices": [
+      "0.1875 bpp.",
+      "0.5 bpp.",
+      "2 bpp.",
+      "4 bpp."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "Each index needs log₂4 = 2 bits: 8 bits total divided by 16 pixels is 0.5 bpp, excluding overhead.",
+    "difficulty": "medium",
+    "tags": [
+      "Neural compression"
+    ],
+    "relatedTopicUrl": "/papers/t2-neural-compression#6--count-bits-carefully"
+  },
+  {
+    "id": "compression-book-beta",
+    "topic": "topic-2",
+    "title": "Neural compression · Rate penalty",
+    "question": "In distortion + β × rate, what does increasing β favor when comparing fixed candidates?",
+    "choices": [
+      "More expensive bitstreams.",
+      "Higher distortion at any cost.",
+      "Lower rate relative to distortion.",
+      "A change from bits to nats automatically."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "Increasing the multiplier on rate makes bits more expensive; the units and normalization must remain fixed.",
+    "difficulty": "medium",
+    "tags": [
+      "Neural compression"
+    ],
+    "relatedTopicUrl": "/papers/t2-neural-compression#7--the-ratedistortion-tradeoff-is-a-choice-of-units-and-priorities"
+  },
+  {
+    "id": "compression-book-evidence",
+    "topic": "topic-2",
+    "title": "Neural compression · Evidence limits",
+    "question": "What does the chapter’s single-β training plot establish about codec comparisons?",
+    "choices": [
+      "It proves superiority to JPEG.",
+      "It measures end-to-end decoding speed.",
+      "Its rate axis is necessarily complete-file bpp.",
+      "It illustrates training behavior, without establishing a baseline codec advantage."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "The example lacks baseline and full-stream accounting; a training curve is not a rate–distortion frontier.",
+    "difficulty": "medium",
+    "tags": [
+      "Neural compression"
+    ],
+    "relatedTopicUrl": "/papers/t2-neural-compression#8--what-the-source-demonstrates-and-what-remains-untested"
   }
 ]

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="485" viewBox="0 0 1000 485" role="img" aria-label="Close-up: floats, indices and codebook values are different objects">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="#fff" font-family="sans-serif" font-size="25">Close-up: floats, indices and codebook values are different objects</text>
+<text x="30" y="85" fill="#c5d5ee" font-family="sans-serif" font-size="18">HARD ASSIGNMENT · codebook c = (−1,0,1); nearest value</text>
+<rect x="30" y="100" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="127" fill="#fff" font-family="sans-serif" font-size="17">y = (−0.8,0.2,0.9)</text>
+<text x="42" y="151" fill="#fff" font-family="sans-serif" font-size="17">Three continuous values</text>
+<path d="M324,134 H349" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="355" y="100" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="127" fill="#fff" font-family="sans-serif" font-size="17">i = (0,1,2)</text>
+<text x="367" y="151" fill="#fff" font-family="sans-serif" font-size="17">Three integer indices</text>
+<path d="M649,134 H674" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="680" y="100" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="127" fill="#fff" font-family="sans-serif" font-size="17">c[i] = (−1,0,1)</text>
+<text x="692" y="151" fill="#fff" font-family="sans-serif" font-size="17">Three reconstructed values</text>
+<text x="30" y="210" fill="#c5d5ee" font-family="sans-serif" font-size="18">SOFT TRAINING · one row per coordinate, one column per codebook entry</text>
+<rect x="30" y="225" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="252" fill="#fff" font-family="sans-serif" font-size="17">Similarity matrix S</text>
+<text x="42" y="276" fill="#fff" font-family="sans-serif" font-size="17">Shape M × K</text>
+<path d="M324,259 H349" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="355" y="225" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="252" fill="#fff" font-family="sans-serif" font-size="17">W = softmax(τ S)</text>
+<text x="367" y="276" fill="#fff" font-family="sans-serif" font-size="17">Rows sum to 1</text>
+<path d="M649,259 H674" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="680" y="225" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="252" fill="#fff" font-family="sans-serif" font-size="17">Soft values = Wc</text>
+<text x="692" y="276" fill="#fff" font-family="sans-serif" font-size="17">Generally between entries</text>
+<text x="30" y="335" fill="#c5d5ee" font-family="sans-serif" font-size="18">LIMITS · raising τ sharpens assignments but can saturate gradients</text>
+<rect x="30" y="350" width="290" height="68" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="377" fill="#fff" font-family="sans-serif" font-size="17">Small τ</text>
+<text x="42" y="401" fill="#fff" font-family="sans-serif" font-size="17">Diffuse mixtures</text>
+<rect x="355" y="350" width="290" height="68" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="367" y="377" fill="#fff" font-family="sans-serif" font-size="17">Large τ; unique winner</text>
+<text x="367" y="401" fill="#fff" font-family="sans-serif" font-size="17">Approaches one-hot</text>
+<rect x="680" y="350" width="290" height="68" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="692" y="377" fill="#fff" font-family="sans-serif" font-size="17">Exact tie</text>
+<text x="692" y="401" fill="#fff" font-family="sans-serif" font-size="17">Mixture can persist</text>
+</svg>

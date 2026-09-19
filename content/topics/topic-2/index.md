@@ -9,6 +9,8 @@ locale: "en"
 ---
 ## Learning path
 
+The [Neural compression chapter guide](/papers/t2-neural-compression) complements the textbook roadmap using the separately cataloged course copy. Follow learned transforms, soft and hard quantization, entropy coding and rate–distortion accounting through seven diagrams, a complete toy message and eight study cards.
+
 The [Deep Generative Modeling textbook guide](/papers/t2-deep-generative-modeling) follows Tomczak’s supplied second edition (2024). Seven diagrams and eight study cards trace autoregressive likelihoods, flow volume corrections, VAE training and generation, adversarial learning and score-based sampling.
 
 The [Flow Matching extra-reading guide](/papers/t2-flow-matching) develops the supplied 2026 MIT notes: conditional targets, posterior averaging, separate training and sampling, score-corrected SDEs, guidance and latent generators. Seven diagrams and eight study cards connect the derivations to worked examples.

@@ -176,8 +176,8 @@
       "topic": 2,
       "order": null,
       "kind": "extra",
-      "status": "not-started",
-      "guide": null,
+      "status": "ready",
+      "guide": "/papers/t2-neural-compression",
       "pdf": "/materials/52f0790c3323bf24.pdf",
       "sha256": "d3a970dbbcfd4f26d0469ee21b99713daabd2a7bbbf11cbdf3ce9953bdc3d316"
     },
