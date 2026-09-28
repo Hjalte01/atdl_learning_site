@@ -1,5 +1,5 @@
 {
-  "inventoryComplete": true,
+  "inventoryComplete": false,
   "materials": [
     {
       "id": "c3a92e3755fdccf8",
@@ -11,7 +11,8 @@
       "status": "ready",
       "guide": "/papers/not-so-mysterious",
       "pdf": "/materials/c3a92e3755fdccf8.pdf",
-      "sha256": "ed980e43235fdb036cdfbdee31a6287f527aad1a54d003a4ca00d8f585b4a539"
+      "sha256": "ed980e43235fdb036cdfbdee31a6287f527aad1a54d003a4ca00d8f585b4a539",
+      "sourceState": "present"
     },
     {
       "id": "eaaa66a375c9ea2f",
@@ -23,7 +24,8 @@
       "status": "ready",
       "guide": "/papers/selection-under-uncertainty",
       "pdf": "/materials/eaaa66a375c9ea2f.pdf",
-      "sha256": "79a8ec3efd554d6252ba17b681b82b7e47ef18ec66732b04134bc10d0d33bb36"
+      "sha256": "79a8ec3efd554d6252ba17b681b82b7e47ef18ec66732b04134bc10d0d33bb36",
+      "sourceState": "present"
     },
     {
       "id": "0d0a9af9a318e975",
@@ -35,7 +37,8 @@
       "status": "ready",
       "guide": "/papers/representation-overview",
       "pdf": "/materials/0d0a9af9a318e975.pdf",
-      "sha256": "e61ca87bd97a702638e9e7264ac38c95ca5759af3412637b2993113ffae6571e"
+      "sha256": "e61ca87bd97a702638e9e7264ac38c95ca5759af3412637b2993113ffae6571e",
+      "sourceState": "present"
     },
     {
       "id": "9de9386c534d5941",
@@ -47,7 +50,8 @@
       "status": "ready",
       "guide": "/papers/understanding-deep-learning",
       "pdf": "/materials/9de9386c534d5941.pdf",
-      "sha256": "8a107732419052818773169fb348e0128b2d234db952f4c62a1711a5cab02c5f"
+      "sha256": "8a107732419052818773169fb348e0128b2d234db952f4c62a1711a5cab02c5f",
+      "sourceState": "present"
     },
     {
       "id": "2d3cbfe4f57b5df2",
@@ -59,7 +63,8 @@
       "status": "ready",
       "guide": "/papers/t1-theories-lecture",
       "pdf": "/materials/2d3cbfe4f57b5df2.pdf",
-      "sha256": "1e880e0605e6fc679abe98166c803b003bad754e0862a49b657a6a005aa8556c"
+      "sha256": "1e880e0605e6fc679abe98166c803b003bad754e0862a49b657a6a005aa8556c",
+      "sourceState": "present"
     },
     {
       "id": "d94bef971da2e5c9",
@@ -71,7 +76,8 @@
       "status": "ready",
       "guide": "/papers/t1-complexity-lecture",
       "pdf": "/materials/d94bef971da2e5c9.pdf",
-      "sha256": "a766100dcfccf4728a37d98698116bbee8d1c1ac84f0ac8e43d03d0f87a105c8"
+      "sha256": "a766100dcfccf4728a37d98698116bbee8d1c1ac84f0ac8e43d03d0f87a105c8",
+      "sourceState": "present"
     },
     {
       "id": "9457e09b91494020",
@@ -83,7 +89,8 @@
       "status": "ready",
       "guide": "/papers/t1-momos-lecture",
       "pdf": "/materials/9457e09b91494020.pdf",
-      "sha256": "038664c8295960724630a00ad7fe0ba58c5abca2f8a87e3d00798a7a0c16af00"
+      "sha256": "038664c8295960724630a00ad7fe0ba58c5abca2f8a87e3d00798a7a0c16af00",
+      "sourceState": "present"
     },
     {
       "id": "120203b5e33d656b",
@@ -95,7 +102,8 @@
       "status": "ready",
       "guide": "/papers/t2-generative-lecture-2",
       "pdf": "/materials/120203b5e33d656b.pdf",
-      "sha256": "26d6e8fbe615c4101932f536b74283160fab34cdf2e7eac2ed649f065e04cb20"
+      "sha256": "26d6e8fbe615c4101932f536b74283160fab34cdf2e7eac2ed649f065e04cb20",
+      "sourceState": "present"
     },
     {
       "id": "22cd8f7416021c32",
@@ -107,7 +115,8 @@
       "status": "ready",
       "guide": "/papers/t1-paper-1",
       "pdf": "/materials/22cd8f7416021c32.pdf",
-      "sha256": "1dc4501aa1e4e75bda26e2679553a8df9b736d65ac0b848a5b0263f7141b5ba3"
+      "sha256": "1dc4501aa1e4e75bda26e2679553a8df9b736d65ac0b848a5b0263f7141b5ba3",
+      "sourceState": "present"
     },
     {
       "id": "fd2a56c293d6c3a4",
@@ -119,7 +128,8 @@
       "status": "ready",
       "guide": "/papers/t1-paper-2",
       "pdf": "/materials/fd2a56c293d6c3a4.pdf",
-      "sha256": "4d28d0e2f5f7b841a5c79c0ecfa675cb6357323a008fa048dff9a07594ee6a35"
+      "sha256": "4d28d0e2f5f7b841a5c79c0ecfa675cb6357323a008fa048dff9a07594ee6a35",
+      "sourceState": "present"
     },
     {
       "id": "a2f39f732c758013",
@@ -131,7 +141,8 @@
       "status": "ready",
       "guide": "/papers/t1-paper-3",
       "pdf": "/materials/a2f39f732c758013.pdf",
-      "sha256": "b2f561a5e1073c4f05a22edf0803553bba561cd2864f65c2268b422755e0ae47"
+      "sha256": "b2f561a5e1073c4f05a22edf0803553bba561cd2864f65c2268b422755e0ae47",
+      "sourceState": "present"
     },
     {
       "id": "afd074637ca4280b",
@@ -143,7 +154,8 @@
       "status": "ready",
       "guide": "/papers/t1-paper-4",
       "pdf": "/materials/afd074637ca4280b.pdf",
-      "sha256": "8f731731ecb6dcf08cb9736e55b6f84a39d50546db0d9e724e1a68dc34464e68"
+      "sha256": "8f731731ecb6dcf08cb9736e55b6f84a39d50546db0d9e724e1a68dc34464e68",
+      "sourceState": "present"
     },
     {
       "id": "da97193c2ba796d0",
@@ -155,7 +167,8 @@
       "status": "ready",
       "guide": "/papers/t1-paper-5",
       "pdf": "/materials/da97193c2ba796d0.pdf",
-      "sha256": "99f55e2f3828894481b4c81e011ea81a7bed40506cf268cbf96dc5d46b0c78cd"
+      "sha256": "99f55e2f3828894481b4c81e011ea81a7bed40506cf268cbf96dc5d46b0c78cd",
+      "sourceState": "present"
     },
     {
       "id": "e623964ae51976dd",
@@ -167,7 +180,8 @@
       "status": "ready",
       "guide": "/papers/t1-paper-6",
       "pdf": "/materials/e623964ae51976dd.pdf",
-      "sha256": "953744cf2120b6294669be59eaaf432433aa47c21e27192f421ed75501bbc926"
+      "sha256": "953744cf2120b6294669be59eaaf432433aa47c21e27192f421ed75501bbc926",
+      "sourceState": "present"
     },
     {
       "id": "52f0790c3323bf24",
@@ -179,7 +193,8 @@
       "status": "ready",
       "guide": "/papers/t2-neural-compression",
       "pdf": "/materials/52f0790c3323bf24.pdf",
-      "sha256": "d3a970dbbcfd4f26d0469ee21b99713daabd2a7bbbf11cbdf3ce9953bdc3d316"
+      "sha256": "d3a970dbbcfd4f26d0469ee21b99713daabd2a7bbbf11cbdf3ce9953bdc3d316",
+      "sourceState": "present"
     },
     {
       "id": "0e37cce88575e9f0",
@@ -191,7 +206,8 @@
       "status": "ready",
       "guide": "/papers/t2-paper-1",
       "pdf": "/papers/repa.pdf",
-      "sha256": "d97efd44d9354162bc4ad9b0d5288952f09a90e99c5da344b2098204b7a8164a"
+      "sha256": "d97efd44d9354162bc4ad9b0d5288952f09a90e99c5da344b2098204b7a8164a",
+      "sourceState": "present"
     },
     {
       "id": "215843b3d4041760",
@@ -203,7 +219,8 @@
       "status": "ready",
       "guide": "/papers/t2-paper-2",
       "pdf": "/papers/meanflows.pdf",
-      "sha256": "c0b560a099c17966bbb0bb293f6c8d295f4a5a5f47b5698b4f26bd2d0f793caa"
+      "sha256": "c0b560a099c17966bbb0bb293f6c8d295f4a5a5f47b5698b4f26bd2d0f793caa",
+      "sourceState": "present"
     },
     {
       "id": "c5d69e739589b6d7",
@@ -215,7 +232,8 @@
       "status": "ready",
       "guide": "/papers/t2-paper-3",
       "pdf": "/materials/c5d69e739589b6d7.pdf",
-      "sha256": "c5ebf7da74d2b0ee4a19b876a57372dd8855bcd2da97db6998205a0cb41003fb"
+      "sha256": "c5ebf7da74d2b0ee4a19b876a57372dd8855bcd2da97db6998205a0cb41003fb",
+      "sourceState": "present"
     },
     {
       "id": "0b19fbfeb9558570",
@@ -227,7 +245,8 @@
       "status": "ready",
       "guide": "/papers/t2-paper-4",
       "pdf": "/papers/diffatlas.pdf",
-      "sha256": "96b623485471742c79c730fb9c8a66a72b014fdae50f6169dac3574417c8947b"
+      "sha256": "96b623485471742c79c730fb9c8a66a72b014fdae50f6169dac3574417c8947b",
+      "sourceState": "present"
     },
     {
       "id": "b97b4e68cb3a3620",
@@ -238,8 +257,16 @@
       "kind": "paper",
       "status": "ready",
       "guide": "/papers/flux-kontext",
-      "pdf": "/papers/flux-kontext.pdf",
-      "sha256": "86c8acc1ca714fa463f02315d849a81b5d746c4da4ecb50743b9d672311f916b"
+      "pdf": "/materials/b97b4e68cb3a3620-5c610c8cdca780e76739906a3addc913b551c03cf607d2a243e0e1aa783240ea.pdf",
+      "sha256": "5c610c8cdca780e76739906a3addc913b551c03cf607d2a243e0e1aa783240ea",
+      "sourceState": "present",
+      "previousVersions": [
+        {
+          "pdf": "/papers/flux-kontext.pdf",
+          "sha256": "86c8acc1ca714fa463f02315d849a81b5d746c4da4ecb50743b9d672311f916b"
+        }
+      ],
+      "reviewRequired": true
     },
     {
       "id": "b2f2fdea16f14ee2",
@@ -251,7 +278,8 @@
       "status": "ready",
       "guide": "/papers/t2-paper-6",
       "pdf": "/materials/b2f2fdea16f14ee2.pdf",
-      "sha256": "16538964f7c446ec1fe422d0c7293b7ff7d7f009bc3788a116b20456607779bf"
+      "sha256": "16538964f7c446ec1fe422d0c7293b7ff7d7f009bc3788a116b20456607779bf",
+      "sourceState": "present"
     },
     {
       "id": "3b63c2d5e77657be",
@@ -263,7 +291,8 @@
       "status": "ready",
       "guide": "/papers/t2-generative-overview",
       "pdf": "/materials/3b63c2d5e77657be.pdf",
-      "sha256": "b1407d10ee2f10f52b67344ed7e5320fbaaf67dd404b3bf05671c502e2d3f2eb"
+      "sha256": "b1407d10ee2f10f52b67344ed7e5320fbaaf67dd404b3bf05671c502e2d3f2eb",
+      "sourceState": "present"
     },
     {
       "id": "6fa0f9acb73dc11a",
@@ -275,7 +304,8 @@
       "status": "ready",
       "guide": "/papers/t2-ddpms",
       "pdf": "/materials/6fa0f9acb73dc11a.pdf",
-      "sha256": "cb471d4c0063cad56f8d74b6a72fa7dad1677f8423a0a81349487a63bb58d3de"
+      "sha256": "cb471d4c0063cad56f8d74b6a72fa7dad1677f8423a0a81349487a63bb58d3de",
+      "sourceState": "present"
     },
     {
       "id": "13642986bfb3ef2f",
@@ -287,7 +317,8 @@
       "status": "ready",
       "guide": "/papers/t2-deep-generative-modeling",
       "pdf": "/materials/13642986bfb3ef2f.pdf",
-      "sha256": "b3655c0ddda7345f020b132e57e826687b0f3dbbc67a3bca23f2738e29ffeed4"
+      "sha256": "b3655c0ddda7345f020b132e57e826687b0f3dbbc67a3bca23f2738e29ffeed4",
+      "sourceState": "present"
     },
     {
       "id": "0e64cd296a587841",
@@ -299,7 +330,8 @@
       "status": "ready",
       "guide": "/papers/t2-flow-matching",
       "pdf": "/materials/0e64cd296a587841.pdf",
-      "sha256": "d61ddac4329c49043c633c47fadd5293204bce4c9ab28e994a04c79e7251e622"
+      "sha256": "d61ddac4329c49043c633c47fadd5293204bce4c9ab28e994a04c79e7251e622",
+      "sourceState": "present"
     },
     {
       "id": "62f87d046817a782",
@@ -311,7 +343,8 @@
       "status": "ready",
       "guide": "/papers/t2-gans",
       "pdf": "/materials/62f87d046817a782.pdf",
-      "sha256": "331961622a2f6588c48a34ecddc6a3d052ffe8fcfba333f233d5f27b2da5565d"
+      "sha256": "331961622a2f6588c48a34ecddc6a3d052ffe8fcfba333f233d5f27b2da5565d",
+      "sourceState": "present"
     },
     {
       "id": "a885b4b61bd44c12",
@@ -323,7 +356,21 @@
       "status": "ready",
       "guide": "/papers/t2-vaes",
       "pdf": "/materials/a885b4b61bd44c12.pdf",
-      "sha256": "bdcb63b79ed88f64f8ee2d43a721930d01dde5441a4dba20ecaa2342b34e017c"
+      "sha256": "bdcb63b79ed88f64f8ee2d43a721930d01dde5441a4dba20ecaa2342b34e017c",
+      "sourceState": "present"
     }
-  ]
+  ],
+  "sync": {
+    "vault": "/srv/obsidian-webdav/study/ATDL",
+    "attemptedAt": "2026-09-28T11:44:23+00:00",
+    "sourceCount": 30,
+    "importedCount": 27,
+    "errors": [
+      "[Errno 13] Permission denied: '/srv/obsidian-webdav/study/ATDL/Assignments'",
+      "[Errno 13] Permission denied: '/srv/obsidian-webdav/study/ATDL/topic 3'",
+      "[Errno 13] Permission denied: '/srv/obsidian-webdav/study/ATDL/slides/6_ATDL+FM+Lecture+1.pdf'",
+      "[Errno 13] Permission denied: '/srv/obsidian-webdav/study/ATDL/topic 2/extra reading material/FLOW MATCHING FOR GENERATIVE MODELING.pdf'",
+      "[Errno 13] Permission denied: '/srv/obsidian-webdav/study/ATDL/topic 2/extra reading material/Geng_Improved_Mean_Flows_On_the_Challenges_of_Fastforward_Generative_Models_CVPR_2026_paper.pdf'"
+    ]
+  }
 }

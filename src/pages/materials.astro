@@ -9,6 +9,7 @@ import { materialCatalog } from '../lib/materials';
     <h1>Reading library</h1>
     <p class="lede">Start with core slides and overviews, read the papers, or explore extra material. PDFs are available independently of their learning guides.</p>
     <p>{materialCatalog.materials.length} PDFs available.{!materialCatalog.inventoryComplete && ' The vault inventory is incomplete: only previously imported PDFs are available so far.'}</p>
+    {materialCatalog.sync && <p>Last vault check: <time datetime={materialCatalog.sync.attemptedAt}>{new Date(materialCatalog.sync.attemptedAt).toLocaleString('en-GB', { timeZone: 'UTC' })} UTC</time>. {materialCatalog.sync.errors.length ? 'Some vault folders or PDFs could not be read. Newly released material may be missing from this library.' : 'Library reflects the vault at that check.'}</p>}
     <form class="filters" role="search" onsubmit="return false">
       <label>Find a PDF<input type="search" id="material-search" placeholder="Title or source filename" /></label>
       <label>Topic<select id="material-topic"><option value="all">All topics</option>{[1,2,3,4,5,6].map(n => <option value={n}>Topic {n}</option>)}<option value="other">General / unassigned</option></select></label>

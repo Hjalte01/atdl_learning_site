@@ -13,7 +13,7 @@ const materials = (await getMaterialsWithProgress()).filter(m => topic === undef
       {items.length ? <ul class="material-list">{items.map(m => {
         const ready = m.ready;
         return <li data-material data-status={ready ? 'ready' : 'missing'} data-kind={kind} data-topic={m.topic ?? 'other'} data-search={`${m.title} ${m.sourcePath}`.toLowerCase()}>
-          <div><strong>{m.title}</strong><p>{m.topic ? `Topic ${m.topic}` : 'General / topic to review'}{m.order ? ` · Reading ${m.order}` : ''} · <span class={`guide-status ${ready ? 'ready' : 'missing'}`}>{ready ? 'Guide ready' : 'Guide missing · Not started'}</span></p><small>{m.sourcePath}</small></div>
+          <div><strong>{m.title}</strong><p>{m.topic ? `Topic ${m.topic}` : 'General / topic to review'}{m.order ? ` · Reading ${m.order}` : ''} · <span class={`guide-status ${ready ? 'ready' : 'missing'}`}>{m.reviewRequired ? 'Source updated · Guide needs review' : ready ? 'Guide ready' : 'Guide missing · Not started'}</span></p><small>{m.sourcePath}</small>{m.sourceState === 'missing' && <small>Source no longer in vault · Saved PDF retained</small>}</div>
           <div class="material-actions"><a href={withBase(m.pdf)}>Read PDF ↗</a>{m.guide && <a href={withBase(m.guide)}>{ready ? 'Read guide' : 'Guide status'}</a>}</div>
         </li>;
       })}</ul> : <p class="empty-materials">No {label.toLowerCase()} imported yet.</p>}
