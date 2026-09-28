@@ -321,3 +321,10 @@ Scope at the time of the earlier checks: only Flux had a completed learning guid
 - Ran the required live `python3 scripts/materials.py next`: exit 2, incomplete inventory, 30 enumerated sources, 27 imported/verified, and the same five permission errors documented above. The catalog retains the refreshed attempt timestamp and access errors.
 - Topic 3 is owned by `obsidian-webdav` with mode 0700. A read-only sudo listing failed because this process has the no-new-privileges flag. No readable alternate DINOv3 source was found in the repository or searched shared paths. Requested a readable course PDF path or restored vault access for `hjalte`.
 - No guide, cards, application code, dependencies, lockfiles, host permissions, or deployment changed. No build/browser verification was run because authoring is blocked before source review. No Git commit/push, nxb, or queue restart performed. Goal remains unfinished pending course-source access.
+
+
+## Automatic new-guide request — source access blocked, 2026-09-28
+
+- Created persistent goal tracking and ran live `python3 scripts/materials.py next` at 13:35 UTC. It exited 2: inventory incomplete, 30 enumerated PDF paths, 27 imported/verified, and the same five access errors recorded above. No candidate was selected and no guide was authored. The catalog retains the refreshed scan timestamp.
+- Confirmed `Assignments` and `topic 3` are owned by `obsidian-webdav` with mode 0700. `sudo -n -l` cannot elevate because the environment enforces no-new-privileges. Requested restored read/traverse access for `hjalte` or a readable complete vault; did not bypass access restrictions or select from the stale inventory.
+- Existing guides, PDFs, cards, application code, dependencies, lockfiles and host configuration are unchanged. No Nix hash update required. No build or browser checks run: changes are limited to the scan timestamp and this record. `git diff --check` passed. No website was created or deployed; no Git push, nxb or queue restart performed. Goal remains unfinished pending source access.
