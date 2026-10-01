@@ -596,12 +596,12 @@
     {
       "id": "ef840c31c6187589",
       "sourcePath": "topic 4/T4_4_nnActive.pdf",
-      "title": "T4 4 nnActive",
+      "title": "nnActive: A Framework for Evaluation of Active Learning in 3D Biomedical Segmentation",
       "topic": 4,
       "order": 4,
       "kind": "paper",
-      "status": "not-started",
-      "guide": null,
+      "status": "ready",
+      "guide": "/papers/nnactive",
       "pdf": "/materials/ef840c31c6187589.pdf",
       "sha256": "ce246cda7f4506ac77611d3822b7622c392b83077bd41de7427f70cc40e6cd70",
       "sourceState": "present"
@@ -635,10 +635,10 @@
   ],
   "sync": {
     "vault": "/srv/obsidian-webdav/study/ATDL",
-    "attemptedAt": "2026-10-01T19:22:12+00:00",
+    "attemptedAt": "2026-10-01T19:36:16+00:00",
     "sourceCount": 48,
     "importedCount": 48,
     "errors": [],
-    "completedAt": "2026-10-01T19:22:12+00:00"
+    "completedAt": "2026-10-01T19:36:16+00:00"
   }
 }

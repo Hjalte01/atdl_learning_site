@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="685" viewBox="0 0 960 685" role="img" aria-label="A → B → C → D: probabilities become new partial labels">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="white" font-family="sans-serif" font-size="24">A → B → C → D: probabilities become new partial labels</text>
+<text x="30" y="85" fill="#c5d5ee" font-family="sans-serif" font-size="18">A · TRAINING: input patch geometry comes from nnU-Net plans</text>
+<rect x="30" y="100" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="125" fill="white" font-family="sans-serif" font-size="17">Volume X: M × H × W × D</text>
+<text x="42" y="148" fill="white" font-family="sans-serif" font-size="17">Query labels + valid mask</text>
+<path d="M308,145 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="100" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="125" fill="white" font-family="sans-serif" font-size="17">3D nnU-Net fθ: context</text>
+<text x="352" y="148" fill="white" font-family="sans-serif" font-size="17">5 cross-validation models</text>
+<path d="M618,145 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="100" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="125" fill="white" font-family="sans-serif" font-size="17">p_m(c | v): K classes</text>
+<text x="662" y="148" fill="white" font-family="sans-serif" font-size="17">Partial loss → model weights</text>
+<text x="30" y="230" fill="#c5d5ee" font-family="sans-serif" font-size="18">B · ACQUISITION: run predictions on training / pool images</text>
+<rect x="30" y="245" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="270" fill="white" font-family="sans-serif" font-size="17">Five probability volumes</text>
+<text x="42" y="293" fill="white" font-family="sans-serif" font-size="17">Average p̄: K × H × W × D</text>
+<path d="M308,290 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="245" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="270" fill="white" font-family="sans-serif" font-size="17">Voxel entropy or BALD</text>
+<text x="352" y="293" fill="white" font-family="sans-serif" font-size="17">Mean over query patch</text>
+<path d="M618,290 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="245" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="270" fill="white" font-family="sans-serif" font-size="17">Overlap filter within image</text>
+<text x="662" y="293" fill="white" font-family="sans-serif" font-size="17">Rank across images</text>
+<text x="30" y="375" fill="#c5d5ee" font-family="sans-serif" font-size="18">C · ANNOTATION: only selected spatial regions acquire labels</text>
+<rect x="30" y="390" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="415" fill="white" font-family="sans-serif" font-size="17">Choose n eligible patches</text>
+<text x="42" y="438" fill="white" font-family="sans-serif" font-size="17">Main study overlap o = 0</text>
+<path d="M308,435 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="390" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="415" fill="white" font-family="sans-serif" font-size="17">Reveal segmentation masks</text>
+<text x="352" y="438" fill="white" font-family="sans-serif" font-size="17">Simulated expert annotation</text>
+<path d="M618,435 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="390" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="415" fill="white" font-family="sans-serif" font-size="17">Accumulate label locations</text>
+<text x="662" y="438" fill="white" font-family="sans-serif" font-size="17">Old masks persist</text>
+<text x="30" y="520" fill="#c5d5ee" font-family="sans-serif" font-size="18">D · NEXT ROUND: replace fitted weights, retain labeled regions</text>
+<rect x="30" y="535" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="560" fill="white" font-family="sans-serif" font-size="17">Reprocess partial targets</text>
+<text x="42" y="583" fill="white" font-family="sans-serif" font-size="17">Sample label + context</text>
+<path d="M308,580 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="535" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="560" fill="white" font-family="sans-serif" font-size="17">Retrain from scratch</text>
+<text x="352" y="583" fill="white" font-family="sans-serif" font-size="17">Main study: 200 epochs</text>
+<path d="M618,580 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="535" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="560" fill="white" font-family="sans-serif" font-size="17">New predictions → B</text>
+<text x="662" y="583" fill="white" font-family="sans-serif" font-size="17">Final model → held-out test</text>
+</svg>

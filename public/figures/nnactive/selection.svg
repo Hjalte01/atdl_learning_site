@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-label="A greedy patch trace: overlap first, global rank second">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="white" font-family="sans-serif" font-size="24">A greedy patch trace: overlap first, global rank second</text>
+<text x="30" y="85" fill="#c5d5ee" font-family="sans-serif" font-size="18">TOY IMAGE A: scores follow the uncertainty box above</text>
+<rect x="30" y="100" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="125" fill="white" font-family="sans-serif" font-size="17">Patch A1 score .5091</text>
+<text x="42" y="148" fill="white" font-family="sans-serif" font-size="17">Patch A2 score .4900</text>
+<path d="M308,145 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="100" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="125" fill="white" font-family="sans-serif" font-size="17">A2 overlaps A1</text>
+<text x="352" y="148" fill="white" font-family="sans-serif" font-size="17">o = 0 → reject A2</text>
+<path d="M618,145 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="100" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="125" fill="white" font-family="sans-serif" font-size="17">A3 score .3000</text>
+<text x="662" y="148" fill="white" font-family="sans-serif" font-size="17">Disjoint → retain A3</text>
+<text x="30" y="230" fill="#c5d5ee" font-family="sans-serif" font-size="18">TOY IMAGE B: spatial overlap is defined within each image</text>
+<rect x="30" y="245" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="270" fill="white" font-family="sans-serif" font-size="17">Patch B1 score .4500</text>
+<text x="42" y="293" fill="white" font-family="sans-serif" font-size="17">Disjoint from old labels</text>
+<path d="M308,290 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="245" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="270" fill="white" font-family="sans-serif" font-size="17">Combine A1, A3, B1</text>
+<text x="352" y="293" fill="white" font-family="sans-serif" font-size="17">Global descending scores</text>
+<path d="M618,290 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="245" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="270" fill="white" font-family="sans-serif" font-size="17">n = 2 → select A1, B1</text>
+<text x="662" y="293" fill="white" font-family="sans-serif" font-size="17">Annotate these regions</text>
+<text x="30" y="375" fill="#c5d5ee" font-family="sans-serif" font-size="18">WHY A FILTER IS NOT FULL DIVERSITY</text>
+<rect x="30" y="390" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="415" fill="white" font-family="sans-serif" font-size="17">Avoid exact spatial overlap</text>
+<text x="42" y="438" fill="white" font-family="sans-serif" font-size="17">Retain old query locations</text>
+<path d="M308,435 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="390" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="415" fill="white" font-family="sans-serif" font-size="17">Disjoint can look alike</text>
+<text x="352" y="438" fill="white" font-family="sans-serif" font-size="17">Even across different scans</text>
+<path d="M618,435 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="390" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="415" fill="white" font-family="sans-serif" font-size="17">Noise adds diversity</text>
+<text x="662" y="438" fill="white" font-family="sans-serif" font-size="17">No class-coverage guarantee</text>
+</svg>

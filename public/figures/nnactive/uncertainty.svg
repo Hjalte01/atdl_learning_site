@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-label="Same predictive entropy, different ensemble disagreement">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="white" font-family="sans-serif" font-size="24">Same predictive entropy, different ensemble disagreement</text>
+<text x="30" y="85" fill="#c5d5ee" font-family="sans-serif" font-size="18">TOY TWO-MODEL BINARY VOXEL: nats, natural logarithms</text>
+<rect x="30" y="100" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="125" fill="white" font-family="sans-serif" font-size="17">Model 1: (.9, .1)</text>
+<text x="42" y="148" fill="white" font-family="sans-serif" font-size="17">Model 2: (.1, .9)</text>
+<path d="M308,145 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="100" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="125" fill="white" font-family="sans-serif" font-size="17">Mean p̄ = (.5, .5)</text>
+<text x="352" y="148" fill="white" font-family="sans-serif" font-size="17">PE = H(p̄) = .6931</text>
+<path d="M618,145 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="100" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="125" fill="white" font-family="sans-serif" font-size="17">Mean H(p_m) = .3251</text>
+<text x="662" y="148" fill="white" font-family="sans-serif" font-size="17">BALD = .3681</text>
+<text x="30" y="230" fill="#c5d5ee" font-family="sans-serif" font-size="18">AGREEMENT ON AMBIGUITY: uncertain does not imply disagreement</text>
+<rect x="30" y="245" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="270" fill="white" font-family="sans-serif" font-size="17">Both models: (.5, .5)</text>
+<text x="42" y="293" fill="white" font-family="sans-serif" font-size="17">Same mean p̄ = (.5, .5)</text>
+<path d="M308,290 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="245" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="270" fill="white" font-family="sans-serif" font-size="17">PE remains .6931</text>
+<text x="352" y="293" fill="white" font-family="sans-serif" font-size="17">Mean H = .6931</text>
+<path d="M618,290 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="245" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="270" fill="white" font-family="sans-serif" font-size="17">BALD becomes zero</text>
+<text x="662" y="293" fill="white" font-family="sans-serif" font-size="17">Different acquisition score</text>
+<text x="30" y="375" fill="#c5d5ee" font-family="sans-serif" font-size="18">PATCH CLOSE-UP: average voxel scores before ranking</text>
+<rect x="30" y="390" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="415" fill="white" font-family="sans-serif" font-size="17">Voxel PE [.6931, .3251]</text>
+<text x="42" y="438" fill="white" font-family="sans-serif" font-size="17">Toy patch has two voxels</text>
+<path d="M308,435 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="390" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="415" fill="white" font-family="sans-serif" font-size="17">Patch mean = .5091</text>
+<text x="352" y="438" fill="white" font-family="sans-serif" font-size="17">Not sum or maximum</text>
+<path d="M618,435 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="390" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="415" fill="white" font-family="sans-serif" font-size="17">Main study uses 5 models</text>
+<text x="662" y="438" fill="white" font-family="sans-serif" font-size="17">Noise can diversify selection</text>
+</svg>

@@ -454,5 +454,157 @@
       "Active Prompt"
     ],
     "relatedTopicUrl": "/papers/active-prompt#8--evidence-what-feature-guidance-establishes"
+  },
+  {
+    "id": "nnactive-baseline",
+    "topic": "topic-4",
+    "title": "nnActive · Stronger baseline",
+    "question": "What does Random 66% FG specify?",
+    "choices": [
+      "66% of labeled voxels are foreground.",
+      "Roughly two thirds of patches use foreground-aware sampling.",
+      "66% of predictions are correct.",
+      "The model receives 66% of test masks."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "It is a patch sampling mixture: foreground-aware draws are split between foreground class centers and borders. It does not fix a voxel ratio.",
+    "difficulty": "medium",
+    "tags": [
+      "nnActive"
+    ],
+    "relatedTopicUrl": "/papers/nnactive#1--make-the-baseline-and-the-annotation-bill-credible"
+  },
+  {
+    "id": "nnactive-missing",
+    "topic": "topic-4",
+    "title": "nnActive · Unknown targets",
+    "question": "How should a missing segmentation target enter partial supervised training?",
+    "choices": [
+      "Treat it as known background.",
+      "Assign the current model prediction as truth.",
+      "Exclude its direct target loss while retaining image context.",
+      "Remove all nearby labeled voxels."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "Unknown is distinct from background. Image intensities still supply context, while supervised target loss is restricted to known labels.",
+    "difficulty": "medium",
+    "tags": [
+      "nnActive"
+    ],
+    "relatedTopicUrl": "/papers/nnactive#3--missing-labels-are-not-background-labels"
+  },
+  {
+    "id": "nnactive-geometry",
+    "topic": "topic-4",
+    "title": "nnActive · Two patch sizes",
+    "question": "Why can a training patch be larger than an annotation query?",
+    "choices": [
+      "All surrounding voxels secretly have labels.",
+      "Query geometry defines targets; the forward crop supplies image context.",
+      "nnU-Net cannot accept 3D annotations.",
+      "The test split provides extra training targets."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "The query region defines acquired masks. nnU-Net plans determine the forward crop; region sampling places labeled voxels inside a context-rich crop.",
+    "difficulty": "medium",
+    "tags": [
+      "nnActive"
+    ],
+    "relatedTopicUrl": "/papers/nnactive#2--follow-the-full-3d-learning-architecture"
+  },
+  {
+    "id": "nnactive-bald",
+    "topic": "topic-4",
+    "title": "nnActive · Disagreement arithmetic",
+    "question": "Two members both predict (0.5, 0.5). What are PE and BALD in nats?",
+    "choices": [
+      "PE = 0, BALD = 0.6931.",
+      "Both equal 0.6931.",
+      "Both equal zero.",
+      "PE = 0.6931, BALD = 0."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "Predictive entropy is high, but subtracting the identical member entropies gives zero disagreement. Ambiguity and ensemble disagreement differ.",
+    "difficulty": "medium",
+    "tags": [
+      "nnActive"
+    ],
+    "relatedTopicUrl": "/papers/nnactive#4--turn-ensemble-probabilities-into-a-patch-score"
+  },
+  {
+    "id": "nnactive-overlap",
+    "topic": "topic-4",
+    "title": "nnActive · Spatial eligibility",
+    "question": "A high-scoring patch overlaps an already retained patch with o = 0. What happens?",
+    "choices": [
+      "Reject it before global selection.",
+      "Always keep it because of its score.",
+      "Relabel the overlap as background.",
+      "Use test Dice to decide whether to keep it."
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "The per-image overlap filter enforces eligibility before global ranking. Disjoint patches can still be semantically redundant.",
+    "difficulty": "medium",
+    "tags": [
+      "nnActive"
+    ],
+    "relatedTopicUrl": "/papers/nnactive#5--enforce-spatial-eligibility-before-global-selection"
+  },
+  {
+    "id": "nnactive-state",
+    "topic": "topic-4",
+    "title": "nnActive · Round state",
+    "question": "What persists between nnActive acquisition rounds in the main study?",
+    "choices": [
+      "Only the previous fitted model weights.",
+      "Accumulated labels and locations; fitted models are retrained from scratch.",
+      "No information at all.",
+      "Only final test labels."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "Queried masks and coordinates accumulate; models are trained from a standard initialization rather than fine-tuned from the previous round.",
+    "difficulty": "medium",
+    "tags": [
+      "nnActive"
+    ],
+    "relatedTopicUrl": "/papers/nnactive#6--separate-training-acquisition-and-held-out-inference"
+  },
+  {
+    "id": "nnactive-effort",
+    "topic": "topic-4",
+    "title": "nnActive · Cost axis",
+    "question": "Why should FG-Eff accompany rather than replace Dice and AUBC?",
+    "choices": [
+      "It directly measures expert hours.",
+      "Its gamma is comparable across arbitrary datasets.",
+      "A tiny foreground budget can look efficient despite poor segmentation, and foreground is only a labor proxy.",
+      "It measures only neural inference latency."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "FG-Eff fits gap decay against foreground fraction under matching training and budget conditions. It misses costs such as screening and boundary complexity.",
+    "difficulty": "medium",
+    "tags": [
+      "nnActive"
+    ],
+    "relatedTopicUrl": "/papers/nnactive#7--put-quality-and-effort-on-different-axes"
+  },
+  {
+    "id": "nnactive-ablation",
+    "topic": "topic-4",
+    "title": "nnActive · Acquisition isolation",
+    "question": "What does Table 3 compare in its 500 Epochs versus Precomputed contrast?",
+    "choices": [
+      "Five-fold versus single-model training.",
+      "Two models with different final training lengths.",
+      "Random versus oracle labels.",
+      "Longer-trained acquisition versus 200-epoch acquisition trajectories, with both final models trained 500 epochs."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "Matching final training length helps separate improved query choice from the direct benefit of longer fitting. Positive Dice differences are not measured annotation-time savings.",
+    "difficulty": "medium",
+    "tags": [
+      "nnActive"
+    ],
+    "relatedTopicUrl": "/papers/nnactive#8--what-the-experiment-actually-establishes"
   }
 ]

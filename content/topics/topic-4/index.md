@@ -1,7 +1,7 @@
 ---
 title: "Topic 4 — active and label-efficient learning"
 shortTitle: "Topic 4"
-description: "LabelBench, CEC and Active Prompt explain label-efficient adaptation, calibrated uncertainty and selective querying. Six paper PDFs are available; three guides remain not started."
+description: "Four guides explain label-efficient adaptation, selective querying and 3D biomedical acquisition. Six paper PDFs are available; two guides remain not started."
 order: 4
 status: "exploring"
 tags: ["active learning", "label efficiency"]
@@ -15,6 +15,8 @@ Continue with [CEC: calibrate uncertainty, use neighbors and query weighted-clus
 
 Then read [Active Prompt: class-guided coverage and selective human querying](/papers/active-prompt). Eight diagrams and eight recall cards connect soft text mixtures, representative selection, class-specific gates and reset-prompt training.
 
-The live vault supplies six Topic 4 paper PDFs in order: LabelBench, CEC, Active Prompt, nnActive, SUGFW+, and CSCS. LabelBench, CEC and Active Prompt have been explained here; the remaining names are filename labels pending source review. The topic’s descriptive grouping above is provisional, rather than an asserted official course title.
+Next read [nnActive: partial 3D annotations, credible random baselines and foreground-aware cost accounting](/papers/nnactive). Nine diagrams and eight recall cards connect segmentation training to spatial acquisition and evaluation.
+
+The live vault supplies six Topic 4 paper PDFs in order: LabelBench, CEC, Active Prompt, nnActive, SUGFW+, and CSCS. LabelBench, CEC, Active Prompt and nnActive have been explained here; the remaining names are filename labels pending source review. The topic’s descriptive grouping above is provisional, rather than an asserted official course title.
 
 Use the [Topic 4 reading library](/materials?topic=4) to read the PDFs and check guide availability.
