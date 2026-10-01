@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="535" viewBox="0 0 960 535" role="img" aria-label="Training choices differ from downstream inference">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="white" font-family="sans-serif" font-size="24">Training choices differ from downstream inference</text>
+<text x="30" y="80" fill="#c5d5ee" font-family="sans-serif" font-size="18">DISTILLATION: learned smaller student, fixed 7B teacher</text>
+<rect x="30" y="95" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="120" fill="white" font-family="sans-serif" font-size="17">Frozen 7B teacher forward</text>
+<text x="42" y="143" fill="white" font-family="sans-serif" font-size="17">Shared across student groups</text>
+<path d="M308,140 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="95" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="120" fill="white" font-family="sans-serif" font-size="17">DINO + iBOT + DKoleo</text>
+<text x="352" y="143" fill="white" font-family="sans-serif" font-size="17">No Gram term here</text>
+<path d="M618,140 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="95" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="120" fill="white" font-family="sans-serif" font-size="17">Small student weight updates</text>
+<text x="662" y="143" fill="white" font-family="sans-serif" font-size="17">1M + 250k cooldown</text>
+<text x="30" y="225" fill="#c5d5ee" font-family="sans-serif" font-size="18">DENSE LINEAR PROBE: annotations used for head training</text>
+<rect x="30" y="240" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="265" fill="white" font-family="sans-serif" font-size="17">Image → frozen backbone</text>
+<text x="42" y="288" fill="white" font-family="sans-serif" font-size="17">Patch feature grid</text>
+<path d="M308,285 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="240" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="265" fill="white" font-family="sans-serif" font-size="17">Train linear prediction head</text>
+<text x="352" y="288" fill="white" font-family="sans-serif" font-size="17">Backbone weights fixed</text>
+<path d="M618,285 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="240" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="265" fill="white" font-family="sans-serif" font-size="17">Image → features → head</text>
+<text x="662" y="288" fill="white" font-family="sans-serif" font-size="17">Segmentation or depth</text>
+<text x="30" y="370" fill="#c5d5ee" font-family="sans-serif" font-size="18">TEXT ALIGNMENT: separate caption-supervised stage</text>
+<rect x="30" y="385" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="410" fill="white" font-family="sans-serif" font-size="17">Frozen vision backbone</text>
+<text x="42" y="433" fill="white" font-family="sans-serif" font-size="17">Two added transformer layers</text>
+<path d="M308,430 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="385" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="410" fill="white" font-family="sans-serif" font-size="17">CLS + mean patch concat</text>
+<text x="352" y="433" fill="white" font-family="sans-serif" font-size="17">Learn text representation</text>
+<path d="M618,430 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="385" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="410" fill="white" font-family="sans-serif" font-size="17">Contrastive image-text match</text>
+<text x="662" y="433" fill="white" font-family="sans-serif" font-size="17">Not base SSL pretraining</text>
+</svg>

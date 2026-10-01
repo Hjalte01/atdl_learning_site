@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="535" viewBox="0 0 960 535" role="img" aria-label="A · crops → B · backbone → C · three learning signals">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="white" font-family="sans-serif" font-size="24">A · crops → B · backbone → C · three learning signals</text>
+<text x="30" y="80" fill="#c5d5ee" font-family="sans-serif" font-size="18">STUDENT: gradient updates; 2 global + 8 local crops per image</text>
+<rect x="30" y="95" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="120" fill="white" font-family="sans-serif" font-size="17">Global: 256 × 256 pixels</text>
+<text x="42" y="143" fill="white" font-family="sans-serif" font-size="17">Local: 112 × 112 pixels</text>
+<path d="M308,140 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="95" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="120" fill="white" font-family="sans-serif" font-size="17">ViT-7B / 16; d = 4096</text>
+<text x="352" y="143" fill="white" font-family="sans-serif" font-size="17">CLS + 4 registers + patches</text>
+<path d="M618,140 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="95" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="120" fill="white" font-family="sans-serif" font-size="17">CLS head → DINO</text>
+<text x="662" y="143" fill="white" font-family="sans-serif" font-size="17">Masked patch head → iBOT</text>
+<text x="30" y="225" fill="#c5d5ee" font-family="sans-serif" font-size="18">EMA TEACHER: no gradient; clean global crops only</text>
+<rect x="30" y="240" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="265" fill="white" font-family="sans-serif" font-size="17">Same image, global views</text>
+<text x="42" y="288" fill="white" font-family="sans-serif" font-size="17">No student patch masking</text>
+<path d="M308,285 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="240" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="265" fill="white" font-family="sans-serif" font-size="17">EMA copy of student</text>
+<text x="352" y="288" fill="white" font-family="sans-serif" font-size="17">Teacher feature outputs</text>
+<path d="M618,285 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="240" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="265" fill="white" font-family="sans-serif" font-size="17">Balanced head targets</text>
+<text x="662" y="288" fill="white" font-family="sans-serif" font-size="17">Match views / masked sites</text>
+<text x="30" y="370" fill="#c5d5ee" font-family="sans-serif" font-size="18">UPDATE: loss arrows converge here</text>
+<rect x="30" y="385" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="410" fill="white" font-family="sans-serif" font-size="17">DINO + iBOT targets</text>
+<text x="42" y="433" fill="white" font-family="sans-serif" font-size="17">DKoleo on student CLS</text>
+<path d="M308,430 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="385" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="410" fill="white" font-family="sans-serif" font-size="17">LPre = LD + Li + .1 LK</text>
+<text x="352" y="433" fill="white" font-family="sans-serif" font-size="17">Backpropagate to student</text>
+<path d="M618,430 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="385" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="410" fill="white" font-family="sans-serif" font-size="17">θT ← .999 θT + .001 θS</text>
+<text x="662" y="433" fill="white" font-family="sans-serif" font-size="17">Teacher follows student</text>
+</svg>

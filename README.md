@@ -23,6 +23,8 @@ Open http://localhost:4322. For production verification, run `npm run build`; `n
 
 ## Scope
 
+Topic 3 paper 1, *DINOv3*, now has a guide at `/papers/dinov3`, eight reproducible SVGs and eight study cards based on the supplied August 13, 2025 arXiv v1. It connects student/EMA/Gram teacher roles, global and masked-patch objectives, relational anchoring, resolution adaptation and downstream probes. Final-result and refinement-ablation settings are kept separate; OCR, fairness and compute limitations are explicit. This run completes one guide; deployment remains with the queue.
+
 Topic 4 paper 6, *CSCS*, has a guide at `/papers/cscs`, eight reproducible SVGs and eight study cards based on the supplied 20-page June 18, 2026 arXiv v1. It connects pool-specific SSL signals, Spearman DCR, budget pacing, clustered selection and separate nnU-Net training. DIANE budget-label discrepancies, small-pool KNN gaps and ablation-table inconsistencies are explicit. All six supplied Topic 4 papers now have guides. This run completes one guide; deployment remains with the queue.
 
 Topic 4 paper 5, *SUGFW+*, has a guide at `/papers/sugfw-plus`, eight reproducible SVGs and eight study cards based on the supplied 17 August 2026 arXiv v1 PDF. It connects cold-start SAM region entropy, uncertainty-weighted feature pooling, cluster/uncertainty coverage and uncertainty-prompted adaptation with a learned inference prompt. Table exceptions and source ambiguities are explicit. This automatic request completes one guide; deployment remains with the queue.

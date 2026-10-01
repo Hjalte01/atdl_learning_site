@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="535" viewBox="0 0 960 535" role="img" aria-label="Two patches trace the Gram branch exactly">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="white" font-family="sans-serif" font-size="24">Two patches trace the Gram branch exactly</text>
+<text x="30" y="80" fill="#c5d5ee" font-family="sans-serif" font-size="18">NORMALIZED PATCH FEATURES: toy P = d = 2</text>
+<rect x="30" y="95" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="120" fill="white" font-family="sans-serif" font-size="17">XG rows: (1,0), (0,1)</text>
+<text x="42" y="143" fill="white" font-family="sans-serif" font-size="17">Target patches orthogonal</text>
+<path d="M308,140 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="95" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="120" fill="white" font-family="sans-serif" font-size="17">XS rows: (1,0), (.6,.8)</text>
+<text x="352" y="143" fill="white" font-family="sans-serif" font-size="17">Student rows length 1</text>
+<path d="M618,140 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="95" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="120" fill="white" font-family="sans-serif" font-size="17">GG = [[1,0],[0,1]]</text>
+<text x="662" y="143" fill="white" font-family="sans-serif" font-size="17">GS = [[1,.6],[.6,1]]</text>
+<text x="30" y="225" fill="#c5d5ee" font-family="sans-serif" font-size="18">COMPARE THE MATRICES</text>
+<rect x="30" y="240" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="265" fill="white" font-family="sans-serif" font-size="17">GS − GG = [[0,.6],[.6,0]]</text>
+<text x="42" y="288" fill="white" font-family="sans-serif" font-size="17">Diagonal contributes zero</text>
+<path d="M308,285 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="240" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="265" fill="white" font-family="sans-serif" font-size="17">Squared sum = .36 + .36</text>
+<text x="352" y="288" fill="white" font-family="sans-serif" font-size="17">LGram = .72</text>
+<path d="M618,285 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="240" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="265" fill="white" font-family="sans-serif" font-size="17">wGram = 2 → 1.44</text>
+<text x="662" y="288" fill="white" font-family="sans-serif" font-size="17">Contribution to total loss</text>
+<text x="30" y="370" fill="#c5d5ee" font-family="sans-serif" font-size="18">FREEDOM: shared orthogonal rotation</text>
+<rect x="30" y="385" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="410" fill="white" font-family="sans-serif" font-size="17">Rotate both student rows</text>
+<text x="42" y="433" fill="white" font-family="sans-serif" font-size="17">XS becomes XS Q</text>
+<path d="M308,430 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="385" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="410" fill="white" font-family="sans-serif" font-size="17">Q Qᵀ = I</text>
+<text x="352" y="433" fill="white" font-family="sans-serif" font-size="17">XS Q Qᵀ XSᵀ = GS</text>
+<path d="M618,430 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="385" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="410" fill="white" font-family="sans-serif" font-size="17">Same Gram, new coordinates</text>
+<text x="662" y="433" fill="white" font-family="sans-serif" font-size="17">No feature equality required</text>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="535" viewBox="0 0 960 535" role="img" aria-label="Three clocks: student, EMA teacher and Gram teacher">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="white" font-family="sans-serif" font-size="24">Three clocks: student, EMA teacher and Gram teacher</text>
+<text x="30" y="80" fill="#c5d5ee" font-family="sans-serif" font-size="18">INITIAL PRETRAINING: 1M iterations, web model</text>
+<rect x="30" y="95" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="120" fill="white" font-family="sans-serif" font-size="17">Student: gradient update</text>
+<text x="42" y="143" fill="white" font-family="sans-serif" font-size="17">DINO + iBOT + DKoleo</text>
+<path d="M308,140 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="95" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="120" fill="white" font-family="sans-serif" font-size="17">EMA: update every step</text>
+<text x="352" y="143" fill="white" font-family="sans-serif" font-size="17">Early snapshot saved</text>
+<path d="M618,140 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="95" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="120" fill="white" font-family="sans-serif" font-size="17">No Gram objective yet</text>
+<text x="662" y="143" fill="white" font-family="sans-serif" font-size="17">Dense quality may decline</text>
+<text x="30" y="225" fill="#c5d5ee" font-family="sans-serif" font-size="18">REFINEMENT: add Gram anchoring</text>
+<rect x="30" y="240" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="265" fill="white" font-family="sans-serif" font-size="17">Start from late student</text>
+<text x="42" y="288" fill="white" font-family="sans-serif" font-size="17">Initialize early Gram teacher</text>
+<path d="M308,285 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="240" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="265" fill="white" font-family="sans-serif" font-size="17">Gradient + EMA continue</text>
+<text x="352" y="288" fill="white" font-family="sans-serif" font-size="17">Gram fixed per interval</text>
+<path d="M618,285 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="240" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="265" fill="white" font-family="sans-serif" font-size="17">Every 10k: copy EMA to Gram</text>
+<text x="662" y="288" fill="white" font-family="sans-serif" font-size="17">At most 3 updates; App. C</text>
+<text x="30" y="370" fill="#c5d5ee" font-family="sans-serif" font-size="18">HIGH-RESOLUTION ADAPTATION: additional 10k steps</text>
+<rect x="30" y="385" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="410" fill="white" font-family="sans-serif" font-size="17">Student global 512 or 768</text>
+<text x="42" y="433" fill="white" font-family="sans-serif" font-size="17">Local crop sizes also vary</text>
+<path d="M308,430 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="385" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="410" fill="white" font-family="sans-serif" font-size="17">7B teacher as Gram target</text>
+<text x="352" y="433" fill="white" font-family="sans-serif" font-size="17">App. C lists crop mixtures</text>
+<path d="M618,430 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="385" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="410" fill="white" font-family="sans-serif" font-size="17">Improved high-res features</text>
+<text x="662" y="433" fill="white" font-family="sans-serif" font-size="17">Not an infinite guarantee</text>
+</svg>

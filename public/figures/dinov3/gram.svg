@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="535" viewBox="0 0 960 535" role="img" aria-label="Refinement adds a second, stable teacher branch">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="white" font-family="sans-serif" font-size="24">Refinement adds a second, stable teacher branch</text>
+<text x="30" y="80" fill="#c5d5ee" font-family="sans-serif" font-size="18">STUDENT BRANCH: same global crop content</text>
+<rect x="30" y="95" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="120" fill="white" font-family="sans-serif" font-size="17">Standard-resolution crop</text>
+<text x="42" y="143" fill="white" font-family="sans-serif" font-size="17">Student patch features XS</text>
+<path d="M308,140 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="95" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="120" fill="white" font-family="sans-serif" font-size="17">Row normalization</text>
+<text x="352" y="143" fill="white" font-family="sans-serif" font-size="17">GS = XS XSᵀ</text>
+<path d="M618,140 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="95" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="120" fill="white" font-family="sans-serif" font-size="17">Differentiable Gram loss</text>
+<text x="662" y="143" fill="white" font-family="sans-serif" font-size="17">Updates student weights</text>
+<text x="30" y="225" fill="#c5d5ee" font-family="sans-serif" font-size="18">GRAM TARGET BRANCH: no gradient</text>
+<rect x="30" y="240" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="265" fill="white" font-family="sans-serif" font-size="17">Early EMA snapshot</text>
+<text x="42" y="288" fill="white" font-family="sans-serif" font-size="17">Initial dense-feature anchor</text>
+<path d="M308,285 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="240" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="265" fill="white" font-family="sans-serif" font-size="17">2× image → Gram teacher</text>
+<text x="352" y="288" fill="white" font-family="sans-serif" font-size="17">Bicubic feature downsample</text>
+<path d="M618,285 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="240" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="265" fill="white" font-family="sans-serif" font-size="17">Normalize → XG → GG</text>
+<text x="662" y="288" fill="white" font-family="sans-serif" font-size="17">Fixed between refreshes</text>
+<text x="30" y="370" fill="#c5d5ee" font-family="sans-serif" font-size="18">COMPARE: retain existing objectives</text>
+<rect x="30" y="385" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="410" fill="white" font-family="sans-serif" font-size="17">GS and GG: P × P</text>
+<text x="42" y="433" fill="white" font-family="sans-serif" font-size="17">Squared Frobenius difference</text>
+<path d="M308,430 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="385" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="410" fill="white" font-family="sans-serif" font-size="17">LRef = wD LD + Li</text>
+<text x="352" y="433" fill="white" font-family="sans-serif" font-size="17">+ wDK LK + wGram LGram</text>
+<path d="M618,430 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="385" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="410" fill="white" font-family="sans-serif" font-size="17">EMA teacher still active</text>
+<text x="662" y="433" fill="white" font-family="sans-serif" font-size="17">Distinct from Gram teacher</text>
+</svg>

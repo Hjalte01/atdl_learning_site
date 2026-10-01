@@ -1,0 +1,154 @@
+[
+  {
+    "id": "dinov3-1",
+    "topic": "topic-3",
+    "title": "DINOv3 · Global and local",
+    "question": "Why can rising image-classification accuracy miss a dense-feature problem?",
+    "choices": [
+      "CLS discrimination and patch coherence serve different needs.",
+      "Every patch must have the same vector.",
+      "Classification directly measures boundary accuracy.",
+      "Register tokens are annotation masks."
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "The report observes rising global accuracy alongside declining dense segmentation; patch similarity must also be checked.",
+    "difficulty": "medium",
+    "tags": [
+      "DINOv3"
+    ],
+    "relatedTopicUrl": "/papers/dinov3#1--global-success-does-not-guarantee-local-coherence"
+  },
+  {
+    "id": "dinov3-2",
+    "topic": "topic-3",
+    "title": "DINOv3 · Masked targets",
+    "question": "What does the iBOT branch predict?",
+    "choices": [
+      "Raw RGB pixels only.",
+      "Teacher prototype distributions at student-masked patch positions.",
+      "Human segmentation masks.",
+      "The future Gram-teacher update time."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "iBOT is latent-target reconstruction using an unmasked EMA-teacher view, not supervised mask prediction.",
+    "difficulty": "medium",
+    "tags": [
+      "DINOv3"
+    ],
+    "relatedTopicUrl": "/papers/dinov3#2--architecture-two-views-two-token-roles-three-losses"
+  },
+  {
+    "id": "dinov3-3",
+    "topic": "topic-3",
+    "title": "DINOv3 · Matrix dimensions",
+    "question": "For P normalized patch vectors of width d, what is the patch Gram shape?",
+    "choices": [
+      "d × d",
+      "P × d",
+      "P × P",
+      "One scalar per class"
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "X has shape P × d; X Xᵀ compares every pair of patch positions, producing P × P.",
+    "difficulty": "medium",
+    "tags": [
+      "DINOv3"
+    ],
+    "relatedTopicUrl": "/papers/dinov3#4--representation-close-up-a-matrix-of-patch-relationships"
+  },
+  {
+    "id": "dinov3-4",
+    "topic": "topic-3",
+    "title": "DINOv3 · Coordinate freedom",
+    "question": "Which change preserves a patch Gram matrix?",
+    "choices": [
+      "Arbitrary independent changes to each patch.",
+      "Multiplying all features by 10 without normalization.",
+      "Deleting all patch positions.",
+      "The same orthogonal rotation applied to every patch vector."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "A shared orthogonal Q obeys Q Qᵀ = I, so (XQ)(XQ)ᵀ = X Xᵀ.",
+    "difficulty": "medium",
+    "tags": [
+      "DINOv3"
+    ],
+    "relatedTopicUrl": "/papers/dinov3#5--gram-anchoring-stabilize-geometry-keep-coordinate-freedom"
+  },
+  {
+    "id": "dinov3-5",
+    "topic": "topic-3",
+    "title": "DINOv3 · Loss arithmetic",
+    "question": "If two symmetric Gram errors are each 0.6 and all others zero, what is the squared Frobenius loss?",
+    "choices": [
+      "0.72",
+      "0.36",
+      "1.2",
+      "0.6"
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "Both off-diagonal entries count: 0.6² + 0.6² = 0.72. A mean reduction would have a different scale.",
+    "difficulty": "medium",
+    "tags": [
+      "DINOv3"
+    ],
+    "relatedTopicUrl": "/papers/dinov3#6--follow-two-patches-through-the-exact-boxes"
+  },
+  {
+    "id": "dinov3-6",
+    "topic": "topic-3",
+    "title": "DINOv3 · Teacher clocks",
+    "question": "How does the Gram teacher differ from the ordinary EMA teacher during refinement?",
+    "choices": [
+      "Both receive supervised gradients.",
+      "Gram is fixed between discrete refreshes; EMA updates every step.",
+      "Gram updates every patch; EMA stays early forever.",
+      "They are two names for a single permanently identical model."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "The Gram target begins at an early snapshot, then copies EMA every 10k steps, at most three updates in Appendix C.",
+    "difficulty": "medium",
+    "tags": [
+      "DINOv3"
+    ],
+    "relatedTopicUrl": "/papers/dinov3#7--follow-the-training-state-over-time"
+  },
+  {
+    "id": "dinov3-7",
+    "topic": "topic-3",
+    "title": "DINOv3 · Frozen does not mean untrained",
+    "question": "What does frozen-backbone linear probing still require?",
+    "choices": [
+      "Updating the encoder on every target image.",
+      "Applying Gram loss at test time.",
+      "Training a prediction head with labeled downstream data.",
+      "A caption for every inference image."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "The encoder is fixed, but the linear predictor and trained normalization use downstream supervision.",
+    "difficulty": "medium",
+    "tags": [
+      "DINOv3"
+    ],
+    "relatedTopicUrl": "/papers/dinov3#8--inference-smaller-models-and-text-are-separate-paths"
+  },
+  {
+    "id": "dinov3-8",
+    "topic": "topic-3",
+    "title": "DINOv3 · Causal evidence",
+    "question": "Why does the final DINOv3 versus DINOv2 table not isolate Gram anchoring?",
+    "choices": [
+      "mIoU is always meaningless.",
+      "Both methods have identical data and architecture.",
+      "DINOv3 is evaluated only on its training labels.",
+      "Capacity, data and training recipe also differ."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "The closer Figure 9 ablation varies anchoring settings; final-model comparisons change several factors at once.",
+    "difficulty": "medium",
+    "tags": [
+      "DINOv3"
+    ],
+    "relatedTopicUrl": "/papers/dinov3#9--evidence-frozen-features-learned-heads"
+  }
+]
