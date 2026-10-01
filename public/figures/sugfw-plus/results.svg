@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="610" viewBox="0 0 960 610" role="img" aria-label="Reported DSC means for Random and SUGFW+ at each dataset’s lowest budget"><rect width="100%" height="100%" fill="#101c30"/>
+<text x="30" y="40" fill="white" font-family="sans-serif" font-size="24">Measured · supplied arXiv v1 · Tables 1–4</text>
+<text x="30" y="75" fill="white" font-family="sans-serif" font-size="19">DSC (%) · same UPFT model training, different selected images</text>
+<text x="30" y="105" fill="white" font-family="sans-serif" font-size="17">Blue: Random. Green: SUGFW+. Means only; spread is in the guide table.</text>
+<text x="30" y="175" fill="white" font-family="sans-serif" font-size="18">Promise12 · 3.00%</text>
+<rect x="255" y="145" width="453.76200000000006" height="25" fill="#31859b"/>
+<text x="810" y="165" fill="white" font-family="sans-serif" font-size="18">84.03</text>
+<rect x="255" y="176" width="466.452" height="25" fill="#56b890"/>
+<text x="810" y="196" fill="white" font-family="sans-serif" font-size="18">86.38</text>
+<text x="30" y="270" fill="white" font-family="sans-serif" font-size="18">UTAH · 0.10%</text>
+<rect x="255" y="240" width="383.18399999999997" height="25" fill="#31859b"/>
+<text x="810" y="260" fill="white" font-family="sans-serif" font-size="18">70.96</text>
+<rect x="255" y="271" width="424.98" height="25" fill="#56b890"/>
+<text x="810" y="291" fill="white" font-family="sans-serif" font-size="18">78.70</text>
+<text x="30" y="365" fill="white" font-family="sans-serif" font-size="18">MSD Liver · 0.05%</text>
+<rect x="255" y="335" width="372.546" height="25" fill="#31859b"/>
+<text x="810" y="355" fill="white" font-family="sans-serif" font-size="18">68.99</text>
+<rect x="255" y="366" width="444.258" height="25" fill="#56b890"/>
+<text x="810" y="386" fill="white" font-family="sans-serif" font-size="18">82.27</text>
+<text x="30" y="460" fill="white" font-family="sans-serif" font-size="18">ISIC 2018 · 0.50%</text>
+<rect x="255" y="430" width="451.81800000000004" height="25" fill="#31859b"/>
+<text x="810" y="450" fill="white" font-family="sans-serif" font-size="18">83.67</text>
+<rect x="255" y="461" width="466.34400000000005" height="25" fill="#56b890"/>
+<text x="810" y="481" fill="white" font-family="sans-serif" font-size="18">86.36</text>
+<path d="M255 540 H795" stroke="#c5d5ee"/>
+<text x="249.0" y="568" fill="white" font-family="sans-serif" font-size="16">0</text>
+<text x="357.0" y="568" fill="white" font-family="sans-serif" font-size="16">20</text>
+<text x="465.0" y="568" fill="white" font-family="sans-serif" font-size="16">40</text>
+<text x="573.0" y="568" fill="white" font-family="sans-serif" font-size="16">60</text>
+<text x="681.0" y="568" fill="white" font-family="sans-serif" font-size="16">80</text>
+<text x="789.0" y="568" fill="white" font-family="sans-serif" font-size="16">100</text>
+<text x="30" y="601" fill="white" font-family="sans-serif" font-size="17">Budget = fraction of training slices/images, not a fraction of expert hours.</text>
+</svg>

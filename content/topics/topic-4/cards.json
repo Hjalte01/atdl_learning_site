@@ -606,5 +606,157 @@
       "nnActive"
     ],
     "relatedTopicUrl": "/papers/nnactive#8--what-the-experiment-actually-establishes"
+  },
+  {
+    "id": "sugfw-cold",
+    "topic": "topic-4",
+    "title": "SUGFW+ · One query",
+    "question": "When are human target masks obtained in SUGFW+?",
+    "choices": [
+      "Before the first clustering step.",
+      "After the full batch has been selected.",
+      "After every greedy pick followed by retraining.",
+      "Only at test time."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "The computational greedy picks form one query batch. Human annotation and UPFT training follow selection, without an initial labeled target-domain set.",
+    "difficulty": "medium",
+    "tags": [
+      "SUGFW+"
+    ],
+    "relatedTopicUrl": "/papers/sugfw-plus#1--cold-start-is-one-annotation-round"
+  },
+  {
+    "id": "sugfw-surrogate",
+    "topic": "topic-4",
+    "title": "SUGFW+ · Confident errors",
+    "question": "All augmented views consistently miss the organ. What can the surrogate entropy be?",
+    "choices": [
+      "Always maximal.",
+      "Equal to the human annotation cost.",
+      "Zero despite an incorrect segmentation.",
+      "The Dice score."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "Binary foreground agreement can be consistently wrong. SAM’s class-agnostic perturbation signal is a surrogate rather than calibrated target-task uncertainty.",
+    "difficulty": "medium",
+    "tags": [
+      "SUGFW+"
+    ],
+    "relatedTopicUrl": "/papers/sugfw-plus#3--turn-class-agnostic-regions-into-surrogate-uncertainty"
+  },
+  {
+    "id": "sugfw-weights",
+    "topic": "topic-4",
+    "title": "SUGFW+ · Two summaries",
+    "question": "Which quantities does PGDR pass to GSCU?",
+    "choices": [
+      "An uncertainty-weighted feature vector f and an unweighted mean uncertainty u.",
+      "Only the most uncertain patch.",
+      "A human target mask and test Dice.",
+      "Two identical entropy-weighted means."
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "The vector f defines clustering geometry; scalar u defines uncertainty distances within the greedy selection. The scalar mean does not use the feature-pooling softmax weights.",
+    "difficulty": "medium",
+    "tags": [
+      "SUGFW+"
+    ],
+    "relatedTopicUrl": "/papers/sugfw-plus#4--weight-the-feature-average-the-uncertainty"
+  },
+  {
+    "id": "sugfw-numeric",
+    "topic": "topic-4",
+    "title": "SUGFW+ · Softmax arithmetic",
+    "question": "For patch uncertainties 0 and ln 2 with lambda 6, what are the weights?",
+    "choices": [
+      "1/2 and 1/2.",
+      "0 and 1 exactly.",
+      "1/7 and 6/7.",
+      "1/65 and 64/65."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "Exponentiation gives 1 and 64; dividing each by their sum 65 produces normalized positive weights.",
+    "difficulty": "medium",
+    "tags": [
+      "SUGFW+"
+    ],
+    "relatedTopicUrl": "/papers/sugfw-plus#4--weight-the-feature-average-the-uncertainty"
+  },
+  {
+    "id": "sugfw-greedy",
+    "topic": "topic-4",
+    "title": "SUGFW+ · Spectrum coverage",
+    "question": "Selected uncertainties are .3 and .6. A new cluster offers .05, .4 and .65. Which does max-min select?",
+    "choices": [
+      ".65 because it is most uncertain.",
+      ".4 because it is near the mean.",
+      ".05 because its nearest distance .25 is largest.",
+      "All three because they share a cluster."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "Nearest distances are .25, .1 and .05. GSCU selects one image from this new cluster to cover the uncertainty spectrum, not necessarily maximize uncertainty.",
+    "difficulty": "medium",
+    "tags": [
+      "SUGFW+"
+    ],
+    "relatedTopicUrl": "/papers/sugfw-plus#5--greedy-selection-covers-two-different-spaces"
+  },
+  {
+    "id": "sugfw-loss",
+    "topic": "topic-4",
+    "title": "SUGFW+ · Two targets",
+    "question": "What supervises the UPFT predictor g?",
+    "choices": [
+      "Dense test masks.",
+      "Squared error to the uncertainty encoder’s embedding.",
+      "A manually selected point prompt.",
+      "The cluster centroid index alone."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "Embedding MSE trains g to imitate E_un(U_i). Human target masks supervise the decoder prediction with Dice and CE; the two targets have different roles.",
+    "difficulty": "medium",
+    "tags": [
+      "SUGFW+"
+    ],
+    "relatedTopicUrl": "/papers/sugfw-plus#6--train-with-uncertainty-as-a-decoder-prompt"
+  },
+  {
+    "id": "sugfw-test",
+    "topic": "topic-4",
+    "title": "SUGFW+ · Branch replacement",
+    "question": "What supplies the decoder prompt at inference?",
+    "choices": [
+      "The original SAM point encoder with manual clicks.",
+      "The uncertainty encoder processing a fresh K-view mask.",
+      "A test ground-truth mask.",
+      "g applied to image features and the training-pool mean uncertainty map."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "E_un is discarded and its embedding is replaced by the predictor output. This avoids new K-view uncertainty generation for each test image.",
+    "difficulty": "medium",
+    "tags": [
+      "SUGFW+"
+    ],
+    "relatedTopicUrl": "/papers/sugfw-plus#7--inference-replaces-a-branch-not-a-target-mask"
+  },
+  {
+    "id": "sugfw-budget",
+    "topic": "topic-4",
+    "title": "SUGFW+ · Annotation accounting",
+    "question": "What does Liver’s 0.05% annotation budget measure?",
+    "choices": [
+      "A fraction of training slices, not measured expert hours.",
+      "A fraction of 3D volumes labeled completely.",
+      "A fraction of frozen encoder parameters updated.",
+      "A guaranteed reduction in annotation time by the same percentage."
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "The three volumetric datasets use slice-level annotation and 2D training, then stack predictions for 3D metrics. Equal slice fractions need not imply equal human effort.",
+    "difficulty": "medium",
+    "tags": [
+      "SUGFW+"
+    ],
+    "relatedTopicUrl": "/papers/sugfw-plus#8--evidence-budgets-count-slices-and-images"
   }
 ]

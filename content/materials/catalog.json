@@ -609,12 +609,12 @@
     {
       "id": "03f227ea4e880894",
       "sourcePath": "topic 4/T4_5_SUGFW+.pdf",
-      "title": "T4 5 SUGFW+",
+      "title": "SUGFW+: An Uncertainty-guided Feature Weighting Framework for Cold Start Active Adaptation of SAM in Medical Image Segmentation",
       "topic": 4,
       "order": 5,
       "kind": "paper",
-      "status": "not-started",
-      "guide": null,
+      "status": "ready",
+      "guide": "/papers/sugfw-plus",
       "pdf": "/materials/03f227ea4e880894.pdf",
       "sha256": "1ba0714711514d4b74bae55919991f762be1a9f946ade8e175f6e33ef0adbd57",
       "sourceState": "present"
@@ -635,10 +635,10 @@
   ],
   "sync": {
     "vault": "/srv/obsidian-webdav/study/ATDL",
-    "attemptedAt": "2026-10-01T19:36:16+00:00",
+    "attemptedAt": "2026-10-01T19:50:49+00:00",
     "sourceCount": 48,
     "importedCount": 48,
     "errors": [],
-    "completedAt": "2026-10-01T19:36:16+00:00"
+    "completedAt": "2026-10-01T19:50:49+00:00"
   }
 }
