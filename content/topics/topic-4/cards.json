@@ -302,5 +302,157 @@
       "CEC"
     ],
     "relatedTopicUrl": "/papers/cec#8--evidence-label-efficiency-is-conditional-on-the-setting"
+  },
+  {
+    "id": "active-prompt-mixture",
+    "topic": "topic-4",
+    "title": "Active Prompt · Soft representation",
+    "question": "What weights each class text feature in Active Prompt’s mixture?",
+    "choices": [
+      "The true pool label.",
+      "The model’s predicted class probability.",
+      "The cluster’s population only.",
+      "The class-specific annotation price."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "Eq. (6) uses soft predicted probabilities, preserving competing-class evidence before any oracle query.",
+    "difficulty": "medium",
+    "tags": [
+      "Active Prompt"
+    ],
+    "relatedTopicUrl": "/papers/active-prompt#3--representation-keep-the-image-add-soft-class-evidence"
+  },
+  {
+    "id": "active-prompt-concat",
+    "topic": "topic-4",
+    "title": "Active Prompt · Feature blocks",
+    "question": "If image and weighted-text features each have dimension d, what does concatenation produce?",
+    "choices": [
+      "A d-dimensional sum.",
+      "A class-label integer.",
+      "A 2d-dimensional feature.",
+      "A vector with exactly C entries."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "Eq. (7) retains separate image and text-mixture blocks, each of dimension d. The probability vector has C entries.",
+    "difficulty": "medium",
+    "tags": [
+      "Active Prompt"
+    ],
+    "relatedTopicUrl": "/papers/active-prompt#3--representation-keep-the-image-add-soft-class-evidence"
+  },
+  {
+    "id": "active-prompt-balance",
+    "topic": "topic-4",
+    "title": "Active Prompt · Cluster balance",
+    "question": "When B equals the number of classes, does selecting one image per cluster guarantee one true label per class?",
+    "choices": [
+      "Yes, because K-means knows the labels.",
+      "Yes, because every cluster is a class.",
+      "Only when confidence exceeds 0.5.",
+      "No; feature clusters can cross class boundaries."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "The method uses unlabeled features and predictions. Cluster-balanced coverage is not perfect true-class balance.",
+    "difficulty": "medium",
+    "tags": [
+      "Active Prompt"
+    ],
+    "relatedTopicUrl": "/papers/active-prompt#4--acquisition-choose-real-representatives-not-synthetic-centroids"
+  },
+  {
+    "id": "active-prompt-gate",
+    "topic": "topic-4",
+    "title": "Active Prompt · Class-specific gate",
+    "question": "A candidate predicts A at 0.80. Thresholds are ε_A=0.85 and ε_B=0.60. What happens?",
+    "choices": [
+      "Query a human label.",
+      "Accept pseudo-label A because 0.80 exceeds ε_B.",
+      "Accept pseudo-label B.",
+      "Discard the example from the candidate set."
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "The gate compares with the predicted class’s threshold. Since 0.80 < 0.85, the oracle supplies a target.",
+    "difficulty": "medium",
+    "tags": [
+      "Active Prompt"
+    ],
+    "relatedTopicUrl": "/papers/active-prompt#5--the-gate-compare-with-the-predicted-classs-own-threshold"
+  },
+  {
+    "id": "active-prompt-equality",
+    "topic": "topic-4",
+    "title": "Active Prompt · Boundary decision",
+    "question": "What does Eq. (12) prescribe when candidate confidence equals its predicted class threshold?",
+    "choices": [
+      "Query the oracle.",
+      "Accept the pseudo-label.",
+      "Remove all previous pseudo-labels.",
+      "Reset the frozen encoders."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "The pseudo branch uses ≥; the human-query branch uses <. Passing the gate does not prove correctness.",
+    "difficulty": "medium",
+    "tags": [
+      "Active Prompt"
+    ],
+    "relatedTopicUrl": "/papers/active-prompt#5--the-gate-compare-with-the-predicted-classs-own-threshold"
+  },
+  {
+    "id": "active-prompt-reset",
+    "topic": "topic-4",
+    "title": "Active Prompt · Persistent state",
+    "question": "What is carried forward when prompts are randomly reinitialized each round?",
+    "choices": [
+      "Only the previous prompt parameters.",
+      "Newly revealed test labels.",
+      "The accumulated dataset, including earlier assigned pseudo targets.",
+      "A freshly trained image encoder."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "Eq. (12) retains D_(r−1), and Eq. (13) trains a reset prompt on all D_r. The encoders remain frozen.",
+    "difficulty": "medium",
+    "tags": [
+      "Active Prompt"
+    ],
+    "relatedTopicUrl": "/papers/active-prompt#6--training-and-inference-carry-the-dataset-reset-the-prompt"
+  },
+  {
+    "id": "active-prompt-budget",
+    "topic": "topic-4",
+    "title": "Active Prompt · Annotation arithmetic",
+    "question": "Two rounds select two images each; round one queries both, round two queries one and pseudo-labels one. What are the totals?",
+    "choices": [
+      "Four training targets and four human queries.",
+      "Three training targets and four human queries.",
+      "Two training targets and three human queries.",
+      "Four training targets and three human queries."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "A pseudo-label grows the training set without a human annotation: four targets, three purchases. The 25% toy saving is not the paper’s reported 17.6%.",
+    "difficulty": "medium",
+    "tags": [
+      "Active Prompt"
+    ],
+    "relatedTopicUrl": "/papers/active-prompt#7--trace-two-rounds-and-count-what-was-actually-purchased"
+  },
+  {
+    "id": "active-prompt-oracle",
+    "topic": "topic-4",
+    "title": "Active Prompt · Evidence scope",
+    "question": "Why is Table 1’s CB* not ordinary hidden-label acquisition?",
+    "choices": [
+      "It uses true-label text features to construct the dataset.",
+      "It uses frozen image features.",
+      "It performs K-means clustering.",
+      "It trains small prompts rather than all weights."
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "CB* replaces soft predicted text mixtures with ground-truth class text. It is an oracle-assisted comparison with label-balanced few-shot datasets.",
+    "difficulty": "medium",
+    "tags": [
+      "Active Prompt"
+    ],
+    "relatedTopicUrl": "/papers/active-prompt#8--evidence-what-feature-guidance-establishes"
   }
 ]

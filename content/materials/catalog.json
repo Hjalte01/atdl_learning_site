@@ -583,12 +583,12 @@
     {
       "id": "21ae6f9b5dfe7960",
       "sourcePath": "topic 4/T4_3_Active_Prompt.pdf",
-      "title": "T4 3 Active Prompt",
+      "title": "Active Prompt Learning with Vision-Language Model Priors",
       "topic": 4,
       "order": 3,
       "kind": "paper",
-      "status": "not-started",
-      "guide": null,
+      "status": "ready",
+      "guide": "/papers/active-prompt",
       "pdf": "/materials/21ae6f9b5dfe7960.pdf",
       "sha256": "4ed51b3c87c3358cbe839c6f73ec4b1c483d355afc6f6796baf36ae0e48a6a1b",
       "sourceState": "present"
@@ -635,10 +635,10 @@
   ],
   "sync": {
     "vault": "/srv/obsidian-webdav/study/ATDL",
-    "attemptedAt": "2026-10-01T18:54:13+00:00",
+    "attemptedAt": "2026-10-01T19:22:12+00:00",
     "sourceCount": 48,
     "importedCount": 48,
     "errors": [],
-    "completedAt": "2026-10-01T18:54:13+00:00"
+    "completedAt": "2026-10-01T19:22:12+00:00"
   }
 }

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" role="img" aria-label="Table 2 initial-round average accuracy across seven datasets"><rect width="100%" height="100%" fill="#101c30"/>
+<text x="30" y="40" fill="white" font-family="sans-serif" font-size="24">Measured · TMLR 10/2025 · Table 2 · initial acquisition</text>
+<text x="30" y="75" fill="white" font-family="sans-serif" font-size="19">Average accuracy (%) across seven datasets; CLIP ViT-B/32</text>
+<text x="30" y="104" fill="white" font-family="sans-serif" font-size="18">Mean ± SD, three trials. Last two rows use ground-truth labels.</text>
+<text x="30" y="163" fill="white" font-family="sans-serif" font-size="17">Image only</text>
+<rect x="270" y="140" width="369.03999999999996" height="30" fill="#31859b"/>
+<path d="M636.4499999999999,155 H641.63 M636.4499999999999,148 V162 M641.63,148 V162" stroke="white" stroke-width="2"/>
+<text x="780" y="163" fill="white" font-family="sans-serif" font-size="18">52.72 ± 0.37</text>
+<text x="30" y="235" fill="white" font-family="sans-serif" font-size="17">Weighted text only</text>
+<rect x="270" y="212" width="337.68" height="30" fill="#9274ce"/>
+<path d="M606.21,227 H609.1500000000001 M606.21,220 V234 M609.1500000000001,220 V234" stroke="white" stroke-width="2"/>
+<text x="780" y="235" fill="white" font-family="sans-serif" font-size="18">48.24 ± 0.21</text>
+<text x="30" y="307" fill="white" font-family="sans-serif" font-size="17">Image + soft text</text>
+<rect x="270" y="284" width="391.44" height="30" fill="#56b890"/>
+<path d="M658.7800000000001,299 H664.1 M658.7800000000001,292 V306 M664.1,292 V306" stroke="white" stroke-width="2"/>
+<text x="780" y="307" fill="white" font-family="sans-serif" font-size="18">55.92 ± 0.38</text>
+<text x="30" y="379" fill="white" font-family="sans-serif" font-size="17">Oracle label-balanced</text>
+<rect x="270" y="356" width="336.7" height="30" fill="#ad8d58"/>
+<path d="M603.83,371 H609.57 M603.83,364 V378 M609.57,364 V378" stroke="white" stroke-width="2"/>
+<text x="780" y="379" fill="white" font-family="sans-serif" font-size="18">48.10 ± 0.41</text>
+<text x="30" y="451" fill="white" font-family="sans-serif" font-size="17">Image + true-label text</text>
+<rect x="270" y="428" width="407.89000000000004" height="30" fill="#ad8d58"/>
+<path d="M674.8800000000001,443 H680.9000000000001 M674.8800000000001,436 V450 M680.9000000000001,436 V450" stroke="white" stroke-width="2"/>
+<text x="780" y="451" fill="white" font-family="sans-serif" font-size="18">58.27 ± 0.43</text>
+<path d="M270 510 H760" stroke="#c5d5ee"/>
+<text x="264" y="535" fill="white" font-family="sans-serif" font-size="16">0</text>
+<text x="334" y="535" fill="white" font-family="sans-serif" font-size="16">10</text>
+<text x="404" y="535" fill="white" font-family="sans-serif" font-size="16">20</text>
+<text x="474" y="535" fill="white" font-family="sans-serif" font-size="16">30</text>
+<text x="544" y="535" fill="white" font-family="sans-serif" font-size="16">40</text>
+<text x="614" y="535" fill="white" font-family="sans-serif" font-size="16">50</text>
+<text x="684" y="535" fill="white" font-family="sans-serif" font-size="16">60</text>
+<text x="754" y="535" fill="white" font-family="sans-serif" font-size="16">70</text>
+<text x="30" y="575" fill="white" font-family="sans-serif" font-size="18">This tests feature choice, not selective-querying savings or equal paid budgets.</text>
+</svg>

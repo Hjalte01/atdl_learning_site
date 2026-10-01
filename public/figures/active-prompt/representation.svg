@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-label="Close-up: soft class evidence becomes a geometric feature">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="white" font-family="sans-serif" font-size="24">Close-up: soft class evidence becomes a geometric feature</text>
+<text x="30" y="85" fill="#c5d5ee" font-family="sans-serif" font-size="18">TOY: d = 2, two classes; values are illustrative encoder outputs</text>
+<rect x="30" y="100" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="125" fill="white" font-family="sans-serif" font-size="17">Image I = (1, 0)</text>
+<text x="42" y="148" fill="white" font-family="sans-serif" font-size="17">Class A text T_A = (1, 0)</text>
+<path d="M308,145 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="100" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="125" fill="white" font-family="sans-serif" font-size="17">Class B text T_B = (0, 1)</text>
+<text x="352" y="148" fill="white" font-family="sans-serif" font-size="17">Probabilities p = (.8, .2)</text>
+<path d="M618,145 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="100" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="125" fill="white" font-family="sans-serif" font-size="17">Weighted T = (.8, .2)</text>
+<text x="662" y="148" fill="white" font-family="sans-serif" font-size="17">F_C = (1, 0, .8, .2)</text>
+<text x="30" y="230" fill="#c5d5ee" font-family="sans-serif" font-size="18">SAME IMAGE BLOCK, DIFFERENT SOFT EVIDENCE</text>
+<rect x="30" y="245" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="270" fill="white" font-family="sans-serif" font-size="17">Another feature has I=(1,0)</text>
+<text x="42" y="293" fill="white" font-family="sans-serif" font-size="17">Text mixture = (.2, .8)</text>
+<path d="M308,290 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="245" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="270" fill="white" font-family="sans-serif" font-size="17">ΔF = (0, 0, .6, −.6)</text>
+<text x="352" y="293" fill="white" font-family="sans-serif" font-size="17">Squared distance = .72</text>
+<path d="M618,290 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="245" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="270" fill="white" font-family="sans-serif" font-size="17">Text evidence separates them</text>
+<text x="662" y="293" fill="white" font-family="sans-serif" font-size="17">No true labels used</text>
+<text x="30" y="375" fill="#c5d5ee" font-family="sans-serif" font-size="18">KEEP BOTH BLOCKS: texture and class priors remain distinct</text>
+<rect x="30" y="390" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="415" fill="white" font-family="sans-serif" font-size="17">I: visual representation</text>
+<text x="42" y="438" fill="white" font-family="sans-serif" font-size="17">May encode background</text>
+<path d="M308,435 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="390" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="415" fill="white" font-family="sans-serif" font-size="17">Weighted T: class mixture</text>
+<text x="352" y="438" fill="white" font-family="sans-serif" font-size="17">May inherit CLIP bias</text>
+<path d="M618,435 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="390" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="415" fill="white" font-family="sans-serif" font-size="17">Concatenate, not sum</text>
+<text x="662" y="438" fill="white" font-family="sans-serif" font-size="17">No hard one-hot label</text>
+</svg>

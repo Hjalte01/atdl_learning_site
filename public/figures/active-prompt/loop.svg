@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-label="Toy trace: B = 2, growing data and a smaller human bill">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="white" font-family="sans-serif" font-size="24">Toy trace: B = 2, growing data and a smaller human bill</text>
+<text x="30" y="85" fill="#c5d5ee" font-family="sans-serif" font-size="18">ROUND 1: no class thresholds yet</text>
+<rect x="30" y="100" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="125" fill="white" font-family="sans-serif" font-size="17">D_0 empty; K = 2</text>
+<text x="42" y="148" fill="white" font-family="sans-serif" font-size="17">Use hand-crafted prompt</text>
+<path d="M308,145 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="100" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="125" fill="white" font-family="sans-serif" font-size="17">2 selected IDs → 2 queries</text>
+<text x="352" y="148" fill="white" font-family="sans-serif" font-size="17">Assume one A and one B</text>
+<path d="M618,145 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="100" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="125" fill="white" font-family="sans-serif" font-size="17">|D_1| = 2; humans = 2</text>
+<text x="662" y="148" fill="white" font-family="sans-serif" font-size="17">Reset / train t_1</text>
+<text x="30" y="230" fill="#c5d5ee" font-family="sans-serif" font-size="18">ROUND 2: use ε_A = .85 and ε_B = .60 from the worked example</text>
+<rect x="30" y="245" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="270" fill="white" font-family="sans-serif" font-size="17">K = 4; select 2 new IDs</text>
+<text x="42" y="293" fill="white" font-family="sans-serif" font-size="17">A .80 and B .80</text>
+<path d="M308,290 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="245" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="270" fill="white" font-family="sans-serif" font-size="17">A → human; B → pseudo</text>
+<text x="352" y="293" fill="white" font-family="sans-serif" font-size="17">One new paid annotation</text>
+<path d="M618,290 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="245" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="270" fill="white" font-family="sans-serif" font-size="17">|D_2| = 4; humans = 3</text>
+<text x="662" y="293" fill="white" font-family="sans-serif" font-size="17">Reset / train t_2 on all 4</text>
+<text x="30" y="375" fill="#c5d5ee" font-family="sans-serif" font-size="18">BUDGET AND LOSS: pseudo targets also influence learning</text>
+<rect x="30" y="390" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="415" fill="white" font-family="sans-serif" font-size="17">4 targets, 3 human labels</text>
+<text x="42" y="438" fill="white" font-family="sans-serif" font-size="17">Toy saving = 25%</text>
+<path d="M308,435 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="390" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="415" fill="white" font-family="sans-serif" font-size="17">If training p(target)=.8</text>
+<text x="352" y="438" fill="white" font-family="sans-serif" font-size="17">CE = −ln(.8) = .2231</text>
+<path d="M618,435 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="390" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="415" fill="white" font-family="sans-serif" font-size="17">Wrong pseudo still gets CE</text>
+<text x="662" y="438" fill="white" font-family="sans-serif" font-size="17">Confidence is not truth</text>
+</svg>
