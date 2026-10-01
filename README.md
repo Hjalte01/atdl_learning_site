@@ -23,6 +23,8 @@ Open http://localhost:4322. For production verification, run `npm run build`; `n
 
 ## Scope
 
+Topic 3 paper 2, *V-JEPA 2.1*, has a guide at `/papers/vjepa-21`, eight reproducible SVGs and eight study cards based on the supplied 37-page June 2026 arXiv v3. It explains weighted context prediction, four-layer supervision, native image/video tokenization, EMA and task-specific inference. Sequential ablations and scaled-model results stay separate; robot planning changes and internal source discrepancies are explicit. Exactly one guide is completed; deployment remains with the queue.
+
 Topic 3 paper 1, *DINOv3*, now has a guide at `/papers/dinov3`, eight reproducible SVGs and eight study cards based on the supplied August 13, 2025 arXiv v1. It connects student/EMA/Gram teacher roles, global and masked-patch objectives, relational anchoring, resolution adaptation and downstream probes. Final-result and refinement-ablation settings are kept separate; OCR, fairness and compute limitations are explicit. This run completes one guide; deployment remains with the queue.
 
 Topic 4 paper 6, *CSCS*, has a guide at `/papers/cscs`, eight reproducible SVGs and eight study cards based on the supplied 20-page June 18, 2026 arXiv v1. It connects pool-specific SSL signals, Spearman DCR, budget pacing, clustered selection and separate nnU-Net training. DIANE budget-label discrepancies, small-pool KNN gaps and ablation-table inconsistencies are explicit. All six supplied Topic 4 papers now have guides. This run completes one guide; deployment remains with the queue.

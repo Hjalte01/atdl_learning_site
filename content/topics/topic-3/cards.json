@@ -150,5 +150,157 @@
       "DINOv3"
     ],
     "relatedTopicUrl": "/papers/dinov3#9--evidence-frozen-features-learned-heads"
+  },
+  {
+    "id": "vjepa21-1",
+    "topic": "topic-3",
+    "title": "V-JEPA 2.1 · Visible gradients",
+    "question": "What is missing from masked-only V-JEPA supervision?",
+    "choices": [
+      "Any gradients to the visible encoder tokens.",
+      "A direct location-specific prediction loss at visible output positions.",
+      "All temporal position information.",
+      "All learned teacher features."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "Visible features already receive gradients through prediction of hidden sites; the new context loss directly matches their own outputs to clean teacher targets.",
+    "difficulty": "medium",
+    "tags": [
+      "V-JEPA 2.1"
+    ],
+    "relatedTopicUrl": "/papers/vjepa-21#1--why-a-visible-token-needs-a-target"
+  },
+  {
+    "id": "vjepa21-2",
+    "topic": "topic-3",
+    "title": "V-JEPA 2.1 · Targets",
+    "question": "What is the target of V-JEPA 2.1 base self-supervision?",
+    "choices": [
+      "A human noun label.",
+      "A robot action sequence.",
+      "A clean-input EMA teacher feature at the matching position and layer.",
+      "An RGB reconstruction produced by a fixed decoder."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "Both masked and visible predictions match clean teacher features, with stop-gradient on targets.",
+    "difficulty": "medium",
+    "tags": [
+      "V-JEPA 2.1"
+    ],
+    "relatedTopicUrl": "/papers/vjepa-21#4--the-dense-loss-predict-hidden-and-visible-features"
+  },
+  {
+    "id": "vjepa21-3",
+    "topic": "topic-3",
+    "title": "V-JEPA 2.1 · Distance weights",
+    "question": "With base coefficient 0.5, what is the context weight at distance 4?",
+    "choices": [
+      "2",
+      "0.5",
+      "0.125",
+      "0.25"
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "The coefficient is 0.5 / sqrt(4) = 0.25. Distance weighting operates on context errors.",
+    "difficulty": "medium",
+    "tags": [
+      "V-JEPA 2.1"
+    ],
+    "relatedTopicUrl": "/papers/vjepa-21#5--weight-by-distance-supervise-through-depth"
+  },
+  {
+    "id": "vjepa21-4",
+    "topic": "topic-3",
+    "title": "V-JEPA 2.1 · Separate counts",
+    "question": "Context errors are 0.4 and 0.6 with weights 0.5 and 0.25. What is their context loss?",
+    "choices": [
+      "0.175",
+      "0.467",
+      "0.35",
+      "1.0"
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "Divide the weighted error sum 0.20 + 0.15 by two context positions, not by the weight sum.",
+    "difficulty": "medium",
+    "tags": [
+      "V-JEPA 2.1"
+    ],
+    "relatedTopicUrl": "/papers/vjepa-21#6--work-one-example-through-the-architecture"
+  },
+  {
+    "id": "vjepa21-5",
+    "topic": "topic-3",
+    "title": "V-JEPA 2.1 · Deep supervision",
+    "question": "How does deep self-supervision change training?",
+    "choices": [
+      "It trains four unrelated encoders.",
+      "It removes clean teacher targets.",
+      "It matches both loss branches at four corresponding encoder levels.",
+      "It requires every downstream probe to concatenate four layers."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "Intermediate and final feature levels receive predictive/context targets. Final-layer dense probes remain possible.",
+    "difficulty": "medium",
+    "tags": [
+      "V-JEPA 2.1"
+    ],
+    "relatedTopicUrl": "/papers/vjepa-21#5--weight-by-distance-supervise-through-depth"
+  },
+  {
+    "id": "vjepa21-6",
+    "topic": "topic-3",
+    "title": "V-JEPA 2.1 · Native tokens",
+    "question": "How many patch tokens come from a 16-frame 256×256 video with 16×16 patches and tubelet size 2?",
+    "choices": [
+      "256",
+      "2048",
+      "4096",
+      "16"
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "Eight temporal positions times 16×16 spatial positions yields 2048 patch tokens, excluding any modality token convention.",
+    "difficulty": "medium",
+    "tags": [
+      "V-JEPA 2.1"
+    ],
+    "relatedTopicUrl": "/papers/vjepa-21#3--representation-native-grids-four-depths"
+  },
+  {
+    "id": "vjepa21-7",
+    "topic": "topic-3",
+    "title": "V-JEPA 2.1 · Distillation EMA",
+    "question": "Which network supplies the distillation loss targets?",
+    "choices": [
+      "The student EMA.",
+      "The action-conditioned robot predictor.",
+      "An online EMA teacher updated from the small student.",
+      "A frozen ViT-G teacher."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "Distillation uses a fixed ViT-G target; student EMA is maintained for the released encoder and never used in the loss.",
+    "difficulty": "medium",
+    "tags": [
+      "V-JEPA 2.1"
+    ],
+    "relatedTopicUrl": "/papers/vjepa-21#7--the-training-loop-and-the-inference-branches"
+  },
+  {
+    "id": "vjepa21-8",
+    "topic": "topic-3",
+    "title": "V-JEPA 2.1 · Planning comparison",
+    "question": "What qualifies the 60% to 80% grasp-success comparison?",
+    "choices": [
+      "The 80% result also changes planning horizon and takes 14 seconds versus 3.",
+      "It proves a 20% relative gain for an identical planner.",
+      "It uses no action-data training.",
+      "All robot skills improve by 20 points."
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "At the same listed planner settings the gain is 60% to 70%; 80% uses a longer horizon and slower planning, over ten tasks per skill.",
+    "difficulty": "medium",
+    "tags": [
+      "V-JEPA 2.1"
+    ],
+    "relatedTopicUrl": "/papers/vjepa-21#8--evidence-first-the-tradeoff-then-the-final-models"
   }
 ]

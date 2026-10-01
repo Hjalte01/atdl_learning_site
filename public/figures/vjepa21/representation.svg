@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="535" viewBox="0 0 960 535" role="img" aria-label="Native tokens preserve a spatial or spatio-temporal grid">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="white" font-family="sans-serif" font-size="24">Native tokens preserve a spatial or spatio-temporal grid</text>
+<text x="30" y="80" fill="#c5d5ee" font-family="sans-serif" font-size="18">IMAGE: 256 × 256 pixels, patch 16 × 16</text>
+<rect x="30" y="95" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="120" fill="white" font-family="sans-serif" font-size="17">2D convolution tokenizer</text>
+<text x="42" y="143" fill="white" font-family="sans-serif" font-size="17">16 × 16 = 256 tokens</text>
+<path d="M308,140 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="95" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="120" fill="white" font-family="sans-serif" font-size="17">Each token has d channels</text>
+<text x="352" y="143" fill="white" font-family="sans-serif" font-size="17">Shared transformer encoder</text>
+<path d="M618,140 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="95" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="120" fill="white" font-family="sans-serif" font-size="17">Modality embedding: image</text>
+<text x="662" y="143" fill="white" font-family="sans-serif" font-size="17">No repeated static frames</text>
+<text x="30" y="225" fill="#c5d5ee" font-family="sans-serif" font-size="18">VIDEO: 16 frames, 256 × 256, tubelet 2</text>
+<rect x="30" y="240" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="265" fill="white" font-family="sans-serif" font-size="17">3D convolution tokenizer</text>
+<text x="42" y="288" fill="white" font-family="sans-serif" font-size="17">8 × 16 × 16 = 2048 tokens</text>
+<path d="M308,285 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="240" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="265" fill="white" font-family="sans-serif" font-size="17">3D RoPE: time + space</text>
+<text x="352" y="288" fill="white" font-family="sans-serif" font-size="17">Drop tokens before encoder</text>
+<path d="M618,285 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="240" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="265" fill="white" font-family="sans-serif" font-size="17">Mask tokens carry positions</text>
+<text x="662" y="288" fill="white" font-family="sans-serif" font-size="17">Not observed pixel content</text>
+<text x="30" y="370" fill="#c5d5ee" font-family="sans-serif" font-size="18">FOUR FEATURE LEVELS: Nᶜ visible tokens</text>
+<rect x="30" y="385" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="410" fill="white" font-family="sans-serif" font-size="17">Each level: Nᶜ × d</text>
+<text x="42" y="433" fill="white" font-family="sans-serif" font-size="17">Concatenate → Nᶜ × 4d</text>
+<path d="M308,430 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="385" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="410" fill="white" font-family="sans-serif" font-size="17">MLP fuses channel levels</text>
+<text x="352" y="433" fill="white" font-family="sans-serif" font-size="17">Predictor gets fused tokens</text>
+<path d="M618,430 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="385" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="410" fill="white" font-family="sans-serif" font-size="17">Four targets per position</text>
+<text x="662" y="433" fill="white" font-family="sans-serif" font-size="17">Match layer to layer</text>
+</svg>

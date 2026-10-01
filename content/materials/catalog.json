@@ -427,12 +427,12 @@
     {
       "id": "70271e62966f33a3",
       "sourcePath": "topic 3/T3_2_V-JEPA 2.1.pdf",
-      "title": "T3 2 V-JEPA 2.1",
+      "title": "V-JEPA 2.1: Unlocking Dense Features in Video Self-Supervised Learning",
       "topic": 3,
       "order": 2,
       "kind": "paper",
-      "status": "not-started",
-      "guide": null,
+      "status": "ready",
+      "guide": "/papers/vjepa-21",
       "pdf": "/materials/70271e62966f33a3.pdf",
       "sha256": "b40580916242ade00e2ac177cb01473d511f021d5a25f7552fd17512b3a72bbb",
       "sourceState": "present"
@@ -635,10 +635,10 @@
   ],
   "sync": {
     "vault": "/srv/obsidian-webdav/study/ATDL",
-    "attemptedAt": "2026-10-01T20:18:48+00:00",
+    "attemptedAt": "2026-10-01T20:31:50+00:00",
     "sourceCount": 48,
     "importedCount": 48,
     "errors": [],
-    "completedAt": "2026-10-01T20:18:48+00:00"
+    "completedAt": "2026-10-01T20:31:50+00:00"
   }
 }
