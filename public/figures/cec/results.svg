@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-label="Textures held-out accuracy: Random and CEC with three-seed standard deviations"><rect width="100%" height="100%" fill="#101c30"/>
+<text x="30" y="40" fill="white" font-family="sans-serif" font-size="24">Measured · Table 1 · Textures · CoOp / CLIP ViT-B/16</text>
+<text x="30" y="74" fill="white" font-family="sans-serif" font-size="18">Held-out accuracy (%); mean ± SD over three seeds; zero-based bars</text>
+<text x="30" y="132" fill="white" font-family="sans-serif" font-size="19">Budget 1%</text>
+<rect x="190" y="110" width="345.59999999999997" height="26" fill="#31859b"/>
+<path d="M533.8,123 H537.3999999999999 M533.8,116 V130 M537.3999999999999,116 V130" stroke="white" stroke-width="2"/>
+<text x="780" y="130" fill="white" font-family="sans-serif" font-size="18">38.4 ± 0.2</text>
+<rect x="190" y="145" width="431.09999999999997" height="26" fill="#9274ce"/>
+<path d="M610.3,158 H631.8999999999999 M610.3,151 V165 M631.8999999999999,151 V165" stroke="white" stroke-width="2"/>
+<text x="780" y="165" fill="white" font-family="sans-serif" font-size="18">47.9 ± 1.2</text>
+<text x="30" y="237" fill="white" font-family="sans-serif" font-size="19">Budget 2%</text>
+<rect x="190" y="215" width="397.8" height="26" fill="#31859b"/>
+<path d="M561.6999999999999,228 H613.9 M561.6999999999999,221 V235 M613.9,221 V235" stroke="white" stroke-width="2"/>
+<text x="780" y="235" fill="white" font-family="sans-serif" font-size="18">44.2 ± 2.9</text>
+<rect x="190" y="250" width="475.2" height="26" fill="#9274ce"/>
+<path d="M656.2,263 H674.2 M656.2,256 V270 M674.2,256 V270" stroke="white" stroke-width="2"/>
+<text x="780" y="270" fill="white" font-family="sans-serif" font-size="18">52.8 ± 1.0</text>
+<text x="30" y="342" fill="white" font-family="sans-serif" font-size="19">Budget 5%</text>
+<rect x="190" y="320" width="486.90000000000003" height="26" fill="#31859b"/>
+<path d="M650.8000000000001,333 H703.0000000000001 M650.8000000000001,326 V340 M703.0000000000001,326 V340" stroke="white" stroke-width="2"/>
+<text x="780" y="340" fill="white" font-family="sans-serif" font-size="18">54.1 ± 2.9</text>
+<rect x="190" y="355" width="523.8000000000001" height="26" fill="#9274ce"/>
+<path d="M695.8000000000001,368 H731.8000000000001 M695.8000000000001,361 V375 M731.8000000000001,361 V375" stroke="white" stroke-width="2"/>
+<text x="780" y="375" fill="white" font-family="sans-serif" font-size="18">58.2 ± 2.0</text>
+<text x="180" y="450" fill="white" font-family="sans-serif" font-size="16">0</text>
+<text x="270" y="450" fill="white" font-family="sans-serif" font-size="16">10</text>
+<text x="360" y="450" fill="white" font-family="sans-serif" font-size="16">20</text>
+<text x="450" y="450" fill="white" font-family="sans-serif" font-size="16">30</text>
+<text x="540" y="450" fill="white" font-family="sans-serif" font-size="16">40</text>
+<text x="630" y="450" fill="white" font-family="sans-serif" font-size="16">50</text>
+<text x="720" y="450" fill="white" font-family="sans-serif" font-size="16">60</text>
+<path d="M190 423 H730" stroke="#c5d5ee"/>
+<text x="30" y="490" fill="white" font-family="sans-serif" font-size="19">Teal: Random     Purple: CEC     Zero-shot reference: 44.3%</text>
+</svg>

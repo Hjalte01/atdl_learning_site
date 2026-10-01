@@ -150,5 +150,157 @@
       "LabelBench"
     ],
     "relatedTopicUrl": "/papers/labelbench#8--limits-and-experiments-worth-doing"
+  },
+  {
+    "id": "cec-correction",
+    "topic": "topic-4",
+    "title": "CEC · Correction",
+    "question": "What does CEC use to estimate Q(i)?",
+    "choices": [
+      "The top-N predicted class-i probabilities in the unlabeled pool.",
+      "Oracle class frequencies for the whole pool.",
+      "The held-out test labels.",
+      "One shared temperature fitted for every image."
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "Q(i) averages the N highest P_i values separately for each class; it uses no oracle targets and need not sum to one.",
+    "difficulty": "medium",
+    "tags": [
+      "CEC"
+    ],
+    "relatedTopicUrl": "/papers/cec#3--calibration-compensate-for-unequal-class-tendencies"
+  },
+  {
+    "id": "cec-entropy",
+    "topic": "topic-4",
+    "title": "CEC · Entropy",
+    "question": "With P=(.8,.2) and Q=(.8,.4), what is the calibrated distribution?",
+    "choices": [
+      "(.8,.2)",
+      "(1,.5)",
+      "(2/3,1/3)",
+      "(.5,.5)"
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "Divide P by Q to get (1,.5), then normalize by 1.5. The intermediate scores are not a probability distribution.",
+    "difficulty": "medium",
+    "tags": [
+      "CEC"
+    ],
+    "relatedTopicUrl": "/papers/cec#3--calibration-compensate-for-unequal-class-tendencies"
+  },
+  {
+    "id": "cec-neighbor",
+    "topic": "topic-4",
+    "title": "CEC · Neighbor",
+    "question": "Which expression matches the neighbor uncertainty in paper Eq. 6?",
+    "choices": [
+      "Divide the weighted entropy sum by the sum of distance weights.",
+      "Divide the distance-weighted neighbor entropy sum by k.",
+      "Multiply all neighbor entropies by self-entropy.",
+      "Return zero whenever a neighbor is confident."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "The denominator is k, the number of neighbors. Distance attenuation reduces the contribution rather than being normalized away.",
+    "difficulty": "medium",
+    "tags": [
+      "CEC"
+    ],
+    "relatedTopicUrl": "/papers/cec#4--neighbors-is-confusion-shared-locally"
+  },
+  {
+    "id": "cec-additive",
+    "topic": "topic-4",
+    "title": "CEC · Additive",
+    "question": "If an image has high self-entropy and confident neighbors, does CEC automatically reject it?",
+    "choices": [
+      "Yes, because U is a product.",
+      "Yes, because it applies a hard AND test.",
+      "Yes, because neighbors replace the self term.",
+      "No: U adds the self and neighbor terms."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "Eq. 7 is additive. Neighbor uncertainty supplies a preference for shared confusion, not a hard outlier veto.",
+    "difficulty": "medium",
+    "tags": [
+      "CEC"
+    ],
+    "relatedTopicUrl": "/papers/cec#4--neighbors-is-confusion-shared-locally"
+  },
+  {
+    "id": "cec-center",
+    "topic": "topic-4",
+    "title": "CEC · Center",
+    "question": "After uncertainty-weighted K-means, which image does CEC query in each cluster?",
+    "choices": [
+      "The real image closest to the weighted center.",
+      "The image with the largest uncertainty regardless of its position.",
+      "A generated synthetic image at the center.",
+      "An image chosen using the hidden true class."
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "CEC weights clustering first, then queries center-nearest real images. Greedy highest-entropy selection after ordinary clustering is a different rule.",
+    "difficulty": "medium",
+    "tags": [
+      "CEC"
+    ],
+    "relatedTopicUrl": "/papers/cec#5--weighted-clustering-move-the-centers-then-query-real-images"
+  },
+  {
+    "id": "cec-gradient",
+    "topic": "topic-4",
+    "title": "CEC · Gradient",
+    "question": "In the main CoOp setting, what does labeled cross-entropy update?",
+    "choices": [
+      "All image and text encoder weights.",
+      "The oracle label distribution.",
+      "The learnable context vectors, through the frozen text encoder.",
+      "Only the acquisition cluster centers."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "Frozen text-encoder weights still permit gradients with respect to context inputs. Learned context changes text features and future class probabilities.",
+    "difficulty": "medium",
+    "tags": [
+      "CEC"
+    ],
+    "relatedTopicUrl": "/papers/cec#6--learn-prompts-then-classify-without-acquisition"
+  },
+  {
+    "id": "cec-state",
+    "topic": "topic-4",
+    "title": "CEC · State",
+    "question": "What carries forward into the next prompt-training round under the source settings?",
+    "choices": [
+      "Only the most recent batch of pseudo-labels.",
+      "All collected oracle labels; CLIP is reloaded and prompts trained on accumulated data.",
+      "The unlabeled pool with queried images still included.",
+      "A guaranteed equal number of labels per class."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "The paper describes reloading zero-shot CLIP each round and training on accumulated D_L. Queried images leave D_U; class balance is not guaranteed.",
+    "difficulty": "medium",
+    "tags": [
+      "CEC"
+    ],
+    "relatedTopicUrl": "/papers/cec#7--the-annotation-loop-carries-data-forward"
+  },
+  {
+    "id": "cec-evidence",
+    "topic": "topic-4",
+    "title": "CEC · Evidence",
+    "question": "Textures at 2%: CEC accuracy is 52.8%, random is 44.2%. What does this support?",
+    "choices": [
+      "CEC always beats zero-shot CLIP on every dataset.",
+      "CEC improves accuracy by 8.6% relative to random.",
+      "CEC is 52.8% faster at acquisition.",
+      "CEC gains 8.6 percentage points in this reported test setting."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "Subtract the reported accuracies: 52.8−44.2=8.6 points. These are held-out CoOp/ViT-B/16 results across three seeds, not a universal guarantee or runtime measurement.",
+    "difficulty": "medium",
+    "tags": [
+      "CEC"
+    ],
+    "relatedTopicUrl": "/papers/cec#8--evidence-label-efficiency-is-conditional-on-the-setting"
   }
 ]

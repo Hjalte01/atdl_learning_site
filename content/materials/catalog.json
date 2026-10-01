@@ -570,12 +570,12 @@
     {
       "id": "4558c52a433b4d3d",
       "sourcePath": "topic 4/T4_2_CEC.pdf",
-      "title": "T4 2 CEC",
+      "title": "Active Learning for Vision-Language Models (CEC)",
       "topic": 4,
       "order": 2,
       "kind": "paper",
-      "status": "not-started",
-      "guide": null,
+      "status": "ready",
+      "guide": "/papers/cec",
       "pdf": "/materials/4558c52a433b4d3d.pdf",
       "sha256": "920d8aa34efdb41d806658a8a08cacc25d507fce8a083f6657045164ab5d3ad9",
       "sourceState": "present"
@@ -635,10 +635,10 @@
   ],
   "sync": {
     "vault": "/srv/obsidian-webdav/study/ATDL",
-    "attemptedAt": "2026-10-01T18:24:13+00:00",
+    "attemptedAt": "2026-10-01T18:54:13+00:00",
     "sourceCount": 48,
     "importedCount": 48,
     "errors": [],
-    "completedAt": "2026-10-01T18:24:13+00:00"
+    "completedAt": "2026-10-01T18:54:13+00:00"
   }
 }

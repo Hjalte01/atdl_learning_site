@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-label="Which images deserve the next few labels?">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="white" font-family="sans-serif" font-size="24">Which images deserve the next few labels?</text>
+<text x="30" y="85" fill="#c5d5ee" font-family="sans-serif" font-size="18">RANDOM: covers the pool without consulting the model</text>
+<rect x="30" y="100" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="125" fill="white" font-family="sans-serif" font-size="17">Unlabeled pool D_U</text>
+<text x="42" y="148" fill="white" font-family="sans-serif" font-size="17">Known class names</text>
+<path d="M308,145 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="100" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="125" fill="white" font-family="sans-serif" font-size="17">Sample b images</text>
+<text x="352" y="148" fill="white" font-family="sans-serif" font-size="17">No uncertainty ranking</text>
+<path d="M618,145 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="100" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="125" fill="white" font-family="sans-serif" font-size="17">Oracle reveals labels</text>
+<text x="662" y="148" fill="white" font-family="sans-serif" font-size="17">Tune prompts on D_L</text>
+<text x="30" y="230" fill="#c5d5ee" font-family="sans-serif" font-size="18">RAW ENTROPY: may reflect model bias or isolated confusion</text>
+<rect x="30" y="245" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="270" fill="white" font-family="sans-serif" font-size="17">CLIP probabilities P</text>
+<text x="42" y="293" fill="white" font-family="sans-serif" font-size="17">Unequal class tendencies</text>
+<path d="M308,290 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="245" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="270" fill="white" font-family="sans-serif" font-size="17">Rank by H(x)</text>
+<text x="352" y="293" fill="white" font-family="sans-serif" font-size="17">May query similar outliers</text>
+<path d="M618,290 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="245" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="270" fill="white" font-family="sans-serif" font-size="17">Oracle reveals labels</text>
+<text x="662" y="293" fill="white" font-family="sans-serif" font-size="17">No diversity guarantee</text>
+<text x="30" y="375" fill="#c5d5ee" font-family="sans-serif" font-size="18">CEC: correct scores, use neighbors, cover feature regions</text>
+<rect x="30" y="390" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="415" fill="white" font-family="sans-serif" font-size="17">Calibrated entropy H-hat</text>
+<text x="42" y="438" fill="white" font-family="sans-serif" font-size="17">Pool-derived Q(i)</text>
+<path d="M308,435 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="390" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="415" fill="white" font-family="sans-serif" font-size="17">Neighbor term → U(x)</text>
+<text x="352" y="438" fill="white" font-family="sans-serif" font-size="17">Weighted b-way clustering</text>
+<path d="M618,435 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="390" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="415" fill="white" font-family="sans-serif" font-size="17">Nearest to each center</text>
+<text x="662" y="438" fill="white" font-family="sans-serif" font-size="17">Query b labels; tune</text>
+</svg>

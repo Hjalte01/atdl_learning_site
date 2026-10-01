@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-label="Selection, prompt training and inference have separate jobs">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="white" font-family="sans-serif" font-size="24">Selection, prompt training and inference have separate jobs</text>
+<text x="30" y="85" fill="#c5d5ee" font-family="sans-serif" font-size="18">SELECTION: no true targets from the remaining pool</text>
+<rect x="30" y="100" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="125" fill="white" font-family="sans-serif" font-size="17">Current CLIP + prompts</text>
+<text x="42" y="148" fill="white" font-family="sans-serif" font-size="17">Images and class names</text>
+<path d="M308,145 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="100" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="125" fill="white" font-family="sans-serif" font-size="17">Calibration / neighbors</text>
+<text x="352" y="148" fill="white" font-family="sans-serif" font-size="17">Weighted clusters</text>
+<path d="M618,145 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="100" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="125" fill="white" font-family="sans-serif" font-size="17">Query oracle labels</text>
+<text x="662" y="148" fill="white" font-family="sans-serif" font-size="17">Add to accumulated D_L</text>
+<text x="30" y="230" fill="#c5d5ee" font-family="sans-serif" font-size="18">TRAINING: reload zero-shot CLIP each AL round (§5)</text>
+<rect x="30" y="245" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="270" fill="white" font-family="sans-serif" font-size="17">Collected D_L</text>
+<text x="42" y="293" fill="white" font-family="sans-serif" font-size="17">Initialize CoOp context</text>
+<path d="M308,290 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="245" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="270" fill="white" font-family="sans-serif" font-size="17">Frozen f and h</text>
+<text x="352" y="293" fill="white" font-family="sans-serif" font-size="17">Differentiate loss wrt V</text>
+<path d="M618,290 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="245" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="270" fill="white" font-family="sans-serif" font-size="17">Learn context vectors V</text>
+<text x="662" y="293" fill="white" font-family="sans-serif" font-size="17">Not encoder weights</text>
+<text x="30" y="375" fill="#c5d5ee" font-family="sans-serif" font-size="18">INFERENCE: classify a new image; no oracle or clusters</text>
+<rect x="30" y="390" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="415" fill="white" font-family="sans-serif" font-size="17">New image → f(x)</text>
+<text x="42" y="438" fill="white" font-family="sans-serif" font-size="17">Learned V + class → h</text>
+<path d="M308,435 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="390" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="415" fill="white" font-family="sans-serif" font-size="17">Cosine / T → softmax</text>
+<text x="352" y="438" fill="white" font-family="sans-serif" font-size="17">K class probabilities</text>
+<path d="M618,435 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="390" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="415" fill="white" font-family="sans-serif" font-size="17">Argmax → class</text>
+<text x="662" y="438" fill="white" font-family="sans-serif" font-size="17">Evaluate held-out accuracy</text>
+</svg>
