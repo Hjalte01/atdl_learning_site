@@ -1,7 +1,7 @@
 ---
 title: "Topic 4 — active and label-efficient learning"
 shortTitle: "Topic 4"
-description: "Five guides explain label-efficient adaptation, selective querying, 3D biomedical acquisition and cold-start SAM adaptation. Six paper PDFs are available; one guide remains not started."
+description: "Six guides explain label-efficient adaptation, selective querying, 3D biomedical acquisition, cold-start SAM adaptation and dataset-aware initialization. All six supplied papers have guides."
 order: 4
 status: "exploring"
 tags: ["active learning", "label efficiency"]
@@ -19,6 +19,8 @@ Next read [nnActive: partial 3D annotations, credible random baselines and foreg
 
 Then explore [SUGFW+: one-shot selection and uncertainty-prompted SAM adaptation](/papers/sugfw-plus). Eight diagrams and eight recall cards trace surrogate entropy, weighted features, greedy uncertainty coverage and the prompt branch replaced at inference.
 
-The live vault supplies six Topic 4 paper PDFs in order: LabelBench, CEC, Active Prompt, nnActive, SUGFW+, and CSCS. LabelBench, CEC, Active Prompt, nnActive and SUGFW+ have been explained here; CSCS is a filename label pending source review. The topic’s descriptive grouping above is provisional, rather than an asserted official course title.
+Finish with [CSCS: pool-aware first-volume selection for 3D segmentation](/papers/cscs). Eight diagrams and eight recall cards connect SSL reconstruction variance, embedding typicality, rank-based pacing, cluster merging and separate nnU-Net training.
+
+The live vault supplies six Topic 4 paper PDFs in order: LabelBench, CEC, Active Prompt, nnActive, SUGFW+, and CSCS. All six now have guides. CSCS means Curriculum-Stratified Cold-Start. The topic’s descriptive grouping above is provisional, rather than an asserted official course title.
 
 Use the [Topic 4 reading library](/materials?topic=4) to read the PDFs and check guide availability.

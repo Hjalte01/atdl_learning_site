@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="545" viewBox="0 0 960 545" role="img" aria-label="Two scalars describe different properties">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="white" font-family="sans-serif" font-size="24">Two scalars describe different properties</text>
+<text x="30" y="85" fill="#c5d5ee" font-family="sans-serif" font-size="18">RECONSTRUCTION DISAGREEMENT: schematic single-voxel views</text>
+<rect x="30" y="100" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="125" fill="white" font-family="sans-serif" font-size="17">Values [.3, .5]</text>
+<text x="42" y="148" fill="white" font-family="sans-serif" font-size="17">Mean .4</text>
+<path d="M308,145 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="100" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="125" fill="white" font-family="sans-serif" font-size="17">Population variance .01</text>
+<text x="352" y="148" fill="white" font-family="sans-serif" font-size="17">Average across voxels</text>
+<path d="M618,145 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="100" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="125" fill="white" font-family="sans-serif" font-size="17">U: difficulty proxy</text>
+<text x="662" y="148" fill="white" font-family="sans-serif" font-size="17">Not segmentation entropy</text>
+<text x="30" y="230" fill="#c5d5ee" font-family="sans-serif" font-size="18">LOCAL DENSITY: schematic neighbor distances</text>
+<rect x="30" y="245" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="270" fill="white" font-family="sans-serif" font-size="17">Distances [.2, .3]</text>
+<text x="42" y="293" fill="white" font-family="sans-serif" font-size="17">Mean distance .25</text>
+<path d="M308,290 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="245" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="270" fill="white" font-family="sans-serif" font-size="17">Inverse mean = 4</text>
+<text x="352" y="293" fill="white" font-family="sans-serif" font-size="17">Raw typicality T</text>
+<path d="M618,290 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="245" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="270" fill="white" font-family="sans-serif" font-size="17">Close to many neighbors</text>
+<text x="662" y="293" fill="white" font-family="sans-serif" font-size="17">Not an anatomical label</text>
+<text x="30" y="375" fill="#c5d5ee" font-family="sans-serif" font-size="18">NORMALIZATION: compute across the entire unlabeled pool</text>
+<rect x="30" y="390" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="415" fill="white" font-family="sans-serif" font-size="17">Subtract pool minimum</text>
+<text x="42" y="438" fill="white" font-family="sans-serif" font-size="17">Divide by pool range</text>
+<path d="M308,435 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="390" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="415" fill="white" font-family="sans-serif" font-size="17">Separate scaling for U, T</text>
+<text x="352" y="438" fill="white" font-family="sans-serif" font-size="17">Each in [0, 1]</text>
+<path d="M618,435 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="390" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="415" fill="white" font-family="sans-serif" font-size="17">Constant range is undefined</text>
+<text x="662" y="438" fill="white" font-family="sans-serif" font-size="17">V1 omits safeguards</text>
+</svg>

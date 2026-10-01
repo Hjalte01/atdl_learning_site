@@ -758,5 +758,157 @@
       "SUGFW+"
     ],
     "relatedTopicUrl": "/papers/sugfw-plus#8--evidence-budgets-count-slices-and-images"
+  },
+  {
+    "id": "cscs-cold-start",
+    "topic": "topic-4",
+    "title": "CSCS · One batch",
+    "question": "What does CSCS evaluate?",
+    "choices": [
+      "Training a segmenter without human masks",
+      "One pre-annotation selection batch followed by supervised training",
+      "Repeated task-model queries until the entire pool is labeled",
+      "SAM adaptation using point prompts"
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "SSL provides signals before labels; experts annotate the selected batch and a separate nnU-Net is trained. Later acquisition rounds are not evaluated.",
+    "difficulty": "medium",
+    "tags": [
+      "CSCS"
+    ],
+    "relatedTopicUrl": "/papers/cscs#1--cold-start-is-a-selection-stage-before-supervised-training"
+  },
+  {
+    "id": "cscs-variance",
+    "topic": "topic-4",
+    "title": "CSCS · Disagreement",
+    "question": "Identical reconstructions all miss an anatomical structure. What can U report?",
+    "choices": [
+      "Guaranteed high uncertainty",
+      "A human annotation request at every voxel",
+      "Zero reconstruction variance despite the shared error",
+      "Perfect segmentation accuracy"
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "U measures disagreement between reconstructions, not their correctness or downstream class entropy.",
+    "difficulty": "medium",
+    "tags": [
+      "CSCS"
+    ],
+    "relatedTopicUrl": "/papers/cscs#3--what-the-two-signals-actually-measure"
+  },
+  {
+    "id": "cscs-dcr",
+    "topic": "topic-4",
+    "title": "CSCS · Rank alignment",
+    "question": "What does a positive DCR indicate?",
+    "choices": [
+      "Difficult scans tend to be typical in the embedding pool",
+      "The selected masks have high Dice",
+      "The task model is calibrated",
+      "Uncertainty is high for every scan"
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "Spearman correlation describes relative rank alignment across the pool. It does not establish uncertainty reliability.",
+    "difficulty": "medium",
+    "tags": [
+      "CSCS"
+    ],
+    "relatedTopicUrl": "/papers/cscs#4--pool-geometry-chooses-the-mixture-weight"
+  },
+  {
+    "id": "cscs-budget",
+    "topic": "topic-4",
+    "title": "CSCS · Budget direction",
+    "question": "For negative DCR, increasing B with fixed N does what to gamma?",
+    "choices": [
+      "Always increases it toward 1",
+      "Leaves it exactly 0.5",
+      "Removes clustering",
+      "Decreases it further below 0.5"
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "The budget factor grows, magnifying the negative DCR correction. More budget does not always mean harder-first.",
+    "difficulty": "medium",
+    "tags": [
+      "CSCS"
+    ],
+    "relatedTopicUrl": "/papers/cscs#4--pool-geometry-chooses-the-mixture-weight"
+  },
+  {
+    "id": "cscs-geometric",
+    "topic": "topic-4",
+    "title": "CSCS · Complementary signals",
+    "question": "At interior gamma, what happens when normalized U is zero but T is one?",
+    "choices": [
+      "The score is one",
+      "The score is zero",
+      "The score equals gamma",
+      "The score becomes segmentation entropy"
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "The geometric score multiplies the powered signals. A zero factor suppresses it, although budget constraints can still force a zero-score selection.",
+    "difficulty": "medium",
+    "tags": [
+      "CSCS"
+    ],
+    "relatedTopicUrl": "/papers/cscs#5--select-locally-then-repair-the-budget-after-merging"
+  },
+  {
+    "id": "cscs-merge",
+    "topic": "topic-4",
+    "title": "CSCS · Budget repair",
+    "question": "After merging, M clusters remain and M < B. How are leftover slots filled?",
+    "choices": [
+      "Discard the annotation budget",
+      "Train nnU-Net before every extra pick",
+      "Globally rank unselected scans by the same score",
+      "Split all surviving clusters until they have identical size"
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "One primary winner per surviving cluster is followed by global score filling. Multiple final picks can share a region.",
+    "difficulty": "medium",
+    "tags": [
+      "CSCS"
+    ],
+    "relatedTopicUrl": "/papers/cscs#5--select-locally-then-repair-the-budget-after-merging"
+  },
+  {
+    "id": "cscs-inference",
+    "topic": "topic-4",
+    "title": "CSCS · Separate models",
+    "question": "Which path produces a test segmentation?",
+    "choices": [
+      "DCR selects the predicted class",
+      "K-means assigns a mask to the nearest volume",
+      "The frozen reconstruction decoder returns the expert mask",
+      "The trained downstream nnU-Net predicts voxel labels"
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "CSCS acquisition selects training volumes; the supervised task model handles held-out inference.",
+    "difficulty": "medium",
+    "tags": [
+      "CSCS"
+    ],
+    "relatedTopicUrl": "/papers/cscs#7--training-changes-weights-inference-no-longer-selects"
+  },
+  {
+    "id": "cscs-accounting",
+    "topic": "topic-4",
+    "title": "CSCS · Exact counts",
+    "question": "DIANE has N = 18 and B = 7 at the middle nominal operating point. What is the actual labeled fraction?",
+    "choices": [
+      "38.89%",
+      "30% exactly",
+      "7%",
+      "The effective budget 1.65 expressed as a percent"
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "7/18 is 38.89%. B/sqrt(N) is an internal pacing descriptor and the printed nominal budget label is inconsistent with this fraction.",
+    "difficulty": "medium",
+    "tags": [
+      "CSCS"
+    ],
+    "relatedTopicUrl": "/papers/cscs#8--evidence-useful-robustness-with-exceptions"
   }
 ]

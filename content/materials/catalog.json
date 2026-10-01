@@ -622,12 +622,12 @@
     {
       "id": "ed31a96ba74203f0",
       "sourcePath": "topic 4/T4_6_CSCS.pdf",
-      "title": "T4 6 CSCS",
+      "title": "CSCS: Dataset-Aware Cold-Start Active Learning for Annotation-Efficient 3D Medical Image Segmentation",
       "topic": 4,
       "order": 6,
       "kind": "paper",
-      "status": "not-started",
-      "guide": null,
+      "status": "ready",
+      "guide": "/papers/cscs",
       "pdf": "/materials/ed31a96ba74203f0.pdf",
       "sha256": "67ed6a4edf9f236ad9123483814f46cd3b2f65dc2d44d8e86676b0affd3b69fe",
       "sourceState": "present"
@@ -635,10 +635,10 @@
   ],
   "sync": {
     "vault": "/srv/obsidian-webdav/study/ATDL",
-    "attemptedAt": "2026-10-01T19:50:49+00:00",
+    "attemptedAt": "2026-10-01T20:05:04+00:00",
     "sourceCount": 48,
     "importedCount": 48,
     "errors": [],
-    "completedAt": "2026-10-01T19:50:49+00:00"
+    "completedAt": "2026-10-01T20:05:04+00:00"
   }
 }

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="545" viewBox="0 0 960 545" role="img" aria-label="A coherent toy pool → one selected scan">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="white" font-family="sans-serif" font-size="24">A coherent toy pool → one selected scan</text>
+<text x="30" y="85" fill="#c5d5ee" font-family="sans-serif" font-size="18">A → B: unit embeddings at angles 0°, 60°, 180°; toy k = 2</text>
+<rect x="30" y="100" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="125" fill="white" font-family="sans-serif" font-size="17">Pairwise distances</text>
+<text x="42" y="148" fill="white" font-family="sans-serif" font-size="17">1, 2, √3</text>
+<path d="M308,145 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="100" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="125" fill="white" font-family="sans-serif" font-size="17">Raw T ≈ [.667,.732,.536]</text>
+<text x="352" y="148" fill="white" font-family="sans-serif" font-size="17">Normalized T = [⅔,1,0]</text>
+<path d="M618,145 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="100" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="125" fill="white" font-family="sans-serif" font-size="17">Raw U = [.01,.04,0]</text>
+<text x="662" y="148" fill="white" font-family="sans-serif" font-size="17">Normalized U = [.25,1,0]</text>
+<text x="30" y="230" fill="#c5d5ee" font-family="sans-serif" font-size="18">C: N = 3, B = 1; ranks agree perfectly</text>
+<rect x="30" y="245" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="270" fill="white" font-family="sans-serif" font-size="17">DCR = 1</text>
+<text x="42" y="293" fill="white" font-family="sans-serif" font-size="17">Effective budget = .5774</text>
+<path d="M308,290 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="245" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="270" fill="white" font-family="sans-serif" font-size="17">Confidence m = .3660</text>
+<text x="352" y="293" fill="white" font-family="sans-serif" font-size="17">γ = 0.5915</text>
+<path d="M618,290 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="245" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="270" fill="white" font-family="sans-serif" font-size="17">Scores ≈ [0.3732,1,0]</text>
+<text x="662" y="293" fill="white" font-family="sans-serif" font-size="17">Single cluster → B wins</text>
+<text x="30" y="375" fill="#c5d5ee" font-family="sans-serif" font-size="18">D: query the scan named B, not a predicted mask</text>
+<rect x="30" y="390" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="415" fill="white" font-family="sans-serif" font-size="17">Expert supplies mask</text>
+<text x="42" y="438" fill="white" font-family="sans-serif" font-size="17">No task labels used earlier</text>
+<path d="M308,435 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="390" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="415" fill="white" font-family="sans-serif" font-size="17">Train downstream nnU-Net</text>
+<text x="352" y="438" fill="white" font-family="sans-serif" font-size="17">Illustrative pool only</text>
+<path d="M618,435 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="390" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="415" fill="white" font-family="sans-serif" font-size="17">Population variance assumed</text>
+<text x="662" y="438" fill="white" font-family="sans-serif" font-size="17">Not a model result</text>
+</svg>

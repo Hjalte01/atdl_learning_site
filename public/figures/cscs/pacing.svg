@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="545" viewBox="0 0 960 545" role="img" aria-label="DCR sets direction; budget sets strength">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="white" font-family="sans-serif" font-size="24">DCR sets direction; budget sets strength</text>
+<text x="30" y="85" fill="#c5d5ee" font-family="sans-serif" font-size="18">POSITIVE ALIGNMENT: uncertainty and typicality ranks agree</text>
+<rect x="30" y="100" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="125" fill="white" font-family="sans-serif" font-size="17">DCR &gt; 0</text>
+<text x="42" y="148" fill="white" font-family="sans-serif" font-size="17">Difficult scans are central</text>
+<path d="M308,145 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="100" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="125" fill="white" font-family="sans-serif" font-size="17">γ &gt; .5</text>
+<text x="352" y="148" fill="white" font-family="sans-serif" font-size="17">Favor uncertainty more</text>
+<path d="M618,145 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="100" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="125" fill="white" font-family="sans-serif" font-size="17">B increases → γ increases</text>
+<text x="662" y="148" fill="white" font-family="sans-serif" font-size="17">Within conservative range</text>
+<text x="30" y="230" fill="#c5d5ee" font-family="sans-serif" font-size="18">NEGATIVE ALIGNMENT: uncertainty rises in peripheral regions</text>
+<rect x="30" y="245" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="270" fill="white" font-family="sans-serif" font-size="17">DCR &lt; 0</text>
+<text x="42" y="293" fill="white" font-family="sans-serif" font-size="17">Difficult scans are isolated</text>
+<path d="M308,290 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="245" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="270" fill="white" font-family="sans-serif" font-size="17">γ &lt; .5</text>
+<text x="352" y="293" fill="white" font-family="sans-serif" font-size="17">Favor typicality more</text>
+<path d="M618,290 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="245" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="270" fill="white" font-family="sans-serif" font-size="17">B increases → γ decreases</text>
+<text x="662" y="293" fill="white" font-family="sans-serif" font-size="17">Not always harder-first</text>
+<text x="30" y="375" fill="#c5d5ee" font-family="sans-serif" font-size="18">NEUTRAL AND LIMITS: finite positive budgets</text>
+<rect x="30" y="390" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="415" fill="white" font-family="sans-serif" font-size="17">DCR = 0 → γ = .5</text>
+<text x="42" y="438" fill="white" font-family="sans-serif" font-size="17">Any annotation budget</text>
+<path d="M308,435 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="390" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="415" fill="white" font-family="sans-serif" font-size="17">m = (B/√N)/(1+B/√N)</text>
+<text x="352" y="438" fill="white" font-family="sans-serif" font-size="17">m stays between 0 and 1</text>
+<path d="M618,435 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="390" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="415" fill="white" font-family="sans-serif" font-size="17">.25 &lt; γ &lt; .75</text>
+<text x="662" y="438" fill="white" font-family="sans-serif" font-size="17">Not an optimality theorem</text>
+</svg>

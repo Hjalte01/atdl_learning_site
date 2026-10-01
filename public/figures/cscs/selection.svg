@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="545" viewBox="0 0 960 545" role="img" aria-label="After merging, one-per-cluster is only the first pass">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="white" font-family="sans-serif" font-size="24">After merging, one-per-cluster is only the first pass</text>
+<text x="30" y="85" fill="#c5d5ee" font-family="sans-serif" font-size="18">ILLUSTRATIVE B = 3: six volumes before merging</text>
+<rect x="30" y="100" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="125" fill="white" font-family="sans-serif" font-size="17">Cluster A: 3 scans</text>
+<text x="42" y="148" fill="white" font-family="sans-serif" font-size="17">One primary winner</text>
+<path d="M308,145 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="100" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="125" fill="white" font-family="sans-serif" font-size="17">Cluster B: 2 scans</text>
+<text x="352" y="148" fill="white" font-family="sans-serif" font-size="17">Too small: merge</text>
+<path d="M618,145 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="100" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="125" fill="white" font-family="sans-serif" font-size="17">Cluster C: 1 scan</text>
+<text x="662" y="148" fill="white" font-family="sans-serif" font-size="17">Too small: merge</text>
+<text x="30" y="230" fill="#c5d5ee" font-family="sans-serif" font-size="18">NEAREST-CENTROID MERGING: illustration ends in one cluster</text>
+<rect x="30" y="245" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="270" fill="white" font-family="sans-serif" font-size="17">B and C join A</text>
+<text x="42" y="293" fill="white" font-family="sans-serif" font-size="17">M = 1 surviving cluster</text>
+<path d="M308,290 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="245" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="270" fill="white" font-family="sans-serif" font-size="17">Choose its max-score scan</text>
+<text x="352" y="293" fill="white" font-family="sans-serif" font-size="17">One query slot occupied</text>
+<path d="M618,290 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="245" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="270" fill="white" font-family="sans-serif" font-size="17">B − M = 2 slots remain</text>
+<text x="662" y="293" fill="white" font-family="sans-serif" font-size="17">Same γ and same scores</text>
+<text x="30" y="375" fill="#c5d5ee" font-family="sans-serif" font-size="18">GLOBAL FILL: no retraining between the individual picks</text>
+<rect x="30" y="390" width="275" height="90" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="415" fill="white" font-family="sans-serif" font-size="17">Rank all unselected scans</text>
+<text x="42" y="438" fill="white" font-family="sans-serif" font-size="17">Take next two scores</text>
+<path d="M308,435 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="340" y="390" width="275" height="90" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="415" fill="white" font-family="sans-serif" font-size="17">Exactly B = 3 identifiers</text>
+<text x="352" y="438" fill="white" font-family="sans-serif" font-size="17">May share a region</text>
+<path d="M618,435 H645" stroke="#c5d5ee" stroke-width="2" marker-end="url(#a)"/>
+<rect x="650" y="390" width="275" height="90" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="415" fill="white" font-family="sans-serif" font-size="17">Experts annotate the batch</text>
+<text x="662" y="438" fill="white" font-family="sans-serif" font-size="17">Only now supervised labels</text>
+</svg>
