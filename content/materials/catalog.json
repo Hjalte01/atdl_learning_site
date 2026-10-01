@@ -362,12 +362,13 @@
   ],
   "sync": {
     "vault": "/srv/obsidian-webdav/study/ATDL",
-    "attemptedAt": "2026-09-28T14:18:52+00:00",
+    "attemptedAt": "2026-10-01T05:18:50+00:00",
     "sourceCount": 30,
     "importedCount": 27,
     "errors": [
       "[Errno 13] Permission denied: '/srv/obsidian-webdav/study/ATDL/Assignments'",
       "[Errno 13] Permission denied: '/srv/obsidian-webdav/study/ATDL/topic 3'",
+      "[Errno 13] Permission denied: '/srv/obsidian-webdav/study/ATDL/topic 4'",
       "[Errno 13] Permission denied: '/srv/obsidian-webdav/study/ATDL/slides/6_ATDL+FM+Lecture+1.pdf'",
       "[Errno 13] Permission denied: '/srv/obsidian-webdav/study/ATDL/topic 2/extra reading material/FLOW MATCHING FOR GENERATIVE MODELING.pdf'",
       "[Errno 13] Permission denied: '/srv/obsidian-webdav/study/ATDL/topic 2/extra reading material/Geng_Improved_Mean_Flows_On_the_Challenges_of_Fastforward_Generative_Models_CVPR_2026_paper.pdf'"
