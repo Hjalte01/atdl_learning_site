@@ -1,6 +1,19 @@
 {
-  "inventoryComplete": false,
+  "inventoryComplete": true,
   "materials": [
+    {
+      "id": "851197b1cbed6889",
+      "sourcePath": "Assignments/A1.pdf",
+      "title": "A1",
+      "topic": null,
+      "order": null,
+      "kind": "extra",
+      "status": "not-started",
+      "guide": null,
+      "pdf": "/materials/851197b1cbed6889.pdf",
+      "sha256": "6b63fd9af54e9490ac8984fc7714a672dd70b55bdd233b484755dcae5689dd10",
+      "sourceState": "present"
+    },
     {
       "id": "c3a92e3755fdccf8",
       "sourcePath": "overview/Deep Learning is Not So Mysterious or Different.pdf",
@@ -103,6 +116,19 @@
       "guide": "/papers/t2-generative-lecture-2",
       "pdf": "/materials/120203b5e33d656b.pdf",
       "sha256": "26d6e8fbe615c4101932f536b74283160fab34cdf2e7eac2ed649f065e04cb20",
+      "sourceState": "present"
+    },
+    {
+      "id": "f3d090bc57eed2b7",
+      "sourcePath": "slides/6_ATDL+FM+Lecture+1.pdf",
+      "title": "6 ATDL+FM+Lecture+1",
+      "topic": null,
+      "order": null,
+      "kind": "slides",
+      "status": "not-started",
+      "guide": null,
+      "pdf": "/materials/f3d090bc57eed2b7.pdf",
+      "sha256": "f2dafc540c795bb32e11f5866490ac7ba498cff2bd7e83203c7d460624a2f46c",
       "sourceState": "present"
     },
     {
@@ -321,6 +347,19 @@
       "sourceState": "present"
     },
     {
+      "id": "4c26d3137906d173",
+      "sourcePath": "topic 2/extra reading material/FLOW MATCHING FOR GENERATIVE MODELING.pdf",
+      "title": "FLOW MATCHING FOR GENERATIVE MODELING",
+      "topic": 2,
+      "order": null,
+      "kind": "extra",
+      "status": "not-started",
+      "guide": null,
+      "pdf": "/materials/4c26d3137906d173.pdf",
+      "sha256": "5eeb39ba516396924aba4787452f9d0abdee88467a4d0c264d9f66cad0c5ee14",
+      "sourceState": "present"
+    },
+    {
       "id": "0e64cd296a587841",
       "sourcePath": "topic 2/extra reading material/Flow_Matching.pdf",
       "title": "Flow Matching",
@@ -347,6 +386,19 @@
       "sourceState": "present"
     },
     {
+      "id": "aa4f62bc131ed4d9",
+      "sourcePath": "topic 2/extra reading material/Geng_Improved_Mean_Flows_On_the_Challenges_of_Fastforward_Generative_Models_CVPR_2026_paper.pdf",
+      "title": "Geng Improved Mean Flows On the Challenges of Fastforward Generative Models CVPR 2026 paper",
+      "topic": 2,
+      "order": null,
+      "kind": "extra",
+      "status": "not-started",
+      "guide": null,
+      "pdf": "/materials/aa4f62bc131ed4d9.pdf",
+      "sha256": "41aa05bf6981da6922b74937b5b98ca41144da32fa4377ef1c8c3ae1ddadca6d",
+      "sourceState": "present"
+    },
+    {
       "id": "a885b4b61bd44c12",
       "sourcePath": "topic 2/extra reading material/VAEs.pdf",
       "title": "VAEs",
@@ -358,20 +410,235 @@
       "pdf": "/materials/a885b4b61bd44c12.pdf",
       "sha256": "bdcb63b79ed88f64f8ee2d43a721930d01dde5441a4dba20ecaa2342b34e017c",
       "sourceState": "present"
+    },
+    {
+      "id": "ce615ba130261682",
+      "sourcePath": "topic 3/T3_1_DINOv3.pdf",
+      "title": "T3 1 DINOv3",
+      "topic": 3,
+      "order": 1,
+      "kind": "paper",
+      "status": "not-started",
+      "guide": null,
+      "pdf": "/materials/ce615ba130261682.pdf",
+      "sha256": "c68dc50b1f73e1641a592f777984fc360759e84b7fe65ac4f6e1377927f20b2e",
+      "sourceState": "present"
+    },
+    {
+      "id": "70271e62966f33a3",
+      "sourcePath": "topic 3/T3_2_V-JEPA 2.1.pdf",
+      "title": "T3 2 V-JEPA 2.1",
+      "topic": 3,
+      "order": 2,
+      "kind": "paper",
+      "status": "not-started",
+      "guide": null,
+      "pdf": "/materials/70271e62966f33a3.pdf",
+      "sha256": "b40580916242ade00e2ac177cb01473d511f021d5a25f7552fd17512b3a72bbb",
+      "sourceState": "present"
+    },
+    {
+      "id": "b6ddfb55fc0e058e",
+      "sourcePath": "topic 3/T3_3_SAM 3.pdf",
+      "title": "T3 3 SAM 3",
+      "topic": 3,
+      "order": 3,
+      "kind": "paper",
+      "status": "not-started",
+      "guide": null,
+      "pdf": "/materials/b6ddfb55fc0e058e.pdf",
+      "sha256": "b8dfc88bab9a499598923715b0bf90b544acfe52a5ee9e499d9b5009279c6331",
+      "sourceState": "present"
+    },
+    {
+      "id": "43e90cf90a6cae49",
+      "sourcePath": "topic 3/T3_4_AnyUp.pdf",
+      "title": "T3 4 AnyUp",
+      "topic": 3,
+      "order": 4,
+      "kind": "paper",
+      "status": "not-started",
+      "guide": null,
+      "pdf": "/materials/43e90cf90a6cae49.pdf",
+      "sha256": "7401dbc16bca7b6d752b3e67d9ed25c2a216d0d37395dc651e5de7c134009570",
+      "sourceState": "present"
+    },
+    {
+      "id": "f13f85e68a833519",
+      "sourcePath": "topic 3/T3_5_Med-SA.pdf",
+      "title": "T3 5 Med-SA",
+      "topic": 3,
+      "order": 5,
+      "kind": "paper",
+      "status": "not-started",
+      "guide": null,
+      "pdf": "/materials/f13f85e68a833519.pdf",
+      "sha256": "fef826568d96f339aee8b7cedbd7ab9cad8b567ab37eb0b604526fdb02dc0b25",
+      "sourceState": "present"
+    },
+    {
+      "id": "176399b5874e60e6",
+      "sourcePath": "topic 3/T3_6_Unified View of PEFT.pdf",
+      "title": "T3 6 Unified View of PEFT",
+      "topic": 3,
+      "order": 6,
+      "kind": "paper",
+      "status": "not-started",
+      "guide": null,
+      "pdf": "/materials/176399b5874e60e6.pdf",
+      "sha256": "9f2786bc0b02f51d9ee343fe16b791f6054da626ec540358ad6841e84a239019",
+      "sourceState": "present"
+    },
+    {
+      "id": "bfe0d33d811baafe",
+      "sourcePath": "topic 3/extra reading material/ATDL_FM_Reading_Materials.pdf",
+      "title": "ATDL FM Reading Materials",
+      "topic": 3,
+      "order": null,
+      "kind": "overview",
+      "status": "not-started",
+      "guide": null,
+      "pdf": "/materials/bfe0d33d811baafe.pdf",
+      "sha256": "f7acee6a6954b956e6b493b71224ac88ee0e19d64681adb1bd1cd3aa3e4c889c",
+      "sourceState": "present"
+    },
+    {
+      "id": "4c39cea009ba3813",
+      "sourcePath": "topic 3/extra reading material/Cookbook for SSL.pdf",
+      "title": "Cookbook for SSL",
+      "topic": 3,
+      "order": null,
+      "kind": "extra",
+      "status": "not-started",
+      "guide": null,
+      "pdf": "/materials/4c39cea009ba3813.pdf",
+      "sha256": "a8d30ab7753f5e156023de839f6594911360f190e520df581dd4081dd0386709",
+      "sourceState": "present"
+    },
+    {
+      "id": "c556080ee8f1dc65",
+      "sourcePath": "topic 3/extra reading material/Risk and Opportunities.pdf",
+      "title": "Risk and Opportunities",
+      "topic": 3,
+      "order": null,
+      "kind": "extra",
+      "status": "not-started",
+      "guide": null,
+      "pdf": "/materials/c556080ee8f1dc65.pdf",
+      "sha256": "2bfd7dc72f47af72c49b82b36b799da1880555a581e1cd2e25baed685a743e21",
+      "sourceState": "present"
+    },
+    {
+      "id": "0c0cd96cfe179ddc",
+      "sourcePath": "topic 3/extra reading material/me_DINOv1_Emerging Properties in Self-Supervised Vision Transformers.pdf",
+      "title": "me DINOv1 Emerging Properties in Self-Supervised Vision Transformers",
+      "topic": 3,
+      "order": null,
+      "kind": "extra",
+      "status": "not-started",
+      "guide": null,
+      "pdf": "/materials/0c0cd96cfe179ddc.pdf",
+      "sha256": "aa464cfd59a428890190bea1065823a491a853478b4fb2a25f5eb44d442ce296",
+      "sourceState": "present"
+    },
+    {
+      "id": "280b0d47dbb6efa4",
+      "sourcePath": "topic 3/extra reading material/me_DINOv2_ Learning Robust Visual Features without supervision.pdf",
+      "title": "me DINOv2  Learning Robust Visual Features without supervision",
+      "topic": 3,
+      "order": null,
+      "kind": "extra",
+      "status": "not-started",
+      "guide": null,
+      "pdf": "/materials/280b0d47dbb6efa4.pdf",
+      "sha256": "3add205547f3ece5fb1ac7a91720aa9fabf02d9cde29a096643ff022449f3e91",
+      "sourceState": "present"
+    },
+    {
+      "id": "94afb6d0a2b8ec5b",
+      "sourcePath": "topic 4/T4_1_LabelBench.pdf",
+      "title": "LabelBench: A Comprehensive Framework for Benchmarking Adaptive Label-Efficient Learning",
+      "topic": 4,
+      "order": 1,
+      "kind": "paper",
+      "status": "ready",
+      "guide": "/papers/labelbench",
+      "pdf": "/materials/94afb6d0a2b8ec5b.pdf",
+      "sha256": "bc50025fcbc9acae36d75e563dfa4710aed66052d44a2dd9b840e7173fd7c9a9",
+      "sourceState": "present"
+    },
+    {
+      "id": "4558c52a433b4d3d",
+      "sourcePath": "topic 4/T4_2_CEC.pdf",
+      "title": "T4 2 CEC",
+      "topic": 4,
+      "order": 2,
+      "kind": "paper",
+      "status": "not-started",
+      "guide": null,
+      "pdf": "/materials/4558c52a433b4d3d.pdf",
+      "sha256": "920d8aa34efdb41d806658a8a08cacc25d507fce8a083f6657045164ab5d3ad9",
+      "sourceState": "present"
+    },
+    {
+      "id": "21ae6f9b5dfe7960",
+      "sourcePath": "topic 4/T4_3_Active_Prompt.pdf",
+      "title": "T4 3 Active Prompt",
+      "topic": 4,
+      "order": 3,
+      "kind": "paper",
+      "status": "not-started",
+      "guide": null,
+      "pdf": "/materials/21ae6f9b5dfe7960.pdf",
+      "sha256": "4ed51b3c87c3358cbe839c6f73ec4b1c483d355afc6f6796baf36ae0e48a6a1b",
+      "sourceState": "present"
+    },
+    {
+      "id": "ef840c31c6187589",
+      "sourcePath": "topic 4/T4_4_nnActive.pdf",
+      "title": "T4 4 nnActive",
+      "topic": 4,
+      "order": 4,
+      "kind": "paper",
+      "status": "not-started",
+      "guide": null,
+      "pdf": "/materials/ef840c31c6187589.pdf",
+      "sha256": "ce246cda7f4506ac77611d3822b7622c392b83077bd41de7427f70cc40e6cd70",
+      "sourceState": "present"
+    },
+    {
+      "id": "03f227ea4e880894",
+      "sourcePath": "topic 4/T4_5_SUGFW+.pdf",
+      "title": "T4 5 SUGFW+",
+      "topic": 4,
+      "order": 5,
+      "kind": "paper",
+      "status": "not-started",
+      "guide": null,
+      "pdf": "/materials/03f227ea4e880894.pdf",
+      "sha256": "1ba0714711514d4b74bae55919991f762be1a9f946ade8e175f6e33ef0adbd57",
+      "sourceState": "present"
+    },
+    {
+      "id": "ed31a96ba74203f0",
+      "sourcePath": "topic 4/T4_6_CSCS.pdf",
+      "title": "T4 6 CSCS",
+      "topic": 4,
+      "order": 6,
+      "kind": "paper",
+      "status": "not-started",
+      "guide": null,
+      "pdf": "/materials/ed31a96ba74203f0.pdf",
+      "sha256": "67ed6a4edf9f236ad9123483814f46cd3b2f65dc2d44d8e86676b0affd3b69fe",
+      "sourceState": "present"
     }
   ],
   "sync": {
     "vault": "/srv/obsidian-webdav/study/ATDL",
-    "attemptedAt": "2026-10-01T10:27:55+00:00",
-    "sourceCount": 30,
-    "importedCount": 27,
-    "errors": [
-      "[Errno 13] Permission denied: '/srv/obsidian-webdav/study/ATDL/Assignments'",
-      "[Errno 13] Permission denied: '/srv/obsidian-webdav/study/ATDL/topic 3'",
-      "[Errno 13] Permission denied: '/srv/obsidian-webdav/study/ATDL/topic 4'",
-      "[Errno 13] Permission denied: '/srv/obsidian-webdav/study/ATDL/slides/6_ATDL+FM+Lecture+1.pdf'",
-      "[Errno 13] Permission denied: '/srv/obsidian-webdav/study/ATDL/topic 2/extra reading material/FLOW MATCHING FOR GENERATIVE MODELING.pdf'",
-      "[Errno 13] Permission denied: '/srv/obsidian-webdav/study/ATDL/topic 2/extra reading material/Geng_Improved_Mean_Flows_On_the_Challenges_of_Fastforward_Generative_Models_CVPR_2026_paper.pdf'"
-    ]
+    "attemptedAt": "2026-10-01T18:24:13+00:00",
+    "sourceCount": 48,
+    "importedCount": 48,
+    "errors": [],
+    "completedAt": "2026-10-01T18:24:13+00:00"
   }
 }

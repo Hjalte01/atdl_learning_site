@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="380" viewBox="0 0 960 380" role="img" aria-label="Features, predictions and labels have different roles">
+<rect width="100%" height="100%" fill="#101c30"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="30" y="42" fill="white" font-family="sans-serif" font-size="25">Features, predictions and labels have different roles</text>
+<text x="30" y="85" fill="#c5d5ee" font-family="sans-serif" font-size="18">TOY: same three-class probabilities; different feature locations</text>
+<rect x="30" y="100" width="275" height="85" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="124" fill="white" font-family="sans-serif" font-size="17">Example A</text>
+<text x="42" y="147" fill="white" font-family="sans-serif" font-size="17">z = (0, 0)</text>
+<text x="42" y="170" fill="white" font-family="sans-serif" font-size="17">p = (.45, .40, .15)</text>
+<rect x="340" y="100" width="275" height="85" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="124" fill="white" font-family="sans-serif" font-size="17">Example B</text>
+<text x="352" y="147" fill="white" font-family="sans-serif" font-size="17">z = (0.1, 0)</text>
+<text x="352" y="170" fill="white" font-family="sans-serif" font-size="17">p = (.45, .40, .15)</text>
+<rect x="650" y="100" width="275" height="85" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="124" fill="white" font-family="sans-serif" font-size="17">Example C</text>
+<text x="662" y="147" fill="white" font-family="sans-serif" font-size="17">z = (5, 5)</text>
+<text x="662" y="170" fill="white" font-family="sans-serif" font-size="17">p = (.45, .40, .15)</text>
+<text x="30" y="225" fill="#c5d5ee" font-family="sans-serif" font-size="18">WHAT EACH ARRAY CAN SAY</text>
+<rect x="30" y="240" width="275" height="85" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="42" y="264" fill="white" font-family="sans-serif" font-size="17">Feature z in R^d</text>
+<text x="42" y="287" fill="white" font-family="sans-serif" font-size="17">Diversity / distances</text>
+<text x="42" y="310" fill="white" font-family="sans-serif" font-size="17">Not a class label</text>
+<rect x="340" y="240" width="275" height="85" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="264" fill="white" font-family="sans-serif" font-size="17">Probability p in R^K</text>
+<text x="352" y="287" fill="white" font-family="sans-serif" font-size="17">Margin / entropy</text>
+<text x="352" y="310" fill="white" font-family="sans-serif" font-size="17">Not guaranteed calibrated</text>
+<rect x="650" y="240" width="275" height="85" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="662" y="264" fill="white" font-family="sans-serif" font-size="17">Oracle label y</text>
+<text x="662" y="287" fill="white" font-family="sans-serif" font-size="17">Revealed after selection</text>
+<text x="662" y="310" fill="white" font-family="sans-serif" font-size="17">Not a cached prediction</text>
+</svg>

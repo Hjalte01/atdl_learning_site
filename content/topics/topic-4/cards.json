@@ -1,0 +1,154 @@
+[
+  {
+    "id": "labelbench-roles",
+    "topic": "topic-4",
+    "title": "LabelBench · Different jobs",
+    "question": "What does the proxy do in LabelBench’s efficient path?",
+    "choices": [
+      "Select examples for oracle annotation.",
+      "Replace the oracle’s true labels.",
+      "Become the only final evaluated predictor.",
+      "Update the pretrained encoder every round."
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "The cheap proxy guides acquisition; the final model is fine-tuned end-to-end on the collected labels and remaining unlabeled inputs.",
+    "difficulty": "medium",
+    "tags": [
+      "LabelBench"
+    ],
+    "relatedTopicUrl": "/papers/labelbench#2--architecture-cache-features-learn-a-proxy-query-the-oracle"
+  },
+  {
+    "id": "labelbench-cache",
+    "topic": "topic-4",
+    "title": "LabelBench · Frozen representation",
+    "question": "Why can cached embeddings be reused during proxy training?",
+    "choices": [
+      "They contain all future oracle labels.",
+      "The encoder weights remain fixed on this path.",
+      "The proxy never changes.",
+      "They are outputs of the final changing encoder."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "The fixed encoder gives a reusable feature representation. Final encoder fine-tuning cannot treat old cached features as current encoder outputs.",
+    "difficulty": "medium",
+    "tags": [
+      "LabelBench"
+    ],
+    "relatedTopicUrl": "/papers/labelbench#6--training-and-inference-are-different-paths"
+  },
+  {
+    "id": "labelbench-margin",
+    "topic": "topic-4",
+    "title": "LabelBench · Acquisition arithmetic",
+    "question": "For probabilities (0.45, 0.40, 0.15), what is the margin score?",
+    "choices": [
+      "0.45",
+      "0.85",
+      "0.05",
+      "1.010"
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "The margin is the largest probability minus the second largest: 0.45 − 0.40 = 0.05. Margin sampling queries small gaps.",
+    "difficulty": "medium",
+    "tags": [
+      "LabelBench"
+    ],
+    "relatedTopicUrl": "/papers/labelbench#4--follow-one-annotation-through-the-numbers"
+  },
+  {
+    "id": "labelbench-oracle",
+    "topic": "topic-4",
+    "title": "LabelBench · Truth versus guesses",
+    "question": "The selected example was predicted as class 1; the oracle returns class 2. What enters L?",
+    "choices": [
+      "The class 1 pseudo-label.",
+      "Both classes with equal confidence.",
+      "No label until they agree.",
+      "The oracle’s class 2 label."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "Acquisition happens before the hidden target is revealed. The oracle label supplies supervision and can contradict the proxy.",
+    "difficulty": "medium",
+    "tags": [
+      "LabelBench"
+    ],
+    "relatedTopicUrl": "/papers/labelbench#5--the-annotation-loop-carries-data-not-a-frozen-decision-list"
+  },
+  {
+    "id": "labelbench-pool",
+    "topic": "topic-4",
+    "title": "LabelBench · Two accuracy tasks",
+    "question": "With 20 perfect oracle labels in a 100-item pool and 75% accuracy on the other 80, what is pool accuracy?",
+    "choices": [
+      "80%",
+      "75%",
+      "95%",
+      "20%"
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "The completed pool has 20 correct oracle labels plus 60 correct model labels: 80/100. This is not held-out test accuracy.",
+    "difficulty": "medium",
+    "tags": [
+      "LabelBench"
+    ],
+    "relatedTopicUrl": "/papers/labelbench#7--evidence-label-efficiency-compute-and-two-accuracies"
+  },
+  {
+    "id": "labelbench-reset",
+    "topic": "topic-4",
+    "title": "LabelBench · State in the loop",
+    "question": "What does the paper specify for proxy training at each acquisition round?",
+    "choices": [
+      "Warm-start the same head forever.",
+      "Train the proxy from scratch on the updated partitions.",
+      "Retrain the oracle.",
+      "Delete previously annotated labels."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "Section 4.1 trains the proxy from scratch. Collected annotations, partitions and cached features survive; proxy weights are not the stated carried state.",
+    "difficulty": "medium",
+    "tags": [
+      "LabelBench"
+    ],
+    "relatedTopicUrl": "/papers/labelbench#5--the-annotation-loop-carries-data-not-a-frozen-decision-list"
+  },
+  {
+    "id": "labelbench-diversity",
+    "topic": "topic-4",
+    "title": "LabelBench · Uncertainty is not coverage",
+    "question": "Why might uncertainty sampling select redundant examples?",
+    "choices": [
+      "Uncertainty directly measures pairwise diversity.",
+      "Every uncertain image belongs to a rare class.",
+      "Duplicates can have the same high uncertainty score.",
+      "It reads the hidden labels before ranking."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "High uncertainty alone does not ensure distinct information. Diversity strategies use features or other geometry, with their own representation-dependent limitations.",
+    "difficulty": "medium",
+    "tags": [
+      "LabelBench"
+    ],
+    "relatedTopicUrl": "/papers/labelbench#3--the-representation-close-up-a-feature-is-not-a-label"
+  },
+  {
+    "id": "labelbench-shift",
+    "topic": "topic-4",
+    "title": "LabelBench · Evidence boundaries",
+    "question": "What does use of the WILDS datasets establish in this paper?",
+    "choices": [
+      "Distribution-shift robustness is guaranteed.",
+      "No pretrained data were used.",
+      "The oracle cost includes real annotation time.",
+      "The reported evaluation uses in-domain test data."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "The paper uses in-domain splits of iWildCam and fMoW and proposes distribution-shift evaluation as future work. Dataset provenance alone does not establish an OOD result.",
+    "difficulty": "medium",
+    "tags": [
+      "LabelBench"
+    ],
+    "relatedTopicUrl": "/papers/labelbench#8--limits-and-experiments-worth-doing"
+  }
+]

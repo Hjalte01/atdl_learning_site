@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-label="Table 2 test and pool accuracy for Random and Confidence selection"><rect width="960" height="540" fill="#101c30"/>
+<text x="30" y="40" fill="white" font-family="sans-serif" font-size="24">ImageNet · CLIP ViT-B32 · 400,000 labels · Table 2</text>
+<text x="30" y="75" fill="white" font-family="sans-serif" font-size="18">Final end-to-end FlexMatch; two trials; bars start at zero</text>
+<text x="30" y="132" fill="white" font-family="sans-serif" font-size="18">Random</text>
+<rect x="270" y="110" width="418.66" height="24" fill="#31859b"/>
+<text x="698.6600000000001" y="129" fill="white" font-family="sans-serif" font-size="17">76.12%</text>
+<rect x="270" y="140" width="458.42499999999995" height="24" fill="#9274ce"/>
+<text x="738.425" y="159" fill="white" font-family="sans-serif" font-size="17">83.35%</text>
+<text x="30" y="217" fill="white" font-family="sans-serif" font-size="18">Confidence / full</text>
+<rect x="270" y="195" width="425.59" height="24" fill="#31859b"/>
+<text x="705.5899999999999" y="214" fill="white" font-family="sans-serif" font-size="17">77.38%</text>
+<rect x="270" y="225" width="495.605" height="24" fill="#9274ce"/>
+<text x="775.605" y="244" fill="white" font-family="sans-serif" font-size="17">90.11%</text>
+<text x="30" y="302" fill="white" font-family="sans-serif" font-size="18">Confidence / shallow</text>
+<rect x="270" y="280" width="423.28" height="24" fill="#31859b"/>
+<text x="703.28" y="299" fill="white" font-family="sans-serif" font-size="17">76.96%</text>
+<rect x="270" y="310" width="489.115" height="24" fill="#9274ce"/>
+<text x="769.115" y="329" fill="white" font-family="sans-serif" font-size="17">88.93%</text>
+<text x="30" y="387" fill="white" font-family="sans-serif" font-size="18">Confidence / linear</text>
+<rect x="270" y="365" width="424.76500000000004" height="24" fill="#31859b"/>
+<text x="704.7650000000001" y="384" fill="white" font-family="sans-serif" font-size="17">77.23%</text>
+<rect x="270" y="395" width="489.555" height="24" fill="#9274ce"/>
+<text x="769.5550000000001" y="414" fill="white" font-family="sans-serif" font-size="17">89.01%</text>
+<text x="260.0" y="473" fill="white" font-family="sans-serif" font-size="16">0</text>
+<text x="370.0" y="473" fill="white" font-family="sans-serif" font-size="16">20</text>
+<text x="480.0" y="473" fill="white" font-family="sans-serif" font-size="16">40</text>
+<text x="590.0" y="473" fill="white" font-family="sans-serif" font-size="16">60</text>
+<text x="700.0" y="473" fill="white" font-family="sans-serif" font-size="16">80</text>
+<text x="810.0" y="473" fill="white" font-family="sans-serif" font-size="16">100</text>
+<path d="M270 445 H820" stroke="#c5d5ee"/>
+<text x="30" y="515" fill="white" font-family="sans-serif" font-size="19">Teal: held-out test accuracy    Purple: whole-pool accuracy</text>
+</svg>
