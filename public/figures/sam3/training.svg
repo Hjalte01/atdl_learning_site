@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="710" viewBox="0 0 960 710" role="img" aria-label="Training changes weights; inference carries prompts and memory">
+<rect width="960" height="710" fill="#101c30"/>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="28" y="40" font-family="sans-serif" font-size="24" fill="#eef4ff">Training changes weights; inference carries prompts and memory</text>
+<text x="28" y="82" font-family="sans-serif" font-size="18" fill="#c5d5ee">STAGES 1 → 2 → 3 · IMAGE AND LANGUAGE LEARNING</text>
+<rect x="28" y="98" width="278" height="94" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="40" y="125" font-family="sans-serif" font-size="17" fill="#eef4ff">1: aligned PE encoders</text>
+<text x="40" y="148" font-family="sans-serif" font-size="17" fill="#eef4ff">5.4B image-text pairs</text>
+<path d="M309,144 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="340" y="98" width="278" height="94" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="125" font-family="sans-serif" font-size="17" fill="#eef4ff">2: detector + encoders</text>
+<text x="352" y="148" font-family="sans-serif" font-size="17" fill="#eef4ff">~95k steps; broad mask data</text>
+<path d="M621,144 H647" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="652" y="98" width="278" height="94" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="664" y="125" font-family="sans-serif" font-size="17" fill="#eef4ff">3: high-quality refinement</text>
+<text x="664" y="148" font-family="sans-serif" font-size="17" fill="#eef4ff">~5k; presence + interaction</text>
+<text x="28" y="232" font-family="sans-serif" font-size="18" fill="#c5d5ee">STAGE 4 · VIDEO TRACKER LEARNING</text>
+<rect x="28" y="248" width="278" height="94" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="40" y="275" font-family="sans-serif" font-size="17" fill="#eef4ff">Freeze shared PE backbone</text>
+<text x="40" y="298" font-family="sans-serif" font-size="17" fill="#eef4ff">Keep image grounding</text>
+<path d="M309,294 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="340" y="248" width="278" height="94" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="275" font-family="sans-serif" font-size="17" fill="#eef4ff">Learn tracker + memory path</text>
+<text x="352" y="298" font-family="sans-serif" font-size="17" fill="#eef4ff">~190k steps</text>
+<path d="M621,294 H647" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="652" y="248" width="278" height="94" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="664" y="275" font-family="sans-serif" font-size="17" fill="#eef4ff">Longer temporal context</text>
+<text x="664" y="298" font-family="sans-serif" font-size="17" fill="#eef4ff">60k additional steps</text>
+<text x="28" y="382" font-family="sans-serif" font-size="18" fill="#c5d5ee">INFERENCE · NO OPTIMIZER OR GROUND-TRUTH LOSS</text>
+<rect x="28" y="398" width="278" height="94" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="40" y="425" font-family="sans-serif" font-size="17" fill="#eef4ff">Cache frame features F</text>
+<text x="40" y="448" font-family="sans-serif" font-size="17" fill="#eef4ff">Apply text/exemplar prompt</text>
+<path d="M309,444 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="340" y="398" width="278" height="94" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="425" font-family="sans-serif" font-size="17" fill="#eef4ff">Detector gives concept set</text>
+<text x="352" y="448" font-family="sans-serif" font-size="17" fill="#eef4ff">Clicks refine one instance</text>
+<path d="M621,444 H647" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="652" y="398" width="278" height="94" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="664" y="425" font-family="sans-serif" font-size="17" fill="#eef4ff">Video state: IDs + memory</text>
+<text x="664" y="448" font-family="sans-serif" font-size="17" fill="#eef4ff">New frame repeats inference</text>
+<text x="28" y="532" font-family="sans-serif" font-size="18" fill="#c5d5ee">DATA ENGINE · DIFFERENT LOOP FROM VIDEO INFERENCE</text>
+<rect x="28" y="548" width="278" height="94" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="40" y="575" font-family="sans-serif" font-size="17" fill="#eef4ff">Mine media + noun phrases</text>
+<text x="40" y="598" font-family="sans-serif" font-size="17" fill="#eef4ff">Propose masks + negatives</text>
+<path d="M309,594 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="340" y="548" width="278" height="94" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="575" font-family="sans-serif" font-size="17" fill="#eef4ff">Verify quality + exhaustivity</text>
+<text x="352" y="598" font-family="sans-serif" font-size="17" fill="#eef4ff">Humans correct failures</text>
+<path d="M621,594 H647" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="652" y="548" width="278" height="94" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="664" y="575" font-family="sans-serif" font-size="17" fill="#eef4ff">Train next model on labels</text>
+<text x="664" y="598" font-family="sans-serif" font-size="17" fill="#eef4ff">Not online user fine-tuning</text>
+</svg>

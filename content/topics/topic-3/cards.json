@@ -302,5 +302,157 @@
       "V-JEPA 2.1"
     ],
     "relatedTopicUrl": "/papers/vjepa-21#8--evidence-first-the-tradeoff-then-the-final-models"
+  },
+  {
+    "id": "sam3-1",
+    "topic": "topic-3",
+    "title": "SAM 3 · Concept versus instance",
+    "question": "What does a positive exemplar box mean in PCS?",
+    "choices": [
+      "Find other instances matching the demonstrated concept.",
+      "Return only the pixels inside that box.",
+      "Delete all text tokens permanently.",
+      "Train a new model on this image."
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "A concept exemplar can affect the entire predicted set; PVS instead refines an indicated instance.",
+    "difficulty": "medium",
+    "tags": [
+      "SAM 3"
+    ],
+    "relatedTopicUrl": "/papers/sam3#1--a-concept-is-a-set-a-click-targets-an-instance"
+  },
+  {
+    "id": "sam3-2",
+    "topic": "topic-3",
+    "title": "SAM 3 · Shared backbone",
+    "question": "Which features feed the video memory-attention path?",
+    "choices": [
+      "Only the semantic binary map.",
+      "Unconditioned PE frame features through a separate neck.",
+      "Only text tokens with no image features.",
+      "The final cgF1 evaluation score."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "Detection conditions image features on prompts, while tracking separately conditions unconditioned PE features on per-object memory.",
+    "difficulty": "medium",
+    "tags": [
+      "SAM 3"
+    ],
+    "relatedTopicUrl": "/papers/sam3#2--architecture-one-backbone-two-paths"
+  },
+  {
+    "id": "sam3-3",
+    "topic": "topic-3",
+    "title": "SAM 3 · Query slots",
+    "question": "What are the 200 learned object queries?",
+    "choices": [
+      "Exactly 200 user clicks.",
+      "A guaranteed set of 200 true objects.",
+      "Learned output slots that may be unmatched or duplicated.",
+      "The maximum text context length."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "Queries propose objects; they are not input prompts or a guarantee of detection count.",
+    "difficulty": "medium",
+    "tags": [
+      "SAM 3"
+    ],
+    "relatedTopicUrl": "/papers/sam3#3--representation-prompts-queries-pixels-and-identities"
+  },
+  {
+    "id": "sam3-4",
+    "topic": "topic-3",
+    "title": "SAM 3 · Presence gating",
+    "question": "Presence is 0.8 and conditional query score is 0.7. What is the final score?",
+    "choices": [
+      "1.5",
+      "0.7",
+      "0.8",
+      "0.56"
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "The same global presence factor multiplies every local conditional score: 0.8 × 0.7 = 0.56.",
+    "difficulty": "medium",
+    "tags": [
+      "SAM 3"
+    ],
+    "relatedTopicUrl": "/papers/sam3#4--where-the-math-happens-one-global-gate-many-local-scores"
+  },
+  {
+    "id": "sam3-5",
+    "topic": "topic-3",
+    "title": "SAM 3 · Negative supervision",
+    "question": "How is an absent concept supervised in the selected decoupled strategy?",
+    "choices": [
+      "Train presence on absence; skip per-query classification for that pair.",
+      "Mark all queries positive.",
+      "Train only the tracker with no presence loss.",
+      "Always supervise the product and detach presence."
+    ],
+    "correctChoiceIndex": 0,
+    "explanation": "The presence branch learns absent concepts. Unmatched queries still receive negative labels on positive concept-image pairs.",
+    "difficulty": "medium",
+    "tags": [
+      "SAM 3"
+    ],
+    "relatedTopicUrl": "/papers/sam3#4--where-the-math-happens-one-global-gate-many-local-scores"
+  },
+  {
+    "id": "sam3-6",
+    "topic": "topic-3",
+    "title": "SAM 3 · Training versus interaction",
+    "question": "What changes during ordinary video inference?",
+    "choices": [
+      "PE weights are optimized on every new frame.",
+      "Prompts, object IDs and memory state evolve with fixed learned weights.",
+      "An EMA teacher updates the presence token.",
+      "The cgF1 metric trains the mask decoder."
+    ],
+    "correctChoiceIndex": 1,
+    "explanation": "The tracker is learned in stage 4 with frozen PE; inference carries state without a user-label optimizer update.",
+    "difficulty": "medium",
+    "tags": [
+      "SAM 3"
+    ],
+    "relatedTopicUrl": "/papers/sam3#6--training-and-inference-carry-different-state"
+  },
+  {
+    "id": "sam3-7",
+    "topic": "topic-3",
+    "title": "SAM 3 · Track suppression",
+    "question": "A confirmed track has negative lifetime MDS. What happens?",
+    "choices": [
+      "Its state must be deleted permanently.",
+      "Every detector query is removed.",
+      "Its output is zeroed while its state remains available for recovery.",
+      "Its identity is merged with every new object."
+    ],
+    "correctChoiceIndex": 2,
+    "explanation": "Lifetime suppression retains state; removal of an unconfirmed candidate is a separate policy.",
+    "difficulty": "medium",
+    "tags": [
+      "SAM 3"
+    ],
+    "relatedTopicUrl": "/papers/sam3#7--video-discover-propagate-associate-confirm"
+  },
+  {
+    "id": "sam3-8",
+    "topic": "topic-3",
+    "title": "SAM 3 · Evidence",
+    "question": "Why can presence improve cgF1 even when pmF1 falls?",
+    "choices": [
+      "cgF1 is identical to mask AP.",
+      "cgF1 ignores absent concepts.",
+      "The human oracle becomes a training label.",
+      "Better image-level recognition can outweigh worse positive-mask localization."
+    ],
+    "correctChoiceIndex": 3,
+    "explanation": "cgF1 multiplies positive micro F1 by image-level MCC. Table 9a shows the two factors can move in different directions.",
+    "difficulty": "medium",
+    "tags": [
+      "SAM 3"
+    ],
+    "relatedTopicUrl": "/papers/sam3#8--evidence-recognition-boundaries-and-association"
   }
 ]

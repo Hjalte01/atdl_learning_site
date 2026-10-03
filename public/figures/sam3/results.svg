@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="670" viewBox="0 0 960 670" role="img" aria-label="Measured image PCS · SA-Co/Gold · Table 1">
+<rect width="960" height="670" fill="#101c30"/>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="28" y="40" font-family="sans-serif" font-size="24" fill="#eef4ff">Measured image PCS · SA-Co/Gold · Table 1</text>
+<text x="28" y="80" font-family="sans-serif" font-size="18" fill="#eef4ff">Instance cgF1 ↑ · text prompt · zero-origin bars</text>
+<text x="28" y="142" font-family="sans-serif" font-size="18" fill="#eef4ff">OWLv2</text>
+<rect x="235" y="115" width="121.10000000000001" height="36" fill="#258ca6"/>
+<text x="770" y="142" font-family="sans-serif" font-size="19" fill="#eef4ff">17.3</text>
+<text x="28" y="214" font-family="sans-serif" font-size="18" fill="#eef4ff">OWLv2*</text>
+<rect x="235" y="187" width="172.20000000000002" height="36" fill="#258ca6"/>
+<text x="770" y="214" font-family="sans-serif" font-size="19" fill="#eef4ff">24.6</text>
+<text x="28" y="286" font-family="sans-serif" font-size="18" fill="#eef4ff">LLMDet-L</text>
+<rect x="235" y="259" width="45.5" height="36" fill="#258ca6"/>
+<text x="770" y="286" font-family="sans-serif" font-size="19" fill="#eef4ff">6.5</text>
+<text x="28" y="358" font-family="sans-serif" font-size="18" fill="#eef4ff">DINO-X</text>
+<rect x="235" y="331" width="149.1" height="36" fill="#258ca6"/>
+<text x="770" y="358" font-family="sans-serif" font-size="19" fill="#eef4ff">21.3</text>
+<text x="28" y="430" font-family="sans-serif" font-size="18" fill="#eef4ff">SAM 3</text>
+<rect x="235" y="403" width="378.7" height="36" fill="#258ca6"/>
+<text x="770" y="430" font-family="sans-serif" font-size="19" fill="#eef4ff">54.1</text>
+<text x="28" y="502" font-family="sans-serif" font-size="18" fill="#eef4ff">Human oracle</text>
+<rect x="235" y="475" width="509.59999999999997" height="36" fill="#339774"/>
+<text x="770" y="502" font-family="sans-serif" font-size="19" fill="#eef4ff">72.8</text>
+<path d="M235 557 H795" stroke="#8299b8"/>
+<text x="228" y="588" font-family="sans-serif" font-size="16" fill="#eef4ff">0</text>
+<text x="368" y="588" font-family="sans-serif" font-size="16" fill="#eef4ff">20</text>
+<text x="508" y="588" font-family="sans-serif" font-size="16" fill="#eef4ff">40</text>
+<text x="648" y="588" font-family="sans-serif" font-size="16" fill="#eef4ff">60</text>
+<text x="788" y="588" font-family="sans-serif" font-size="16" fill="#eef4ff">80</text>
+<text x="28" y="622" font-family="sans-serif" font-size="17" fill="#eef4ff">* OWLv2 partially trained on LVIS; DINO-X from API; no uncertainty bars.</text>
+<text x="28" y="652" font-family="sans-serif" font-size="17" fill="#eef4ff">Gold selects best of 3 annotations; human is an oracle agreement reference.</text>
+</svg>

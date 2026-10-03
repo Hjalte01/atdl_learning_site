@@ -1,5 +1,18 @@
 # Paper learning-site authoring
 
+## Browser verification on terminal-only hosts
+
+Use the pinned development shell with `nix develop`. It supplies Node, PDF tools,
+Python Playwright and NixOS-compatible Chromium; no desktop/display is required.
+After `npm run build`, start `npm run preview -- --host 127.0.0.1 --port 4322`.
+Run `nix develop -c python scripts/browser-check.py http://127.0.0.1:4322/atdl_learning_site/papers/<slug>`
+from this repository. Review the screenshots in `.validation/browser/` with the
+image viewer, including enlarged figures and mobile equations. Automated checks
+alone are not a visual review. Extend checks for a guide's custom interactive lab
+when applicable. Do not borrow Playwright from another repository, download
+generic Linux browser binaries, or put the only verification scripts in `/tmp`.
+Stop the preview with `npm run preview -- stop` when finished.
+
 For requests to create or expand paper guides (including “create sites for topic 2-4”), read and follow [GPT.md](GPT.md). Topic-paper shorthand means one paper unless the user explicitly requests a range. Preserve existing work and verify against the supplied course paper.
 
 ## Automatic next-guide requests

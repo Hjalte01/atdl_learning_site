@@ -23,6 +23,8 @@ Open http://localhost:4322. For production verification, run `npm run build`; `n
 
 ## Scope
 
+Topic 3 paper 3, *SAM 3: Segment Anything with Concepts*, has a guide at `/papers/sam3`, eight reproducible SVGs and eight study cards based on the supplied 78-page ICLR 2026 conference copy (PDF export March 6, 2026). It connects prompt-conditioned detection, shared presence gating, positive-only query supervision and per-object video memory. The LVIS AP prose/table mismatch and confirmation-window endpoint convention are explicit. Exactly one new guide is completed; deployment remains with the queue.
+
 Topic 3 paper 2, *V-JEPA 2.1*, has a guide at `/papers/vjepa-21`, eight reproducible SVGs and eight study cards based on the supplied 37-page June 2026 arXiv v3. It explains weighted context prediction, four-layer supervision, native image/video tokenization, EMA and task-specific inference. Sequential ablations and scaled-model results stay separate; robot planning changes and internal source discrepancies are explicit. Exactly one guide is completed; deployment remains with the queue.
 
 Topic 3 paper 1, *DINOv3*, now has a guide at `/papers/dinov3`, eight reproducible SVGs and eight study cards based on the supplied August 13, 2025 arXiv v1. It connects student/EMA/Gram teacher roles, global and masked-patch objectives, relational anchoring, resolution adaptation and downstream probes. Final-result and refinement-ablation settings are kept separate; OCR, fairness and compute limitations are explicit. This run completes one guide; deployment remains with the queue.
@@ -120,3 +122,25 @@ Topic 2’s original **Generative Adversarial Nets** extra reading now has a gui
 Topic 2’s **Denoising Diffusion Probabilistic Models** extra reading now has a guide at `/papers/t2-ddpms`, following the supplied 12-page NeurIPS 2020 copy. Seven reproducible SVGs and eight cards cover image-shaped states, shared U-Net conditioning, separate training and sampling, loss weighting, a worked reverse step and original CIFAR10 evidence. Referenced appendices are absent from the supplied PDF; no appendix-only implementation details are asserted.
 
 Topic 2’s **Auto-Encoding Variational Bayes** extra reading now has a guide at `/papers/t2-vaes`, based on the supplied 14-page arXiv v11 (December 10, 2022). Seven reproducible teaching SVGs, the original Figure 2 page and eight cards explain encoder/decoder roles, prior versus posterior KL, reparameterized gradients, a scalar training trace and separate generation. It distinguishes sampled objectives from guaranteed bounds and preserves the source’s experimental evaluation limits.
+
+## Reproducible authoring on NixOS
+
+The existing Astro/Markdown structure works on the terminal-only VPS. Use the
+pinned development environment for a NixOS-compatible headless browser:
+
+```console
+nix develop
+npm ci
+npm run build
+npm run preview -- --host 127.0.0.1 --port 4322
+python scripts/browser-check.py http://127.0.0.1:4322/atdl_learning_site/papers/sam3
+```
+
+The check verifies links and anchors, rendered equations, image loading, quiz
+feedback, printable cards, SVG label bounds, and page overflow at phone/desktop
+widths in light/dark themes. It saves full-page, viewport, equation and enlarged
+diagram screenshots plus a result JSON under ignored `.validation/browser/`.
+Inspect those images visually; extend the checks for any custom lab. No desktop
+session or browser download is needed. Stop with `npm run preview -- stop`.
+The development flake changes authoring tools only; production uses the existing
+NixOS package and deployment registry.

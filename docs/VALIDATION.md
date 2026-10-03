@@ -1,5 +1,15 @@
 # Validation — 2026-09-15
 
+## SAM 3 recovery and reproducible browser workflow — 2026-10-03
+
+- Recovered cancelled queue run 167, which selected Topic 3 paper 3 from a complete live inventory of 48 PDFs. Completed its final verification and validation record; no additional guide was selected. The supplied 78-page ICLR 2026 PDF, portable `/papers/sam3.pdf` and catalog asset have identical SHA-256 `b8dfc88bab9a499598923715b0bf90b544acfe52a5ee9e499d9b5009279c6331`.
+- Preserved the architecture-to-math explanation, eight reproducible teaching SVGs, eight study cards, catalog readiness and topic navigation. Rechecked the supplied source's presence-score factorization, training stages, video confirmation/suppression policy and Table 1. The 48.8 introductory LVIS AP versus 48.5 table value is explicitly documented; the measured chart uses Table 1. No trained SAM model runs in this guide.
+- Final `npm run build` passed: 48 static pages; zero Astro errors, warnings or hints. `python3 scripts/sam3-figures.py` passed its arithmetic assertions, and `git diff --check` passed. The two shortened representation labels left by the cancelled run pass final Chromium text/panel bounds checks.
+- Pinned `flake.nix`/`flake.lock` provide Node 22, Poppler, Python Playwright and NixOS-compatible Chromium for headless authoring. `scripts/browser-check.py` retains checks in the repository and captures in ignored `.validation/browser/`, without another project's dependencies or ephemeral `/tmp` scripts. AGENTS.md and README document the workflow. Application dependencies and npm lockfile are unchanged.
+- Final headless browser run passed: all local links and linked HTML anchors, image decoding, rendered KaTeX, all eight correct quiz answers and one incorrect answer, all eight questions in the printable deck, and SVG label/panel bounds for all eight figures. No JavaScript errors or page overflow at 1440 and 390 pixels in light/dark themes. JSON result: `.validation/browser/sam3-result.json`.
+- Visually reviewed all eight enlarged figures and desktop/mobile captures, including phone math. Existing contained horizontal equation/table scrolling and full-size figure links remain available. Corrected the check's screenshot scroll reset to be instant and its printable-deck URL to accommodate paper pages without a print toolbar; reran successfully. Captures cover every display equation in both widths/themes.
+- Source and final guide are complete. Local NixOS deployment and live revision checks are recorded in the finishing response; no GitHub push is part of this recovery.
+
 ## DiffAtlas guide addition
 
 - Final `npm run build`: passed, 23 routes, zero errors/warnings/hints.

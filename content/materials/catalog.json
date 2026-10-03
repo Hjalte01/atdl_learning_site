@@ -440,12 +440,12 @@
     {
       "id": "b6ddfb55fc0e058e",
       "sourcePath": "topic 3/T3_3_SAM 3.pdf",
-      "title": "T3 3 SAM 3",
+      "title": "SAM 3: Segment Anything with Concepts",
       "topic": 3,
       "order": 3,
       "kind": "paper",
-      "status": "not-started",
-      "guide": null,
+      "status": "ready",
+      "guide": "/papers/sam3",
       "pdf": "/materials/b6ddfb55fc0e058e.pdf",
       "sha256": "b8dfc88bab9a499598923715b0bf90b544acfe52a5ee9e499d9b5009279c6331",
       "sourceState": "present"
@@ -635,10 +635,10 @@
   ],
   "sync": {
     "vault": "/srv/obsidian-webdav/study/ATDL",
-    "attemptedAt": "2026-10-01T20:31:50+00:00",
+    "attemptedAt": "2026-10-03T07:57:57+00:00",
     "sourceCount": 48,
     "importedCount": 48,
     "errors": [],
-    "completedAt": "2026-10-01T20:31:50+00:00"
+    "completedAt": "2026-10-03T07:57:57+00:00"
   }
 }

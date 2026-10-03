@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" role="img" aria-label="Trace one invented example through A → B → C → D">
+<rect width="960" height="560" fill="#101c30"/>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="28" y="40" font-family="sans-serif" font-size="24" fill="#eef4ff">Trace one invented example through A → B → C → D</text>
+<text x="28" y="82" font-family="sans-serif" font-size="18" fill="#c5d5ee">A → B · REPRESENTATIONS</text>
+<rect x="28" y="98" width="278" height="94" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="40" y="125" font-family="sans-serif" font-size="17" fill="#eef4ff">Image contains 2 red apples</text>
+<text x="40" y="148" font-family="sans-serif" font-size="17" fill="#eef4ff">PE caches image feature grid</text>
+<path d="M309,144 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="340" y="98" width="278" height="94" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="125" font-family="sans-serif" font-size="17" fill="#eef4ff">Text: “red apple”</text>
+<text x="352" y="148" font-family="sans-serif" font-size="17" fill="#eef4ff">Fusion conditions the grid</text>
+<path d="M621,144 H647" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="652" y="98" width="278" height="94" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="664" y="125" font-family="sans-serif" font-size="17" fill="#eef4ff">No numeric encoder claimed</text>
+<text x="664" y="148" font-family="sans-serif" font-size="17" fill="#eef4ff">Head outputs assumed below</text>
+<text x="28" y="232" font-family="sans-serif" font-size="18" fill="#c5d5ee">C → D · SCORING</text>
+<rect x="28" y="248" width="278" height="94" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="40" y="275" font-family="sans-serif" font-size="17" fill="#eef4ff">Presence r = .8</text>
+<text x="40" y="298" font-family="sans-serif" font-size="17" fill="#eef4ff">Local a = [.9, .7, .4]</text>
+<path d="M309,294 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="340" y="248" width="278" height="94" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="275" font-family="sans-serif" font-size="17" fill="#eef4ff">s = [.72, .56, .32]</text>
+<text x="352" y="298" font-family="sans-serif" font-size="17" fill="#eef4ff">Threshold &gt; .5 keeps 2</text>
+<path d="M621,294 H647" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="652" y="248" width="278" height="94" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="664" y="275" font-family="sans-serif" font-size="17" fill="#eef4ff">Masks overlap two apples</text>
+<text x="664" y="298" font-family="sans-serif" font-size="17" fill="#eef4ff">Mask quality is separate</text>
+<text x="28" y="382" font-family="sans-serif" font-size="18" fill="#c5d5ee">TRAINING ARROW AT C · POSITIVE PRESENCE LABEL y = 1</text>
+<rect x="28" y="398" width="278" height="94" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="40" y="425" font-family="sans-serif" font-size="17" fill="#eef4ff">BCE = −ln(.8) = .2231</text>
+<text x="40" y="448" font-family="sans-serif" font-size="17" fill="#eef4ff">Stage 3 weight: 20</text>
+<path d="M309,444 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="340" y="398" width="278" height="94" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="425" font-family="sans-serif" font-size="17" fill="#eef4ff">Contribution ≈ 4.4629</text>
+<text x="352" y="448" font-family="sans-serif" font-size="17" fill="#eef4ff">Only the presence term</text>
+<path d="M621,444 H647" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="652" y="398" width="278" height="94" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="664" y="425" font-family="sans-serif" font-size="17" fill="#eef4ff">dBCE/dlogit = .8 − 1</text>
+<text x="664" y="448" font-family="sans-serif" font-size="17" fill="#eef4ff">Gradient descent raises r</text>
+</svg>

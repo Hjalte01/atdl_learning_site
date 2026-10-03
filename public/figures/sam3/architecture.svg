@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="710" viewBox="0 0 960 710" role="img" aria-label="Shared visual features, distinct detection and tracking paths">
+<rect width="960" height="710" fill="#101c30"/>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c5d5ee"/></marker></defs>
+<text x="28" y="40" font-family="sans-serif" font-size="24" fill="#eef4ff">Shared visual features, distinct detection and tracking paths</text>
+<text x="28" y="82" font-family="sans-serif" font-size="18" fill="#c5d5ee">A · INPUTS: independent branches meet at B</text>
+<rect x="28" y="98" width="278" height="94" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="40" y="125" font-family="sans-serif" font-size="17" fill="#eef4ff">Image I → PE vision encoder</text>
+<text x="40" y="148" font-family="sans-serif" font-size="17" fill="#eef4ff">Unconditioned features F</text>
+<rect x="340" y="98" width="278" height="94" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="125" font-family="sans-serif" font-size="17" fill="#eef4ff">Text → PE text encoder</text>
+<text x="352" y="148" font-family="sans-serif" font-size="17" fill="#eef4ff">Exemplar → ROI + label + box</text>
+<rect x="652" y="98" width="278" height="94" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="664" y="125" font-family="sans-serif" font-size="17" fill="#eef4ff">Prompt tokens P</text>
+<text x="664" y="148" font-family="sans-serif" font-size="17" fill="#eef4ff">Text and/or exemplars</text>
+<text x="28" y="232" font-family="sans-serif" font-size="18" fill="#c5d5ee">B → C → D · IMAGE DETECTOR</text>
+<rect x="28" y="248" width="278" height="94" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="40" y="275" font-family="sans-serif" font-size="17" fill="#eef4ff">B: F cross-attends to P</text>
+<text x="40" y="298" font-family="sans-serif" font-size="17" fill="#eef4ff">6-block fusion encoder</text>
+<path d="M309,294 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="340" y="248" width="278" height="94" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="275" font-family="sans-serif" font-size="17" fill="#eef4ff">C: 6-block query decoder</text>
+<text x="352" y="298" font-family="sans-serif" font-size="17" fill="#eef4ff">200 queries + presence token</text>
+<path d="M621,294 H647" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="652" y="248" width="278" height="94" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="664" y="275" font-family="sans-serif" font-size="17" fill="#eef4ff">D: boxes, masks, scores</text>
+<text x="664" y="298" font-family="sans-serif" font-size="17" fill="#eef4ff">Semantic map + instance set</text>
+<text x="28" y="382" font-family="sans-serif" font-size="18" fill="#c5d5ee">VIDEO BRANCH: starts from A features, not conditioned B features</text>
+<rect x="28" y="398" width="278" height="94" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="40" y="425" font-family="sans-serif" font-size="17" fill="#eef4ff">A: F + per-object memory</text>
+<text x="40" y="448" font-family="sans-serif" font-size="17" fill="#eef4ff">Memory attention</text>
+<path d="M309,444 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="340" y="398" width="278" height="94" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="425" font-family="sans-serif" font-size="17" fill="#eef4ff">SAM 2-style mask decoder</text>
+<text x="352" y="448" font-family="sans-serif" font-size="17" fill="#eef4ff">Propagated masks with IDs</text>
+<path d="M621,444 H647" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="652" y="398" width="278" height="94" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="664" y="425" font-family="sans-serif" font-size="17" fill="#eef4ff">Associate with D detections</text>
+<text x="664" y="448" font-family="sans-serif" font-size="17" fill="#eef4ff">Spawn / confirm / re-prompt</text>
+<text x="28" y="532" font-family="sans-serif" font-size="18" fill="#c5d5ee">RECURRENT STATE: match/update → future memory attention</text>
+<rect x="28" y="548" width="278" height="94" rx="10" fill="#174c63" stroke="#8299b8"/>
+<text x="40" y="575" font-family="sans-serif" font-size="17" fill="#eef4ff">Mask + A features</text>
+<text x="40" y="598" font-family="sans-serif" font-size="17" fill="#eef4ff">Memory encoding per object</text>
+<path d="M309,594 H335" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="340" y="548" width="278" height="94" rx="10" fill="#493a75" stroke="#8299b8"/>
+<text x="352" y="575" font-family="sans-serif" font-size="17" fill="#eef4ff">Keep confident references</text>
+<text x="352" y="598" font-family="sans-serif" font-size="17" fill="#eef4ff">Spatial memory + pointers</text>
+<path d="M621,594 H647" stroke="#c5d5ee" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="652" y="548" width="278" height="94" rx="10" fill="#245546" stroke="#8299b8"/>
+<text x="664" y="575" font-family="sans-serif" font-size="17" fill="#eef4ff">Next frame reuses identity</text>
+<text x="664" y="598" font-family="sans-serif" font-size="17" fill="#eef4ff">Detector can discover arrivals</text>
+</svg>
